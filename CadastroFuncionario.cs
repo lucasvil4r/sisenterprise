@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,11 +26,11 @@ namespace SisEnterprise
 
 		private void SaveFuncionario()
 		{
-			String sConnectionString = "Data Source=database-1.c8xx4efpat02.sa-east-1.rds.amazonaws.com;" +
+			String sConnectionString = "Data Source=-east-1.rds.amazonaws.com;" +
 																	"Initial Catalog=sisenterprise;" +
 																	"Persist Security Info=True;" +
-																	"User ID=admin;" +
-																	"Password=Jdt7$uwF9u^B8uvd";
+																	"User ID=;" +
+																	"Password=";
 
 			String sCommandText = "INSERT INTO (name, cpf) VALUES (@Nome,@Cpf)";
 
