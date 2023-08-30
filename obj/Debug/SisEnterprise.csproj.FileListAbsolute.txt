@@ -1,0 +1,10 @@
+D:\sisenterprise_v2\SisEnterprise\bin\Debug\SisEnterprise.exe.config
+D:\sisenterprise_v2\SisEnterprise\bin\Debug\SisEnterprise.exe
+D:\sisenterprise_v2\SisEnterprise\bin\Debug\SisEnterprise.pdb
+D:\sisenterprise_v2\SisEnterprise\obj\Debug\SisEnterprise.csproj.AssemblyReference.cache
+D:\sisenterprise_v2\SisEnterprise\obj\Debug\SisEnterprise.CadastroFuncionario.resources
+D:\sisenterprise_v2\SisEnterprise\obj\Debug\SisEnterprise.Properties.Resources.resources
+D:\sisenterprise_v2\SisEnterprise\obj\Debug\SisEnterprise.csproj.GenerateResource.cache
+D:\sisenterprise_v2\SisEnterprise\obj\Debug\SisEnterprise.csproj.CoreCompileInputs.cache
+D:\sisenterprise_v2\SisEnterprise\obj\Debug\SisEnterprise.exe
+D:\sisenterprise_v2\SisEnterprise\obj\Debug\SisEnterprise.pdb

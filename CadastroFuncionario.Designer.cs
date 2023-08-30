@@ -28,66 +28,34 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			button1 = new Button();
-			textBox1 = new TextBox();
-			textBox2 = new TextBox();
-			label1 = new Label();
-			SuspendLayout();
+			this.button1 = new System.Windows.Forms.Button();
+			this.SuspendLayout();
 			// 
 			// button1
 			// 
-			button1.Location = new Point(321, 323);
-			button1.Name = "button1";
-			button1.Size = new Size(120, 46);
-			button1.TabIndex = 0;
-			button1.Text = "button1";
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
-			// 
-			// textBox1
-			// 
-			textBox1.Location = new Point(72, 51);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(210, 23);
-			textBox1.TabIndex = 1;
-			// 
-			// textBox2
-			// 
-			textBox2.Location = new Point(500, 51);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(166, 23);
-			textBox2.TabIndex = 2;
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Location = new Point(23, 54);
-			label1.Name = "label1";
-			label1.Size = new Size(43, 15);
-			label1.TabIndex = 3;
-			label1.Text = "Nome:";
-			label1.Click += label1_Click;
+			this.button1.Location = new System.Drawing.Point(336, 205);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// CadastroFuncionario
 			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 450);
-			Controls.Add(label1);
-			Controls.Add(textBox2);
-			Controls.Add(textBox1);
-			Controls.Add(button1);
-			Name = "CadastroFuncionario";
-			Text = "CadastroFuncionario";
-			ResumeLayout(false);
-			PerformLayout();
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.button1);
+			this.Name = "CadastroFuncionario";
+			this.Text = "CadastroFuncionario";
+			this.Load += new System.EventHandler(this.CadastroFuncionario_Load);
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
 
-		private Button button1;
-		private TextBox textBox1;
-		private TextBox textBox2;
-		private Label label1;
+		private System.Windows.Forms.Button button1;
 	}
 }
