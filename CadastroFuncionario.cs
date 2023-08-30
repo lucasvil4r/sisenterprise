@@ -26,11 +26,11 @@ namespace SisEnterprise
 
 		private void SaveFuncionario()
 		{
-			String sConnectionString = "Data Source=-east-1.rds.amazonaws.com;" +
-																	"Initial Catalog=sisenterprise;" +
-																	"Persist Security Info=True;" +
-																	"User ID=;" +
-																	"Password=";
+			String sConnectionString = "Data Source=;" +
+						"Initial Catalog=sisenterprise;" +
+						"Persist Security Info=True;" +
+						"User ID=;" +
+						"Password=";
 
 			String sCommandText = "INSERT INTO (name, cpf) VALUES (@Nome,@Cpf)";
 
