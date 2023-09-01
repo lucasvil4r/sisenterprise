@@ -30,16 +30,16 @@
 		{
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.RH = new System.Windows.Forms.ToolStripMenuItem();
-			this.fISCALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.lOGISTICAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.fINANCEIROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.cONTABILIDADEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
 			this.cadastroDeFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
 			this.marcaçãoDeFaltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fISCALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lOGISTICAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fINANCEIROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cONTABILIDADEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,7 +55,7 @@
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.MdiWindowListItem = this.RH;
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(717, 24);
+			this.menuStrip.Size = new System.Drawing.Size(1018, 24);
 			this.menuStrip.TabIndex = 2;
 			this.menuStrip.Text = "menuStrip";
 			// 
@@ -70,36 +70,6 @@
 			this.RH.Name = "RH";
 			this.RH.Size = new System.Drawing.Size(35, 20);
 			this.RH.Text = "RH";
-			// 
-			// fISCALToolStripMenuItem
-			// 
-			this.fISCALToolStripMenuItem.Name = "fISCALToolStripMenuItem";
-			this.fISCALToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-			this.fISCALToolStripMenuItem.Text = "FISCAL";
-			// 
-			// lOGISTICAToolStripMenuItem
-			// 
-			this.lOGISTICAToolStripMenuItem.Name = "lOGISTICAToolStripMenuItem";
-			this.lOGISTICAToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-			this.lOGISTICAToolStripMenuItem.Text = "LOGISTICA";
-			// 
-			// vENDASToolStripMenuItem
-			// 
-			this.vENDASToolStripMenuItem.Name = "vENDASToolStripMenuItem";
-			this.vENDASToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-			this.vENDASToolStripMenuItem.Text = "VENDAS";
-			// 
-			// fINANCEIROToolStripMenuItem
-			// 
-			this.fINANCEIROToolStripMenuItem.Name = "fINANCEIROToolStripMenuItem";
-			this.fINANCEIROToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-			this.fINANCEIROToolStripMenuItem.Text = "FINANCEIRO";
-			// 
-			// cONTABILIDADEToolStripMenuItem
-			// 
-			this.cONTABILIDADEToolStripMenuItem.Name = "cONTABILIDADEToolStripMenuItem";
-			this.cONTABILIDADEToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
-			this.cONTABILIDADEToolStripMenuItem.Text = "CONTABILIDADE";
 			// 
 			// toolStripMenuItem3
 			// 
@@ -132,15 +102,44 @@
 			this.marcaçãoDeFaltaToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
 			this.marcaçãoDeFaltaToolStripMenuItem.Text = "Marcação de Falta";
 			// 
+			// fISCALToolStripMenuItem
+			// 
+			this.fISCALToolStripMenuItem.Name = "fISCALToolStripMenuItem";
+			this.fISCALToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+			this.fISCALToolStripMenuItem.Text = "FISCAL";
+			// 
+			// lOGISTICAToolStripMenuItem
+			// 
+			this.lOGISTICAToolStripMenuItem.Name = "lOGISTICAToolStripMenuItem";
+			this.lOGISTICAToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+			this.lOGISTICAToolStripMenuItem.Text = "LOGISTICA";
+			// 
+			// vENDASToolStripMenuItem
+			// 
+			this.vENDASToolStripMenuItem.Name = "vENDASToolStripMenuItem";
+			this.vENDASToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+			this.vENDASToolStripMenuItem.Text = "VENDAS";
+			// 
+			// fINANCEIROToolStripMenuItem
+			// 
+			this.fINANCEIROToolStripMenuItem.Name = "fINANCEIROToolStripMenuItem";
+			this.fINANCEIROToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+			this.fINANCEIROToolStripMenuItem.Text = "FINANCEIRO";
+			// 
+			// cONTABILIDADEToolStripMenuItem
+			// 
+			this.cONTABILIDADEToolStripMenuItem.Name = "cONTABILIDADEToolStripMenuItem";
+			this.cONTABILIDADEToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+			this.cONTABILIDADEToolStripMenuItem.Text = "CONTABILIDADE";
+			// 
 			// Main
 			// 
-			this.ClientSize = new System.Drawing.Size(717, 407);
+			this.ClientSize = new System.Drawing.Size(1018, 590);
 			this.Controls.Add(this.menuStrip);
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "Main";
 			this.Text = "Enterprise Resource Planning";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Main_Load_1);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
