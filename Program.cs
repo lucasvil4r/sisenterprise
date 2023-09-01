@@ -16,7 +16,7 @@ namespace SisEnterprise
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new CadastroFuncionario());
+			Application.Run(new Main());
 		}
 	}
 }

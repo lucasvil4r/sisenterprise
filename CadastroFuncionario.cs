@@ -39,10 +39,6 @@ namespace SisEnterprise
 			{
 				using (var cmd = new SqlCommand(sCommandText))
 				{
-					cmd.Parameters.AddWithValue(“@Nome”, "");
-					cmd.Parameters.AddWithValue(“@Cpf”, "");
-					cn.Open();
-					cmd.ExecuteNonQuery();
 				}
 			}
 		}
