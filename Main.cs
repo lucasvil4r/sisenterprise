@@ -17,22 +17,27 @@ namespace SisEnterprise
 			InitializeComponent();
 		}
 
-		private void cadastroFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
+		//metodo para abrir formulario filho
+		private void abreFormFilho(Form form)
 		{
-
+			foreach (Form formFilho in this.MdiChildren)
+			{
+				if (formFilho.GetType() == form.GetType())
+				{
+					formFilho.Focus();
+					return;
+				}
+			}
+			form.MdiParent = this;
+			form.Show();
 		}
 
-		private void cADASTROFUNCIONAToolStripMenuItem_Click(object sender, EventArgs e)
+		private void cadastroDeFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-
+			this.abreFormFilho(new CadastroFuncionario());
 		}
 
-		private void rHToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void Main_Load(object sender, EventArgs e)
+		private void Main_Load_1(object sender, EventArgs e)
 		{
 
 		}
