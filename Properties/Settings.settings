@@ -10,5 +10,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=database-1.c8xx4efpat02.sa-east-1.rds.amazonaws.com;Initial Catalog=sisenterprise;Persist Security Info=True;User ID=admin;Password=Jdt7$uwF9u^B8uvd</Value>
     </Setting>
+    <Setting Name="sisenterpriseConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=sisenterprise.database.windows.net;Initial Catalog=sisenterprise;Persist Security Info=True;User ID=sisenterprise;Password=Jdt7$uwF9u^B8uvd&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sisenterprise.database.windows.net;Initial Catalog=sisenterprise;Persist Security Info=True;User ID=sisenterprise;Password=Jdt7$uwF9u^B8uvd</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

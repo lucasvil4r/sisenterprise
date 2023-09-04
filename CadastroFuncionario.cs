@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,6 @@ namespace SisEnterprise
 	public partial class CadastroFuncionario : Form
 	{
 		private int childFormNumber = 0;
-		private RHContext dbContext;
 
 		public CadastroFuncionario()
 		{
@@ -68,16 +68,6 @@ namespace SisEnterprise
 		{
 		}
 
-		private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-		}
-
-		private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-		}
-
 		private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			LayoutMdi(MdiLayout.Cascade);
@@ -127,26 +117,48 @@ namespace SisEnterprise
 
 		private void saveToolStripButton_Click(object sender, EventArgs e)
 		{
-			var novoFuncionario = new FuncionarioInterface
-			{
-				Nome = textBoxNome.Text,
-				CPF = textBoxCPF.Text,
-				Email = textBoxEmail.Text,
-				Salario = decimal.Parse(textBoxSalario.Text),
-				Cargo = textBoxCargo.Text,
-				Telefone = textBoxTelefone.Text,
-				Endereco = textBoxEndereco.Text,
-				DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text),
-				DataAlteracao = DateTime.Now,
-				Ativo = true
-			};
+			var funcionario = new Funcionario();
+			funcionario.Nome = textBoxNome.Text;
+			funcionario.Cargo = textBoxCargo.Text;
+			funcionario.Salario = decimal.Parse(textBoxSalario.Text);
+			funcionario.Ativo = true;
+			funcionario.CPF = textBoxCPF.Text;
+			funcionario.NomeMeio = textBoxNomeMeio.Text;
+			funcionario.Telefone = textBoxTelefone.Text;
+			funcionario.DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text);
+			funcionario.Endereco = textBoxEndereco.Text;
+			funcionario.SobreNome = textBoxSobreNome.Text;
+			funcionario.DataNascimento = DateTime.Parse(textBoxNascimento.Text);
+			funcionario.Email = textBoxEmail.Text;
+			funcionario.RG = textBoxRg.Text;
+			funcionario.DataAlteracao = DateTime.Now;
 
-			dbContext.Funcionarios.Add(novoFuncionario);
-			dbContext.SaveChanges();
-			LimparCampos();
-			}
+			var db = new RHContext();
+			db.Funcionarios.Add(funcionario);
+			db.SaveChanges();
+		}
 
 		private void TextBoxAtivo_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBoxSalario_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
 		{
 
 		}

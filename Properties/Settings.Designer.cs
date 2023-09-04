@@ -33,5 +33,16 @@ namespace SisEnterprise.Properties {
                 return ((string)(this["sisenterpriseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sisenterprise.database.windows.net;Initial Catalog=sisenterprise;Pers" +
+            "ist Security Info=True;User ID=sisenterprise;Password=Jdt7$uwF9u^B8uvd")]
+        public string sisenterpriseConnectionString1 {
+            get {
+                return ((string)(this["sisenterpriseConnectionString1"]));
+            }
+        }
     }
 }
