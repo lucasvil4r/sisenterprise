@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sisenterpriseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="funcionario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cpf" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="salario" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="cargo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="endereco" Type="varchar" MaxLength="50" />
+    <Property Name="data_admissao" Type="date" />
+    <Property Name="data_alteracao" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ativo" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_funcionario_funcionario">
+    <End Role="funcionario" Type="Self.funcionario" Multiplicity="1" />
+    <End Role="funcionario1" Type="Self.funcionario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="funcionario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="funcionario1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sisenterpriseModelStoreContainer">
+    <EntitySet Name="funcionario" EntityType="Self.funcionario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_funcionario_funcionario" Association="Self.FK_funcionario_funcionario">
+      <End Role="funcionario" EntitySet="funcionario" />
+      <End Role="funcionario1" EntitySet="funcionario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

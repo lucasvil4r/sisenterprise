@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sisenterpriseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="funcionario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cpf" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="salario" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="data_admissao" Type="DateTime" Precision="0" />
+    <Property Name="data_alteracao" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ativo" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="funcionario1" Relationship="Self.FK_funcionario_funcionario" FromRole="funcionario" ToRole="funcionario1" />
+    <NavigationProperty Name="funcionario2" Relationship="Self.FK_funcionario_funcionario" FromRole="funcionario1" ToRole="funcionario" />
+  </EntityType>
+  <Association Name="FK_funcionario_funcionario">
+    <End Role="funcionario" Type="Self.funcionario" Multiplicity="1" />
+    <End Role="funcionario1" Type="Self.funcionario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="funcionario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="funcionario1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sisenterpriseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="funcionario" EntityType="Self.funcionario" />
+    <AssociationSet Name="FK_funcionario_funcionario" Association="Self.FK_funcionario_funcionario">
+      <End Role="funcionario" EntitySet="funcionario" />
+      <End Role="funcionario1" EntitySet="funcionario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
