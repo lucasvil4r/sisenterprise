@@ -55,7 +55,7 @@
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.MdiWindowListItem = this.RH;
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(1018, 24);
+			this.menuStrip.Size = new System.Drawing.Size(1056, 24);
 			this.menuStrip.TabIndex = 2;
 			this.menuStrip.Text = "menuStrip";
 			// 
@@ -134,13 +134,12 @@
 			// 
 			// Main
 			// 
-			this.ClientSize = new System.Drawing.Size(1018, 590);
+			this.ClientSize = new System.Drawing.Size(1056, 625);
 			this.Controls.Add(this.menuStrip);
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "Main";
 			this.Text = "Enterprise Resource Planning";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Main_Load_1);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();

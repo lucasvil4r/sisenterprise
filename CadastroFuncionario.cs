@@ -152,8 +152,8 @@ namespace SisEnterprise
 			funcionario.Nome = textBoxNome.Text;
 			funcionario.Cargo = textBoxCargo.Text;
 			funcionario.Salario = decimal.Parse(textBoxSalario.Text);
-			funcionario.Ativo = true;
 			funcionario.CPF = textBoxCPF.Text;
+			funcionario.Matricula = Int32.Parse(textBoxMatricula.Text);
 			funcionario.NomeMeio = textBoxNomeMeio.Text;
 			funcionario.Telefone = textBoxTelefone.Text;
 			funcionario.DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text);
@@ -164,16 +164,19 @@ namespace SisEnterprise
 			funcionario.RG = textBoxRg.Text;
 			funcionario.DataAlteracao = DateTime.Now;
 
+			// Create and initialize a CheckBox.   
+			CheckBox checkBoxAtivo = new CheckBox();
+			funcionario.Ativo = checkBoxAtivo.Checked;
+
 			dbContext.Funcionarios.Add(funcionario);
 			dbContext.SaveChanges();
 
-			ClearData();
-
 			//Recarrega Grid
 			dataGridView.DataSource = "";
-			dataGridView.DataSource = dbContext.Funcionarios;
+			dataGridView.DataSource = dbContext.Funcionarios.ToList();
 			dataGridView.Refresh();
 
+			ClearData();
 			MessageBox.Show("Funcionario Cadastrado com sucesso");
 		}
 
@@ -206,10 +209,12 @@ namespace SisEnterprise
 
 				if (funcionario != null)
 				{
+					textBoxId.Text = funcionario.Id.ToString();
 					textBoxNome.Text = funcionario.Nome;
 					textBoxCargo.Text = funcionario.Cargo;
-					textBoxSalario.Text = funcionario.Salario.ToString(); ;
+					textBoxSalario.Text = funcionario.Salario.ToString();
 					textBoxCPF.Text = funcionario.CPF;
+					textBoxMatricula.Text = funcionario.Matricula.ToString();
 					textBoxNomeMeio.Text = funcionario.NomeMeio;
 					textBoxTelefone.Text = funcionario.Telefone;
 					textBoxDataAdmissao.Text = funcionario.DataAdmissao.ToString(); ;
@@ -217,6 +222,10 @@ namespace SisEnterprise
 					textBoxSobreNome.Text = funcionario.SobreNome;
 					textBoxDataNascimento.Text = funcionario.DataNascimento.ToString(); ;
 					textBoxEmail.Text = funcionario.Email;
+
+					// Create and initialize a CheckBox.   
+					CheckBox checkBoxAtivo = new CheckBox();
+					checkBoxAtivo.Checked = funcionario.Ativo;
 				}
 			}
 		}
