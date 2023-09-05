@@ -140,6 +140,7 @@
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "Main";
 			this.Text = "Enterprise Resource Planning";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Main_Load_1);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();

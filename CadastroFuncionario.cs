@@ -15,10 +15,15 @@ namespace SisEnterprise
 	public partial class CadastroFuncionario : Form
 	{
 		private int childFormNumber = 0;
+		private RHContext dbContext;
 
 		public CadastroFuncionario()
 		{
 			InitializeComponent();
+
+			dbContext = new RHContext();
+			dataGridView.DataSource = dbContext.Funcionarios.ToList();
+			dataGridView.CellClick += dataGridView_CellClick;
 		}
 
 		private void ShowNewForm(object sender, EventArgs e)
@@ -98,44 +103,32 @@ namespace SisEnterprise
 
 		private void CadastroFuncionario_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'sisenterpriseDataSet1.Funcionarios' table. You can move, or remove it, as needed.
+			this.funcionariosTableAdapter.Fill(this.sisenterpriseDataSet1.Funcionarios);
 
 		}
 
 		// Método para limpar os campos de entrada de dados
-		private void LimparCampos()
+		private void ClearData()
 		{
 			textBoxNome.Clear();
-			textBoxCPF.Clear();
-			textBoxEmail.Clear();
+			textBoxCargo.Clear(); ;
 			textBoxSalario.Clear();
-			textBoxCargo.Clear();
-			textBoxTelefone.Clear();
-			textBoxEndereco.Clear();
 			textBoxDataAdmissao.Clear();
-			textBoxAtivo.Clear();
+			textBoxCPF.Clear();
+			textBoxNomeMeio.Clear();
+			textBoxTelefone.Clear();
+			textBoxDataAdmissao.Clear();
+			textBoxEndereco.Clear();
+			textBoxSobreNome.Clear();
+			textBoxDataNascimento.Clear();
+			textBoxEmail.Clear();
+			textBoxRg.Clear();
 		}
 
 		private void saveToolStripButton_Click(object sender, EventArgs e)
 		{
-			var funcionario = new Funcionario();
-			funcionario.Nome = textBoxNome.Text;
-			funcionario.Cargo = textBoxCargo.Text;
-			funcionario.Salario = decimal.Parse(textBoxSalario.Text);
-			funcionario.Ativo = true;
-			funcionario.CPF = textBoxCPF.Text;
-			funcionario.NomeMeio = textBoxNomeMeio.Text;
-			funcionario.Telefone = textBoxTelefone.Text;
-			funcionario.DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text);
-			funcionario.Endereco = textBoxEndereco.Text;
-			funcionario.SobreNome = textBoxSobreNome.Text;
-			funcionario.DataNascimento = DateTime.Parse(textBoxNascimento.Text);
-			funcionario.Email = textBoxEmail.Text;
-			funcionario.RG = textBoxRg.Text;
-			funcionario.DataAlteracao = DateTime.Now;
 
-			var db = new RHContext();
-			db.Funcionarios.Add(funcionario);
-			db.SaveChanges();
 		}
 
 		private void TextBoxAtivo_TextChanged(object sender, EventArgs e)
@@ -155,10 +148,80 @@ namespace SisEnterprise
 
 		private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
 		{
+			var funcionario = new Funcionario();
+			funcionario.Nome = textBoxNome.Text;
+			funcionario.Cargo = textBoxCargo.Text;
+			funcionario.Salario = decimal.Parse(textBoxSalario.Text);
+			funcionario.Ativo = true;
+			funcionario.CPF = textBoxCPF.Text;
+			funcionario.NomeMeio = textBoxNomeMeio.Text;
+			funcionario.Telefone = textBoxTelefone.Text;
+			funcionario.DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text);
+			funcionario.Endereco = textBoxEndereco.Text;
+			funcionario.SobreNome = textBoxSobreNome.Text;
+			funcionario.DataNascimento = DateTime.Parse(textBoxDataNascimento.Text);
+			funcionario.Email = textBoxEmail.Text;
+			funcionario.RG = textBoxRg.Text;
+			funcionario.DataAlteracao = DateTime.Now;
 
+			dbContext.Funcionarios.Add(funcionario);
+			dbContext.SaveChanges();
+
+			ClearData();
+
+			//Recarrega Grid
+			dataGridView.DataSource = "";
+			dataGridView.DataSource = dbContext.Funcionarios;
+			dataGridView.Refresh();
+
+			MessageBox.Show("Funcionario Cadastrado com sucesso");
 		}
 
 		private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void saveToolStripButton1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dataGridView_DoubleClick(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int columnIndexId = 0; // Índice da coluna "Id"
+
+			if (e.RowIndex >= 0 && e.ColumnIndex == columnIndexId)
+			{
+				// Obtém o valor do ID da célula clicada
+				int funcionarioId = (int)dataGridView.Rows[e.RowIndex].Cells[columnIndexId].Value;
+
+				// Consulte o banco de dados para obter os detalhes do funcionário
+				Funcionario funcionario = dbContext.Funcionarios.Find(funcionarioId);
+
+				if (funcionario != null)
+				{
+					textBoxNome.Text = funcionario.Nome;
+					textBoxCargo.Text = funcionario.Cargo;
+					textBoxSalario.Text = funcionario.Salario.ToString(); ;
+					textBoxCPF.Text = funcionario.CPF;
+					textBoxNomeMeio.Text = funcionario.NomeMeio;
+					textBoxTelefone.Text = funcionario.Telefone;
+					textBoxDataAdmissao.Text = funcionario.DataAdmissao.ToString(); ;
+					textBoxEndereco.Text = funcionario.Endereco;
+					textBoxSobreNome.Text = funcionario.SobreNome;
+					textBoxDataNascimento.Text = funcionario.DataNascimento.ToString(); ;
+					textBoxEmail.Text = funcionario.Email;
+				}
+			}
+		}
+
+		private void checkBoxAtivo(object sender, EventArgs e)
 		{
 
 		}
