@@ -22,7 +22,7 @@ namespace SisEnterprise
 			InitializeComponent();
 
 			dbContext = new RHContext();
-			dataGridView.DataSource = dbContext.Funcionarios.ToList();
+			dataGridView.DataSource = dbContext.Funcionarios.AsNoTracking().ToList();
 			dataGridView.CellClick += dataGridView_CellClick;
 		}
 
@@ -164,29 +164,107 @@ namespace SisEnterprise
 			funcionario.RG = textBoxRg.Text;
 			funcionario.DataAlteracao = DateTime.Now;
 
-			// Create and initialize a CheckBox.   
 			CheckBox checkBoxAtivo = new CheckBox();
 			funcionario.Ativo = checkBoxAtivo.Checked;
 
 			dbContext.Funcionarios.Add(funcionario);
 			dbContext.SaveChanges();
 
-			//Recarrega Grid
-			dataGridView.DataSource = "";
-			dataGridView.DataSource = dbContext.Funcionarios.ToList();
-			dataGridView.Refresh();
-
-			ClearData();
+			refreshGridAndTextBox();
 			MessageBox.Show("Funcionario Cadastrado com sucesso");
 		}
 
 		private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
 		{
+			Boolean RetornoExcluido = ExcluirRegistroPorID(int.Parse(textBoxId.Text));
 
+			if (RetornoExcluido)
+			{
+				// Atualize sua interface do usuário, se necessário
+				refreshGridAndTextBox();
+				MessageBox.Show("Registro excluído com sucesso!");
+			}
+			else
+			{
+				MessageBox.Show("Falha ao excluir o registro!");
+			}
+		}
+		public bool ExcluirRegistroPorID(int idParaExcluir)
+		{
+			try
+			{
+				using (var context = new RHContext())
+				{
+					var funcionario = context.Funcionarios.FirstOrDefault(e => e.Id == idParaExcluir);
+					if (funcionario != null)
+					{
+						context.Funcionarios.Remove(funcionario);
+						context.SaveChanges();
+						return true; // Exclusão bem-sucedida
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				// Lidar com exceções, como violações de chave estrangeira
+				Console.WriteLine("Erro ao excluir registro: " + ex.Message);
+			}
+
+			return false; // Exclusão falhou
+		}
+
+		public bool AtualizarRegistrosBanco(int idParaAtualizar)
+		{
+			using (var context = new RHContext())
+			{
+				var funcionario = context.Funcionarios.FirstOrDefault(e => e.Id == idParaAtualizar);
+				if (funcionario != null)
+				{
+					funcionario.Nome = textBoxNome.Text;
+					funcionario.Cargo = textBoxCargo.Text;
+					funcionario.Salario = decimal.Parse(textBoxSalario.Text);
+					funcionario.CPF = textBoxCPF.Text;
+					funcionario.Matricula = Int32.Parse(textBoxMatricula.Text);
+					funcionario.NomeMeio = textBoxNomeMeio.Text;
+					funcionario.Telefone = textBoxTelefone.Text;
+					funcionario.DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text);
+					funcionario.Endereco = textBoxEndereco.Text;
+					funcionario.SobreNome = textBoxSobreNome.Text;
+					funcionario.DataNascimento = DateTime.Parse(textBoxDataNascimento.Text);
+					funcionario.Email = textBoxEmail.Text;
+					funcionario.RG = textBoxRg.Text;
+					funcionario.DataAlteracao = DateTime.Now;
+					context.Entry(funcionario).Reload();
+					return true;
+				}
+				else { return false; }
+			}
 		}
 
 		private void saveToolStripButton1_Click(object sender, EventArgs e)
 		{
+			// Chame o código para atualizar os registros no banco de dados
+			Boolean RetornoUpdate = AtualizarRegistrosBanco(int.Parse(textBoxId.Text));
+
+			if (RetornoUpdate)
+			{
+				// Atualize sua interface do usuário, se necessário
+				refreshGridAndTextBox();
+				MessageBox.Show("Registro atualizado com sucesso!");
+			}
+			else
+			{
+				MessageBox.Show("Falha ao atulizar o registro!");
+			}
+		}
+
+		private void refreshGridAndTextBox()
+		{
+			//Recarrega Grid
+			ClearData();
+			dataGridView.DataSource = "";
+			dataGridView.DataSource = dbContext.Funcionarios.AsNoTracking().ToList();
+			dataGridView.Refresh();
 
 		}
 

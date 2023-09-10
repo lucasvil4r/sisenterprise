@@ -56,15 +56,18 @@
 			this.label14 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
 			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+			this.saveToolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
 			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.textBoxRg = new System.Windows.Forms.MaskedTextBox();
+			this.textBoxTelefone = new System.Windows.Forms.MaskedTextBox();
+			this.textBoxCPF = new System.Windows.Forms.MaskedTextBox();
+			this.textBoxDataNascimento = new System.Windows.Forms.MaskedTextBox();
+			this.textBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.sisenterpriseDataSet = new SisEnterprise.sisenterpriseDataSet();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
-			this.sisenterpriseDataSet1 = new SisEnterprise.sisenterpriseDataSet1();
-			this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.funcionariosTableAdapter = new SisEnterprise.sisenterpriseDataSet1TableAdapters.FuncionariosTableAdapter();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,23 +84,20 @@
 			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.rGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataAlteracaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.saveToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.textBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
-			this.textBoxDataNascimento = new System.Windows.Forms.MaskedTextBox();
-			this.textBoxCPF = new System.Windows.Forms.MaskedTextBox();
-			this.textBoxTelefone = new System.Windows.Forms.MaskedTextBox();
+			this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.sisenterpriseDataSet1 = new SisEnterprise.sisenterpriseDataSet1();
+			this.sisenterpriseDataSet = new SisEnterprise.sisenterpriseDataSet();
+			this.funcionariosTableAdapter = new SisEnterprise.sisenterpriseDataSet1TableAdapters.FuncionariosTableAdapter();
 			this.textBoxSalario = new System.Windows.Forms.TextBox();
-			this.textBoxRg = new System.Windows.Forms.MaskedTextBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.statusStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// statusStrip
@@ -321,6 +321,16 @@
 			this.bindingNavigator1.TabIndex = 11;
 			this.bindingNavigator1.Text = "bindingNavigator";
 			// 
+			// saveToolStripButton1
+			// 
+			this.saveToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.saveToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton1.Image")));
+			this.saveToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.saveToolStripButton1.Name = "saveToolStripButton1";
+			this.saveToolStripButton1.Size = new System.Drawing.Size(23, 22);
+			this.saveToolStripButton1.Text = "0";
+			this.saveToolStripButton1.Click += new System.EventHandler(this.saveToolStripButton1_Click);
+			// 
 			// bindingNavigatorAddNewItem
 			// 
 			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -354,6 +364,62 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Dados Clientes:";
 			// 
+			// checkBox1
+			// 
+			this.checkBox1.AutoSize = true;
+			this.checkBox1.Checked = true;
+			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox1.Location = new System.Drawing.Point(118, 185);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(58, 17);
+			this.checkBox1.TabIndex = 12;
+			this.checkBox1.Text = "ATIVO";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBoxAtivo);
+			// 
+			// textBoxRg
+			// 
+			this.textBoxRg.Location = new System.Drawing.Point(723, 184);
+			this.textBoxRg.Mask = "00.000.000-0";
+			this.textBoxRg.Name = "textBoxRg";
+			this.textBoxRg.Size = new System.Drawing.Size(181, 20);
+			this.textBoxRg.TabIndex = 14;
+			// 
+			// textBoxTelefone
+			// 
+			this.textBoxTelefone.Location = new System.Drawing.Point(380, 105);
+			this.textBoxTelefone.Mask = "(00) 0000-0000";
+			this.textBoxTelefone.Name = "textBoxTelefone";
+			this.textBoxTelefone.Size = new System.Drawing.Size(181, 20);
+			this.textBoxTelefone.TabIndex = 7;
+			// 
+			// textBoxCPF
+			// 
+			this.textBoxCPF.Location = new System.Drawing.Point(380, 29);
+			this.textBoxCPF.Mask = "000.000.000-00";
+			this.textBoxCPF.Name = "textBoxCPF";
+			this.textBoxCPF.Size = new System.Drawing.Size(181, 20);
+			this.textBoxCPF.TabIndex = 1;
+			this.textBoxCPF.TabStop = false;
+			// 
+			// textBoxDataNascimento
+			// 
+			this.textBoxDataNascimento.Location = new System.Drawing.Point(725, 103);
+			this.textBoxDataNascimento.Mask = "00/00/0000";
+			this.textBoxDataNascimento.Name = "textBoxDataNascimento";
+			this.textBoxDataNascimento.Size = new System.Drawing.Size(179, 20);
+			this.textBoxDataNascimento.TabIndex = 8;
+			this.textBoxDataNascimento.ValidatingType = typeof(System.DateTime);
+			// 
+			// textBoxDataAdmissao
+			// 
+			this.textBoxDataAdmissao.Location = new System.Drawing.Point(380, 145);
+			this.textBoxDataAdmissao.Mask = "00/00/0000";
+			this.textBoxDataAdmissao.Name = "textBoxDataAdmissao";
+			this.textBoxDataAdmissao.Size = new System.Drawing.Size(181, 20);
+			this.textBoxDataAdmissao.TabIndex = 10;
+			this.textBoxDataAdmissao.ValidatingType = typeof(System.DateTime);
+			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.dataGridView);
@@ -363,11 +429,6 @@
 			this.groupBox2.TabIndex = 14;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Lista de Clientes";
-			// 
-			// sisenterpriseDataSet
-			// 
-			this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
-			this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// dataGridView
 			// 
@@ -403,20 +464,6 @@
 			this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
 			this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
 			this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
-			// 
-			// sisenterpriseDataSet1
-			// 
-			this.sisenterpriseDataSet1.DataSetName = "sisenterpriseDataSet1";
-			this.sisenterpriseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// funcionariosBindingSource
-			// 
-			this.funcionariosBindingSource.DataMember = "Funcionarios";
-			this.funcionariosBindingSource.DataSource = this.sisenterpriseDataSet1;
-			// 
-			// funcionariosTableAdapter
-			// 
-			this.funcionariosTableAdapter.ClearBeforeFill = true;
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -528,50 +575,24 @@
 			this.dataAlteracaoDataGridViewTextBoxColumn.Name = "dataAlteracaoDataGridViewTextBoxColumn";
 			this.dataAlteracaoDataGridViewTextBoxColumn.Visible = false;
 			// 
-			// saveToolStripButton1
+			// funcionariosBindingSource
 			// 
-			this.saveToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.saveToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton1.Image")));
-			this.saveToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.saveToolStripButton1.Name = "saveToolStripButton1";
-			this.saveToolStripButton1.Size = new System.Drawing.Size(23, 22);
-			this.saveToolStripButton1.Text = "0";
-			this.saveToolStripButton1.Click += new System.EventHandler(this.saveToolStripButton1_Click);
+			this.funcionariosBindingSource.DataMember = "Funcionarios";
+			this.funcionariosBindingSource.DataSource = this.sisenterpriseDataSet1;
 			// 
-			// textBoxDataAdmissao
+			// sisenterpriseDataSet1
 			// 
-			this.textBoxDataAdmissao.Location = new System.Drawing.Point(380, 145);
-			this.textBoxDataAdmissao.Mask = "00/00/0000";
-			this.textBoxDataAdmissao.Name = "textBoxDataAdmissao";
-			this.textBoxDataAdmissao.Size = new System.Drawing.Size(181, 20);
-			this.textBoxDataAdmissao.TabIndex = 10;
-			this.textBoxDataAdmissao.ValidatingType = typeof(System.DateTime);
+			this.sisenterpriseDataSet1.DataSetName = "sisenterpriseDataSet1";
+			this.sisenterpriseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// textBoxDataNascimento
+			// sisenterpriseDataSet
 			// 
-			this.textBoxDataNascimento.Location = new System.Drawing.Point(725, 103);
-			this.textBoxDataNascimento.Mask = "00/00/0000";
-			this.textBoxDataNascimento.Name = "textBoxDataNascimento";
-			this.textBoxDataNascimento.Size = new System.Drawing.Size(179, 20);
-			this.textBoxDataNascimento.TabIndex = 8;
-			this.textBoxDataNascimento.ValidatingType = typeof(System.DateTime);
+			this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
+			this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// textBoxCPF
+			// funcionariosTableAdapter
 			// 
-			this.textBoxCPF.Location = new System.Drawing.Point(380, 29);
-			this.textBoxCPF.Mask = "000.000.000-00";
-			this.textBoxCPF.Name = "textBoxCPF";
-			this.textBoxCPF.Size = new System.Drawing.Size(181, 20);
-			this.textBoxCPF.TabIndex = 1;
-			this.textBoxCPF.TabStop = false;
-			// 
-			// textBoxTelefone
-			// 
-			this.textBoxTelefone.Location = new System.Drawing.Point(380, 105);
-			this.textBoxTelefone.Mask = "(00) 0000-0000";
-			this.textBoxTelefone.Name = "textBoxTelefone";
-			this.textBoxTelefone.Size = new System.Drawing.Size(181, 20);
-			this.textBoxTelefone.TabIndex = 7;
+			this.funcionariosTableAdapter.ClearBeforeFill = true;
 			// 
 			// textBoxSalario
 			// 
@@ -580,27 +601,6 @@
 			this.textBoxSalario.Size = new System.Drawing.Size(181, 20);
 			this.textBoxSalario.TabIndex = 9;
 			this.textBoxSalario.TextChanged += new System.EventHandler(this.textBoxSalario_TextChanged);
-			// 
-			// textBoxRg
-			// 
-			this.textBoxRg.Location = new System.Drawing.Point(723, 184);
-			this.textBoxRg.Mask = "00.000.000-0";
-			this.textBoxRg.Name = "textBoxRg";
-			this.textBoxRg.Size = new System.Drawing.Size(181, 20);
-			this.textBoxRg.TabIndex = 14;
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Checked = true;
-			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.Location = new System.Drawing.Point(118, 185);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(58, 17);
-			this.checkBox1.TabIndex = 12;
-			this.checkBox1.Text = "ATIVO";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBoxAtivo);
 			// 
 			// CadastroFuncionario
 			// 
@@ -647,10 +647,10 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
