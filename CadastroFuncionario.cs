@@ -148,30 +148,16 @@ namespace SisEnterprise
 
 		private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
 		{
-			var funcionario = new Funcionario();
-			funcionario.Nome = textBoxNome.Text;
-			funcionario.Cargo = textBoxCargo.Text;
-			funcionario.Salario = decimal.Parse(textBoxSalario.Text);
-			funcionario.CPF = textBoxCPF.Text;
-			funcionario.Matricula = Int32.Parse(textBoxMatricula.Text);
-			funcionario.NomeMeio = textBoxNomeMeio.Text;
-			funcionario.Telefone = textBoxTelefone.Text;
-			funcionario.DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text);
-			funcionario.Endereco = textBoxEndereco.Text;
-			funcionario.SobreNome = textBoxSobreNome.Text;
-			funcionario.DataNascimento = DateTime.Parse(textBoxDataNascimento.Text);
-			funcionario.Email = textBoxEmail.Text;
-			funcionario.RG = textBoxRg.Text;
-			funcionario.DataAlteracao = DateTime.Now;
-
-			CheckBox checkBoxAtivo = new CheckBox();
-			funcionario.Ativo = checkBoxAtivo.Checked;
-
-			dbContext.Funcionarios.Add(funcionario);
-			dbContext.SaveChanges();
-
-			refreshGridAndTextBox();
-			MessageBox.Show("Funcionario Cadastrado com sucesso");
+			Boolean RetornoInsert = InsertFuncionario();
+			if (RetornoInsert)
+			{
+				refreshGridAndTextBox();
+				MessageBox.Show("Funcionario cadastrado com sucesso");
+			} 
+			else
+			{
+				MessageBox.Show("Erro ao cadastrado com sucesso");
+			}
 		}
 
 		private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -206,7 +192,6 @@ namespace SisEnterprise
 			}
 			catch (Exception ex)
 			{
-				// Lidar com exceções, como violações de chave estrangeira
 				Console.WriteLine("Erro ao excluir registro: " + ex.Message);
 			}
 
@@ -234,10 +219,69 @@ namespace SisEnterprise
 					funcionario.Email = textBoxEmail.Text;
 					funcionario.RG = textBoxRg.Text;
 					funcionario.DataAlteracao = DateTime.Now;
+					context.SaveChanges();
 					context.Entry(funcionario).Reload();
 					return true;
 				}
 				else { return false; }
+			}
+		}
+		public bool AtualizarTextBox(int idParaAtualizar)
+		{
+			using (var context = new RHContext())
+			{
+				Funcionario funcionario = dbContext.Funcionarios.Find(idParaAtualizar);
+				dbContext.Entry(funcionario).State = EntityState.Detached;
+				if (funcionario != null)
+				{
+					textBoxId.Text = funcionario.Id.ToString();
+					textBoxNome.Text = funcionario.Nome;
+					textBoxCargo.Text = funcionario.Cargo;
+					textBoxSalario.Text = funcionario.Salario.ToString();
+					textBoxCPF.Text = funcionario.CPF;
+					textBoxMatricula.Text = funcionario.Matricula.ToString();
+					textBoxNomeMeio.Text = funcionario.NomeMeio;
+					textBoxTelefone.Text = funcionario.Telefone;
+					textBoxDataAdmissao.Text = funcionario.DataAdmissao.ToString(); ;
+					textBoxEndereco.Text = funcionario.Endereco;
+					textBoxSobreNome.Text = funcionario.SobreNome;
+					textBoxDataNascimento.Text = funcionario.DataNascimento.ToString(); ;
+					textBoxEmail.Text = funcionario.Email;
+
+					// Create and initialize a CheckBox.   
+					CheckBox checkBoxAtivo = new CheckBox();
+					checkBoxAtivo.Checked = funcionario.Ativo;
+					return true;
+				}
+				else { return false; }
+			}
+		}
+		public bool InsertFuncionario()
+		{
+			using (var context = new RHContext())
+			{
+				var funcionario = new Funcionario();
+				funcionario.Nome = textBoxNome.Text;
+				funcionario.Cargo = textBoxCargo.Text;
+				funcionario.Salario = decimal.Parse(textBoxSalario.Text);
+				funcionario.CPF = textBoxCPF.Text;
+				funcionario.Matricula = Int32.Parse(textBoxMatricula.Text);
+				funcionario.NomeMeio = textBoxNomeMeio.Text;
+				funcionario.Telefone = textBoxTelefone.Text;
+				funcionario.DataAdmissao = DateTime.Parse(textBoxDataAdmissao.Text);
+				funcionario.Endereco = textBoxEndereco.Text;
+				funcionario.SobreNome = textBoxSobreNome.Text;
+				funcionario.DataNascimento = DateTime.Parse(textBoxDataNascimento.Text);
+				funcionario.Email = textBoxEmail.Text;
+				funcionario.RG = textBoxRg.Text;
+				funcionario.DataAlteracao = DateTime.Now;
+
+				CheckBox checkBoxAtivo = new CheckBox();
+				funcionario.Ativo = checkBoxAtivo.Checked;
+
+				dbContext.Funcionarios.Add(funcionario);
+				dbContext.SaveChanges();
+				return true;
 			}
 		}
 
@@ -280,30 +324,10 @@ namespace SisEnterprise
 			if (e.RowIndex >= 0 && e.ColumnIndex == columnIndexId)
 			{
 				// Obtém o valor do ID da célula clicada
-				int funcionarioId = (int)dataGridView.Rows[e.RowIndex].Cells[columnIndexId].Value;
-
-				// Consulte o banco de dados para obter os detalhes do funcionário
-				Funcionario funcionario = dbContext.Funcionarios.Find(funcionarioId);
-
-				if (funcionario != null)
+				Boolean RetornoUpdate = AtualizarTextBox((int)dataGridView.Rows[e.RowIndex].Cells[columnIndexId].Value);
+				if (!RetornoUpdate)
 				{
-					textBoxId.Text = funcionario.Id.ToString();
-					textBoxNome.Text = funcionario.Nome;
-					textBoxCargo.Text = funcionario.Cargo;
-					textBoxSalario.Text = funcionario.Salario.ToString();
-					textBoxCPF.Text = funcionario.CPF;
-					textBoxMatricula.Text = funcionario.Matricula.ToString();
-					textBoxNomeMeio.Text = funcionario.NomeMeio;
-					textBoxTelefone.Text = funcionario.Telefone;
-					textBoxDataAdmissao.Text = funcionario.DataAdmissao.ToString(); ;
-					textBoxEndereco.Text = funcionario.Endereco;
-					textBoxSobreNome.Text = funcionario.SobreNome;
-					textBoxDataNascimento.Text = funcionario.DataNascimento.ToString(); ;
-					textBoxEmail.Text = funcionario.Email;
-
-					// Create and initialize a CheckBox.   
-					CheckBox checkBoxAtivo = new CheckBox();
-					checkBoxAtivo.Checked = funcionario.Ativo;
+					MessageBox.Show("Falha ao atulizar o registro!");
 				}
 			}
 		}

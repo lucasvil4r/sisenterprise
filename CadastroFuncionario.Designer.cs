@@ -86,7 +86,6 @@
 			this.dataAlteracaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.sisenterpriseDataSet1 = new SisEnterprise.sisenterpriseDataSet1();
-			this.sisenterpriseDataSet = new SisEnterprise.sisenterpriseDataSet();
 			this.funcionariosTableAdapter = new SisEnterprise.sisenterpriseDataSet1TableAdapters.FuncionariosTableAdapter();
 			this.textBoxSalario = new System.Windows.Forms.TextBox();
 			this.statusStrip.SuspendLayout();
@@ -97,7 +96,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// statusStrip
@@ -585,11 +583,6 @@
 			this.sisenterpriseDataSet1.DataSetName = "sisenterpriseDataSet1";
 			this.sisenterpriseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// sisenterpriseDataSet
-			// 
-			this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
-			this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// funcionariosTableAdapter
 			// 
 			this.funcionariosTableAdapter.ClearBeforeFill = true;
@@ -650,7 +643,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -686,7 +678,6 @@
 		private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.GroupBox groupBox2;
-		private sisenterpriseDataSet sisenterpriseDataSet;
 		private System.Windows.Forms.DataGridView dataGridView;
 		private sisenterpriseDataSet1 sisenterpriseDataSet1;
 		private System.Windows.Forms.BindingSource funcionariosBindingSource;
