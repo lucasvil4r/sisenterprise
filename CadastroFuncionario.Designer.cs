@@ -360,7 +360,7 @@
 			this.groupBox1.Size = new System.Drawing.Size(942, 221);
 			this.groupBox1.TabIndex = 13;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Dados Clientes:";
+			this.groupBox1.Text = "Dados Funcionarios";
 			// 
 			// checkBox1
 			// 
@@ -426,7 +426,8 @@
 			this.groupBox2.Size = new System.Drawing.Size(942, 229);
 			this.groupBox2.TabIndex = 14;
 			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Lista de Clientes";
+			this.groupBox2.Text = "Lista de Funcionarios";
+			this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
 			// 
 			// dataGridView
 			// 
