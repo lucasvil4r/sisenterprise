@@ -630,7 +630,7 @@
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "CadastroFuncionario";
-			this.Text = "CadastroFuncionario";
+			this.Text = "Cadastro de Funcionario";
 			this.Load += new System.EventHandler(this.CadastroFuncionario_Load);
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();

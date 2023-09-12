@@ -105,7 +105,6 @@ namespace SisEnterprise
 		{
 			// TODO: This line of code loads data into the 'sisenterpriseDataSet1.Funcionarios' table. You can move, or remove it, as needed.
 			this.funcionariosTableAdapter.Fill(this.sisenterpriseDataSet1.Funcionarios);
-
 		}
 
 		// Método para limpar os campos de entrada de dados
