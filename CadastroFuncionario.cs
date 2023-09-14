@@ -340,5 +340,62 @@ namespace SisEnterprise
 		{
 
 		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void buttonSalvar_Click(object sender, EventArgs e)
+		{
+			// Chame o código para atualizar os registros no banco de dados
+			Boolean RetornoUpdate = AtualizarRegistrosBanco(int.Parse(textBoxId.Text));
+
+			if (RetornoUpdate)
+			{
+				// Atualize sua interface do usuário, se necessário
+				refreshGridAndTextBox();
+				MessageBox.Show("Registro atualizado com sucesso!");
+			}
+			else
+			{
+				MessageBox.Show("Falha ao atulizar o registro!");
+			}
+		}
+
+		private void buttonDeletar_Click(object sender, EventArgs e)
+		{
+			Boolean RetornoExcluido = ExcluirRegistroPorID(int.Parse(textBoxId.Text));
+
+			if (RetornoExcluido)
+			{
+				// Atualize sua interface do usuário, se necessário
+				refreshGridAndTextBox();
+				MessageBox.Show("Registro excluído com sucesso!");
+			}
+			else
+			{
+				MessageBox.Show("Falha ao excluir o registro!");
+			}
+		}
+
+		private void buttonAdicionar_Click(object sender, EventArgs e)
+		{
+						Boolean RetornoInsert = InsertFuncionario();
+			if (RetornoInsert)
+			{
+				refreshGridAndTextBox();
+				MessageBox.Show("Funcionario cadastrado com sucesso");
+			} 
+			else
+			{
+				MessageBox.Show("Erro ao cadastrado com sucesso");
+			}
+		}
+
+		private void buttonVerDocs_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
