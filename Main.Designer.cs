@@ -40,6 +40,7 @@
 			this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fINANCEIROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cONTABILIDADEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cadastroDeDepartamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,7 +56,7 @@
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.MdiWindowListItem = this.RH;
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(1056, 24);
+			this.menuStrip.Size = new System.Drawing.Size(1262, 24);
 			this.menuStrip.TabIndex = 2;
 			this.menuStrip.Text = "menuStrip";
 			// 
@@ -66,7 +67,8 @@
             this.toolStripMenuItem4,
             this.cadastroDeFuncionarioToolStripMenuItem,
             this.toolStripMenuItem5,
-            this.marcaçãoDeFaltaToolStripMenuItem});
+            this.marcaçãoDeFaltaToolStripMenuItem,
+            this.cadastroDeDepartamentoToolStripMenuItem});
 			this.RH.Name = "RH";
 			this.RH.Size = new System.Drawing.Size(35, 20);
 			this.RH.Text = "RH";
@@ -132,14 +134,22 @@
 			this.cONTABILIDADEToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
 			this.cONTABILIDADEToolStripMenuItem.Text = "CONTABILIDADE";
 			// 
+			// cadastroDeDepartamentoToolStripMenuItem
+			// 
+			this.cadastroDeDepartamentoToolStripMenuItem.Name = "cadastroDeDepartamentoToolStripMenuItem";
+			this.cadastroDeDepartamentoToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+			this.cadastroDeDepartamentoToolStripMenuItem.Text = "Cadastro de Departamento";
+			this.cadastroDeDepartamentoToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeDepartamentoToolStripMenuItem_Click);
+			// 
 			// Main
 			// 
-			this.ClientSize = new System.Drawing.Size(1056, 625);
+			this.ClientSize = new System.Drawing.Size(1262, 737);
 			this.Controls.Add(this.menuStrip);
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "Main";
 			this.Text = "Enterprise Resource Planning";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Main_Load_1);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
@@ -170,5 +180,6 @@
 		private System.Windows.Forms.ToolStripMenuItem vENDASToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fINANCEIROToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cONTABILIDADEToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cadastroDeDepartamentoToolStripMenuItem;
 	}
 }

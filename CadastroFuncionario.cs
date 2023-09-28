@@ -142,7 +142,17 @@ namespace SisEnterprise
 
 		private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
+			int columnIndexId = 0; // Índice da coluna "Id"
 
+			if (e.RowIndex >= 0)
+			{
+				// Obtém o valor do ID da célula clicada
+				Boolean RetornoUpdate = AtualizarTextBox((int)dataGridView.Rows[e.RowIndex].Cells[columnIndexId].Value);
+				if (!RetornoUpdate)
+				{
+					MessageBox.Show("Falha ao atulizar o registro!");
+				}
+			}
 		}
 
 		private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -320,7 +330,7 @@ namespace SisEnterprise
 		{
 			int columnIndexId = 0; // Índice da coluna "Id"
 
-			if (e.RowIndex >= 0 && e.ColumnIndex == columnIndexId)
+			if (e.RowIndex >= 0)
 			{
 				// Obtém o valor do ID da célula clicada
 				Boolean RetornoUpdate = AtualizarTextBox((int)dataGridView.Rows[e.RowIndex].Cells[columnIndexId].Value);
@@ -394,6 +404,11 @@ namespace SisEnterprise
 		}
 
 		private void buttonVerDocs_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBoxId_TextChanged(object sender, EventArgs e)
 		{
 
 		}

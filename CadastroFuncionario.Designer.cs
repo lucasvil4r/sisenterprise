@@ -64,6 +64,7 @@
 			this.textBoxCPF = new System.Windows.Forms.MaskedTextBox();
 			this.textBoxDataNascimento = new System.Windows.Forms.MaskedTextBox();
 			this.textBoxDataAdmissao = new System.Windows.Forms.MaskedTextBox();
+			this.textBoxSalario = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.dataGridView = new System.Windows.Forms.DataGridView();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,12 +85,11 @@
 			this.dataAlteracaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.sisenterpriseDataSet1 = new SisEnterprise.sisenterpriseDataSet1();
-			this.funcionariosTableAdapter = new SisEnterprise.sisenterpriseDataSet1TableAdapters.FuncionariosTableAdapter();
-			this.textBoxSalario = new System.Windows.Forms.TextBox();
 			this.buttonDeletar = new System.Windows.Forms.Button();
 			this.buttonAdicionar = new System.Windows.Forms.Button();
 			this.buttonVerDocs = new System.Windows.Forms.Button();
 			this.buttonSalvar = new System.Windows.Forms.Button();
+			this.funcionariosTableAdapter = new SisEnterprise.sisenterpriseDataSet1TableAdapters.FuncionariosTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
 			this.bindingNavigator1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -134,6 +134,7 @@
 			this.textBoxId.Name = "textBoxId";
 			this.textBoxId.Size = new System.Drawing.Size(181, 20);
 			this.textBoxId.TabIndex = 0;
+			this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
 			// 
 			// label1
 			// 
@@ -412,6 +413,14 @@
 			this.textBoxDataAdmissao.TabIndex = 10;
 			this.textBoxDataAdmissao.ValidatingType = typeof(System.DateTime);
 			// 
+			// textBoxSalario
+			// 
+			this.textBoxSalario.Location = new System.Drawing.Point(85, 137);
+			this.textBoxSalario.Name = "textBoxSalario";
+			this.textBoxSalario.Size = new System.Drawing.Size(181, 20);
+			this.textBoxSalario.TabIndex = 9;
+			this.textBoxSalario.TextChanged += new System.EventHandler(this.textBoxSalario_TextChanged);
+			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.dataGridView);
@@ -452,6 +461,7 @@
 			this.dataGridView.DataSource = this.funcionariosBindingSource;
 			this.dataGridView.Location = new System.Drawing.Point(21, 32);
 			this.dataGridView.Name = "dataGridView";
+			this.dataGridView.ReadOnly = true;
 			this.dataGridView.Size = new System.Drawing.Size(1146, 283);
 			this.dataGridView.TabIndex = 12;
 			this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
@@ -470,12 +480,14 @@
 			this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
 			this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
 			this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+			this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// cargoDataGridViewTextBoxColumn
 			// 
 			this.cargoDataGridViewTextBoxColumn.DataPropertyName = "Cargo";
 			this.cargoDataGridViewTextBoxColumn.HeaderText = "Cargo";
 			this.cargoDataGridViewTextBoxColumn.Name = "cargoDataGridViewTextBoxColumn";
+			this.cargoDataGridViewTextBoxColumn.ReadOnly = true;
 			this.cargoDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// salarioDataGridViewTextBoxColumn
@@ -483,6 +495,7 @@
 			this.salarioDataGridViewTextBoxColumn.DataPropertyName = "Salario";
 			this.salarioDataGridViewTextBoxColumn.HeaderText = "Salario";
 			this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
+			this.salarioDataGridViewTextBoxColumn.ReadOnly = true;
 			this.salarioDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// ativoDataGridViewCheckBoxColumn
@@ -490,6 +503,7 @@
 			this.ativoDataGridViewCheckBoxColumn.DataPropertyName = "Ativo";
 			this.ativoDataGridViewCheckBoxColumn.HeaderText = "Ativo";
 			this.ativoDataGridViewCheckBoxColumn.Name = "ativoDataGridViewCheckBoxColumn";
+			this.ativoDataGridViewCheckBoxColumn.ReadOnly = true;
 			this.ativoDataGridViewCheckBoxColumn.Visible = false;
 			// 
 			// cPFDataGridViewTextBoxColumn
@@ -497,12 +511,14 @@
 			this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
 			this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
 			this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
+			this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// nomeMeioDataGridViewTextBoxColumn
 			// 
 			this.nomeMeioDataGridViewTextBoxColumn.DataPropertyName = "NomeMeio";
 			this.nomeMeioDataGridViewTextBoxColumn.HeaderText = "NomeMeio";
 			this.nomeMeioDataGridViewTextBoxColumn.Name = "nomeMeioDataGridViewTextBoxColumn";
+			this.nomeMeioDataGridViewTextBoxColumn.ReadOnly = true;
 			this.nomeMeioDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// telefoneDataGridViewTextBoxColumn
@@ -510,6 +526,7 @@
 			this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
 			this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
 			this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+			this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
 			this.telefoneDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// dataAdmissaoDataGridViewTextBoxColumn
@@ -517,6 +534,7 @@
 			this.dataAdmissaoDataGridViewTextBoxColumn.DataPropertyName = "DataAdmissao";
 			this.dataAdmissaoDataGridViewTextBoxColumn.HeaderText = "DataAdmissao";
 			this.dataAdmissaoDataGridViewTextBoxColumn.Name = "dataAdmissaoDataGridViewTextBoxColumn";
+			this.dataAdmissaoDataGridViewTextBoxColumn.ReadOnly = true;
 			this.dataAdmissaoDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// enderecoDataGridViewTextBoxColumn
@@ -524,6 +542,7 @@
 			this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco";
 			this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereco";
 			this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
+			this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
 			this.enderecoDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// matriculaDataGridViewTextBoxColumn
@@ -531,6 +550,7 @@
 			this.matriculaDataGridViewTextBoxColumn.DataPropertyName = "Matricula";
 			this.matriculaDataGridViewTextBoxColumn.HeaderText = "Matricula";
 			this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
+			this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
 			this.matriculaDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// sobreNomeDataGridViewTextBoxColumn
@@ -538,6 +558,7 @@
 			this.sobreNomeDataGridViewTextBoxColumn.DataPropertyName = "SobreNome";
 			this.sobreNomeDataGridViewTextBoxColumn.HeaderText = "SobreNome";
 			this.sobreNomeDataGridViewTextBoxColumn.Name = "sobreNomeDataGridViewTextBoxColumn";
+			this.sobreNomeDataGridViewTextBoxColumn.ReadOnly = true;
 			this.sobreNomeDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// dataNascimentoDataGridViewTextBoxColumn
@@ -545,6 +566,7 @@
 			this.dataNascimentoDataGridViewTextBoxColumn.DataPropertyName = "DataNascimento";
 			this.dataNascimentoDataGridViewTextBoxColumn.HeaderText = "DataNascimento";
 			this.dataNascimentoDataGridViewTextBoxColumn.Name = "dataNascimentoDataGridViewTextBoxColumn";
+			this.dataNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
 			this.dataNascimentoDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// emailDataGridViewTextBoxColumn
@@ -552,6 +574,7 @@
 			this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
 			this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
 			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
 			this.emailDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// rGDataGridViewTextBoxColumn
@@ -559,6 +582,7 @@
 			this.rGDataGridViewTextBoxColumn.DataPropertyName = "RG";
 			this.rGDataGridViewTextBoxColumn.HeaderText = "RG";
 			this.rGDataGridViewTextBoxColumn.Name = "rGDataGridViewTextBoxColumn";
+			this.rGDataGridViewTextBoxColumn.ReadOnly = true;
 			this.rGDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// dataAlteracaoDataGridViewTextBoxColumn
@@ -566,6 +590,7 @@
 			this.dataAlteracaoDataGridViewTextBoxColumn.DataPropertyName = "DataAlteracao";
 			this.dataAlteracaoDataGridViewTextBoxColumn.HeaderText = "DataAlteracao";
 			this.dataAlteracaoDataGridViewTextBoxColumn.Name = "dataAlteracaoDataGridViewTextBoxColumn";
+			this.dataAlteracaoDataGridViewTextBoxColumn.ReadOnly = true;
 			this.dataAlteracaoDataGridViewTextBoxColumn.Visible = false;
 			// 
 			// funcionariosBindingSource
@@ -577,18 +602,6 @@
 			// 
 			this.sisenterpriseDataSet1.DataSetName = "sisenterpriseDataSet1";
 			this.sisenterpriseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// funcionariosTableAdapter
-			// 
-			this.funcionariosTableAdapter.ClearBeforeFill = true;
-			// 
-			// textBoxSalario
-			// 
-			this.textBoxSalario.Location = new System.Drawing.Point(85, 137);
-			this.textBoxSalario.Name = "textBoxSalario";
-			this.textBoxSalario.Size = new System.Drawing.Size(181, 20);
-			this.textBoxSalario.TabIndex = 9;
-			this.textBoxSalario.TextChanged += new System.EventHandler(this.textBoxSalario_TextChanged);
 			// 
 			// buttonDeletar
 			// 
@@ -629,6 +642,10 @@
 			this.buttonSalvar.Text = "Salvar";
 			this.buttonSalvar.UseVisualStyleBackColor = true;
 			this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+			// 
+			// funcionariosTableAdapter
+			// 
+			this.funcionariosTableAdapter.ClearBeforeFill = true;
 			// 
 			// CadastroFuncionario
 			// 

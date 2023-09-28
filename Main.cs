@@ -34,5 +34,10 @@ namespace SisEnterprise
 		{
 
 		}
+
+		private void cadastroDeDepartamentoToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.abreFormFilho(new CadastroDepartamento());
+		}
 	}
 }
