@@ -909,6 +909,8 @@ namespace SisEnterprise {
             
             private global::System.Data.DataColumn columnsupervisor;
             
+            private global::System.Data.DataColumn columncentro_custo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Cadastro_DepartamentoDataTable() {
@@ -976,6 +978,14 @@ namespace SisEnterprise {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn centro_custoColumn {
+                get {
+                    return this.columncentro_custo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1011,13 +1021,14 @@ namespace SisEnterprise {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Cadastro_DepartamentoRow AddCadastro_DepartamentoRow(string nome, string gerente, string supervisor) {
+            public Cadastro_DepartamentoRow AddCadastro_DepartamentoRow(string nome, string gerente, string supervisor, decimal centro_custo) {
                 Cadastro_DepartamentoRow rowCadastro_DepartamentoRow = ((Cadastro_DepartamentoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         nome,
                         gerente,
-                        supervisor};
+                        supervisor,
+                        centro_custo};
                 rowCadastro_DepartamentoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCadastro_DepartamentoRow);
                 return rowCadastro_DepartamentoRow;
@@ -1051,6 +1062,7 @@ namespace SisEnterprise {
                 this.columnnome = base.Columns["nome"];
                 this.columngerente = base.Columns["gerente"];
                 this.columnsupervisor = base.Columns["supervisor"];
+                this.columncentro_custo = base.Columns["centro_custo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1064,6 +1076,8 @@ namespace SisEnterprise {
                 base.Columns.Add(this.columngerente);
                 this.columnsupervisor = new global::System.Data.DataColumn("supervisor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsupervisor);
+                this.columncentro_custo = new global::System.Data.DataColumn("centro_custo", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncentro_custo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_departamento}, true));
                 this.columnid_departamento.AutoIncrement = true;
@@ -3879,6 +3893,22 @@ namespace SisEnterprise {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal centro_custo {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCadastro_Departamento.centro_custoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'centro_custo\' in table \'Cadastro_Departamento\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCadastro_Departamento.centro_custoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsnomeNull() {
                 return this.IsNull(this.tableCadastro_Departamento.nomeColumn);
             }
@@ -3911,6 +3941,18 @@ namespace SisEnterprise {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetsupervisorNull() {
                 this[this.tableCadastro_Departamento.supervisorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscentro_custoNull() {
+                return this.IsNull(this.tableCadastro_Departamento.centro_custoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcentro_custoNull() {
+                this[this.tableCadastro_Departamento.centro_custoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6342,10 +6384,11 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
             tableMapping.ColumnMappings.Add("nome", "nome");
             tableMapping.ColumnMappings.Add("gerente", "gerente");
             tableMapping.ColumnMappings.Add("supervisor", "supervisor");
+            tableMapping.ColumnMappings.Add("centro_custo", "centro_custo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Cadastro_Departamento] WHERE (([id_departamento] = @Original_id_departamento) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_gerente = 1 AND [gerente] IS NULL) OR ([gerente] = @Original_gerente)) AND ((@IsNull_supervisor = 1 AND [supervisor] IS NULL) OR ([supervisor] = @Original_supervisor)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Cadastro_Departamento] WHERE (([id_departamento] = @Original_id_departamento) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_gerente = 1 AND [gerente] IS NULL) OR ([gerente] = @Original_gerente)) AND ((@IsNull_supervisor = 1 AND [supervisor] IS NULL) OR ([supervisor] = @Original_supervisor)) AND ((@IsNull_centro_custo = 1 AND [centro_custo] IS NULL) OR ([centro_custo] = @Original_centro_custo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_departamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_departamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -6354,23 +6397,26 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gerente", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gerente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_supervisor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "supervisor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_supervisor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "supervisor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_centro_custo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "centro_custo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_centro_custo", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "centro_custo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Cadastro_Departamento] ([nome], [gerente], [supervisor]) VALUE" +
-                "S (@nome, @gerente, @supervisor);\r\nSELECT id_departamento, nome, gerente, superv" +
-                "isor FROM Cadastro_Departamento WHERE (id_departamento = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Cadastro_Departamento] ([nome], [gerente], [supervisor], [centro_custo]) VALUES (@nome, @gerente, @supervisor, @centro_custo);
+SELECT id_departamento, nome, gerente, supervisor, centro_custo FROM Cadastro_Departamento WHERE (id_departamento = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gerente", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gerente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supervisor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "supervisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@centro_custo", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "centro_custo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cadastro_Departamento] SET [nome] = @nome, [gerente] = @gerente, [supervisor] = @supervisor WHERE (([id_departamento] = @Original_id_departamento) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_gerente = 1 AND [gerente] IS NULL) OR ([gerente] = @Original_gerente)) AND ((@IsNull_supervisor = 1 AND [supervisor] IS NULL) OR ([supervisor] = @Original_supervisor)));
-SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHERE (id_departamento = @id_departamento)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Cadastro_Departamento] SET [nome] = @nome, [gerente] = @gerente, [supervisor] = @supervisor, [centro_custo] = @centro_custo WHERE (([id_departamento] = @Original_id_departamento) AND ((@IsNull_nome = 1 AND [nome] IS NULL) OR ([nome] = @Original_nome)) AND ((@IsNull_gerente = 1 AND [gerente] IS NULL) OR ([gerente] = @Original_gerente)) AND ((@IsNull_supervisor = 1 AND [supervisor] IS NULL) OR ([supervisor] = @Original_supervisor)) AND ((@IsNull_centro_custo = 1 AND [centro_custo] IS NULL) OR ([centro_custo] = @Original_centro_custo)));
+SELECT id_departamento, nome, gerente, supervisor, centro_custo FROM Cadastro_Departamento WHERE (id_departamento = @id_departamento)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gerente", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gerente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supervisor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "supervisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@centro_custo", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "centro_custo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_departamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_departamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6378,6 +6424,8 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gerente", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gerente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_supervisor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "supervisor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_supervisor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "supervisor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_centro_custo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "centro_custo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_centro_custo", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "centro_custo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_departamento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_departamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -6394,7 +6442,8 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_departamento, nome, gerente, supervisor FROM dbo.Cadastro_Departamento";
+            this._commandCollection[0].CommandText = "SELECT id_departamento, nome, gerente, supervisor, centro_custo FROM Cadastro_Dep" +
+                "artamento";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6455,7 +6504,7 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_departamento, string Original_nome, string Original_gerente, string Original_supervisor) {
+        public virtual int Delete(int Original_id_departamento, string Original_nome, string Original_gerente, string Original_supervisor, global::System.Nullable<decimal> Original_centro_custo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_departamento));
             if ((Original_nome == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -6481,6 +6530,14 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_supervisor));
             }
+            if ((Original_centro_custo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_centro_custo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6501,7 +6558,7 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nome, string gerente, string supervisor) {
+        public virtual int Insert(string nome, string gerente, string supervisor, global::System.Nullable<decimal> centro_custo) {
             if ((nome == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -6519,6 +6576,12 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(supervisor));
+            }
+            if ((centro_custo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(centro_custo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6540,7 +6603,7 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nome, string gerente, string supervisor, int Original_id_departamento, string Original_nome, string Original_gerente, string Original_supervisor, int id_departamento) {
+        public virtual int Update(string nome, string gerente, string supervisor, global::System.Nullable<decimal> centro_custo, int Original_id_departamento, string Original_nome, string Original_gerente, string Original_supervisor, global::System.Nullable<decimal> Original_centro_custo, int id_departamento) {
             if ((nome == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -6559,32 +6622,46 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(supervisor));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id_departamento));
-            if ((Original_nome == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((centro_custo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(centro_custo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_nome));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id_departamento));
+            if ((Original_nome == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_nome));
             }
             if ((Original_gerente == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_gerente));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_gerente));
             }
             if ((Original_supervisor == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_supervisor));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_supervisor));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(id_departamento));
+            if ((Original_centro_custo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_centro_custo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id_departamento));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6605,8 +6682,8 @@ SELECT id_departamento, nome, gerente, supervisor FROM Cadastro_Departamento WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nome, string gerente, string supervisor, int Original_id_departamento, string Original_nome, string Original_gerente, string Original_supervisor) {
-            return this.Update(nome, gerente, supervisor, Original_id_departamento, Original_nome, Original_gerente, Original_supervisor, Original_id_departamento);
+        public virtual int Update(string nome, string gerente, string supervisor, global::System.Nullable<decimal> centro_custo, int Original_id_departamento, string Original_nome, string Original_gerente, string Original_supervisor, global::System.Nullable<decimal> Original_centro_custo) {
+            return this.Update(nome, gerente, supervisor, centro_custo, Original_id_departamento, Original_nome, Original_gerente, Original_supervisor, Original_centro_custo, Original_id_departamento);
         }
     }
     
