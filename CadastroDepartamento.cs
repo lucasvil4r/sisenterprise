@@ -58,5 +58,10 @@ namespace SisEnterprise
         {
 
         }
-    }
+
+		private void textBoxId_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
