@@ -26,6 +26,9 @@ namespace SisEnterprise_2._0
 		{
             // TODO: This line of code loads data into the 'sisenterpriseDataSet.Cadastro_Departamento' table. You can move, or remove it, as needed.
             this.cadastro_DepartamentoTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Departamento);
+
+			ClearData();
+			SetDataInGridView();
 		}
 
 		private void SetDataInGridView()
