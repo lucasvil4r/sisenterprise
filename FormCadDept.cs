@@ -86,9 +86,9 @@ namespace SisEnterprise_2._0
 
 		private void dataGridView_MouseClick(object sender, MouseEventArgs e)
 		{
-			if (dataGridView.CurrentCell.RowIndex > 0)
+			DeptId = Convert.ToInt32(dataGridView.CurrentRow.Cells["iddepartamentoDataGridViewTextBoxColumn"].Value);
+			if (dataGridView.CurrentCell.RowIndex != -1 && DeptId > 1)
 			{
-				DeptId = Convert.ToInt32(dataGridView.CurrentRow.Cells["iddepartamentoDataGridViewTextBoxColumn"].Value);
 				using (var db = new ModelContext())
 				{
 					var departamento = new Cadastro_Departamento();
