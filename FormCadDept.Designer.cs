@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.iddepartamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gerenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supervisorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,6 +48,10 @@
             this.textBoxDept = new System.Windows.Forms.TextBox();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
+            this.iddepartamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gerenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supervisorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
@@ -85,31 +85,6 @@
             this.dataGridView.Size = new System.Drawing.Size(607, 191);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
-            // 
-            // iddepartamentoDataGridViewTextBoxColumn
-            // 
-            this.iddepartamentoDataGridViewTextBoxColumn.DataPropertyName = "id_departamento";
-            this.iddepartamentoDataGridViewTextBoxColumn.HeaderText = "id_departamento";
-            this.iddepartamentoDataGridViewTextBoxColumn.Name = "iddepartamentoDataGridViewTextBoxColumn";
-            this.iddepartamentoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // gerenteDataGridViewTextBoxColumn
-            // 
-            this.gerenteDataGridViewTextBoxColumn.DataPropertyName = "gerente";
-            this.gerenteDataGridViewTextBoxColumn.HeaderText = "gerente";
-            this.gerenteDataGridViewTextBoxColumn.Name = "gerenteDataGridViewTextBoxColumn";
-            // 
-            // supervisorDataGridViewTextBoxColumn
-            // 
-            this.supervisorDataGridViewTextBoxColumn.DataPropertyName = "supervisor";
-            this.supervisorDataGridViewTextBoxColumn.HeaderText = "supervisor";
-            this.supervisorDataGridViewTextBoxColumn.Name = "supervisorDataGridViewTextBoxColumn";
             // 
             // cadastroDepartamentoBindingSource
             // 
@@ -266,6 +241,31 @@
             // 
             this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
             // 
+            // iddepartamentoDataGridViewTextBoxColumn
+            // 
+            this.iddepartamentoDataGridViewTextBoxColumn.DataPropertyName = "id_departamento";
+            this.iddepartamentoDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iddepartamentoDataGridViewTextBoxColumn.Name = "iddepartamentoDataGridViewTextBoxColumn";
+            this.iddepartamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Departamento";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // gerenteDataGridViewTextBoxColumn
+            // 
+            this.gerenteDataGridViewTextBoxColumn.DataPropertyName = "gerente";
+            this.gerenteDataGridViewTextBoxColumn.HeaderText = "Gerente";
+            this.gerenteDataGridViewTextBoxColumn.Name = "gerenteDataGridViewTextBoxColumn";
+            // 
+            // supervisorDataGridViewTextBoxColumn
+            // 
+            this.supervisorDataGridViewTextBoxColumn.DataPropertyName = "supervisor";
+            this.supervisorDataGridViewTextBoxColumn.HeaderText = "Supervisor";
+            this.supervisorDataGridViewTextBoxColumn.Name = "supervisorDataGridViewTextBoxColumn";
+            // 
             // FormCadDept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,11 +311,11 @@
 		private sisenterpriseDataSet sisenterpriseDataSet;
 		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
 		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
+		private System.Windows.Forms.Button buttonLimpar;
+		private System.Windows.Forms.Button buttonAdicionar;
 		private System.Windows.Forms.DataGridViewTextBoxColumn iddepartamentoDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn gerenteDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn supervisorDataGridViewTextBoxColumn;
-		private System.Windows.Forms.Button buttonLimpar;
-		private System.Windows.Forms.Button buttonAdicionar;
 	}
 }

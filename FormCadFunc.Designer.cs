@@ -65,6 +65,10 @@
             this.textBoxSalario = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.cadastroFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
+            this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
             this.idfuncionarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,10 +84,6 @@
             this.pathfoto3x4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtddependentesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cadastroFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
-            this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -281,7 +281,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(71, 184);
+            this.checkBox1.Location = new System.Drawing.Point(146, 185);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(58, 17);
             this.checkBox1.TabIndex = 12;
@@ -438,6 +438,35 @@
             this.dataGridView.Size = new System.Drawing.Size(1146, 283);
             this.dataGridView.TabIndex = 12;
             // 
+            // cadastroFuncionarioBindingSource
+            // 
+            this.cadastroFuncionarioBindingSource.DataMember = "Cadastro_Funcionario";
+            this.cadastroFuncionarioBindingSource.DataSource = this.sisenterpriseDataSet;
+            // 
+            // sisenterpriseDataSet
+            // 
+            this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
+            this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // textBoxTitle
+            // 
+            this.textBoxTitle.AllowDrop = true;
+            this.textBoxTitle.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTitle.Location = new System.Drawing.Point(310, 31);
+            this.textBoxTitle.Multiline = true;
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.ReadOnly = true;
+            this.textBoxTitle.Size = new System.Drawing.Size(672, 39);
+            this.textBoxTitle.TabIndex = 37;
+            this.textBoxTitle.Text = "CADASTRO DE FUNCIONARIOS";
+            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cadastro_FuncionarioTableAdapter
+            // 
+            this.cadastro_FuncionarioTableAdapter.ClearBeforeFill = true;
+            // 
             // idfuncionarioDataGridViewTextBoxColumn
             // 
             this.idfuncionarioDataGridViewTextBoxColumn.DataPropertyName = "id_funcionario";
@@ -449,42 +478,42 @@
             // nomeDataGridViewTextBoxColumn
             // 
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cpfDataGridViewTextBoxColumn
             // 
             this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
-            this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
+            this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
             this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
             this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // enderecoDataGridViewTextBoxColumn
             // 
             this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "endereco";
-            this.enderecoDataGridViewTextBoxColumn.HeaderText = "endereco";
+            this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereço";
             this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
             this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // datanascimentoDataGridViewTextBoxColumn
             // 
             this.datanascimentoDataGridViewTextBoxColumn.DataPropertyName = "data_nascimento";
-            this.datanascimentoDataGridViewTextBoxColumn.HeaderText = "data_nascimento";
+            this.datanascimentoDataGridViewTextBoxColumn.HeaderText = "Data Nascimento";
             this.datanascimentoDataGridViewTextBoxColumn.Name = "datanascimentoDataGridViewTextBoxColumn";
             this.datanascimentoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // salarioDataGridViewTextBoxColumn
             // 
             this.salarioDataGridViewTextBoxColumn.DataPropertyName = "salario";
-            this.salarioDataGridViewTextBoxColumn.HeaderText = "salario";
+            this.salarioDataGridViewTextBoxColumn.HeaderText = "Salario";
             this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
             this.salarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "E-Mail";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -499,7 +528,7 @@
             // telefoneDataGridViewTextBoxColumn
             // 
             this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
             this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
             this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -550,35 +579,6 @@
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn.Name = "qtdhorastrabalhadasDataGridViewTextBoxColumn";
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn.ReadOnly = true;
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cadastroFuncionarioBindingSource
-            // 
-            this.cadastroFuncionarioBindingSource.DataMember = "Cadastro_Funcionario";
-            this.cadastroFuncionarioBindingSource.DataSource = this.sisenterpriseDataSet;
-            // 
-            // sisenterpriseDataSet
-            // 
-            this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
-            this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.AllowDrop = true;
-            this.textBoxTitle.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(310, 31);
-            this.textBoxTitle.Multiline = true;
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(672, 39);
-            this.textBoxTitle.TabIndex = 37;
-            this.textBoxTitle.Text = "CADASTRO DE FUNCIONARIOS";
-            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cadastro_FuncionarioTableAdapter
-            // 
-            this.cadastro_FuncionarioTableAdapter.ClearBeforeFill = true;
             // 
             // FormCadFunc
             // 
