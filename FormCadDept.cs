@@ -70,7 +70,7 @@ namespace SisEnterprise_2._0
 		{
 			if (DeptId != 0)
 			{
-				if (MessageBox.Show("Are you sure you want to delete this record ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show("Deseja deletar ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					using (var db = new ModelContext())
 					{
@@ -82,7 +82,7 @@ namespace SisEnterprise_2._0
 
 					ClearData();
 					SetDataInGridView();
-					MessageBox.Show("Record Deleted Successfully");
+					MessageBox.Show("Registro deletado com sucesso!");
 				}
 			} else { MessageBox.Show("Não foi possível excluir, tente novamente"); }
 		}
