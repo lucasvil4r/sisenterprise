@@ -102,6 +102,8 @@
 			this.treeView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this.treeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.treeView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.treeView.ItemHeight = 40;
 			this.treeView.Location = new System.Drawing.Point(0, 52);
 			this.treeView.Name = "treeView";
 			treeNode1.Name = "NodeCadDept";
@@ -133,7 +135,8 @@
             treeNode8,
             treeNode9,
             treeNode10});
-			this.treeView.Size = new System.Drawing.Size(224, 651);
+			this.treeView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.treeView.Size = new System.Drawing.Size(268, 651);
 			this.treeView.TabIndex = 5;
 			this.treeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_NodeMouseClick);
 			// 
