@@ -29,9 +29,14 @@ namespace SisEnterprise_2._0
 					MessageBox.Show("Bem vindo!");
 				} else
 				{
-					MessageBox.Show("Usúario Inválido, tente novamente!");
+					MessageBox.Show("Usúario Inválido");
 				}
 			}
+		}
+
+		private void FormLogin_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
