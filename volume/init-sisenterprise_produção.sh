@@ -1,0 +1,1 @@
+/opt/mssql-tools/bin/sqlcmd -S sqlserver -U sa -P Jdt7$uwF9u^B8uvd -d master -i /tmp/sisenterprise_produção.sql

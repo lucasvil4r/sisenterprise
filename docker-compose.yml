@@ -1,0 +1,17 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "Jdt7$uwF9u^B8uvd"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+  mssqltools:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - sqlserver
+    volumes:
+      - ./volume/sisenterprise_produção.sql:/tmp/sisenterprise_produção.sql
+      - ./volume/init-sisenterprise_produção.sh:/tmp/init-sisenterprise_produção.sh
+    command: /bin/bash ./tmp/init-sisenterprise_produção.sh

@@ -8,7 +8,7 @@ namespace SisEnterprise_2._0
 	public partial class ModelContext : DbContext
 	{
 		public ModelContext()
-			: base("Data Source=sisenterprise.database.windows.net;Initial Catalog=sisenterprise;Persist Security Info=True;User ID=sisenterprise;Password=Jdt7$uwF9u^B8uvd")
+			: base("Data Source=localhost;Initial Catalog=sisenterprise;Integrated Security=True")
 		{
 		}
 

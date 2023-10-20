@@ -62,7 +62,7 @@
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.dataGridView);
-			this.groupBox2.Location = new System.Drawing.Point(64, 337);
+			this.groupBox2.Location = new System.Drawing.Point(64, 187);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(672, 245);
 			this.groupBox2.TabIndex = 17;
@@ -123,10 +123,6 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.buttonAdicionar);
-			this.groupBox1.Controls.Add(this.buttonLimpar);
-			this.groupBox1.Controls.Add(this.buttonSalvar);
-			this.groupBox1.Controls.Add(this.buttonDeletar);
 			this.groupBox1.Controls.Add(this.label10);
 			this.groupBox1.Controls.Add(this.textBoxGerente);
 			this.groupBox1.Controls.Add(this.textBoxSupervisor);
@@ -135,16 +131,16 @@
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.textBoxDept);
-			this.groupBox1.Location = new System.Drawing.Point(64, 94);
+			this.groupBox1.Location = new System.Drawing.Point(64, 54);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(672, 221);
+			this.groupBox1.Size = new System.Drawing.Size(672, 127);
 			this.groupBox1.TabIndex = 16;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Dados Departamento";
 			// 
 			// buttonAdicionar
 			// 
-			this.buttonAdicionar.Location = new System.Drawing.Point(454, 77);
+			this.buttonAdicionar.Location = new System.Drawing.Point(287, 461);
 			this.buttonAdicionar.Name = "buttonAdicionar";
 			this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
 			this.buttonAdicionar.TabIndex = 19;
@@ -154,7 +150,7 @@
 			// 
 			// buttonLimpar
 			// 
-			this.buttonLimpar.Location = new System.Drawing.Point(454, 40);
+			this.buttonLimpar.Location = new System.Drawing.Point(408, 461);
 			this.buttonLimpar.Name = "buttonLimpar";
 			this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
 			this.buttonLimpar.TabIndex = 19;
@@ -164,7 +160,7 @@
 			// 
 			// buttonSalvar
 			// 
-			this.buttonSalvar.Location = new System.Drawing.Point(454, 114);
+			this.buttonSalvar.Location = new System.Drawing.Point(166, 461);
 			this.buttonSalvar.Name = "buttonSalvar";
 			this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
 			this.buttonSalvar.TabIndex = 17;
@@ -174,7 +170,7 @@
 			// 
 			// buttonDeletar
 			// 
-			this.buttonDeletar.Location = new System.Drawing.Point(454, 151);
+			this.buttonDeletar.Location = new System.Drawing.Point(529, 461);
 			this.buttonDeletar.Name = "buttonDeletar";
 			this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
 			this.buttonDeletar.TabIndex = 18;
@@ -185,7 +181,7 @@
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(49, 160);
+			this.label10.Location = new System.Drawing.Point(329, 77);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(60, 13);
 			this.label10.TabIndex = 10;
@@ -194,7 +190,7 @@
 			// textBoxGerente
 			// 
 			this.textBoxGerente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.textBoxGerente.Location = new System.Drawing.Point(115, 83);
+			this.textBoxGerente.Location = new System.Drawing.Point(115, 71);
 			this.textBoxGerente.Name = "textBoxGerente";
 			this.textBoxGerente.Size = new System.Drawing.Size(181, 20);
 			this.textBoxGerente.TabIndex = 6;
@@ -202,7 +198,7 @@
 			// textBoxSupervisor
 			// 
 			this.textBoxSupervisor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.textBoxSupervisor.Location = new System.Drawing.Point(115, 157);
+			this.textBoxSupervisor.Location = new System.Drawing.Point(395, 72);
 			this.textBoxSupervisor.Name = "textBoxSupervisor";
 			this.textBoxSupervisor.Size = new System.Drawing.Size(181, 20);
 			this.textBoxSupervisor.TabIndex = 3;
@@ -210,7 +206,7 @@
 			// textBoxId
 			// 
 			this.textBoxId.Enabled = false;
-			this.textBoxId.Location = new System.Drawing.Point(115, 48);
+			this.textBoxId.Location = new System.Drawing.Point(115, 36);
 			this.textBoxId.Name = "textBoxId";
 			this.textBoxId.Size = new System.Drawing.Size(181, 20);
 			this.textBoxId.TabIndex = 0;
@@ -218,7 +214,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(32, 119);
+			this.label3.Location = new System.Drawing.Point(312, 36);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(77, 13);
 			this.label3.TabIndex = 10;
@@ -227,7 +223,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(88, 51);
+			this.label1.Location = new System.Drawing.Point(88, 39);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(21, 13);
 			this.label1.TabIndex = 10;
@@ -236,7 +232,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(61, 86);
+			this.label5.Location = new System.Drawing.Point(61, 74);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(48, 13);
 			this.label5.TabIndex = 10;
@@ -245,7 +241,7 @@
 			// textBoxDept
 			// 
 			this.textBoxDept.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.textBoxDept.Location = new System.Drawing.Point(115, 119);
+			this.textBoxDept.Location = new System.Drawing.Point(395, 34);
 			this.textBoxDept.Name = "textBoxDept";
 			this.textBoxDept.Size = new System.Drawing.Size(181, 20);
 			this.textBoxDept.TabIndex = 9;
@@ -256,7 +252,7 @@
 			this.textBoxTitle.BackColor = System.Drawing.SystemColors.Menu;
 			this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBoxTitle.Location = new System.Drawing.Point(64, 28);
+			this.textBoxTitle.Location = new System.Drawing.Point(64, 12);
 			this.textBoxTitle.Multiline = true;
 			this.textBoxTitle.Name = "textBoxTitle";
 			this.textBoxTitle.ReadOnly = true;
@@ -273,13 +269,17 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(801, 618);
+			this.ClientSize = new System.Drawing.Size(801, 523);
+			this.Controls.Add(this.buttonAdicionar);
 			this.Controls.Add(this.textBoxTitle);
+			this.Controls.Add(this.buttonLimpar);
+			this.Controls.Add(this.buttonSalvar);
 			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.buttonDeletar);
 			this.Controls.Add(this.groupBox1);
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(817, 657);
-			this.MinimumSize = new System.Drawing.Size(817, 657);
+			this.MaximumSize = new System.Drawing.Size(817, 562);
+			this.MinimumSize = new System.Drawing.Size(817, 562);
 			this.Name = "FormCadDept";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Cadastro de Departamento";

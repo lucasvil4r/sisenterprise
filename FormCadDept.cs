@@ -90,7 +90,7 @@ namespace SisEnterprise_2._0
 		private void dataGridView_MouseClick(object sender, MouseEventArgs e)
 		{
 			DeptId = Convert.ToInt32(dataGridView.CurrentRow.Cells["iddepartamentoDataGridViewTextBoxColumn"].Value);
-			if (dataGridView.CurrentCell.RowIndex != -1 && DeptId > 1)
+			if (dataGridView.CurrentCell.RowIndex != -1 && DeptId > 0)
 			{
 				using (var db = new ModelContext())
 				{
