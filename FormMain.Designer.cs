@@ -30,16 +30,20 @@
 		{
 			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Cadastro de Departamento");
 			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Cadastro de Funcionário");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Departamento RH", new System.Windows.Forms.TreeNode[] {
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Cálculo de Férias");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Cálculo de 13°");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Departamento RH", new System.Windows.Forms.TreeNode[] {
             treeNode1,
-            treeNode2});
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Departamento Logistica");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Departamento Contabilidade");
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Departamento Fiscal");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Departamento Financeiro");
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Diretoria");
-			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Departamento TI");
-			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Departamento Comercial");
+            treeNode2,
+            treeNode3,
+            treeNode4});
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Departamento Logistica");
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Departamento Contabilidade");
+			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Departamento Fiscal");
+			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Departamento Financeiro");
+			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Diretoria");
+			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Departamento TI");
+			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Departamento Comercial");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.treeView = new System.Windows.Forms.TreeView();
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -110,31 +114,35 @@
 			treeNode1.Text = "Cadastro de Departamento";
 			treeNode2.Name = "NodeCadFunc";
 			treeNode2.Text = "Cadastro de Funcionário";
-			treeNode3.Name = "NodeRH";
-			treeNode3.Text = "Departamento RH";
-			treeNode4.Name = "Node1";
-			treeNode4.Text = "Departamento Logistica";
-			treeNode5.Name = "Node3";
-			treeNode5.Text = "Departamento Contabilidade";
-			treeNode6.Name = "Node4";
-			treeNode6.Text = "Departamento Fiscal";
-			treeNode7.Name = "Node5";
-			treeNode7.Text = "Departamento Financeiro";
-			treeNode8.Name = "Node6";
-			treeNode8.Text = "Diretoria";
-			treeNode9.Name = "Node7";
-			treeNode9.Text = "Departamento TI";
-			treeNode10.Name = "Node8";
-			treeNode10.Text = "Departamento Comercial";
+			treeNode3.Name = "NodeCalcFerias";
+			treeNode3.Text = "Cálculo de Férias";
+			treeNode4.Name = "NodeCalc13";
+			treeNode4.Text = "Cálculo de 13°";
+			treeNode5.Name = "NodeRH";
+			treeNode5.Text = "Departamento RH";
+			treeNode6.Name = "Node1";
+			treeNode6.Text = "Departamento Logistica";
+			treeNode7.Name = "Node3";
+			treeNode7.Text = "Departamento Contabilidade";
+			treeNode8.Name = "Node4";
+			treeNode8.Text = "Departamento Fiscal";
+			treeNode9.Name = "Node5";
+			treeNode9.Text = "Departamento Financeiro";
+			treeNode10.Name = "Node6";
+			treeNode10.Text = "Diretoria";
+			treeNode11.Name = "Node7";
+			treeNode11.Text = "Departamento TI";
+			treeNode12.Name = "Node8";
+			treeNode12.Text = "Departamento Comercial";
 			this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
             treeNode5,
             treeNode6,
             treeNode7,
             treeNode8,
             treeNode9,
-            treeNode10});
+            treeNode10,
+            treeNode11,
+            treeNode12});
 			this.treeView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.treeView.Size = new System.Drawing.Size(268, 651);
 			this.treeView.TabIndex = 5;

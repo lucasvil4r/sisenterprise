@@ -48,6 +48,12 @@ namespace SisEnterprise_2._0
 				case "Cadastro de Departamento":
 					ShowFormChild(new FormCadDept());
 					break;
+				case "Cálculo de Férias":
+					ShowFormChild(new FormCalcFerias());
+					break;
+				case "Cálculo de 13°":
+					ShowFormChild(new FormCalc13());
+					break;
 			}
 
 		}
