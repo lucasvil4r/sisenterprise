@@ -47,7 +47,7 @@ namespace SisEnterprise_2._0
 			textBoxDataAdmissao.Text = string.Empty;
 			textBoxDataAlteracao.Text = string.Empty;
 			textBoxDataCadastro.Text = string.Empty;
-			//textBoxDataAdmissao.Text = funcionario.path_foto3x4.ToString();
+			pictureBoxFoto.Image = null;
 			textBoxQtdDependentes.Text = string.Empty;
 			textBoxQtdHorasTrab.Text = string.Empty;
 
