@@ -116,6 +116,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";
 			this.Load += new System.EventHandler(this.FormLogin_Load);
+			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormLogin_KeyUp);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

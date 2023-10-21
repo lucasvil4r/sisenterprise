@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.buttonVerDocs = new System.Windows.Forms.Button();
+			this.buttonImportFoto = new System.Windows.Forms.Button();
 			this.buttonAdicionar = new System.Windows.Forms.Button();
 			this.buttonSalvar = new System.Windows.Forms.Button();
 			this.buttonDeletar = new System.Windows.Forms.Button();
@@ -81,33 +81,34 @@
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
 			this.label13 = new System.Windows.Forms.Label();
 			this.textBoxDataCadastro = new System.Windows.Forms.MaskedTextBox();
 			this.label15 = new System.Windows.Forms.Label();
 			this.textBoxDataAlteracao = new System.Windows.Forms.MaskedTextBox();
+			this.buttonLimpar = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// buttonVerDocs
+			// buttonImportFoto
 			// 
-			this.buttonVerDocs.Location = new System.Drawing.Point(759, 723);
-			this.buttonVerDocs.Name = "buttonVerDocs";
-			this.buttonVerDocs.Size = new System.Drawing.Size(105, 31);
-			this.buttonVerDocs.TabIndex = 36;
-			this.buttonVerDocs.Text = "Ver Documentos";
-			this.buttonVerDocs.UseVisualStyleBackColor = true;
-			this.buttonVerDocs.Click += new System.EventHandler(this.buttonVerDocs_Click);
+			this.buttonImportFoto.Location = new System.Drawing.Point(102, 247);
+			this.buttonImportFoto.Name = "buttonImportFoto";
+			this.buttonImportFoto.Size = new System.Drawing.Size(105, 31);
+			this.buttonImportFoto.TabIndex = 36;
+			this.buttonImportFoto.Text = "Importar Foto:";
+			this.buttonImportFoto.UseVisualStyleBackColor = true;
+			this.buttonImportFoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonImportFoto_MouseClick);
 			// 
 			// buttonAdicionar
 			// 
-			this.buttonAdicionar.Location = new System.Drawing.Point(630, 723);
+			this.buttonAdicionar.Location = new System.Drawing.Point(697, 723);
 			this.buttonAdicionar.Name = "buttonAdicionar";
 			this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
 			this.buttonAdicionar.TabIndex = 34;
@@ -117,7 +118,7 @@
 			// 
 			// buttonSalvar
 			// 
-			this.buttonSalvar.Location = new System.Drawing.Point(372, 723);
+			this.buttonSalvar.Location = new System.Drawing.Point(443, 723);
 			this.buttonSalvar.Name = "buttonSalvar";
 			this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
 			this.buttonSalvar.TabIndex = 33;
@@ -127,7 +128,7 @@
 			// 
 			// buttonDeletar
 			// 
-			this.buttonDeletar.Location = new System.Drawing.Point(501, 723);
+			this.buttonDeletar.Location = new System.Drawing.Point(570, 723);
 			this.buttonDeletar.Name = "buttonDeletar";
 			this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
 			this.buttonDeletar.TabIndex = 35;
@@ -156,7 +157,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(899, 386);
+			this.label7.Location = new System.Drawing.Point(930, 390);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(98, 13);
 			this.label7.TabIndex = 23;
@@ -360,10 +361,10 @@
 			// 
 			// textBoxDataAdmissao
 			// 
-			this.textBoxDataAdmissao.Location = new System.Drawing.Point(1004, 383);
+			this.textBoxDataAdmissao.Location = new System.Drawing.Point(1035, 383);
 			this.textBoxDataAdmissao.Mask = "00/00/0000";
 			this.textBoxDataAdmissao.Name = "textBoxDataAdmissao";
-			this.textBoxDataAdmissao.Size = new System.Drawing.Size(181, 20);
+			this.textBoxDataAdmissao.Size = new System.Drawing.Size(108, 20);
 			this.textBoxDataAdmissao.TabIndex = 10;
 			this.textBoxDataAdmissao.ValidatingType = typeof(System.DateTime);
 			// 
@@ -566,29 +567,29 @@
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.pictureBox1);
+			this.groupBox3.Controls.Add(this.pictureBoxFoto);
 			this.groupBox3.Controls.Add(this.checkBox1);
+			this.groupBox3.Controls.Add(this.buttonImportFoto);
 			this.groupBox3.Location = new System.Drawing.Point(887, 72);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(313, 279);
+			this.groupBox3.Size = new System.Drawing.Size(313, 297);
 			this.groupBox3.TabIndex = 13;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Foto Funcionário";
 			// 
-			// pictureBox1
+			// pictureBoxFoto
 			// 
-			this.pictureBox1.InitialImage = null;
-			this.pictureBox1.Location = new System.Drawing.Point(46, 38);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(221, 205);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			this.pictureBoxFoto.Location = new System.Drawing.Point(46, 38);
+			this.pictureBoxFoto.Name = "pictureBoxFoto";
+			this.pictureBoxFoto.Size = new System.Drawing.Size(221, 190);
+			this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBoxFoto.TabIndex = 0;
+			this.pictureBoxFoto.TabStop = false;
 			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(899, 417);
+			this.label13.Location = new System.Drawing.Point(930, 419);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(101, 13);
 			this.label13.TabIndex = 23;
@@ -597,17 +598,17 @@
 			// textBoxDataCadastro
 			// 
 			this.textBoxDataCadastro.Enabled = false;
-			this.textBoxDataCadastro.Location = new System.Drawing.Point(1004, 414);
+			this.textBoxDataCadastro.Location = new System.Drawing.Point(1035, 414);
 			this.textBoxDataCadastro.Mask = "00/00/0000";
 			this.textBoxDataCadastro.Name = "textBoxDataCadastro";
-			this.textBoxDataCadastro.Size = new System.Drawing.Size(181, 20);
+			this.textBoxDataCadastro.Size = new System.Drawing.Size(108, 20);
 			this.textBoxDataCadastro.TabIndex = 10;
 			this.textBoxDataCadastro.ValidatingType = typeof(System.DateTime);
 			// 
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(898, 449);
+			this.label15.Location = new System.Drawing.Point(929, 448);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(106, 13);
 			this.label15.TabIndex = 23;
@@ -616,21 +617,31 @@
 			// textBoxDataAlteracao
 			// 
 			this.textBoxDataAlteracao.Enabled = false;
-			this.textBoxDataAlteracao.Location = new System.Drawing.Point(1004, 446);
+			this.textBoxDataAlteracao.Location = new System.Drawing.Point(1035, 446);
 			this.textBoxDataAlteracao.Mask = "00/00/0000";
 			this.textBoxDataAlteracao.Name = "textBoxDataAlteracao";
-			this.textBoxDataAlteracao.Size = new System.Drawing.Size(181, 20);
+			this.textBoxDataAlteracao.Size = new System.Drawing.Size(108, 20);
 			this.textBoxDataAlteracao.TabIndex = 10;
 			this.textBoxDataAlteracao.ValidatingType = typeof(System.DateTime);
+			// 
+			// buttonLimpar
+			// 
+			this.buttonLimpar.Location = new System.Drawing.Point(824, 723);
+			this.buttonLimpar.Name = "buttonLimpar";
+			this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
+			this.buttonLimpar.TabIndex = 38;
+			this.buttonLimpar.Text = "Limpar";
+			this.buttonLimpar.UseVisualStyleBackColor = true;
+			this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
 			// 
 			// FormCadFunc
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1237, 791);
+			this.Controls.Add(this.buttonLimpar);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.textBoxTitle);
-			this.Controls.Add(this.buttonVerDocs);
 			this.Controls.Add(this.buttonAdicionar);
 			this.Controls.Add(this.buttonSalvar);
 			this.Controls.Add(this.buttonDeletar);
@@ -658,7 +669,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -666,7 +677,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button buttonVerDocs;
+		private System.Windows.Forms.Button buttonImportFoto;
 		private System.Windows.Forms.Button buttonAdicionar;
 		private System.Windows.Forms.Button buttonSalvar;
 		private System.Windows.Forms.Button buttonDeletar;
@@ -718,10 +729,11 @@
 		private System.Windows.Forms.MaskedTextBox textBoxCPF;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox pictureBoxFoto;
 		private System.Windows.Forms.MaskedTextBox textBoxDataCadastro;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.MaskedTextBox textBoxDataAlteracao;
 		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Button buttonLimpar;
 	}
 }

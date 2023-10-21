@@ -36,6 +36,11 @@ namespace SisEnterprise_2._0
 
 		private void FormLogin_Load(object sender, EventArgs e)
 		{
+			this.AcceptButton = buttonLogin;
+		}
+
+		private void FormLogin_KeyUp(object sender, KeyEventArgs e)
+		{
 
 		}
 	}

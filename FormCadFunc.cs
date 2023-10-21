@@ -1,7 +1,11 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace SisEnterprise_2._0
 {
@@ -104,22 +108,17 @@ namespace SisEnterprise_2._0
 					funcionario.data_admissao = DateTime.Now;
 					funcionario.data_alteracao = DateTime.Now;
 					funcionario.data_cadastro = DateTime.Now;
-					//funcionario.path_foto3x4 = Int32.Parse(textBoxMatricula.Text);
 					funcionario.qtd_dependentes = Int32.Parse(textBoxQtdDependentes.Text);
 					funcionario.qtd_horas_trabalhadas = decimal.Parse(textBoxQtdHorasTrab.Text);
 					db.Cadastro_Funcionario.Add(funcionario);
 					db.SaveChanges();
-					MessageBox.Show("Funcionário atualizar com sucesso");
+					MessageBox.Show("Funcionário adicionado com sucesso");
 				}
 				else { MessageBox.Show("Não foi possível atualizar, tente novamente"); }
 
 				ClearData();
 				SetDataInGridView();
 			}
-		}
-		private void buttonVerDocs_Click(object sender, EventArgs e)
-		{
-
 		}
 
 		private void dataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -149,11 +148,70 @@ namespace SisEnterprise_2._0
 					textBoxDataAdmissao.Text = funcionario.data_admissao.ToString();
 					textBoxDataAlteracao.Text = funcionario.data_alteracao.ToString();
 					textBoxDataCadastro.Text = funcionario.data_cadastro.ToString();
-					//textBoxDataAdmissao.Text = funcionario.path_foto3x4.ToString();
+					if (funcionario.path_foto3x4 != null)
+					{
+						// Exiba a imagem no PictureBox
+						string pastaImages = Path.Combine(Application.StartupPath, "Resource");
+						string fotoFunc = Path.Combine(pastaImages, (funcionario.path_foto3x4.ToString()));
+						if (File.Exists(fotoFunc))
+						{
+							Image imagemCarregada = Image.FromFile(fotoFunc);
+							pictureBoxFoto.Image = imagemCarregada;
+							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
+						}
+					}
 					textBoxQtdDependentes.Text = funcionario.qtd_dependentes.ToString();
 					textBoxQtdHorasTrab.Text = funcionario.qtd_horas_trabalhadas.ToString();
 				}
 			}
+		}
+
+		private void buttonImportFoto_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (FuncId == 0) {
+				MessageBox.Show("Nenhum funcionario foi selecionado!");
+				return; 
+			}
+
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+			openFileDialog.Filter = "Imagens JPEG|*.jpg;*.jpeg";
+
+			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				string caminhoDaImagem = openFileDialog.FileName;
+				string novoNomeDoArquivo = "func_" + (FuncId.ToString()) + ".jpg";
+
+				// Caminho para a pasta "Resources" na raiz do projeto
+				string pastaDestino = Path.Combine(Application.StartupPath, "Resource");
+
+				// Crie a pasta "Resources" se ela não existir
+				if (!Directory.Exists(pastaDestino)) {Directory.CreateDirectory(pastaDestino);}
+
+				string caminhoDestino = Path.Combine(pastaDestino, novoNomeDoArquivo);
+				File.Copy(caminhoDaImagem, caminhoDestino, true);
+
+				using (var db = new ModelContext())
+				{
+					var funcionario = db.Cadastro_Funcionario.FirstOrDefault(x => x.id_funcionario == FuncId);
+					if (funcionario != null)
+					{
+						funcionario.data_alteracao = DateTime.Now;
+						funcionario.path_foto3x4 = novoNomeDoArquivo.ToString();
+						db.SaveChanges();
+					}
+					else { MessageBox.Show("Não foi possível importar a foto, tente novamente"); }
+				}
+
+				ClearData();
+				SetDataInGridView();
+				MessageBox.Show("Imagem importada com sucesso!");
+			}
+		}
+
+		private void buttonLimpar_Click(object sender, EventArgs e)
+		{
+			ClearData();
+			SetDataInGridView();
 		}
 	}
 }

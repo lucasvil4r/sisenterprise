@@ -1,5 +1,6 @@
 services:
   sqlserver:
+    container_name: sisenterprise
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       SA_PASSWORD: "Jdt7$uwF9u^B8uvd"
@@ -8,6 +9,7 @@ services:
     ports:
       - "1433:1433"
   mssqltools:
+    container_name: sisenterprise-tools
     image: mcr.microsoft.com/mssql-tools
     depends_on:
       - sqlserver
