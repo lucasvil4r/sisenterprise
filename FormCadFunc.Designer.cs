@@ -81,12 +81,12 @@
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
 			this.label13 = new System.Windows.Forms.Label();
 			this.textBoxDataCadastro = new System.Windows.Forms.MaskedTextBox();
 			this.label15 = new System.Windows.Forms.Label();
 			this.textBoxDataAlteracao = new System.Windows.Forms.MaskedTextBox();
 			this.buttonLimpar = new System.Windows.Forms.Button();
+			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -361,6 +361,7 @@
 			// 
 			// textBoxDataAdmissao
 			// 
+			this.textBoxDataAdmissao.Enabled = false;
 			this.textBoxDataAdmissao.Location = new System.Drawing.Point(1035, 383);
 			this.textBoxDataAdmissao.Mask = "00/00/0000";
 			this.textBoxDataAdmissao.Name = "textBoxDataAdmissao";
@@ -577,15 +578,6 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Foto Funcionário";
 			// 
-			// pictureBoxFoto
-			// 
-			this.pictureBoxFoto.Location = new System.Drawing.Point(46, 38);
-			this.pictureBoxFoto.Name = "pictureBoxFoto";
-			this.pictureBoxFoto.Size = new System.Drawing.Size(221, 190);
-			this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBoxFoto.TabIndex = 0;
-			this.pictureBoxFoto.TabStop = false;
-			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
@@ -633,6 +625,15 @@
 			this.buttonLimpar.Text = "Limpar";
 			this.buttonLimpar.UseVisualStyleBackColor = true;
 			this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
+			// 
+			// pictureBoxFoto
+			// 
+			this.pictureBoxFoto.Location = new System.Drawing.Point(46, 38);
+			this.pictureBoxFoto.Name = "pictureBoxFoto";
+			this.pictureBoxFoto.Size = new System.Drawing.Size(221, 190);
+			this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBoxFoto.TabIndex = 0;
+			this.pictureBoxFoto.TabStop = false;
 			// 
 			// FormCadFunc
 			// 

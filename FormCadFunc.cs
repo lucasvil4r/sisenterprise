@@ -148,9 +148,10 @@ namespace SisEnterprise_2._0
 					textBoxDataAdmissao.Text = funcionario.data_admissao.ToString();
 					textBoxDataAlteracao.Text = funcionario.data_alteracao.ToString();
 					textBoxDataCadastro.Text = funcionario.data_cadastro.ToString();
+
+					// Exiba a imagem no PictureBox
 					if (funcionario.path_foto3x4 != null)
 					{
-						// Exiba a imagem no PictureBox
 						string pastaImages = Path.Combine(Application.StartupPath, "Resource");
 						string fotoFunc = Path.Combine(pastaImages, (funcionario.path_foto3x4.ToString()));
 						if (File.Exists(fotoFunc))
@@ -160,6 +161,18 @@ namespace SisEnterprise_2._0
 							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
 						}
 					}
+					else 
+					{
+						string pastaImages = Path.Combine(Application.StartupPath, "Resource");
+						string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.png");
+						if (File.Exists(fotoPlaceholder))
+						{
+							Image imagemCarregada = Image.FromFile(fotoPlaceholder);
+							pictureBoxFoto.Image = imagemCarregada;
+							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
+						}
+					}
+
 					textBoxQtdDependentes.Text = funcionario.qtd_dependentes.ToString();
 					textBoxQtdHorasTrab.Text = funcionario.qtd_horas_trabalhadas.ToString();
 				}
@@ -202,7 +215,7 @@ namespace SisEnterprise_2._0
 					else { MessageBox.Show("Não foi possível importar a foto, tente novamente"); }
 				}
 
-				ClearData();
+				//ClearData();
 				SetDataInGridView();
 				MessageBox.Show("Imagem importada com sucesso!");
 			}

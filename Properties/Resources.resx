@@ -121,7 +121,4 @@
   <data name="7076235" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7076235.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tereza-fotoruim_300_400" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tereza-fotoruim_300_400.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
