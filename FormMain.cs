@@ -42,7 +42,7 @@ namespace SisEnterprise_2._0
 
 			switch (SelectForm)
 			{
-				case "Cadastro de Funcionario":
+				case "Cadastro de Funcionário":
 					ShowFormChild(new FormCadFunc());
 					break;
 				case "Cadastro de Departamento":

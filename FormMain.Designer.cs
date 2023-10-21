@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Cadastro de Departamento");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Cadastro de Funcionario");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Cadastro de Funcionário");
 			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Departamento RH", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode2});
@@ -109,7 +109,7 @@
 			treeNode1.Name = "NodeCadDept";
 			treeNode1.Text = "Cadastro de Departamento";
 			treeNode2.Name = "NodeCadFunc";
-			treeNode2.Text = "Cadastro de Funcionario";
+			treeNode2.Text = "Cadastro de Funcionário";
 			treeNode3.Name = "NodeRH";
 			treeNode3.Text = "Departamento RH";
 			treeNode4.Name = "Node1";
