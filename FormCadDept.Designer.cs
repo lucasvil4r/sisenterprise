@@ -38,10 +38,6 @@
 			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.buttonAdicionar = new System.Windows.Forms.Button();
-			this.buttonLimpar = new System.Windows.Forms.Button();
-			this.buttonSalvar = new System.Windows.Forms.Button();
-			this.buttonDeletar = new System.Windows.Forms.Button();
 			this.label10 = new System.Windows.Forms.Label();
 			this.textBoxGerente = new System.Windows.Forms.TextBox();
 			this.textBoxSupervisor = new System.Windows.Forms.TextBox();
@@ -50,6 +46,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.textBoxDept = new System.Windows.Forms.TextBox();
+			this.buttonAdicionar = new System.Windows.Forms.Button();
+			this.buttonLimpar = new System.Windows.Forms.Button();
+			this.buttonSalvar = new System.Windows.Forms.Button();
+			this.buttonDeletar = new System.Windows.Forms.Button();
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
 			this.groupBox2.SuspendLayout();
@@ -138,46 +138,6 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Dados Departamento";
 			// 
-			// buttonAdicionar
-			// 
-			this.buttonAdicionar.Location = new System.Drawing.Point(287, 461);
-			this.buttonAdicionar.Name = "buttonAdicionar";
-			this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
-			this.buttonAdicionar.TabIndex = 19;
-			this.buttonAdicionar.Text = "Adicionar";
-			this.buttonAdicionar.UseVisualStyleBackColor = true;
-			this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
-			// 
-			// buttonLimpar
-			// 
-			this.buttonLimpar.Location = new System.Drawing.Point(408, 461);
-			this.buttonLimpar.Name = "buttonLimpar";
-			this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
-			this.buttonLimpar.TabIndex = 19;
-			this.buttonLimpar.Text = "Limpar";
-			this.buttonLimpar.UseVisualStyleBackColor = true;
-			this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
-			// 
-			// buttonSalvar
-			// 
-			this.buttonSalvar.Location = new System.Drawing.Point(166, 461);
-			this.buttonSalvar.Name = "buttonSalvar";
-			this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
-			this.buttonSalvar.TabIndex = 17;
-			this.buttonSalvar.Text = "Salvar";
-			this.buttonSalvar.UseVisualStyleBackColor = true;
-			this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
-			// 
-			// buttonDeletar
-			// 
-			this.buttonDeletar.Location = new System.Drawing.Point(529, 461);
-			this.buttonDeletar.Name = "buttonDeletar";
-			this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
-			this.buttonDeletar.TabIndex = 18;
-			this.buttonDeletar.Text = "Excluir";
-			this.buttonDeletar.UseVisualStyleBackColor = true;
-			this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
-			// 
 			// label10
 			// 
 			this.label10.AutoSize = true;
@@ -245,6 +205,46 @@
 			this.textBoxDept.Name = "textBoxDept";
 			this.textBoxDept.Size = new System.Drawing.Size(181, 20);
 			this.textBoxDept.TabIndex = 9;
+			// 
+			// buttonAdicionar
+			// 
+			this.buttonAdicionar.Location = new System.Drawing.Point(287, 461);
+			this.buttonAdicionar.Name = "buttonAdicionar";
+			this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
+			this.buttonAdicionar.TabIndex = 19;
+			this.buttonAdicionar.Text = "Adicionar";
+			this.buttonAdicionar.UseVisualStyleBackColor = true;
+			this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
+			// 
+			// buttonLimpar
+			// 
+			this.buttonLimpar.Location = new System.Drawing.Point(408, 461);
+			this.buttonLimpar.Name = "buttonLimpar";
+			this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
+			this.buttonLimpar.TabIndex = 19;
+			this.buttonLimpar.Text = "Limpar";
+			this.buttonLimpar.UseVisualStyleBackColor = true;
+			this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
+			// 
+			// buttonSalvar
+			// 
+			this.buttonSalvar.Location = new System.Drawing.Point(166, 461);
+			this.buttonSalvar.Name = "buttonSalvar";
+			this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
+			this.buttonSalvar.TabIndex = 17;
+			this.buttonSalvar.Text = "Salvar";
+			this.buttonSalvar.UseVisualStyleBackColor = true;
+			this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+			// 
+			// buttonDeletar
+			// 
+			this.buttonDeletar.Location = new System.Drawing.Point(529, 461);
+			this.buttonDeletar.Name = "buttonDeletar";
+			this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
+			this.buttonDeletar.TabIndex = 18;
+			this.buttonDeletar.Text = "Excluir";
+			this.buttonDeletar.UseVisualStyleBackColor = true;
+			this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
 			// 
 			// textBoxTitle
 			// 

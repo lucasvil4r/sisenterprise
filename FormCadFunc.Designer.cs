@@ -44,16 +44,16 @@
 			this.textBoxEmail = new System.Windows.Forms.TextBox();
 			this.textBoxQtdHorasTrab = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.textBoxDept = new System.Windows.Forms.ComboBox();
+			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBoxTelefone = new System.Windows.Forms.MaskedTextBox();
 			this.textBoxCPF = new System.Windows.Forms.MaskedTextBox();
 			this.textBoxDataNascimento = new System.Windows.Forms.MaskedTextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.textBoxDept = new System.Windows.Forms.TextBox();
-			this.textBoxNome = new System.Windows.Forms.TextBox();
 			this.textBoxId = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.textBoxSalario = new System.Windows.Forms.TextBox();
@@ -77,7 +77,6 @@
 			this.qtddependentesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.qtdhorastrabalhadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cadastroFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -87,17 +86,17 @@
 			this.label15 = new System.Windows.Forms.Label();
 			this.textBoxDataAlteracao = new System.Windows.Forms.MaskedTextBox();
 			this.buttonLimpar = new System.Windows.Forms.Button();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
+			this.label3 = new System.Windows.Forms.Label();
+			this.textBoxNome = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// buttonImportFoto
@@ -225,7 +224,7 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.comboBox1);
+			this.groupBox1.Controls.Add(this.textBoxDept);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.textBoxTelefone);
 			this.groupBox1.Controls.Add(this.textBoxCPF);
@@ -238,7 +237,6 @@
 			this.groupBox1.Controls.Add(this.label9);
 			this.groupBox1.Controls.Add(this.textBoxQtdDependentes);
 			this.groupBox1.Controls.Add(this.label11);
-			this.groupBox1.Controls.Add(this.textBoxDept);
 			this.groupBox1.Controls.Add(this.textBoxNome);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.textBoxQtdHorasTrab);
@@ -254,6 +252,27 @@
 			this.groupBox1.TabIndex = 31;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Dados Funcionarios";
+			// 
+			// textBoxDept
+			// 
+			this.textBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
+			this.textBoxDept.DisplayMember = "nome";
+			this.textBoxDept.FormattingEnabled = true;
+			this.textBoxDept.Location = new System.Drawing.Point(205, 180);
+			this.textBoxDept.Name = "textBoxDept";
+			this.textBoxDept.Size = new System.Drawing.Size(181, 21);
+			this.textBoxDept.TabIndex = 31;
+			this.textBoxDept.ValueMember = "id_departamento";
+			// 
+			// cadastroDepartamentoBindingSource
+			// 
+			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
+			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
+			// 
+			// sisenterpriseDataSet
+			// 
+			this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
+			this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// label2
 			// 
@@ -308,20 +327,6 @@
 			this.label8.TabIndex = 24;
 			this.label8.Text = "NASCIMENTO:";
 			// 
-			// textBoxDept
-			// 
-			this.textBoxDept.Location = new System.Drawing.Point(205, 180);
-			this.textBoxDept.Name = "textBoxDept";
-			this.textBoxDept.Size = new System.Drawing.Size(181, 20);
-			this.textBoxDept.TabIndex = 6;
-			// 
-			// textBoxNome
-			// 
-			this.textBoxNome.Location = new System.Drawing.Point(205, 137);
-			this.textBoxNome.Name = "textBoxNome";
-			this.textBoxNome.Size = new System.Drawing.Size(181, 20);
-			this.textBoxNome.TabIndex = 3;
-			// 
 			// textBoxId
 			// 
 			this.textBoxId.Enabled = false;
@@ -329,15 +334,6 @@
 			this.textBoxId.Name = "textBoxId";
 			this.textBoxId.Size = new System.Drawing.Size(181, 20);
 			this.textBoxId.TabIndex = 0;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(157, 140);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(42, 13);
-			this.label3.TabIndex = 10;
-			this.label3.Text = "NOME:";
 			// 
 			// label1
 			// 
@@ -547,11 +543,6 @@
 			this.cadastroFuncionarioBindingSource.DataMember = "Cadastro_Funcionario";
 			this.cadastroFuncionarioBindingSource.DataSource = this.sisenterpriseDataSet;
 			// 
-			// sisenterpriseDataSet
-			// 
-			this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
-			this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// textBoxTitle
 			// 
 			this.textBoxTitle.AllowDrop = true;
@@ -640,25 +631,25 @@
 			this.buttonLimpar.UseVisualStyleBackColor = true;
 			this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
 			// 
-			// comboBox1
-			// 
-			this.comboBox1.DataSource = this.cadastroDepartamentoBindingSource;
-			this.comboBox1.DisplayMember = "nome";
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(515, 304);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(181, 21);
-			this.comboBox1.TabIndex = 31;
-			this.comboBox1.ValueMember = "id_departamento";
-			// 
-			// cadastroDepartamentoBindingSource
-			// 
-			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
-			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
-			// 
 			// cadastro_DepartamentoTableAdapter
 			// 
 			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(157, 140);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(42, 13);
+			this.label3.TabIndex = 10;
+			this.label3.Text = "NOME:";
+			// 
+			// textBoxNome
+			// 
+			this.textBoxNome.Location = new System.Drawing.Point(205, 137);
+			this.textBoxNome.Name = "textBoxNome";
+			this.textBoxNome.Size = new System.Drawing.Size(181, 20);
+			this.textBoxNome.TabIndex = 3;
 			// 
 			// FormCadFunc
 			// 
@@ -689,14 +680,14 @@
 			this.Load += new System.EventHandler(this.FormCadFunc_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -724,10 +715,7 @@
 		private System.Windows.Forms.MaskedTextBox textBoxDataNascimento;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.MaskedTextBox textBoxDataAdmissao;
-		private System.Windows.Forms.TextBox textBoxDept;
-		private System.Windows.Forms.TextBox textBoxNome;
 		private System.Windows.Forms.TextBox textBoxId;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox textBoxSalario;
@@ -762,8 +750,10 @@
 		private System.Windows.Forms.MaskedTextBox textBoxDataAlteracao;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Button buttonLimpar;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox textBoxDept;
 		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
 		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
+		private System.Windows.Forms.TextBox textBoxNome;
+		private System.Windows.Forms.Label label3;
 	}
 }

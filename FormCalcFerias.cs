@@ -16,5 +16,12 @@ namespace SisEnterprise_2._0
 		{
 			InitializeComponent();
 		}
+
+		private void FormCalcFerias_Load(object sender, EventArgs e)
+		{
+			// TODO: This line of code loads data into the 'sisenterpriseDataSet.Cadastro_Funcionario' table. You can move, or remove it, as needed.
+			this.cadastro_FuncionarioTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Funcionario);
+
+		}
 	}
 }
