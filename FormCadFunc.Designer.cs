@@ -81,12 +81,15 @@
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
 			this.label13 = new System.Windows.Forms.Label();
 			this.textBoxDataCadastro = new System.Windows.Forms.MaskedTextBox();
 			this.label15 = new System.Windows.Forms.Label();
 			this.textBoxDataAlteracao = new System.Windows.Forms.MaskedTextBox();
 			this.buttonLimpar = new System.Windows.Forms.Button();
-			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -94,6 +97,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// buttonImportFoto
@@ -221,6 +225,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.comboBox1);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.textBoxTelefone);
 			this.groupBox1.Controls.Add(this.textBoxCPF);
@@ -578,6 +583,15 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Foto Funcionário";
 			// 
+			// pictureBoxFoto
+			// 
+			this.pictureBoxFoto.Location = new System.Drawing.Point(46, 38);
+			this.pictureBoxFoto.Name = "pictureBoxFoto";
+			this.pictureBoxFoto.Size = new System.Drawing.Size(221, 190);
+			this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBoxFoto.TabIndex = 0;
+			this.pictureBoxFoto.TabStop = false;
+			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
@@ -626,14 +640,25 @@
 			this.buttonLimpar.UseVisualStyleBackColor = true;
 			this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
 			// 
-			// pictureBoxFoto
+			// comboBox1
 			// 
-			this.pictureBoxFoto.Location = new System.Drawing.Point(46, 38);
-			this.pictureBoxFoto.Name = "pictureBoxFoto";
-			this.pictureBoxFoto.Size = new System.Drawing.Size(221, 190);
-			this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBoxFoto.TabIndex = 0;
-			this.pictureBoxFoto.TabStop = false;
+			this.comboBox1.DataSource = this.cadastroDepartamentoBindingSource;
+			this.comboBox1.DisplayMember = "nome";
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(515, 304);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(181, 21);
+			this.comboBox1.TabIndex = 31;
+			this.comboBox1.ValueMember = "id_departamento";
+			// 
+			// cadastroDepartamentoBindingSource
+			// 
+			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
+			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
+			// 
+			// cadastro_DepartamentoTableAdapter
+			// 
+			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
 			// 
 			// FormCadFunc
 			// 
@@ -671,6 +696,7 @@
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -736,5 +762,8 @@
 		private System.Windows.Forms.MaskedTextBox textBoxDataAlteracao;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Button buttonLimpar;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
+		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
 	}
 }

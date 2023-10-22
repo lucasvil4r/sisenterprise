@@ -20,6 +20,8 @@ namespace SisEnterprise_2._0
 
 		private void FormCadFunc_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'sisenterpriseDataSet.Cadastro_Departamento' table. You can move, or remove it, as needed.
+			this.cadastro_DepartamentoTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Departamento);
 			// TODO: This line of code loads data into the 'sisenterpriseDataSet.Cadastro_Funcionario' table. You can move, or remove it, as needed.
 			this.cadastro_FuncionarioTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Funcionario);
 
@@ -47,10 +49,18 @@ namespace SisEnterprise_2._0
 			textBoxDataAdmissao.Text = string.Empty;
 			textBoxDataAlteracao.Text = string.Empty;
 			textBoxDataCadastro.Text = string.Empty;
-			pictureBoxFoto.Image = null;
+
+			string pastaImages = Path.Combine(Application.StartupPath, "Resource");
+			string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.png");
+			if (File.Exists(fotoPlaceholder))
+			{
+				Image imagemCarregada = Image.FromFile(fotoPlaceholder);
+				pictureBoxFoto.Image = imagemCarregada;
+				pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
+			}
+
 			textBoxQtdDependentes.Text = string.Empty;
 			textBoxQtdHorasTrab.Text = string.Empty;
-
 			FuncId = 0;
 		}
 
@@ -87,7 +97,24 @@ namespace SisEnterprise_2._0
 
 		private void buttonDeletar_Click(object sender, EventArgs e)
 		{
+			if (FuncId != 0)
+			{
+				if (MessageBox.Show("Deseja deletar ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					using (var db = new ModelContext())
+					{
+						var funcionario = new Cadastro_Funcionario();
+						funcionario = db.Cadastro_Funcionario.Where(x => x.id_funcionario == FuncId).FirstOrDefault();
+						db.Cadastro_Funcionario.Remove(funcionario);
+						db.SaveChanges();
+					}
 
+					ClearData();
+					SetDataInGridView();
+					MessageBox.Show("Registro deletado com sucesso!");
+				}
+			}
+			else { MessageBox.Show("Não foi possível excluir, tente novamente"); }
 		}
 
 		private void buttonAdicionar_Click(object sender, EventArgs e)
@@ -148,7 +175,6 @@ namespace SisEnterprise_2._0
 					textBoxDataAdmissao.Text = funcionario.data_admissao.ToString();
 					textBoxDataAlteracao.Text = funcionario.data_alteracao.ToString();
 					textBoxDataCadastro.Text = funcionario.data_cadastro.ToString();
-
 					// Exiba a imagem no PictureBox
 					if (funcionario.path_foto3x4 != null)
 					{
@@ -161,18 +187,6 @@ namespace SisEnterprise_2._0
 							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
 						}
 					}
-					else 
-					{
-						string pastaImages = Path.Combine(Application.StartupPath, "Resource");
-						string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.png");
-						if (File.Exists(fotoPlaceholder))
-						{
-							Image imagemCarregada = Image.FromFile(fotoPlaceholder);
-							pictureBoxFoto.Image = imagemCarregada;
-							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
-						}
-					}
-
 					textBoxQtdDependentes.Text = funcionario.qtd_dependentes.ToString();
 					textBoxQtdHorasTrab.Text = funcionario.qtd_horas_trabalhadas.ToString();
 				}
@@ -186,6 +200,7 @@ namespace SisEnterprise_2._0
 				return; 
 			}
 
+
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Filter = "Imagens JPEG|*.jpg;*.jpeg";
 
@@ -193,14 +208,21 @@ namespace SisEnterprise_2._0
 			{
 				string caminhoDaImagem = openFileDialog.FileName;
 				string novoNomeDoArquivo = "func_" + (FuncId.ToString()) + ".jpg";
-
-				// Caminho para a pasta "Resources" na raiz do projeto
-				string pastaDestino = Path.Combine(Application.StartupPath, "Resource");
+				string pastaImages = Path.Combine(Application.StartupPath, "Resource");
+				string caminhoDestino = Path.Combine(pastaImages, novoNomeDoArquivo);
 
 				// Crie a pasta "Resources" se ela não existir
-				if (!Directory.Exists(pastaDestino)) {Directory.CreateDirectory(pastaDestino);}
+				if (!Directory.Exists(pastaImages)) {Directory.CreateDirectory(pastaImages);}
 
-				string caminhoDestino = Path.Combine(pastaDestino, novoNomeDoArquivo);
+				string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.png");
+				if (File.Exists(fotoPlaceholder))
+				{
+					Image imagemCarregada = Image.FromFile(fotoPlaceholder);
+					pictureBoxFoto.Image = imagemCarregada;
+					pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
+				}
+
+				// Copiar a foto nova
 				File.Copy(caminhoDaImagem, caminhoDestino, true);
 
 				using (var db = new ModelContext())

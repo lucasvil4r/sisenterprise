@@ -127,6 +127,12 @@
     <EmbeddedResource Include="FormCadFunc.resx">
       <DependentUpon>FormCadFunc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCalc13.resx">
+      <DependentUpon>FormCalc13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCalcFerias.resx">
+      <DependentUpon>FormCalcFerias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
