@@ -72,7 +72,7 @@
 			this.cadastroFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridViewResult = new System.Windows.Forms.DataGridView();
 			this.eventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.aliquota_real = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.proventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +86,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBoxTitle
@@ -112,16 +112,16 @@
 			this.groupBox3.Controls.Add(this.textBox2);
 			this.groupBox3.Controls.Add(this.pictureBoxFoto);
 			this.groupBox3.Controls.Add(this.textBox1);
-			this.groupBox3.Location = new System.Drawing.Point(825, 75);
+			this.groupBox3.Location = new System.Drawing.Point(825, 57);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(229, 557);
+			this.groupBox3.Size = new System.Drawing.Size(229, 581);
 			this.groupBox3.TabIndex = 40;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Dados Funcionário";
 			// 
 			// textBox5
 			// 
-			this.textBox5.Location = new System.Drawing.Point(25, 466);
+			this.textBox5.Location = new System.Drawing.Point(25, 464);
 			this.textBox5.Name = "textBox5";
 			this.textBox5.Size = new System.Drawing.Size(179, 20);
 			this.textBox5.TabIndex = 48;
@@ -129,7 +129,7 @@
 			// 
 			// textBox4
 			// 
-			this.textBox4.Location = new System.Drawing.Point(25, 399);
+			this.textBox4.Location = new System.Drawing.Point(25, 397);
 			this.textBox4.Name = "textBox4";
 			this.textBox4.Size = new System.Drawing.Size(179, 20);
 			this.textBox4.TabIndex = 47;
@@ -137,7 +137,7 @@
 			// 
 			// textBox3
 			// 
-			this.textBox3.Location = new System.Drawing.Point(25, 332);
+			this.textBox3.Location = new System.Drawing.Point(25, 330);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(179, 20);
 			this.textBox3.TabIndex = 46;
@@ -145,7 +145,7 @@
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(25, 265);
+			this.textBox2.Location = new System.Drawing.Point(25, 263);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(179, 20);
 			this.textBox2.TabIndex = 45;
@@ -153,7 +153,7 @@
 			// 
 			// pictureBoxFoto
 			// 
-			this.pictureBoxFoto.Location = new System.Drawing.Point(43, 38);
+			this.pictureBoxFoto.Location = new System.Drawing.Point(43, 30);
 			this.pictureBoxFoto.Name = "pictureBoxFoto";
 			this.pictureBoxFoto.Size = new System.Drawing.Size(142, 112);
 			this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -162,7 +162,7 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(25, 198);
+			this.textBox1.Location = new System.Drawing.Point(25, 196);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(179, 20);
 			this.textBox1.TabIndex = 44;
@@ -184,7 +184,7 @@
 			this.groupBox1.Controls.Add(this.textBoxId);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(12, 75);
+			this.groupBox1.Location = new System.Drawing.Point(12, 57);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(790, 216);
 			this.groupBox1.TabIndex = 41;
@@ -194,7 +194,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(392, 112);
+			this.label5.Location = new System.Drawing.Point(431, 112);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(84, 13);
 			this.label5.TabIndex = 43;
@@ -203,7 +203,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(49, 109);
+			this.label4.Location = new System.Drawing.Point(88, 109);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(117, 13);
 			this.label4.TabIndex = 42;
@@ -211,7 +211,7 @@
 			// 
 			// buttonLimpar
 			// 
-			this.buttonLimpar.Location = new System.Drawing.Point(410, 154);
+			this.buttonLimpar.Location = new System.Drawing.Point(449, 154);
 			this.buttonLimpar.Name = "buttonLimpar";
 			this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
 			this.buttonLimpar.TabIndex = 40;
@@ -220,7 +220,7 @@
 			// 
 			// buttonAdicionar
 			// 
-			this.buttonAdicionar.Location = new System.Drawing.Point(283, 154);
+			this.buttonAdicionar.Location = new System.Drawing.Point(322, 154);
 			this.buttonAdicionar.Name = "buttonAdicionar";
 			this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
 			this.buttonAdicionar.TabIndex = 39;
@@ -231,7 +231,7 @@
 			// 
 			this.comboBox3.DisplayMember = "nome";
 			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(482, 109);
+			this.comboBox3.Location = new System.Drawing.Point(521, 109);
 			this.comboBox3.Name = "comboBox3";
 			this.comboBox3.Size = new System.Drawing.Size(181, 21);
 			this.comboBox3.TabIndex = 38;
@@ -241,7 +241,7 @@
 			// 
 			this.comboBox2.DisplayMember = "nome";
 			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(175, 106);
+			this.comboBox2.Location = new System.Drawing.Point(214, 106);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(181, 21);
 			this.comboBox2.TabIndex = 37;
@@ -250,7 +250,7 @@
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(372, 73);
+			this.label14.Location = new System.Drawing.Point(411, 73);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(106, 13);
 			this.label14.TabIndex = 34;
@@ -258,7 +258,7 @@
 			// 
 			// textBoxQtdDependentes
 			// 
-			this.textBoxQtdDependentes.Location = new System.Drawing.Point(484, 71);
+			this.textBoxQtdDependentes.Location = new System.Drawing.Point(523, 71);
 			this.textBoxQtdDependentes.Name = "textBoxQtdDependentes";
 			this.textBoxQtdDependentes.Size = new System.Drawing.Size(179, 20);
 			this.textBoxQtdDependentes.TabIndex = 33;
@@ -266,7 +266,7 @@
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(400, 33);
+			this.label11.Location = new System.Drawing.Point(439, 33);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(76, 13);
 			this.label11.TabIndex = 35;
@@ -274,14 +274,14 @@
 			// 
 			// textBoxNome
 			// 
-			this.textBoxNome.Location = new System.Drawing.Point(175, 70);
+			this.textBoxNome.Location = new System.Drawing.Point(214, 70);
 			this.textBoxNome.Name = "textBoxNome";
 			this.textBoxNome.Size = new System.Drawing.Size(181, 20);
 			this.textBoxNome.TabIndex = 29;
 			// 
 			// textBoxQtdHorasTrab
 			// 
-			this.textBoxQtdHorasTrab.Location = new System.Drawing.Point(484, 30);
+			this.textBoxQtdHorasTrab.Location = new System.Drawing.Point(523, 30);
 			this.textBoxQtdHorasTrab.Name = "textBoxQtdHorasTrab";
 			this.textBoxQtdHorasTrab.Size = new System.Drawing.Size(179, 20);
 			this.textBoxQtdHorasTrab.TabIndex = 32;
@@ -290,7 +290,7 @@
 			// textBoxId
 			// 
 			this.textBoxId.Enabled = false;
-			this.textBoxId.Location = new System.Drawing.Point(175, 30);
+			this.textBoxId.Location = new System.Drawing.Point(214, 30);
 			this.textBoxId.Name = "textBoxId";
 			this.textBoxId.Size = new System.Drawing.Size(181, 20);
 			this.textBoxId.TabIndex = 28;
@@ -298,7 +298,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(72, 74);
+			this.label3.Location = new System.Drawing.Point(111, 74);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(94, 13);
 			this.label3.TabIndex = 30;
@@ -307,7 +307,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(72, 33);
+			this.label1.Location = new System.Drawing.Point(111, 33);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(97, 13);
 			this.label1.TabIndex = 31;
@@ -316,7 +316,7 @@
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.dataGridView);
-			this.groupBox2.Location = new System.Drawing.Point(12, 487);
+			this.groupBox2.Location = new System.Drawing.Point(12, 493);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(790, 145);
 			this.groupBox2.TabIndex = 42;
@@ -349,10 +349,10 @@
             this.qtddependentesDataGridViewTextBoxColumn,
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn});
 			this.dataGridView.DataSource = this.cadastroFuncionarioBindingSource;
-			this.dataGridView.Location = new System.Drawing.Point(39, 25);
+			this.dataGridView.Location = new System.Drawing.Point(39, 15);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.ReadOnly = true;
-			this.dataGridView.Size = new System.Drawing.Size(714, 105);
+			this.dataGridView.Size = new System.Drawing.Size(714, 97);
 			this.dataGridView.TabIndex = 12;
 			// 
 			// idfuncionarioDataGridViewTextBoxColumn
@@ -483,27 +483,27 @@
 			// 
 			// groupBox4
 			// 
-			this.groupBox4.Controls.Add(this.dataGridView1);
-			this.groupBox4.Location = new System.Drawing.Point(12, 297);
+			this.groupBox4.Controls.Add(this.dataGridViewResult);
+			this.groupBox4.Location = new System.Drawing.Point(12, 279);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(790, 184);
+			this.groupBox4.Size = new System.Drawing.Size(790, 208);
 			this.groupBox4.TabIndex = 44;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Resultado Cálculo";
 			// 
-			// dataGridView1
+			// dataGridViewResult
 			// 
-			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dataGridViewResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.eventos,
             this.aliquota_real,
             this.proventos,
             this.descontos});
-			this.dataGridView1.Location = new System.Drawing.Point(39, 28);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(714, 118);
-			this.dataGridView1.TabIndex = 0;
+			this.dataGridViewResult.Location = new System.Drawing.Point(39, 21);
+			this.dataGridViewResult.Name = "dataGridViewResult";
+			this.dataGridViewResult.Size = new System.Drawing.Size(714, 169);
+			this.dataGridViewResult.TabIndex = 0;
 			// 
 			// eventos
 			// 
@@ -557,7 +557,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.groupBox4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -609,7 +609,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn pathfoto3x4DataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn qtddependentesDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn qtdhorastrabalhadasDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dataGridViewResult;
 		private System.Windows.Forms.DataGridViewTextBoxColumn eventos;
 		private System.Windows.Forms.DataGridViewTextBoxColumn aliquota_real;
 		private System.Windows.Forms.DataGridViewTextBoxColumn proventos;
