@@ -53,7 +53,9 @@
 			this.textBoxDataNascimento = new System.Windows.Forms.MaskedTextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
+			this.textBoxNome = new System.Windows.Forms.TextBox();
 			this.textBoxId = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.textBoxSalario = new System.Windows.Forms.TextBox();
@@ -87,8 +89,6 @@
 			this.textBoxDataAlteracao = new System.Windows.Forms.MaskedTextBox();
 			this.buttonLimpar = new System.Windows.Forms.Button();
 			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
-			this.label3 = new System.Windows.Forms.Label();
-			this.textBoxNome = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
@@ -327,6 +327,13 @@
 			this.label8.TabIndex = 24;
 			this.label8.Text = "NASCIMENTO:";
 			// 
+			// textBoxNome
+			// 
+			this.textBoxNome.Location = new System.Drawing.Point(205, 137);
+			this.textBoxNome.Name = "textBoxNome";
+			this.textBoxNome.Size = new System.Drawing.Size(181, 20);
+			this.textBoxNome.TabIndex = 3;
+			// 
 			// textBoxId
 			// 
 			this.textBoxId.Enabled = false;
@@ -334,6 +341,15 @@
 			this.textBoxId.Name = "textBoxId";
 			this.textBoxId.Size = new System.Drawing.Size(181, 20);
 			this.textBoxId.TabIndex = 0;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(157, 140);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(42, 13);
+			this.label3.TabIndex = 10;
+			this.label3.Text = "NOME:";
 			// 
 			// label1
 			// 
@@ -423,7 +439,7 @@
 			this.dataGridView.ReadOnly = true;
 			this.dataGridView.Size = new System.Drawing.Size(1093, 145);
 			this.dataGridView.TabIndex = 12;
-			this.dataGridView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseDoubleClick);
+			this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseDoubleClick);
 			// 
 			// idfuncionarioDataGridViewTextBoxColumn
 			// 
@@ -634,22 +650,6 @@
 			// cadastro_DepartamentoTableAdapter
 			// 
 			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(157, 140);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(42, 13);
-			this.label3.TabIndex = 10;
-			this.label3.Text = "NOME:";
-			// 
-			// textBoxNome
-			// 
-			this.textBoxNome.Location = new System.Drawing.Point(205, 137);
-			this.textBoxNome.Name = "textBoxNome";
-			this.textBoxNome.Size = new System.Drawing.Size(181, 20);
-			this.textBoxNome.TabIndex = 3;
 			// 
 			// FormCadFunc
 			// 

@@ -31,25 +31,25 @@
 			this.components = new System.ComponentModel.Container();
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBoxEmail = new System.Windows.Forms.TextBox();
+			this.textBoxDept = new System.Windows.Forms.TextBox();
+			this.textBoxTelefone = new System.Windows.Forms.TextBox();
+			this.textBoxCPF = new System.Windows.Forms.TextBox();
 			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxNome = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.buttonLimpar = new System.Windows.Forms.Button();
-			this.buttonAdicionar = new System.Windows.Forms.Button();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.buttonCalcular = new System.Windows.Forms.Button();
+			this.comboBoxAdinta13 = new System.Windows.Forms.ComboBox();
+			this.comboBoxAbonoPecu = new System.Windows.Forms.ComboBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.textBoxQtdDependentes = new System.Windows.Forms.TextBox();
 			this.label11 = new System.Windows.Forms.Label();
-			this.textBoxNome = new System.Windows.Forms.TextBox();
-			this.textBoxQtdHorasTrab = new System.Windows.Forms.TextBox();
-			this.textBoxId = new System.Windows.Forms.TextBox();
+			this.textBoxHrExtra = new System.Windows.Forms.TextBox();
+			this.textBoxDiasFerias = new System.Windows.Forms.TextBox();
+			this.textBoxSalario = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -106,12 +106,12 @@
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.textBox5);
-			this.groupBox3.Controls.Add(this.textBox4);
-			this.groupBox3.Controls.Add(this.textBox3);
-			this.groupBox3.Controls.Add(this.textBox2);
+			this.groupBox3.Controls.Add(this.textBoxEmail);
+			this.groupBox3.Controls.Add(this.textBoxDept);
+			this.groupBox3.Controls.Add(this.textBoxTelefone);
+			this.groupBox3.Controls.Add(this.textBoxCPF);
 			this.groupBox3.Controls.Add(this.pictureBoxFoto);
-			this.groupBox3.Controls.Add(this.textBox1);
+			this.groupBox3.Controls.Add(this.textBoxNome);
 			this.groupBox3.Location = new System.Drawing.Point(825, 57);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(229, 581);
@@ -119,37 +119,41 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Dados Funcionário";
 			// 
-			// textBox5
+			// textBoxEmail
 			// 
-			this.textBox5.Location = new System.Drawing.Point(25, 464);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(179, 20);
-			this.textBox5.TabIndex = 48;
-			this.textBox5.TabStop = false;
+			this.textBoxEmail.Enabled = false;
+			this.textBoxEmail.Location = new System.Drawing.Point(25, 464);
+			this.textBoxEmail.Name = "textBoxEmail";
+			this.textBoxEmail.Size = new System.Drawing.Size(179, 20);
+			this.textBoxEmail.TabIndex = 48;
+			this.textBoxEmail.TabStop = false;
 			// 
-			// textBox4
+			// textBoxDept
 			// 
-			this.textBox4.Location = new System.Drawing.Point(25, 397);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(179, 20);
-			this.textBox4.TabIndex = 47;
-			this.textBox4.TabStop = false;
+			this.textBoxDept.Enabled = false;
+			this.textBoxDept.Location = new System.Drawing.Point(25, 397);
+			this.textBoxDept.Name = "textBoxDept";
+			this.textBoxDept.Size = new System.Drawing.Size(179, 20);
+			this.textBoxDept.TabIndex = 47;
+			this.textBoxDept.TabStop = false;
 			// 
-			// textBox3
+			// textBoxTelefone
 			// 
-			this.textBox3.Location = new System.Drawing.Point(25, 330);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(179, 20);
-			this.textBox3.TabIndex = 46;
-			this.textBox3.TabStop = false;
+			this.textBoxTelefone.Enabled = false;
+			this.textBoxTelefone.Location = new System.Drawing.Point(25, 330);
+			this.textBoxTelefone.Name = "textBoxTelefone";
+			this.textBoxTelefone.Size = new System.Drawing.Size(179, 20);
+			this.textBoxTelefone.TabIndex = 46;
+			this.textBoxTelefone.TabStop = false;
 			// 
-			// textBox2
+			// textBoxCPF
 			// 
-			this.textBox2.Location = new System.Drawing.Point(25, 263);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(179, 20);
-			this.textBox2.TabIndex = 45;
-			this.textBox2.TabStop = false;
+			this.textBoxCPF.Enabled = false;
+			this.textBoxCPF.Location = new System.Drawing.Point(25, 263);
+			this.textBoxCPF.Name = "textBoxCPF";
+			this.textBoxCPF.Size = new System.Drawing.Size(179, 20);
+			this.textBoxCPF.TabIndex = 45;
+			this.textBoxCPF.TabStop = false;
 			// 
 			// pictureBoxFoto
 			// 
@@ -160,28 +164,29 @@
 			this.pictureBoxFoto.TabIndex = 0;
 			this.pictureBoxFoto.TabStop = false;
 			// 
-			// textBox1
+			// textBoxNome
 			// 
-			this.textBox1.Location = new System.Drawing.Point(25, 196);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(179, 20);
-			this.textBox1.TabIndex = 44;
-			this.textBox1.TabStop = false;
+			this.textBoxNome.Enabled = false;
+			this.textBoxNome.Location = new System.Drawing.Point(25, 196);
+			this.textBoxNome.Name = "textBoxNome";
+			this.textBoxNome.Size = new System.Drawing.Size(179, 20);
+			this.textBoxNome.TabIndex = 44;
+			this.textBoxNome.TabStop = false;
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.buttonLimpar);
-			this.groupBox1.Controls.Add(this.buttonAdicionar);
-			this.groupBox1.Controls.Add(this.comboBox3);
-			this.groupBox1.Controls.Add(this.comboBox2);
+			this.groupBox1.Controls.Add(this.buttonCalcular);
+			this.groupBox1.Controls.Add(this.comboBoxAdinta13);
+			this.groupBox1.Controls.Add(this.comboBoxAbonoPecu);
 			this.groupBox1.Controls.Add(this.label14);
 			this.groupBox1.Controls.Add(this.textBoxQtdDependentes);
 			this.groupBox1.Controls.Add(this.label11);
-			this.groupBox1.Controls.Add(this.textBoxNome);
-			this.groupBox1.Controls.Add(this.textBoxQtdHorasTrab);
-			this.groupBox1.Controls.Add(this.textBoxId);
+			this.groupBox1.Controls.Add(this.textBoxHrExtra);
+			this.groupBox1.Controls.Add(this.textBoxDiasFerias);
+			this.groupBox1.Controls.Add(this.textBoxSalario);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Location = new System.Drawing.Point(12, 57);
@@ -217,35 +222,36 @@
 			this.buttonLimpar.TabIndex = 40;
 			this.buttonLimpar.Text = "Limpar";
 			this.buttonLimpar.UseVisualStyleBackColor = true;
+			this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
 			// 
-			// buttonAdicionar
+			// buttonCalcular
 			// 
-			this.buttonAdicionar.Location = new System.Drawing.Point(322, 154);
-			this.buttonAdicionar.Name = "buttonAdicionar";
-			this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
-			this.buttonAdicionar.TabIndex = 39;
-			this.buttonAdicionar.Text = "Calcular";
-			this.buttonAdicionar.UseVisualStyleBackColor = true;
+			this.buttonCalcular.Location = new System.Drawing.Point(322, 154);
+			this.buttonCalcular.Name = "buttonCalcular";
+			this.buttonCalcular.Size = new System.Drawing.Size(105, 31);
+			this.buttonCalcular.TabIndex = 39;
+			this.buttonCalcular.Text = "Calcular";
+			this.buttonCalcular.UseVisualStyleBackColor = true;
 			// 
-			// comboBox3
+			// comboBoxAdinta13
 			// 
-			this.comboBox3.DisplayMember = "nome";
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(521, 109);
-			this.comboBox3.Name = "comboBox3";
-			this.comboBox3.Size = new System.Drawing.Size(181, 21);
-			this.comboBox3.TabIndex = 38;
-			this.comboBox3.ValueMember = "id_departamento";
+			this.comboBoxAdinta13.DisplayMember = "nome";
+			this.comboBoxAdinta13.FormattingEnabled = true;
+			this.comboBoxAdinta13.Location = new System.Drawing.Point(521, 109);
+			this.comboBoxAdinta13.Name = "comboBoxAdinta13";
+			this.comboBoxAdinta13.Size = new System.Drawing.Size(181, 21);
+			this.comboBoxAdinta13.TabIndex = 38;
+			this.comboBoxAdinta13.ValueMember = "id_departamento";
 			// 
-			// comboBox2
+			// comboBoxAbonoPecu
 			// 
-			this.comboBox2.DisplayMember = "nome";
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(214, 106);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(181, 21);
-			this.comboBox2.TabIndex = 37;
-			this.comboBox2.ValueMember = "id_departamento";
+			this.comboBoxAbonoPecu.DisplayMember = "nome";
+			this.comboBoxAbonoPecu.FormattingEnabled = true;
+			this.comboBoxAbonoPecu.Location = new System.Drawing.Point(214, 106);
+			this.comboBoxAbonoPecu.Name = "comboBoxAbonoPecu";
+			this.comboBoxAbonoPecu.Size = new System.Drawing.Size(181, 21);
+			this.comboBoxAbonoPecu.TabIndex = 37;
+			this.comboBoxAbonoPecu.ValueMember = "id_departamento";
 			// 
 			// label14
 			// 
@@ -258,6 +264,7 @@
 			// 
 			// textBoxQtdDependentes
 			// 
+			this.textBoxQtdDependentes.Enabled = false;
 			this.textBoxQtdDependentes.Location = new System.Drawing.Point(523, 71);
 			this.textBoxQtdDependentes.Name = "textBoxQtdDependentes";
 			this.textBoxQtdDependentes.Size = new System.Drawing.Size(179, 20);
@@ -272,28 +279,28 @@
 			this.label11.TabIndex = 35;
 			this.label11.Text = "DIAS FÉRIAS:";
 			// 
-			// textBoxNome
+			// textBoxHrExtra
 			// 
-			this.textBoxNome.Location = new System.Drawing.Point(214, 70);
-			this.textBoxNome.Name = "textBoxNome";
-			this.textBoxNome.Size = new System.Drawing.Size(181, 20);
-			this.textBoxNome.TabIndex = 29;
+			this.textBoxHrExtra.Location = new System.Drawing.Point(214, 70);
+			this.textBoxHrExtra.Name = "textBoxHrExtra";
+			this.textBoxHrExtra.Size = new System.Drawing.Size(181, 20);
+			this.textBoxHrExtra.TabIndex = 29;
 			// 
-			// textBoxQtdHorasTrab
+			// textBoxDiasFerias
 			// 
-			this.textBoxQtdHorasTrab.Location = new System.Drawing.Point(523, 30);
-			this.textBoxQtdHorasTrab.Name = "textBoxQtdHorasTrab";
-			this.textBoxQtdHorasTrab.Size = new System.Drawing.Size(179, 20);
-			this.textBoxQtdHorasTrab.TabIndex = 32;
-			this.textBoxQtdHorasTrab.TabStop = false;
+			this.textBoxDiasFerias.Location = new System.Drawing.Point(523, 30);
+			this.textBoxDiasFerias.Name = "textBoxDiasFerias";
+			this.textBoxDiasFerias.Size = new System.Drawing.Size(179, 20);
+			this.textBoxDiasFerias.TabIndex = 32;
+			this.textBoxDiasFerias.TabStop = false;
 			// 
-			// textBoxId
+			// textBoxSalario
 			// 
-			this.textBoxId.Enabled = false;
-			this.textBoxId.Location = new System.Drawing.Point(214, 30);
-			this.textBoxId.Name = "textBoxId";
-			this.textBoxId.Size = new System.Drawing.Size(181, 20);
-			this.textBoxId.TabIndex = 28;
+			this.textBoxSalario.Enabled = false;
+			this.textBoxSalario.Location = new System.Drawing.Point(214, 30);
+			this.textBoxSalario.Name = "textBoxSalario";
+			this.textBoxSalario.Size = new System.Drawing.Size(181, 20);
+			this.textBoxSalario.TabIndex = 28;
 			// 
 			// label3
 			// 
@@ -349,11 +356,12 @@
             this.qtddependentesDataGridViewTextBoxColumn,
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn});
 			this.dataGridView.DataSource = this.cadastroFuncionarioBindingSource;
-			this.dataGridView.Location = new System.Drawing.Point(39, 15);
+			this.dataGridView.Location = new System.Drawing.Point(39, 28);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.ReadOnly = true;
 			this.dataGridView.Size = new System.Drawing.Size(714, 97);
 			this.dataGridView.TabIndex = 12;
+			this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
 			// 
 			// idfuncionarioDataGridViewTextBoxColumn
 			// 
@@ -366,14 +374,14 @@
 			// nomeDataGridViewTextBoxColumn
 			// 
 			this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-			this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+			this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
 			this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
 			this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// cpfDataGridViewTextBoxColumn
 			// 
 			this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
-			this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
+			this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
 			this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
 			this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
@@ -396,14 +404,14 @@
 			// salarioDataGridViewTextBoxColumn
 			// 
 			this.salarioDataGridViewTextBoxColumn.DataPropertyName = "salario";
-			this.salarioDataGridViewTextBoxColumn.HeaderText = "salario";
+			this.salarioDataGridViewTextBoxColumn.HeaderText = "Sálario";
 			this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
 			this.salarioDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// emailDataGridViewTextBoxColumn
 			// 
 			this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-			this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+			this.emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
 			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
 			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
@@ -571,29 +579,34 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.TextBox textBoxQtdDependentes;
-		private System.Windows.Forms.TextBox textBoxNome;
-		private System.Windows.Forms.TextBox textBoxId;
+		private System.Windows.Forms.TextBox textBoxHrExtra;
+		private System.Windows.Forms.TextBox textBoxSalario;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ComboBox comboBox3;
-		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox comboBoxAdinta13;
+		private System.Windows.Forms.ComboBox comboBoxAbonoPecu;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button buttonLimpar;
-		private System.Windows.Forms.Button buttonAdicionar;
+		private System.Windows.Forms.Button buttonCalcular;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.DataGridView dataGridView;
-		private System.Windows.Forms.TextBox textBox5;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBoxEmail;
+		private System.Windows.Forms.TextBox textBoxDept;
+		private System.Windows.Forms.TextBox textBoxTelefone;
+		private System.Windows.Forms.TextBox textBoxCPF;
+		private System.Windows.Forms.TextBox textBoxNome;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.TextBox textBoxQtdHorasTrab;
+		private System.Windows.Forms.TextBox textBoxDiasFerias;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private sisenterpriseDataSet sisenterpriseDataSet;
 		private System.Windows.Forms.BindingSource cadastroFuncionarioBindingSource;
 		private sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter cadastro_FuncionarioTableAdapter;
+		private System.Windows.Forms.DataGridView dataGridViewResult;
+		private System.Windows.Forms.DataGridViewTextBoxColumn eventos;
+		private System.Windows.Forms.DataGridViewTextBoxColumn aliquota_real;
+		private System.Windows.Forms.DataGridViewTextBoxColumn proventos;
+		private System.Windows.Forms.DataGridViewTextBoxColumn descontos;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idfuncionarioDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
@@ -609,10 +622,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn pathfoto3x4DataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn qtddependentesDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn qtdhorastrabalhadasDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridView dataGridViewResult;
-		private System.Windows.Forms.DataGridViewTextBoxColumn eventos;
-		private System.Windows.Forms.DataGridViewTextBoxColumn aliquota_real;
-		private System.Windows.Forms.DataGridViewTextBoxColumn proventos;
-		private System.Windows.Forms.DataGridViewTextBoxColumn descontos;
 	}
 }
