@@ -70,50 +70,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastro_Departamento.cs" />
-    <Compile Include="Cadastro_Ferias.cs" />
-    <Compile Include="Cadastro_Funcionario.cs" />
-    <Compile Include="FormCadDept.cs">
+    <Compile Include="Interface\Cadastro_Departamento.cs" />
+    <Compile Include="Interface\Cadastro_Ferias.cs" />
+    <Compile Include="Interface\Cadastro_Funcionario.cs" />
+    <Compile Include="Forms\FormCadDept.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadDept.Designer.cs">
+    <Compile Include="Forms\FormCadDept.Designer.cs">
       <DependentUpon>FormCadDept.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadFunc.cs">
+    <Compile Include="Forms\FormCadFunc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadFunc.Designer.cs">
+    <Compile Include="Forms\FormCadFunc.Designer.cs">
       <DependentUpon>FormCadFunc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCalc13.cs">
+    <Compile Include="Forms\FormCalc13.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCalc13.Designer.cs">
+    <Compile Include="Forms\FormCalc13.Designer.cs">
       <DependentUpon>FormCalc13.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCalcFerias.cs">
+    <Compile Include="Forms\FormCalcFerias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCalcFerias.Designer.cs">
+    <Compile Include="Forms\FormCalcFerias.Designer.cs">
       <DependentUpon>FormCalcFerias.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="Forms\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login_Usuario.cs" />
-    <Compile Include="Log_calculo_13.cs" />
-    <Compile Include="Log_calculo_ferias.cs" />
-    <Compile Include="Marcacao_de_ponto.cs" />
-    <Compile Include="ModelContext.cs" />
+    <Compile Include="Interface\Login_Usuario.cs" />
+    <Compile Include="Interface\Log_calculo_13.cs" />
+    <Compile Include="Interface\Log_calculo_ferias.cs" />
+    <Compile Include="Interface\Marcacao_de_ponto.cs" />
+    <Compile Include="Context\ModelContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sisenterpriseDataSet.Designer.cs">
@@ -121,22 +121,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sisenterpriseDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormCadDept.resx">
+    <EmbeddedResource Include="Forms\FormCadDept.resx">
       <DependentUpon>FormCadDept.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadFunc.resx">
+    <EmbeddedResource Include="Forms\FormCadFunc.resx">
       <DependentUpon>FormCadFunc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCalc13.resx">
+    <EmbeddedResource Include="Forms\FormCalc13.resx">
       <DependentUpon>FormCalc13.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCalcFerias.resx">
+    <EmbeddedResource Include="Forms\FormCalcFerias.resx">
       <DependentUpon>FormCalcFerias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
