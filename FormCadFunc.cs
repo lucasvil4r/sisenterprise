@@ -26,7 +26,7 @@ namespace SisEnterprise_2._0
 			this.cadastro_FuncionarioTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Funcionario);
 
 			string pastaImages = Path.Combine(Application.StartupPath, "Resource");
-			string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.png");
+			string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.jpg");
 			if (File.Exists(fotoPlaceholder))
 			{
 				Image imagemCarregada = Image.FromFile(fotoPlaceholder);
@@ -59,7 +59,7 @@ namespace SisEnterprise_2._0
 			textBoxDataCadastro.Text = string.Empty;
 
 			string pastaImages = Path.Combine(Application.StartupPath, "Resource");
-			string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.png");
+			string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.jpg");
 			if (File.Exists(fotoPlaceholder))
 			{
 				Image imagemCarregada = Image.FromFile(fotoPlaceholder);
@@ -85,7 +85,7 @@ namespace SisEnterprise_2._0
 					funcionario.data_nascimento = DateTime.Parse(textBoxDataNascimento.Text);
 					funcionario.salario = decimal.Parse(textBoxSalario.Text);
 					funcionario.email = textBoxEmail.Text;
-					funcionario.id_departamento = Int32.Parse(textBoxDept.Text);
+					funcionario.id_departamento = 1;
 					funcionario.telefone = textBoxTelefone.Text;
 					//funcionario.data_admissao = DateTime.Parse(textBoxDataAdmissao.Text);
 					funcionario.data_alteracao = DateTime.Now;
@@ -138,7 +138,7 @@ namespace SisEnterprise_2._0
 					funcionario.data_nascimento = DateTime.Parse(textBoxDataNascimento.Text);
 					funcionario.salario = decimal.Parse(textBoxSalario.Text);
 					funcionario.email = textBoxEmail.Text;
-					funcionario.id_departamento = Int32.Parse(textBoxDept.Text);
+					funcionario.id_departamento = 1;
 					funcionario.telefone = textBoxTelefone.Text;
 					funcionario.data_admissao = DateTime.Now;
 					funcionario.data_alteracao = DateTime.Now;
@@ -184,13 +184,23 @@ namespace SisEnterprise_2._0
 					textBoxDataAlteracao.Text = funcionario.data_alteracao.ToString();
 					textBoxDataCadastro.Text = funcionario.data_cadastro.ToString();
 					// Exiba a imagem no PictureBox
+					string pastaImages = Path.Combine(Application.StartupPath, "Resource");
 					if (funcionario.path_foto3x4 != null)
 					{
-						string pastaImages = Path.Combine(Application.StartupPath, "Resource");
 						string fotoFunc = Path.Combine(pastaImages, (funcionario.path_foto3x4.ToString()));
 						if (File.Exists(fotoFunc))
 						{
 							Image imagemCarregada = Image.FromFile(fotoFunc);
+							pictureBoxFoto.Image = imagemCarregada;
+							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
+						}
+					} 
+					else
+					{
+						string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.jpg");
+						if (File.Exists(fotoPlaceholder))
+						{
+							Image imagemCarregada = Image.FromFile(fotoPlaceholder);
 							pictureBoxFoto.Image = imagemCarregada;
 							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
 						}
@@ -222,7 +232,7 @@ namespace SisEnterprise_2._0
 				// Crie a pasta "Resources" se ela não existir
 				if (!Directory.Exists(pastaImages)) {Directory.CreateDirectory(pastaImages);}
 
-				string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.png");
+				string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.jpg");
 				if (File.Exists(fotoPlaceholder))
 				{
 					Image imagemCarregada = Image.FromFile(fotoPlaceholder);
