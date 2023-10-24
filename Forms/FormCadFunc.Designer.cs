@@ -726,7 +726,7 @@
             this.MinimumSize = new System.Drawing.Size(1253, 830);
             this.Name = "FormCadFunc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "1";
+            this.Text = "Cadastro de Funcionários";
             this.Load += new System.EventHandler(this.FormCadFunc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
