@@ -31,6 +31,9 @@
 			this.components = new System.ComponentModel.Container();
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.ComboBoxDept = new System.Windows.Forms.ComboBox();
+			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
 			this.textBoxEmail = new System.Windows.Forms.TextBox();
 			this.textBoxTelefone = new System.Windows.Forms.TextBox();
 			this.textBoxCPF = new System.Windows.Forms.TextBox();
@@ -69,7 +72,6 @@
 			this.qtddependentesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.qtdhorastrabalhadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cadastroFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.dataGridViewResult = new System.Windows.Forms.DataGridView();
 			this.eventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,19 +79,17 @@
 			this.proventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.descontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
-			this.ComboBoxDept = new System.Windows.Forms.ComboBox();
-			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
 			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBoxTitle
@@ -121,6 +121,29 @@
 			this.groupBox3.TabIndex = 40;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Dados Funcionário";
+			// 
+			// ComboBoxDept
+			// 
+			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
+			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
+			this.ComboBoxDept.DisplayMember = "nome";
+			this.ComboBoxDept.Enabled = false;
+			this.ComboBoxDept.FormattingEnabled = true;
+			this.ComboBoxDept.Location = new System.Drawing.Point(23, 396);
+			this.ComboBoxDept.Name = "ComboBoxDept";
+			this.ComboBoxDept.Size = new System.Drawing.Size(181, 21);
+			this.ComboBoxDept.TabIndex = 49;
+			this.ComboBoxDept.ValueMember = "id_departamento";
+			// 
+			// cadastroDepartamentoBindingSource
+			// 
+			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
+			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
+			// 
+			// sisenterpriseDataSet
+			// 
+			this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
+			this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// textBoxEmail
 			// 
@@ -478,11 +501,6 @@
 			this.cadastroFuncionarioBindingSource.DataMember = "Cadastro_Funcionario";
 			this.cadastroFuncionarioBindingSource.DataSource = this.sisenterpriseDataSet;
 			// 
-			// sisenterpriseDataSet
-			// 
-			this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
-			this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.dataGridViewResult);
@@ -531,24 +549,6 @@
 			// 
 			this.cadastro_FuncionarioTableAdapter.ClearBeforeFill = true;
 			// 
-			// ComboBoxDept
-			// 
-			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
-			this.ComboBoxDept.DisplayMember = "nome";
-			this.ComboBoxDept.Enabled = false;
-			this.ComboBoxDept.FormattingEnabled = true;
-			this.ComboBoxDept.Location = new System.Drawing.Point(23, 396);
-			this.ComboBoxDept.Name = "ComboBoxDept";
-			this.ComboBoxDept.Size = new System.Drawing.Size(181, 21);
-			this.ComboBoxDept.TabIndex = 49;
-			this.ComboBoxDept.ValueMember = "id_departamento";
-			// 
-			// cadastroDepartamentoBindingSource
-			// 
-			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
-			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
-			// 
 			// cadastro_DepartamentoTableAdapter
 			// 
 			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
@@ -565,7 +565,9 @@
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.textBoxTitle);
+			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(1079, 699);
+			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(1079, 699);
 			this.Name = "FormCalcFerias";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -573,16 +575,16 @@
 			this.Load += new System.EventHandler(this.FormCalcFerias_Load);
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.groupBox4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

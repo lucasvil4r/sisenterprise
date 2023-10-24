@@ -70,6 +70,8 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.ComboBoxDept = new System.Windows.Forms.ComboBox();
+			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.textBoxEmail = new System.Windows.Forms.TextBox();
 			this.textBoxTelefone = new System.Windows.Forms.TextBox();
 			this.textBoxCPF = new System.Windows.Forms.TextBox();
@@ -77,8 +79,6 @@
 			this.textBoxNome = new System.Windows.Forms.TextBox();
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.ComboBoxDept = new System.Windows.Forms.ComboBox();
-			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox4.SuspendLayout();
@@ -87,9 +87,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
 			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// qtddependentesDataGridViewTextBoxColumn
@@ -461,6 +461,24 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Dados Funcionário";
 			// 
+			// ComboBoxDept
+			// 
+			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
+			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
+			this.ComboBoxDept.DisplayMember = "nome";
+			this.ComboBoxDept.Enabled = false;
+			this.ComboBoxDept.FormattingEnabled = true;
+			this.ComboBoxDept.Location = new System.Drawing.Point(25, 398);
+			this.ComboBoxDept.Name = "ComboBoxDept";
+			this.ComboBoxDept.Size = new System.Drawing.Size(181, 21);
+			this.ComboBoxDept.TabIndex = 49;
+			this.ComboBoxDept.ValueMember = "id_departamento";
+			// 
+			// cadastroDepartamentoBindingSource
+			// 
+			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
+			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
+			// 
 			// textBoxEmail
 			// 
 			this.textBoxEmail.Enabled = false;
@@ -531,24 +549,6 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Lista de Funcionarios";
 			// 
-			// ComboBoxDept
-			// 
-			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
-			this.ComboBoxDept.DisplayMember = "nome";
-			this.ComboBoxDept.Enabled = false;
-			this.ComboBoxDept.FormattingEnabled = true;
-			this.ComboBoxDept.Location = new System.Drawing.Point(25, 398);
-			this.ComboBoxDept.Name = "ComboBoxDept";
-			this.ComboBoxDept.Size = new System.Drawing.Size(181, 21);
-			this.ComboBoxDept.TabIndex = 49;
-			this.ComboBoxDept.ValueMember = "id_departamento";
-			// 
-			// cadastroDepartamentoBindingSource
-			// 
-			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
-			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
-			// 
 			// cadastro_DepartamentoTableAdapter
 			// 
 			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
@@ -563,7 +563,9 @@
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.textBoxTitle);
 			this.Controls.Add(this.groupBox2);
+			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(1079, 699);
+			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(1079, 699);
 			this.Name = "FormCalc13";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -578,9 +580,9 @@
 			this.groupBox1.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
 			this.groupBox2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

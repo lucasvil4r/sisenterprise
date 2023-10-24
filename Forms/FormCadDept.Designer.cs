@@ -279,6 +279,7 @@
 			this.Controls.Add(this.groupBox1);
 			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(817, 562);
+			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(817, 562);
 			this.Name = "FormCadDept";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
