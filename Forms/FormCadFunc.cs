@@ -60,7 +60,7 @@ namespace SisEnterprise_2._0
 			textBoxDataNascimento.Text = string.Empty;
 			textBoxSalario.Text = string.Empty;
 			textBoxEmail.Text = string.Empty;
-			ComboBoxDept.Text = string.Empty;
+			//ComboBoxDept.Text = string.Empty;
 			textBoxTelefone.Text = string.Empty;
 			textBoxDataAdmissao.Text = string.Empty;
 			textBoxDataAlteracao.Text = string.Empty;
@@ -163,76 +163,6 @@ namespace SisEnterprise_2._0
 			}
 		}
 
-		private void dataGridView_MouseDoubleClick(object sender, MouseEventArgs e)
-		{
-			this.dataGridView_MouseClick();
-		}
-
-		private void dataGridView_MouseClick()
-		{
-			ClearData();
-			FuncId = Convert.ToInt32(dataGridView.CurrentRow.Cells["idfuncionarioDataGridViewTextBoxColumn"].Value);
-			if (dataGridView.CurrentCell.RowIndex != -1 && FuncId > 0)
-			{
-				using (var db = new ModelContext())
-				{
-					var funcionario = new Cadastro_Funcionario();
-					funcionario = db.Cadastro_Funcionario.Where(x => x.id_funcionario == FuncId).FirstOrDefault();
-
-					textBoxId.Text = funcionario.id_funcionario.ToString();
-					textBoxNome.Text = funcionario.nome;
-					textBoxCPF.Text = funcionario.cpf.ToString();
-					textBoxEndereco.Text = funcionario.endereco;
-					textBoxDataNascimento.Text = funcionario.data_nascimento.ToString();
-					textBoxSalario.Text = funcionario.salario.ToString();
-					textBoxEmail.Text = funcionario.email;
-					ComboBoxDept.SelectedValue = funcionario.id_departamento;
-					textBoxTelefone.Text = funcionario.telefone.ToString();
-					textBoxDataAdmissao.Text = funcionario.data_admissao.ToString();
-					textBoxDataAlteracao.Text = funcionario.data_alteracao.ToString();
-					textBoxDataCadastro.Text = funcionario.data_cadastro.ToString();
-					// Exiba a imagem no PictureBox
-					string pastaImages = Path.Combine(Application.StartupPath, "Resource");
-					if (funcionario.path_foto3x4 != null)
-					{
-						string fotoFunc = Path.Combine(pastaImages, (funcionario.path_foto3x4.ToString()));
-						if (File.Exists(fotoFunc))
-						{
-							Image imagemCarregada = Image.FromFile(fotoFunc);
-							pictureBoxFoto.Image = imagemCarregada;
-							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
-						}
-					} 
-					else
-					{
-						string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.jpg");
-						if (File.Exists(fotoPlaceholder))
-						{
-							Image imagemCarregada = Image.FromFile(fotoPlaceholder);
-							pictureBoxFoto.Image = imagemCarregada;
-							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
-						}
-					}
-					textBoxQtdDependentes.Text = funcionario.qtd_dependentes.ToString();
-					textBoxQtdHorasTrab.Text = funcionario.qtd_horas_trabalhadas.ToString();
-
-					// Carrega os arquivos do diretório para o DataGridView.
-					if (Directory.Exists(Path.Combine(Application.StartupPath, "Documento", ("func_" + FuncId.ToString()))))
-					{
-						// Obtém a lista de arquivos no diretório.
-						string[] files = Directory.GetFiles(Path.Combine(Application.StartupPath, "Documento", ("func_" + FuncId.ToString())));
-
-						// Adiciona os arquivos à grid.
-						foreach (string file in files)
-						{
-							string fileName = Path.GetFileName(file);
-							dataGridViewFiles.Rows.Add(fileName);
-						}
-					}
-				}
-			}
-		}
-
 		private void buttonImportFoto_MouseClick(object sender, MouseEventArgs e)
 		{
 			if (FuncId == 0) {
@@ -287,12 +217,6 @@ namespace SisEnterprise_2._0
 			ClearData();
 			SetDataInGridView();
 		}
-
-		private void dataGridViewFiles_MouseClick(object sender, MouseEventArgs e)
-		{
-
-		}
-
 		private void buttonImportaDocs_Click(object sender, EventArgs e)
 		{
 			if (FuncId == 0)
@@ -357,6 +281,71 @@ namespace SisEnterprise_2._0
 					}
 				}
 				ClearData();
+			}
+		}
+
+		private void dataGridView_MouseClick(object sender, MouseEventArgs e)
+		{
+			ClearData();
+			FuncId = Convert.ToInt32(dataGridView.CurrentRow.Cells["idfuncionarioDataGridViewTextBoxColumn"].Value);
+			if (dataGridView.CurrentCell.RowIndex != -1 && FuncId > 0)
+			{
+				using (var db = new ModelContext())
+				{
+					var funcionario = new Cadastro_Funcionario();
+					funcionario = db.Cadastro_Funcionario.Where(x => x.id_funcionario == FuncId).FirstOrDefault();
+
+					textBoxId.Text = funcionario.id_funcionario.ToString();
+					textBoxNome.Text = funcionario.nome;
+					textBoxCPF.Text = funcionario.cpf.ToString();
+					textBoxEndereco.Text = funcionario.endereco;
+					textBoxDataNascimento.Text = funcionario.data_nascimento.ToString();
+					textBoxSalario.Text = funcionario.salario.ToString();
+					textBoxEmail.Text = funcionario.email;
+					ComboBoxDept.SelectedValue = funcionario.id_departamento;
+					textBoxTelefone.Text = funcionario.telefone.ToString();
+					textBoxDataAdmissao.Text = funcionario.data_admissao.ToString();
+					textBoxDataAlteracao.Text = funcionario.data_alteracao.ToString();
+					textBoxDataCadastro.Text = funcionario.data_cadastro.ToString();
+					// Exiba a imagem no PictureBox
+					string pastaImages = Path.Combine(Application.StartupPath, "Resource");
+					if (funcionario.path_foto3x4 != null)
+					{
+						string fotoFunc = Path.Combine(pastaImages, (funcionario.path_foto3x4.ToString()));
+						if (File.Exists(fotoFunc))
+						{
+							Image imagemCarregada = Image.FromFile(fotoFunc);
+							pictureBoxFoto.Image = imagemCarregada;
+							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
+						}
+					}
+					else
+					{
+						string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.jpg");
+						if (File.Exists(fotoPlaceholder))
+						{
+							Image imagemCarregada = Image.FromFile(fotoPlaceholder);
+							pictureBoxFoto.Image = imagemCarregada;
+							pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
+						}
+					}
+					textBoxQtdDependentes.Text = funcionario.qtd_dependentes.ToString();
+					textBoxQtdHorasTrab.Text = funcionario.qtd_horas_trabalhadas.ToString();
+
+					// Carrega os arquivos do diretório para o DataGridView.
+					if (Directory.Exists(Path.Combine(Application.StartupPath, "Documento", ("func_" + FuncId.ToString()))))
+					{
+						// Obtém a lista de arquivos no diretório.
+						string[] files = Directory.GetFiles(Path.Combine(Application.StartupPath, "Documento", ("func_" + FuncId.ToString())));
+
+						// Adiciona os arquivos à grid.
+						foreach (string file in files)
+						{
+							string fileName = Path.GetFileName(file);
+							dataGridViewFiles.Rows.Add(fileName);
+						}
+					}
+				}
 			}
 		}
 	}

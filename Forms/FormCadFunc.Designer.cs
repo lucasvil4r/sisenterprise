@@ -252,7 +252,7 @@
 			// ComboBoxDept
 			// 
 			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.Never, null, "N2"));
-			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cadastroDepartamentoBindingSource, "nome", true, System.Windows.Forms.DataSourceUpdateMode.Never, null, "N2"));
+			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cadastroDepartamentoBindingSource, "nome", true, System.Windows.Forms.DataSourceUpdateMode.Never));
 			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
 			this.ComboBoxDept.DisplayMember = "nome";
 			this.ComboBoxDept.FormattingEnabled = true;
@@ -437,7 +437,7 @@
 			this.dataGridView.ReadOnly = true;
 			this.dataGridView.Size = new System.Drawing.Size(1093, 145);
 			this.dataGridView.TabIndex = 12;
-			this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseDoubleClick);
+			this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
 			// 
 			// idfuncionarioDataGridViewTextBoxColumn
 			// 
