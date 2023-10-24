@@ -1,8 +1,23 @@
-CREATE DATABASE sisenterprise;
+-- Conecte-se ao banco de dados mestre para criar o banco de dados sisenterprise
+USE master;
+GO
 
+-- Crie o banco de dados sisenterprise
+IF DB_ID('sisenterprise') IS NOT NULL
+BEGIN
+    PRINT 'O banco de dados "sisenterprise" já existe.';
+END
+ELSE
+BEGIN
+    CREATE DATABASE sisenterprise;
+    GO
+END
+
+-- Conecte-se ao banco de dados sisenterprise
 USE sisenterprise;
+GO
 
-/*-- Drop das tabelas se existirem*/
+-- Drop das tabelas se existirem
 IF OBJECT_ID('Cadastro_Departamento', 'U') IS NOT NULL
     DROP TABLE Cadastro_Departamento;
 
@@ -16,16 +31,15 @@ IF OBJECT_ID('Cadastro_Ferias', 'U') IS NOT NULL
     DROP TABLE Cadastro_Ferias;
 
 IF OBJECT_ID('Log_calculo_ferias', 'U') IS NOT NULL
-    DROP TABLE log_calculo_ferias;
+    DROP TABLE Log_calculo_ferias;
 
 IF OBJECT_ID('Log_calculo_13', 'U') IS NOT NULL
-    DROP TABLE log_calculo_13;
+    DROP TABLE Log_calculo_13;
 
 IF OBJECT_ID('Login_Usuario', 'U') IS NOT NULL
-    DROP TABLE Usuario;
+    DROP TABLE Login_Usuario;
 
-/*-- Criar a tabela Cadastro_Funcionario*/
-
+-- Criar a tabela Cadastro_Funcionario
 CREATE TABLE Cadastro_Funcionario (
     id_funcionario INT IDENTITY(1,1) PRIMARY KEY,
     nome VARCHAR(255),
@@ -44,7 +58,7 @@ CREATE TABLE Cadastro_Funcionario (
     qtd_horas_trabalhadas DECIMAL(5, 2)
 );
 
-/*-- Criar a tabela Marcacao_de_ponto*/
+-- Criar a tabela Marcacao_de_ponto
 CREATE TABLE Marcacao_de_ponto (
     id_marcacao_ponto INT IDENTITY(1,1) PRIMARY KEY,
     id_funcionario INT,
@@ -54,7 +68,7 @@ CREATE TABLE Marcacao_de_ponto (
     status VARCHAR(50)
 );
 
-/*-- Criar a tabela Cadastro_Departamento*/
+-- Criar a tabela Cadastro_Departamento
 CREATE TABLE Cadastro_Departamento (
     id_departamento INT IDENTITY(1,1) PRIMARY KEY,
     nome VARCHAR(255),
@@ -62,7 +76,7 @@ CREATE TABLE Cadastro_Departamento (
     supervisor VARCHAR(255)
 );
 
-/*-- Criar a tabela Cadastro_Ferias*/
+-- Criar a tabela Cadastro_Ferias
 CREATE TABLE Cadastro_Ferias (
     id_ferias INT IDENTITY(1,1) PRIMARY KEY,
     id_funcionario INT,
@@ -70,7 +84,7 @@ CREATE TABLE Cadastro_Ferias (
     data_cadastro DATETIME
 );
 
-/*-- Criar a tabela log_calculo_ferias*/
+-- Criar a tabela log_calculo_ferias
 CREATE TABLE Log_calculo_ferias (
     id_log_ferias INT IDENTITY(1,1) PRIMARY KEY,
     id_funcionario INT,
@@ -78,7 +92,7 @@ CREATE TABLE Log_calculo_ferias (
     data_calculo DATETIME
 );
 
-/*-- Criar a tabela log_calculo_13*/
+-- Criar a tabela log_calculo_13
 CREATE TABLE Log_calculo_13 (
     id_log_13 INT IDENTITY(1,1) PRIMARY KEY,
     id_funcionario INT,
@@ -86,7 +100,7 @@ CREATE TABLE Log_calculo_13 (
     data_calculo DATETIME
 );
 
-/*-- Criar a tabela Usuario*/
+-- Criar a tabela Usuario
 CREATE TABLE Login_Usuario (
     id_usuario INT IDENTITY(1,1) PRIMARY KEY,
     nome VARCHAR(255),
@@ -96,7 +110,7 @@ CREATE TABLE Login_Usuario (
     ativo BIT
 );
 
-/*-- Adicionar chaves estrangeiras para manter relacionamentos*/
+-- Adicionar chaves estrangeiras para manter relacionamentos
 ALTER TABLE Marcacao_de_ponto
 ADD CONSTRAINT FK_Marcacao_Funcionario FOREIGN KEY (id_funcionario)
 REFERENCES Cadastro_Funcionario(id_funcionario);
@@ -117,4 +131,8 @@ ALTER TABLE Cadastro_Funcionario
 ADD CONSTRAINT FK_Dept_Funcionario FOREIGN KEY (id_departamento)
 REFERENCES Cadastro_Departamento(id_departamento);
 
-/*-- Final do script*/
+-- Inserir o usuário ADMIN
+INSERT INTO Login_Usuario (nome, login, pass, tipo, ativo)
+VALUES ('ADMIN', 'ADMIN', '123456', '1', 1);
+
+-- Fim do script
