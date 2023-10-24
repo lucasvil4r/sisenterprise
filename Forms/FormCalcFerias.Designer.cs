@@ -32,7 +32,6 @@
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.textBoxEmail = new System.Windows.Forms.TextBox();
-			this.textBoxDept = new System.Windows.Forms.TextBox();
 			this.textBoxTelefone = new System.Windows.Forms.TextBox();
 			this.textBoxCPF = new System.Windows.Forms.TextBox();
 			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
@@ -78,6 +77,9 @@
 			this.proventos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.descontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
+			this.ComboBoxDept = new System.Windows.Forms.ComboBox();
+			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -87,6 +89,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBoxTitle
@@ -106,8 +109,8 @@
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.ComboBoxDept);
 			this.groupBox3.Controls.Add(this.textBoxEmail);
-			this.groupBox3.Controls.Add(this.textBoxDept);
 			this.groupBox3.Controls.Add(this.textBoxTelefone);
 			this.groupBox3.Controls.Add(this.textBoxCPF);
 			this.groupBox3.Controls.Add(this.pictureBoxFoto);
@@ -127,15 +130,6 @@
 			this.textBoxEmail.Size = new System.Drawing.Size(179, 20);
 			this.textBoxEmail.TabIndex = 48;
 			this.textBoxEmail.TabStop = false;
-			// 
-			// textBoxDept
-			// 
-			this.textBoxDept.Enabled = false;
-			this.textBoxDept.Location = new System.Drawing.Point(25, 397);
-			this.textBoxDept.Name = "textBoxDept";
-			this.textBoxDept.Size = new System.Drawing.Size(179, 20);
-			this.textBoxDept.TabIndex = 47;
-			this.textBoxDept.TabStop = false;
 			// 
 			// textBoxTelefone
 			// 
@@ -537,6 +531,28 @@
 			// 
 			this.cadastro_FuncionarioTableAdapter.ClearBeforeFill = true;
 			// 
+			// ComboBoxDept
+			// 
+			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
+			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
+			this.ComboBoxDept.DisplayMember = "nome";
+			this.ComboBoxDept.Enabled = false;
+			this.ComboBoxDept.FormattingEnabled = true;
+			this.ComboBoxDept.Location = new System.Drawing.Point(23, 396);
+			this.ComboBoxDept.Name = "ComboBoxDept";
+			this.ComboBoxDept.Size = new System.Drawing.Size(181, 21);
+			this.ComboBoxDept.TabIndex = 49;
+			this.ComboBoxDept.ValueMember = "id_departamento";
+			// 
+			// cadastroDepartamentoBindingSource
+			// 
+			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
+			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
+			// 
+			// cadastro_DepartamentoTableAdapter
+			// 
+			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
+			// 
 			// FormCalcFerias
 			// 
 			this.AccessibleDescription = "Cálculo de Férias";
@@ -566,6 +582,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
 			this.groupBox4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -592,7 +609,6 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.DataGridView dataGridView;
 		private System.Windows.Forms.TextBox textBoxEmail;
-		private System.Windows.Forms.TextBox textBoxDept;
 		private System.Windows.Forms.TextBox textBoxTelefone;
 		private System.Windows.Forms.TextBox textBoxCPF;
 		private System.Windows.Forms.TextBox textBoxNome;
@@ -622,5 +638,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn pathfoto3x4DataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn qtddependentesDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn qtdhorastrabalhadasDataGridViewTextBoxColumn;
+		private System.Windows.Forms.ComboBox ComboBoxDept;
+		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
+		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
 	}
 }

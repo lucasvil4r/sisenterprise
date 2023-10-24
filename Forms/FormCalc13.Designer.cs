@@ -71,13 +71,15 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.textBoxEmail = new System.Windows.Forms.TextBox();
-			this.textBoxDept = new System.Windows.Forms.TextBox();
 			this.textBoxTelefone = new System.Windows.Forms.TextBox();
 			this.textBoxCPF = new System.Windows.Forms.TextBox();
 			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
 			this.textBoxNome = new System.Windows.Forms.TextBox();
 			this.textBoxTitle = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.ComboBoxDept = new System.Windows.Forms.ComboBox();
+			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
@@ -87,6 +89,7 @@
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
 			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// qtddependentesDataGridViewTextBoxColumn
@@ -445,8 +448,8 @@
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.ComboBoxDept);
 			this.groupBox3.Controls.Add(this.textBoxEmail);
-			this.groupBox3.Controls.Add(this.textBoxDept);
 			this.groupBox3.Controls.Add(this.textBoxTelefone);
 			this.groupBox3.Controls.Add(this.textBoxCPF);
 			this.groupBox3.Controls.Add(this.pictureBoxFoto);
@@ -466,15 +469,6 @@
 			this.textBoxEmail.Size = new System.Drawing.Size(179, 20);
 			this.textBoxEmail.TabIndex = 48;
 			this.textBoxEmail.TabStop = false;
-			// 
-			// textBoxDept
-			// 
-			this.textBoxDept.Enabled = false;
-			this.textBoxDept.Location = new System.Drawing.Point(25, 397);
-			this.textBoxDept.Name = "textBoxDept";
-			this.textBoxDept.Size = new System.Drawing.Size(179, 20);
-			this.textBoxDept.TabIndex = 47;
-			this.textBoxDept.TabStop = false;
 			// 
 			// textBoxTelefone
 			// 
@@ -537,6 +531,28 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Lista de Funcionarios";
 			// 
+			// ComboBoxDept
+			// 
+			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
+			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
+			this.ComboBoxDept.DisplayMember = "nome";
+			this.ComboBoxDept.Enabled = false;
+			this.ComboBoxDept.FormattingEnabled = true;
+			this.ComboBoxDept.Location = new System.Drawing.Point(25, 398);
+			this.ComboBoxDept.Name = "ComboBoxDept";
+			this.ComboBoxDept.Size = new System.Drawing.Size(181, 21);
+			this.ComboBoxDept.TabIndex = 49;
+			this.ComboBoxDept.ValueMember = "id_departamento";
+			// 
+			// cadastroDepartamentoBindingSource
+			// 
+			this.cadastroDepartamentoBindingSource.DataMember = "Cadastro_Departamento";
+			this.cadastroDepartamentoBindingSource.DataSource = this.sisenterpriseDataSet;
+			// 
+			// cadastro_DepartamentoTableAdapter
+			// 
+			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
+			// 
 			// FormCalc13
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,6 +580,7 @@
 			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
 			this.groupBox2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -613,12 +630,14 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.TextBox textBoxEmail;
-		private System.Windows.Forms.TextBox textBoxDept;
 		private System.Windows.Forms.TextBox textBoxTelefone;
 		private System.Windows.Forms.TextBox textBoxCPF;
 		private System.Windows.Forms.PictureBox pictureBoxFoto;
 		private System.Windows.Forms.TextBox textBoxNome;
 		internal System.Windows.Forms.TextBox textBoxTitle;
 		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.ComboBox ComboBoxDept;
+		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
+		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
 	}
 }

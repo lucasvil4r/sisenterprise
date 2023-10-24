@@ -43,7 +43,7 @@
 			this.textBoxEmail = new System.Windows.Forms.TextBox();
 			this.textBoxQtdHorasTrab = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.textBoxDept = new System.Windows.Forms.ComboBox();
+			this.ComboBoxDept = new System.Windows.Forms.ComboBox();
 			this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
 			this.label2 = new System.Windows.Forms.Label();
@@ -82,17 +82,17 @@
 			this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
+			this.buttonImportFoto = new System.Windows.Forms.Button();
 			this.label13 = new System.Windows.Forms.Label();
 			this.textBoxDataCadastro = new System.Windows.Forms.MaskedTextBox();
 			this.label15 = new System.Windows.Forms.Label();
 			this.textBoxDataAlteracao = new System.Windows.Forms.MaskedTextBox();
 			this.buttonLimpar = new System.Windows.Forms.Button();
 			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
-			this.buttonImportFoto = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.buttonImportaDocs = new System.Windows.Forms.Button();
 			this.dataGridViewFiles = new System.Windows.Forms.DataGridView();
 			this.filesFunc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.buttonImportaDocs = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
@@ -220,7 +220,7 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.textBoxDept);
+			this.groupBox1.Controls.Add(this.ComboBoxDept);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.textBoxTelefone);
 			this.groupBox1.Controls.Add(this.textBoxCPF);
@@ -249,16 +249,18 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Dados Funcionarios";
 			// 
-			// textBoxDept
+			// ComboBoxDept
 			// 
-			this.textBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
-			this.textBoxDept.DisplayMember = "nome";
-			this.textBoxDept.FormattingEnabled = true;
-			this.textBoxDept.Location = new System.Drawing.Point(124, 169);
-			this.textBoxDept.Name = "textBoxDept";
-			this.textBoxDept.Size = new System.Drawing.Size(181, 21);
-			this.textBoxDept.TabIndex = 31;
-			this.textBoxDept.ValueMember = "id_departamento";
+			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cadastroDepartamentoBindingSource, "id_departamento", true, System.Windows.Forms.DataSourceUpdateMode.Never, null, "N2"));
+			this.ComboBoxDept.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cadastroDepartamentoBindingSource, "nome", true, System.Windows.Forms.DataSourceUpdateMode.Never, null, "N2"));
+			this.ComboBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
+			this.ComboBoxDept.DisplayMember = "nome";
+			this.ComboBoxDept.FormattingEnabled = true;
+			this.ComboBoxDept.Location = new System.Drawing.Point(124, 169);
+			this.ComboBoxDept.Name = "ComboBoxDept";
+			this.ComboBoxDept.Size = new System.Drawing.Size(181, 21);
+			this.ComboBoxDept.TabIndex = 31;
+			this.ComboBoxDept.ValueMember = "id_departamento";
 			// 
 			// cadastroDepartamentoBindingSource
 			// 
@@ -595,6 +597,16 @@
 			this.pictureBoxFoto.TabIndex = 0;
 			this.pictureBoxFoto.TabStop = false;
 			// 
+			// buttonImportFoto
+			// 
+			this.buttonImportFoto.Location = new System.Drawing.Point(82, 252);
+			this.buttonImportFoto.Name = "buttonImportFoto";
+			this.buttonImportFoto.Size = new System.Drawing.Size(105, 31);
+			this.buttonImportFoto.TabIndex = 36;
+			this.buttonImportFoto.Text = "Importar Foto:";
+			this.buttonImportFoto.UseVisualStyleBackColor = true;
+			this.buttonImportFoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonImportFoto_MouseClick);
+			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
@@ -647,16 +659,6 @@
 			// 
 			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
 			// 
-			// buttonImportFoto
-			// 
-			this.buttonImportFoto.Location = new System.Drawing.Point(82, 252);
-			this.buttonImportFoto.Name = "buttonImportFoto";
-			this.buttonImportFoto.Size = new System.Drawing.Size(105, 31);
-			this.buttonImportFoto.TabIndex = 36;
-			this.buttonImportFoto.Text = "Importar Foto:";
-			this.buttonImportFoto.UseVisualStyleBackColor = true;
-			this.buttonImportFoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonImportFoto_MouseClick);
-			// 
 			// groupBox4
 			// 
 			this.groupBox4.Controls.Add(this.dataGridViewFiles);
@@ -667,16 +669,6 @@
 			this.groupBox4.TabIndex = 37;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Documentos";
-			// 
-			// buttonImportaDocs
-			// 
-			this.buttonImportaDocs.Location = new System.Drawing.Point(63, 352);
-			this.buttonImportaDocs.Name = "buttonImportaDocs";
-			this.buttonImportaDocs.Size = new System.Drawing.Size(117, 31);
-			this.buttonImportaDocs.TabIndex = 37;
-			this.buttonImportaDocs.Text = "Importar Documento:";
-			this.buttonImportaDocs.UseVisualStyleBackColor = true;
-			this.buttonImportaDocs.Click += new System.EventHandler(this.buttonImportaDocs_Click);
 			// 
 			// dataGridViewFiles
 			// 
@@ -696,6 +688,17 @@
 			this.filesFunc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
 			this.filesFunc.HeaderText = "Arquivos";
 			this.filesFunc.Name = "filesFunc";
+			this.filesFunc.ReadOnly = true;
+			// 
+			// buttonImportaDocs
+			// 
+			this.buttonImportaDocs.Location = new System.Drawing.Point(63, 352);
+			this.buttonImportaDocs.Name = "buttonImportaDocs";
+			this.buttonImportaDocs.Size = new System.Drawing.Size(117, 31);
+			this.buttonImportaDocs.TabIndex = 37;
+			this.buttonImportaDocs.Text = "Importar Documento:";
+			this.buttonImportaDocs.UseVisualStyleBackColor = true;
+			this.buttonImportaDocs.Click += new System.EventHandler(this.buttonImportaDocs_Click);
 			// 
 			// FormCadFunc
 			// 
@@ -797,7 +800,7 @@
 		private System.Windows.Forms.MaskedTextBox textBoxDataAlteracao;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Button buttonLimpar;
-		private System.Windows.Forms.ComboBox textBoxDept;
+		private System.Windows.Forms.ComboBox ComboBoxDept;
 		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
 		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
 		private System.Windows.Forms.TextBox textBoxNome;

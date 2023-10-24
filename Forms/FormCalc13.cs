@@ -22,8 +22,10 @@ namespace SisEnterprise_2._0
 
 		private void FormCalc13_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'sisenterpriseDataSet.Cadastro_Funcionario' table. You can move, or remove it, as needed.
-			this.cadastro_FuncionarioTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Funcionario);
+            // TODO: This line of code loads data into the 'sisenterpriseDataSet.Cadastro_Departamento' table. You can move, or remove it, as needed.
+            this.cadastro_DepartamentoTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Departamento);
+            // TODO: This line of code loads data into the 'sisenterpriseDataSet.Cadastro_Funcionario' table. You can move, or remove it, as needed.
+            this.cadastro_FuncionarioTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Funcionario);
 
 			// Adicione linhas à grade
 			object[] row1 = { "Salário / Férias" };
@@ -64,7 +66,7 @@ namespace SisEnterprise_2._0
 					textBoxEmail.Text = funcionario.data_nascimento.ToString();
 					textBoxSalario.Text = funcionario.salario.ToString();
 					textBoxEmail.Text = funcionario.email;
-					textBoxDept.Text = funcionario.id_departamento.ToString();
+					ComboBoxDept.SelectedValue = funcionario.id_departamento;
 					textBoxTelefone.Text = funcionario.telefone.ToString();
 					// Exiba a imagem no PictureBox
 					string pastaImages = Path.Combine(Application.StartupPath, "Resource");
@@ -98,7 +100,7 @@ namespace SisEnterprise_2._0
 			textBoxCPF.Text = string.Empty;
 			textBoxSalario.Text = string.Empty;
 			textBoxEmail.Text = string.Empty;
-			textBoxDept.Text = string.Empty;
+			ComboBoxDept.SelectedValue = string.Empty;
 			textBoxTelefone.Text = string.Empty;
 
 			string pastaImages = Path.Combine(Application.StartupPath, "Resource");

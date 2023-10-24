@@ -60,7 +60,7 @@ namespace SisEnterprise_2._0
 			textBoxDataNascimento.Text = string.Empty;
 			textBoxSalario.Text = string.Empty;
 			textBoxEmail.Text = string.Empty;
-			textBoxDept.Text = string.Empty;
+			ComboBoxDept.Text = string.Empty;
 			textBoxTelefone.Text = string.Empty;
 			textBoxDataAdmissao.Text = string.Empty;
 			textBoxDataAlteracao.Text = string.Empty;
@@ -92,7 +92,7 @@ namespace SisEnterprise_2._0
 					funcionario.data_nascimento = DateTime.Parse(textBoxDataNascimento.Text);
 					funcionario.salario = decimal.Parse(textBoxSalario.Text);
 					funcionario.email = textBoxEmail.Text;
-					funcionario.id_departamento = 1;
+					funcionario.id_departamento = (int)ComboBoxDept.SelectedValue;
 					funcionario.telefone = textBoxTelefone.Text;
 					//funcionario.data_admissao = DateTime.Parse(textBoxDataAdmissao.Text);
 					funcionario.data_alteracao = DateTime.Now;
@@ -145,7 +145,7 @@ namespace SisEnterprise_2._0
 					funcionario.data_nascimento = DateTime.Parse(textBoxDataNascimento.Text);
 					funcionario.salario = decimal.Parse(textBoxSalario.Text);
 					funcionario.email = textBoxEmail.Text;
-					funcionario.id_departamento = 1;
+					funcionario.id_departamento = (int)ComboBoxDept.SelectedValue;
 					funcionario.telefone = textBoxTelefone.Text;
 					funcionario.data_admissao = DateTime.Now;
 					funcionario.data_alteracao = DateTime.Now;
@@ -186,7 +186,7 @@ namespace SisEnterprise_2._0
 					textBoxDataNascimento.Text = funcionario.data_nascimento.ToString();
 					textBoxSalario.Text = funcionario.salario.ToString();
 					textBoxEmail.Text = funcionario.email;
-					textBoxDept.Text = funcionario.id_departamento.ToString();
+					ComboBoxDept.SelectedValue = funcionario.id_departamento;
 					textBoxTelefone.Text = funcionario.telefone.ToString();
 					textBoxDataAdmissao.Text = funcionario.data_admissao.ToString();
 					textBoxDataAlteracao.Text = funcionario.data_alteracao.ToString();
