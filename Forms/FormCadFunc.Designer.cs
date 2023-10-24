@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.buttonImportFoto = new System.Windows.Forms.Button();
 			this.buttonAdicionar = new System.Windows.Forms.Button();
 			this.buttonSalvar = new System.Windows.Forms.Button();
 			this.buttonDeletar = new System.Windows.Forms.Button();
@@ -89,6 +88,11 @@
 			this.textBoxDataAlteracao = new System.Windows.Forms.MaskedTextBox();
 			this.buttonLimpar = new System.Windows.Forms.Button();
 			this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
+			this.buttonImportFoto = new System.Windows.Forms.Button();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.buttonImportaDocs = new System.Windows.Forms.Button();
+			this.dataGridViewFiles = new System.Windows.Forms.DataGridView();
+			this.filesFunc = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
@@ -97,17 +101,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
+			this.groupBox4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewFiles)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// buttonImportFoto
-			// 
-			this.buttonImportFoto.Location = new System.Drawing.Point(102, 247);
-			this.buttonImportFoto.Name = "buttonImportFoto";
-			this.buttonImportFoto.Size = new System.Drawing.Size(105, 31);
-			this.buttonImportFoto.TabIndex = 36;
-			this.buttonImportFoto.Text = "Importar Foto:";
-			this.buttonImportFoto.UseVisualStyleBackColor = true;
-			this.buttonImportFoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonImportFoto_MouseClick);
 			// 
 			// buttonAdicionar
 			// 
@@ -142,7 +138,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(129, 307);
+			this.label9.Location = new System.Drawing.Point(48, 296);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(70, 13);
 			this.label9.TabIndex = 21;
@@ -151,7 +147,7 @@
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(417, 137);
+			this.label14.Location = new System.Drawing.Point(336, 126);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(91, 13);
 			this.label14.TabIndex = 22;
@@ -160,7 +156,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(930, 390);
+			this.label7.Location = new System.Drawing.Point(959, 390);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(98, 13);
 			this.label7.TabIndex = 23;
@@ -169,7 +165,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(442, 266);
+			this.label6.Location = new System.Drawing.Point(361, 255);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(66, 13);
 			this.label6.TabIndex = 25;
@@ -178,7 +174,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(466, 226);
+			this.label4.Location = new System.Drawing.Point(385, 215);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(42, 13);
 			this.label4.TabIndex = 26;
@@ -187,7 +183,7 @@
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(409, 95);
+			this.label11.Location = new System.Drawing.Point(328, 84);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(99, 13);
 			this.label11.TabIndex = 27;
@@ -195,28 +191,28 @@
 			// 
 			// textBoxQtdDependentes
 			// 
-			this.textBoxQtdDependentes.Location = new System.Drawing.Point(514, 133);
+			this.textBoxQtdDependentes.Location = new System.Drawing.Point(433, 122);
 			this.textBoxQtdDependentes.Name = "textBoxQtdDependentes";
 			this.textBoxQtdDependentes.Size = new System.Drawing.Size(179, 20);
 			this.textBoxQtdDependentes.TabIndex = 18;
 			// 
 			// textBoxEndereco
 			// 
-			this.textBoxEndereco.Location = new System.Drawing.Point(205, 304);
+			this.textBoxEndereco.Location = new System.Drawing.Point(124, 293);
 			this.textBoxEndereco.Name = "textBoxEndereco";
 			this.textBoxEndereco.Size = new System.Drawing.Size(181, 20);
 			this.textBoxEndereco.TabIndex = 30;
 			// 
 			// textBoxEmail
 			// 
-			this.textBoxEmail.Location = new System.Drawing.Point(515, 223);
+			this.textBoxEmail.Location = new System.Drawing.Point(434, 212);
 			this.textBoxEmail.Name = "textBoxEmail";
 			this.textBoxEmail.Size = new System.Drawing.Size(178, 20);
 			this.textBoxEmail.TabIndex = 29;
 			// 
 			// textBoxQtdHorasTrab
 			// 
-			this.textBoxQtdHorasTrab.Location = new System.Drawing.Point(514, 92);
+			this.textBoxQtdHorasTrab.Location = new System.Drawing.Point(433, 81);
 			this.textBoxQtdHorasTrab.Name = "textBoxQtdHorasTrab";
 			this.textBoxQtdHorasTrab.Size = new System.Drawing.Size(179, 20);
 			this.textBoxQtdHorasTrab.TabIndex = 16;
@@ -248,7 +244,7 @@
 			this.groupBox1.Controls.Add(this.textBoxSalario);
 			this.groupBox1.Location = new System.Drawing.Point(40, 72);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(825, 416);
+			this.groupBox1.Size = new System.Drawing.Size(635, 394);
 			this.groupBox1.TabIndex = 31;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Dados Funcionarios";
@@ -258,7 +254,7 @@
 			this.textBoxDept.DataSource = this.cadastroDepartamentoBindingSource;
 			this.textBoxDept.DisplayMember = "nome";
 			this.textBoxDept.FormattingEnabled = true;
-			this.textBoxDept.Location = new System.Drawing.Point(205, 180);
+			this.textBoxDept.Location = new System.Drawing.Point(124, 169);
 			this.textBoxDept.Name = "textBoxDept";
 			this.textBoxDept.Size = new System.Drawing.Size(181, 21);
 			this.textBoxDept.TabIndex = 31;
@@ -277,7 +273,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(169, 266);
+			this.label2.Location = new System.Drawing.Point(88, 255);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(30, 13);
 			this.label2.TabIndex = 28;
@@ -285,7 +281,7 @@
 			// 
 			// textBoxTelefone
 			// 
-			this.textBoxTelefone.Location = new System.Drawing.Point(515, 263);
+			this.textBoxTelefone.Location = new System.Drawing.Point(434, 252);
 			this.textBoxTelefone.Mask = "(00) 0000-0000";
 			this.textBoxTelefone.Name = "textBoxTelefone";
 			this.textBoxTelefone.Size = new System.Drawing.Size(181, 20);
@@ -293,7 +289,7 @@
 			// 
 			// textBoxCPF
 			// 
-			this.textBoxCPF.Location = new System.Drawing.Point(205, 263);
+			this.textBoxCPF.Location = new System.Drawing.Point(124, 252);
 			this.textBoxCPF.Mask = "000.000.000-00";
 			this.textBoxCPF.Name = "textBoxCPF";
 			this.textBoxCPF.Size = new System.Drawing.Size(181, 20);
@@ -302,7 +298,7 @@
 			// 
 			// textBoxDataNascimento
 			// 
-			this.textBoxDataNascimento.Location = new System.Drawing.Point(514, 176);
+			this.textBoxDataNascimento.Location = new System.Drawing.Point(433, 165);
 			this.textBoxDataNascimento.Mask = "00/00/0000";
 			this.textBoxDataNascimento.Name = "textBoxDataNascimento";
 			this.textBoxDataNascimento.Size = new System.Drawing.Size(179, 20);
@@ -312,7 +308,7 @@
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(143, 226);
+			this.label10.Location = new System.Drawing.Point(62, 215);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(56, 13);
 			this.label10.TabIndex = 10;
@@ -321,7 +317,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(427, 180);
+			this.label8.Location = new System.Drawing.Point(346, 169);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(81, 13);
 			this.label8.TabIndex = 24;
@@ -329,7 +325,7 @@
 			// 
 			// textBoxNome
 			// 
-			this.textBoxNome.Location = new System.Drawing.Point(205, 137);
+			this.textBoxNome.Location = new System.Drawing.Point(124, 126);
 			this.textBoxNome.Name = "textBoxNome";
 			this.textBoxNome.Size = new System.Drawing.Size(181, 20);
 			this.textBoxNome.TabIndex = 3;
@@ -337,7 +333,7 @@
 			// textBoxId
 			// 
 			this.textBoxId.Enabled = false;
-			this.textBoxId.Location = new System.Drawing.Point(205, 92);
+			this.textBoxId.Location = new System.Drawing.Point(124, 81);
 			this.textBoxId.Name = "textBoxId";
 			this.textBoxId.Size = new System.Drawing.Size(181, 20);
 			this.textBoxId.TabIndex = 0;
@@ -345,7 +341,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(157, 140);
+			this.label3.Location = new System.Drawing.Point(76, 129);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(42, 13);
 			this.label3.TabIndex = 10;
@@ -354,7 +350,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(178, 95);
+			this.label1.Location = new System.Drawing.Point(97, 84);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(21, 13);
 			this.label1.TabIndex = 10;
@@ -363,7 +359,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(101, 183);
+			this.label5.Location = new System.Drawing.Point(20, 172);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(100, 13);
 			this.label5.TabIndex = 10;
@@ -371,7 +367,7 @@
 			// 
 			// textBoxSalario
 			// 
-			this.textBoxSalario.Location = new System.Drawing.Point(205, 223);
+			this.textBoxSalario.Location = new System.Drawing.Point(124, 212);
 			this.textBoxSalario.Name = "textBoxSalario";
 			this.textBoxSalario.Size = new System.Drawing.Size(181, 20);
 			this.textBoxSalario.TabIndex = 9;
@@ -379,7 +375,7 @@
 			// textBoxDataAdmissao
 			// 
 			this.textBoxDataAdmissao.Enabled = false;
-			this.textBoxDataAdmissao.Location = new System.Drawing.Point(1035, 383);
+			this.textBoxDataAdmissao.Location = new System.Drawing.Point(1064, 383);
 			this.textBoxDataAdmissao.Mask = "00/00/0000";
 			this.textBoxDataAdmissao.Name = "textBoxDataAdmissao";
 			this.textBoxDataAdmissao.Size = new System.Drawing.Size(108, 20);
@@ -401,9 +397,9 @@
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.dataGridView);
-			this.groupBox2.Location = new System.Drawing.Point(40, 494);
+			this.groupBox2.Location = new System.Drawing.Point(40, 472);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(1160, 203);
+			this.groupBox2.Size = new System.Drawing.Size(1160, 225);
 			this.groupBox2.TabIndex = 32;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Lista de Funcionarios";
@@ -434,7 +430,7 @@
             this.qtddependentesDataGridViewTextBoxColumn,
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn});
 			this.dataGridView.DataSource = this.cadastroFuncionarioBindingSource;
-			this.dataGridView.Location = new System.Drawing.Point(39, 29);
+			this.dataGridView.Location = new System.Drawing.Point(34, 40);
 			this.dataGridView.Name = "dataGridView";
 			this.dataGridView.ReadOnly = true;
 			this.dataGridView.Size = new System.Drawing.Size(1093, 145);
@@ -583,16 +579,16 @@
 			this.groupBox3.Controls.Add(this.pictureBoxFoto);
 			this.groupBox3.Controls.Add(this.checkBox1);
 			this.groupBox3.Controls.Add(this.buttonImportFoto);
-			this.groupBox3.Location = new System.Drawing.Point(887, 72);
+			this.groupBox3.Location = new System.Drawing.Point(932, 72);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(313, 297);
+			this.groupBox3.Size = new System.Drawing.Size(268, 297);
 			this.groupBox3.TabIndex = 13;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Foto Funcionário";
 			// 
 			// pictureBoxFoto
 			// 
-			this.pictureBoxFoto.Location = new System.Drawing.Point(46, 38);
+			this.pictureBoxFoto.Location = new System.Drawing.Point(24, 43);
 			this.pictureBoxFoto.Name = "pictureBoxFoto";
 			this.pictureBoxFoto.Size = new System.Drawing.Size(221, 190);
 			this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -602,7 +598,7 @@
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(930, 419);
+			this.label13.Location = new System.Drawing.Point(959, 419);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(101, 13);
 			this.label13.TabIndex = 23;
@@ -611,7 +607,7 @@
 			// textBoxDataCadastro
 			// 
 			this.textBoxDataCadastro.Enabled = false;
-			this.textBoxDataCadastro.Location = new System.Drawing.Point(1035, 414);
+			this.textBoxDataCadastro.Location = new System.Drawing.Point(1064, 414);
 			this.textBoxDataCadastro.Mask = "00/00/0000";
 			this.textBoxDataCadastro.Name = "textBoxDataCadastro";
 			this.textBoxDataCadastro.Size = new System.Drawing.Size(108, 20);
@@ -621,7 +617,7 @@
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(929, 448);
+			this.label15.Location = new System.Drawing.Point(958, 448);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(106, 13);
 			this.label15.TabIndex = 23;
@@ -630,7 +626,7 @@
 			// textBoxDataAlteracao
 			// 
 			this.textBoxDataAlteracao.Enabled = false;
-			this.textBoxDataAlteracao.Location = new System.Drawing.Point(1035, 446);
+			this.textBoxDataAlteracao.Location = new System.Drawing.Point(1064, 446);
 			this.textBoxDataAlteracao.Mask = "00/00/0000";
 			this.textBoxDataAlteracao.Name = "textBoxDataAlteracao";
 			this.textBoxDataAlteracao.Size = new System.Drawing.Size(108, 20);
@@ -651,11 +647,61 @@
 			// 
 			this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
 			// 
+			// buttonImportFoto
+			// 
+			this.buttonImportFoto.Location = new System.Drawing.Point(82, 252);
+			this.buttonImportFoto.Name = "buttonImportFoto";
+			this.buttonImportFoto.Size = new System.Drawing.Size(105, 31);
+			this.buttonImportFoto.TabIndex = 36;
+			this.buttonImportFoto.Text = "Importar Foto:";
+			this.buttonImportFoto.UseVisualStyleBackColor = true;
+			this.buttonImportFoto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonImportFoto_MouseClick);
+			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.dataGridViewFiles);
+			this.groupBox4.Controls.Add(this.buttonImportaDocs);
+			this.groupBox4.Location = new System.Drawing.Point(681, 72);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(245, 394);
+			this.groupBox4.TabIndex = 37;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Documentos";
+			// 
+			// buttonImportaDocs
+			// 
+			this.buttonImportaDocs.Location = new System.Drawing.Point(63, 352);
+			this.buttonImportaDocs.Name = "buttonImportaDocs";
+			this.buttonImportaDocs.Size = new System.Drawing.Size(117, 31);
+			this.buttonImportaDocs.TabIndex = 37;
+			this.buttonImportaDocs.Text = "Importar Documento:";
+			this.buttonImportaDocs.UseVisualStyleBackColor = true;
+			this.buttonImportaDocs.Click += new System.EventHandler(this.buttonImportaDocs_Click);
+			// 
+			// dataGridViewFiles
+			// 
+			this.dataGridViewFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filesFunc});
+			this.dataGridViewFiles.Location = new System.Drawing.Point(33, 40);
+			this.dataGridViewFiles.Name = "dataGridViewFiles";
+			this.dataGridViewFiles.ReadOnly = true;
+			this.dataGridViewFiles.Size = new System.Drawing.Size(179, 291);
+			this.dataGridViewFiles.TabIndex = 38;
+			this.dataGridViewFiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFiles_CellContentClick);
+			// 
+			// filesFunc
+			// 
+			this.filesFunc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.filesFunc.HeaderText = "Arquivos";
+			this.filesFunc.Name = "filesFunc";
+			// 
 			// FormCadFunc
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1237, 791);
+			this.Controls.Add(this.groupBox4);
 			this.Controls.Add(this.buttonLimpar);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.textBoxTitle);
@@ -688,14 +734,14 @@
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
+			this.groupBox4.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewFiles)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button buttonImportFoto;
 		private System.Windows.Forms.Button buttonAdicionar;
 		private System.Windows.Forms.Button buttonSalvar;
 		private System.Windows.Forms.Button buttonDeletar;
@@ -755,5 +801,10 @@
 		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
 		private System.Windows.Forms.TextBox textBoxNome;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Button buttonImportFoto;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.DataGridView dataGridViewFiles;
+		private System.Windows.Forms.Button buttonImportaDocs;
+		private System.Windows.Forms.DataGridViewTextBoxColumn filesFunc;
 	}
 }

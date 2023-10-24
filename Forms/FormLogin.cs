@@ -26,10 +26,10 @@ namespace SisEnterprise_2._0
 					this.Hide();
 					Form FormMain = new FormMain();
 					FormMain.Show();
-					MessageBox.Show("Bem vindo!");
+					MessageBox.Show("Bem vindo!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				} else
 				{
-					MessageBox.Show("Usúario Inválido");
+					MessageBox.Show("Usúario Inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
