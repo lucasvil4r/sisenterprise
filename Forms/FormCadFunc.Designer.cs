@@ -689,6 +689,7 @@
 			this.dataGridViewFiles.Size = new System.Drawing.Size(179, 291);
 			this.dataGridViewFiles.TabIndex = 38;
 			this.dataGridViewFiles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFiles_CellContentClick);
+			this.dataGridViewFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridViewFiles_KeyDown);
 			// 
 			// filesFunc
 			// 

@@ -335,5 +335,29 @@ namespace SisEnterprise_2._0
 				System.Diagnostics.Process.Start(filePath);
 			}
 		}
+
+		private void dataGridViewFiles_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Delete)
+			{
+				// Confirmação antes de excluir.
+				DialogResult result = MessageBox.Show("Tem certeza de que deseja excluir o(s) arquivo(s) selecionado(s)?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+				if (result == DialogResult.Yes)
+				{
+					foreach (DataGridViewCell cell in dataGridViewFiles.SelectedCells)
+					{
+						int rowIndex = cell.RowIndex;
+						string selectedFileName = dataGridViewFiles.Rows[rowIndex].Cells[0].Value.ToString();
+						string filePath = Path.Combine(Application.StartupPath, "Documento", ("func_" + FuncId.ToString()), selectedFileName);
+
+						if (File.Exists(filePath))
+						{
+							File.Delete(filePath);
+						}
+					}
+				}
+				ClearData();
+			}
+		}
 	}
 }
