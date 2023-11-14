@@ -249,25 +249,34 @@
             this.buttonCalcular.TabIndex = 6;
             this.buttonCalcular.Text = "Calcular";
             this.buttonCalcular.UseVisualStyleBackColor = true;
+            this.buttonCalcular.Click += new System.EventHandler(this.buttonCalcular_Click);
             // 
             // comboBoxAdinta13
             // 
             this.comboBoxAdinta13.DisplayMember = "nome";
             this.comboBoxAdinta13.FormattingEnabled = true;
+            this.comboBoxAdinta13.Items.AddRange(new object[] {
+            "Não",
+            "Sim"});
             this.comboBoxAdinta13.Location = new System.Drawing.Point(521, 109);
             this.comboBoxAdinta13.Name = "comboBoxAdinta13";
             this.comboBoxAdinta13.Size = new System.Drawing.Size(181, 21);
             this.comboBoxAdinta13.TabIndex = 5;
+            this.comboBoxAdinta13.Text = "Não";
             this.comboBoxAdinta13.ValueMember = "id_departamento";
             // 
             // comboBoxAbonoPecu
             // 
             this.comboBoxAbonoPecu.DisplayMember = "nome";
             this.comboBoxAbonoPecu.FormattingEnabled = true;
+            this.comboBoxAbonoPecu.Items.AddRange(new object[] {
+            "Não",
+            "Sim"});
             this.comboBoxAbonoPecu.Location = new System.Drawing.Point(214, 106);
             this.comboBoxAbonoPecu.Name = "comboBoxAbonoPecu";
             this.comboBoxAbonoPecu.Size = new System.Drawing.Size(181, 21);
             this.comboBoxAbonoPecu.TabIndex = 4;
+            this.comboBoxAbonoPecu.Text = "Não";
             this.comboBoxAbonoPecu.ValueMember = "id_departamento";
             // 
             // label14
@@ -298,6 +307,7 @@
             // 
             // textBoxHrExtra
             // 
+            this.textBoxHrExtra.Enabled = false;
             this.textBoxHrExtra.Location = new System.Drawing.Point(214, 70);
             this.textBoxHrExtra.Name = "textBoxHrExtra";
             this.textBoxHrExtra.Size = new System.Drawing.Size(181, 20);
@@ -305,11 +315,13 @@
             // 
             // textBoxDiasFerias
             // 
+            this.textBoxDiasFerias.Enabled = false;
             this.textBoxDiasFerias.Location = new System.Drawing.Point(523, 30);
             this.textBoxDiasFerias.Name = "textBoxDiasFerias";
             this.textBoxDiasFerias.Size = new System.Drawing.Size(179, 20);
             this.textBoxDiasFerias.TabIndex = 1;
             this.textBoxDiasFerias.TabStop = false;
+            this.textBoxDiasFerias.Text = "30";
             // 
             // textBoxSalario
             // 

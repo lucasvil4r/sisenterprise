@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -54,7 +56,8 @@ namespace SisEnterprise_2._0
 
 		private void dataGridView_MouseClick(object sender, MouseEventArgs e)
 		{
-			FuncId = Convert.ToInt32(dataGridView.CurrentRow.Cells["idfuncionarioDataGridViewTextBoxColumn"].Value);
+            this.ClearData();
+            FuncId = Convert.ToInt32(dataGridView.CurrentRow.Cells["idfuncionarioDataGridViewTextBoxColumn"].Value);
 			if (dataGridView.CurrentCell.RowIndex != -1 && FuncId > 0)
 			{
 				using (var db = new ModelContext())
@@ -94,7 +97,7 @@ namespace SisEnterprise_2._0
 					textBoxQtdDependentes.Text = funcionario.qtd_dependentes.ToString();
 				}
 			}
-		}
+        }
 		private void ClearData()
 		{
 			textBoxNome.Text = string.Empty;
@@ -112,14 +115,138 @@ namespace SisEnterprise_2._0
 				pictureBoxFoto.Image = imagemCarregada;
 				pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
 			}
-
 			textBoxQtdDependentes.Text = string.Empty;
-			FuncId = 0;
-		}
+            FuncId = 0;
+
+            // Limpa a grid antes de carregar os dados.
+            // Colunas: Eventos | Alíquota | Proventos | Descontos
+            dataGridViewResult.Rows.Clear();
+            object[] row1 = { "Salário / Férias", "", "", "" };
+            object[] row2 = { "1/3 férias", "", "", "" };
+            object[] row3 = { "INSS", "", "", "" };
+            object[] row4 = { "IRRF", "", "", "" };
+            object[] row5 = { "Totais", "", "", "" };
+            object[] row6 = { "Valor líquido a receber", "", "", "" };
+            dataGridViewResult.Rows.Add(row1);
+            dataGridViewResult.Rows.Add(row2);
+            dataGridViewResult.Rows.Add(row3);
+            dataGridViewResult.Rows.Add(row4);
+            dataGridViewResult.Rows.Add(row5);
+            dataGridViewResult.Rows.Add(row6);
+        }
 
 		private void buttonLimpar_Click(object sender, EventArgs e)
 		{
 			this.ClearData();
 		}
-	}
+
+        private void buttonCalcular_Click(object sender, EventArgs e)
+        {
+            if (FuncId == 0)
+            {
+                MessageBox.Show("Nenhum funcionario foi selecionado!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //Proventos
+            double salarioBruto = Convert.ToDouble(textBoxSalario.Text);
+			double salarioTerco = salarioBruto / 3;
+
+            //Descontos
+            double descontoINSS = CalcularINSS(salarioBruto);
+            //double descontoIRRF = CalcularIRRF(salarioBruto);
+            double descontoIRRF = 0;
+
+            //Alíquota
+            double aliquotaINSS = ((descontoINSS / salarioBruto) * 100);
+            double aliquotaIRRF = ((descontoIRRF / salarioBruto) * 100);
+
+            //Totais
+            double totalDesconto = descontoINSS;
+
+            //Valor líquido a receber
+            double valorLiquidoReceber = ((salarioBruto + salarioTerco) - (descontoINSS));
+
+			//Formata para R$ para ser exibida na grid
+			var RsalarioBruto = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", salarioBruto);
+            var RsalarioTerco = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", salarioTerco);
+            var RtotalDesconto = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", totalDesconto);
+            var RvalorLiquidoReceber = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorLiquidoReceber);
+            var RdescontoINSS = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoINSS);
+            var RdescontoIRRF = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoIRRF);
+
+            // Limpa a grid antes de carregar os dados.
+            dataGridViewResult.Rows.Clear();
+            // Colunas: Eventos | Alíquota | Proventos | Descontos
+            object[] row1 = { "Salário / Férias"		, ""							 , RsalarioBruto				, "" };
+            object[] row2 = { "1/3 férias"				, ""							 , RsalarioTerco				, "" };
+            object[] row3 = { "INSS"					, aliquotaINSS.ToString("F")	 , ""							, RdescontoINSS };
+            object[] row4 = { "IRRF"					, aliquotaIRRF.ToString("F")	 , ""							, RdescontoIRRF };
+            object[] row5 = { "Totais"					, ""							 , ""							, RtotalDesconto };
+            object[] row6 = { "Valor líquido a receber"	, ""							 , RvalorLiquidoReceber			, "" };
+            dataGridViewResult.Rows.Add(row1);
+            dataGridViewResult.Rows.Add(row2);
+            dataGridViewResult.Rows.Add(row3);
+            dataGridViewResult.Rows.Add(row4);
+            dataGridViewResult.Rows.Add(row5);
+            dataGridViewResult.Rows.Add(row6);
+        }
+
+        private static double CalcularINSS(double salarioBruto)
+        {
+            int faixaSalarial = 0;
+            double faixaDescontoRetroativo = 0;
+
+            //Descobre faixa salarial
+            if (salarioBruto <= 1320.00)								{ faixaSalarial = 1;}
+            else if (salarioBruto >= 1320.01 && salarioBruto <= 2571.29){ faixaSalarial = 2;}
+            else if (salarioBruto >= 2571.30 && salarioBruto <= 3856.94){ faixaSalarial = 3;}
+		    else if (salarioBruto >= 3856.95 && salarioBruto <= 7507.49){ faixaSalarial = 4;}
+            else														{ faixaSalarial = 5;}
+
+			//Calcula retroativo
+            if (salarioBruto >= 1320.00 || faixaSalarial == 1) { faixaDescontoRetroativo += faixaSalarial == 1 ? (salarioBruto - 1320.01) * 0.075 : 1320.01 * 0.075; }				// Alíquota de 7.5%
+			if (salarioBruto >= 1320.01 || faixaSalarial == 2) { faixaDescontoRetroativo += faixaSalarial == 2 ? (salarioBruto - 1320.01) * 0.09  : (2571.30 - 1320.01) * 0.09; }	// Alíquota de 9%
+			if (salarioBruto >= 2571.30 || faixaSalarial == 3) { faixaDescontoRetroativo += faixaSalarial == 3 ? (salarioBruto - 2571.30) * 0.12  :	(3856.95 - 2571.30) * 0.12; }	// Alíquota de 12%
+			if (salarioBruto >= 3856.95 || faixaSalarial == 4) { faixaDescontoRetroativo += faixaSalarial == 4 ? (salarioBruto - 3856.95) * 0.14  :	(7507.49 - 3856.95) * 0.14; }	// Alíquota de 14%
+
+            return faixaDescontoRetroativo;
+        }
+        private static double CalcularIRRF(double salario)
+        {
+            double desconto = 0;
+
+            if (salario <= 1903.98)
+            {
+                desconto = 7.50;
+            }
+            else if (salario <= 2826.65)
+            {
+                desconto = 9.00;
+            }
+            else if (salario <= 3751.05)
+            {
+                desconto = 12.00;
+            }
+            else if (salario <= 4664.68)
+            {
+                desconto = 14.00;
+            }
+            else
+            {
+                // Caso o salário ultrapasse todas as faixas, o desconto é o máximo de 14%
+                desconto = 14.00;
+            }
+
+            return desconto;
+        }
+        private static decimal CalcularDeducaoDepedente(int quantidadeDependente)
+        {
+            // Atualmente, o valor de dedução no cálculo do IRRF é de R$ 2.275,08 por dependente, sendo o valor mensal de R$ 189,59.
+            decimal deducao = 189.59m;
+			deducao = 189.59m * quantidadeDependente;
+
+            return deducao;
+        }
+    }
 }
