@@ -254,6 +254,7 @@
             // comboBoxAdinta13
             // 
             this.comboBoxAdinta13.DisplayMember = "nome";
+            this.comboBoxAdinta13.Enabled = false;
             this.comboBoxAdinta13.FormattingEnabled = true;
             this.comboBoxAdinta13.Items.AddRange(new object[] {
             "Não",

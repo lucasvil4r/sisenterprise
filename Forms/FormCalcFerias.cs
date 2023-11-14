@@ -33,18 +33,22 @@ namespace SisEnterprise_2._0
 			// Adicione linhas à grade
 			object[] row1 = { "Salário / Férias" };
 			object[] row2 = { "1/3 férias" };
-			object[] row3 = { "INSS" };
-			object[] row4 = { "IRRF" };
-			object[] row5 = { "Totais" };
-			object[] row6 = { "Valor líquido a receber" };
+            object[] row3 = { "Abono pecuniário", "", "", "" };
+            object[] row4 = { "1/3 Abono pecuniário", "", "", "" };
+            object[] row5 = { "INSS" };
+			object[] row6 = { "IRRF" };
+			object[] row7 = { "Totais" };
+			object[] row8 = { "Valor líquido a receber" };
 			dataGridViewResult.Rows.Add(row1);
 			dataGridViewResult.Rows.Add(row2);
 			dataGridViewResult.Rows.Add(row3);
 			dataGridViewResult.Rows.Add(row4);
 			dataGridViewResult.Rows.Add(row5);
 			dataGridViewResult.Rows.Add(row6);
+            dataGridViewResult.Rows.Add(row7);
+            dataGridViewResult.Rows.Add(row8);
 
-			string pastaImages = Path.Combine(Application.StartupPath, "Resource");
+            string pastaImages = Path.Combine(Application.StartupPath, "Resource");
 			string fotoPlaceholder = Path.Combine(pastaImages, "placeholder.jpg");
 			if (File.Exists(fotoPlaceholder))
 			{
@@ -123,16 +127,20 @@ namespace SisEnterprise_2._0
             dataGridViewResult.Rows.Clear();
             object[] row1 = { "Salário / Férias", "", "", "" };
             object[] row2 = { "1/3 férias", "", "", "" };
-            object[] row3 = { "INSS", "", "", "" };
-            object[] row4 = { "IRRF", "", "", "" };
-            object[] row5 = { "Totais", "", "", "" };
-            object[] row6 = { "Valor líquido a receber", "", "", "" };
+            object[] row3 = { "Abono pecuniário", "", "", "" };
+            object[] row4 = { "1/3 Abono pecuniário", "", "", "" };
+            object[] row5 = { "INSS", "", "", "" };
+            object[] row6 = { "IRRF", "", "", "" };
+            object[] row7 = { "Totais", "", "", "" };
+            object[] row8 = { "Valor líquido a receber", "", "", "" };
             dataGridViewResult.Rows.Add(row1);
             dataGridViewResult.Rows.Add(row2);
             dataGridViewResult.Rows.Add(row3);
             dataGridViewResult.Rows.Add(row4);
             dataGridViewResult.Rows.Add(row5);
             dataGridViewResult.Rows.Add(row6);
+            dataGridViewResult.Rows.Add(row7);
+            dataGridViewResult.Rows.Add(row8);
         }
 
 		private void buttonLimpar_Click(object sender, EventArgs e)
@@ -151,11 +159,11 @@ namespace SisEnterprise_2._0
             //Proventos
             double salarioBruto = Convert.ToDouble(textBoxSalario.Text);
 			double salarioTerco = salarioBruto / 3;
+            double abonopecuTerco = salarioTerco / 3;
 
             //Descontos
             double descontoINSS = CalcularINSS(salarioBruto);
-            //double descontoIRRF = CalcularIRRF(salarioBruto);
-            double descontoIRRF = 0;
+            double descontoIRRF = CalcularIRRF(salarioBruto);
 
             //Alíquota
             double aliquotaINSS = ((descontoINSS / salarioBruto) * 100);
@@ -174,22 +182,27 @@ namespace SisEnterprise_2._0
             var RvalorLiquidoReceber = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorLiquidoReceber);
             var RdescontoINSS = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoINSS);
             var RdescontoIRRF = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoIRRF);
+            var RabonopecuTerco = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", abonopecuTerco);
 
             // Limpa a grid antes de carregar os dados.
             dataGridViewResult.Rows.Clear();
             // Colunas: Eventos | Alíquota | Proventos | Descontos
             object[] row1 = { "Salário / Férias"		, ""							 , RsalarioBruto				, "" };
             object[] row2 = { "1/3 férias"				, ""							 , RsalarioTerco				, "" };
-            object[] row3 = { "INSS"					, aliquotaINSS.ToString("F")	 , ""							, RdescontoINSS };
-            object[] row4 = { "IRRF"					, aliquotaIRRF.ToString("F")	 , ""							, RdescontoIRRF };
-            object[] row5 = { "Totais"					, ""							 , ""							, RtotalDesconto };
-            object[] row6 = { "Valor líquido a receber"	, ""							 , RvalorLiquidoReceber			, "" };
+            object[] row3 = { "Abono pecuniário"        , ""                             , RsalarioTerco                , "" };
+            object[] row4 = { "1/3 Abono pecuniário"    , ""                             , RabonopecuTerco              , "" };
+            object[] row5 = { "INSS"					, aliquotaINSS.ToString("F")	 , ""							, RdescontoINSS };
+            object[] row6 = { "IRRF"					, aliquotaIRRF.ToString("F")	 , ""							, RdescontoIRRF };
+            object[] row7 = { "Totais"					, ""							 , ""							, RtotalDesconto };
+            object[] row8 = { "Valor líquido a receber"	, ""							 , RvalorLiquidoReceber			, "" };
             dataGridViewResult.Rows.Add(row1);
             dataGridViewResult.Rows.Add(row2);
             dataGridViewResult.Rows.Add(row3);
             dataGridViewResult.Rows.Add(row4);
             dataGridViewResult.Rows.Add(row5);
             dataGridViewResult.Rows.Add(row6);
+            dataGridViewResult.Rows.Add(row7);
+            dataGridViewResult.Rows.Add(row8);
         }
 
         private static double CalcularINSS(double salarioBruto)
@@ -205,7 +218,7 @@ namespace SisEnterprise_2._0
             else														{ faixaSalarial = 5;}
 
 			//Calcula retroativo
-            if (salarioBruto >= 1320.00 || faixaSalarial == 1) { faixaDescontoRetroativo += faixaSalarial == 1 ? (salarioBruto - 1320.01) * 0.075 : 1320.01 * 0.075; }				// Alíquota de 7.5%
+            if (salarioBruto >= 1320.00 || faixaSalarial == 1) { faixaDescontoRetroativo += faixaSalarial == 1 ? (salarioBruto - 1320.01) * 0.075 : 1320.00 * 0.075; }				// Alíquota de 7.5%
 			if (salarioBruto >= 1320.01 || faixaSalarial == 2) { faixaDescontoRetroativo += faixaSalarial == 2 ? (salarioBruto - 1320.01) * 0.09  : (2571.30 - 1320.01) * 0.09; }	// Alíquota de 9%
 			if (salarioBruto >= 2571.30 || faixaSalarial == 3) { faixaDescontoRetroativo += faixaSalarial == 3 ? (salarioBruto - 2571.30) * 0.12  :	(3856.95 - 2571.30) * 0.12; }	// Alíquota de 12%
 			if (salarioBruto >= 3856.95 || faixaSalarial == 4) { faixaDescontoRetroativo += faixaSalarial == 4 ? (salarioBruto - 3856.95) * 0.14  :	(7507.49 - 3856.95) * 0.14; }	// Alíquota de 14%
@@ -238,7 +251,7 @@ namespace SisEnterprise_2._0
                 desconto = 14.00;
             }
 
-            return desconto;
+            return 0;
         }
         private static decimal CalcularDeducaoDepedente(int quantidadeDependente)
         {
