@@ -162,7 +162,8 @@ namespace SisEnterprise_2._0
 
             //Proventos
 			double salarioTerco = salarioBruto / 3;
-            double abonopecuTerco = salarioTerco / 3;
+            double abonoPecuniario = comboBoxAbonoPecu.Text == "Sim" ? salarioBruto / 3 : 0;
+            double abonoPecuniarioTerco = comboBoxAbonoPecu.Text == "Sim" ? abonoPecuniario / 3 : 0;
 
             //Descontos
             double descontoINSS = CalcularINSS((salarioBruto + salarioTerco));
@@ -170,7 +171,7 @@ namespace SisEnterprise_2._0
 
             //Totais
             double totalDesconto = descontoINSS + descontoIRRF;
-            double totalProvento = salarioBruto + salarioTerco+ salarioTerco + abonopecuTerco;
+            double totalProvento = salarioBruto + salarioTerco + abonoPecuniario + abonoPecuniarioTerco;
 
             //Alíquota
             double aliquotaINSS = (descontoINSS / totalProvento) * 100;
@@ -191,15 +192,16 @@ namespace SisEnterprise_2._0
             var RvalorLiquidoReceber = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorLiquidoReceber);
             var RdescontoINSS = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoINSS);
             var RdescontoIRRF = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoIRRF);
-            var RabonopecuTerco = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", abonopecuTerco);
+            var RabonoPecuniario = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", abonoPecuniario);
+            var RabonopecuniarioTerco = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", abonoPecuniarioTerco);
 
             // Limpa a grid antes de carregar os dados.
             dataGridViewResult.Rows.Clear();
             // Colunas: Eventos | Alíquota | Proventos | Descontos
             object[] row1 = { "Salário / Férias"		, ""							 , RsalarioBruto				, "" };
             object[] row2 = { "1/3 férias"				, ""							 , RsalarioTerco				, "" };
-            object[] row3 = { "Abono pecuniário"        , ""                             , RsalarioTerco                , "" };
-            object[] row4 = { "1/3 Abono pecuniário"    , ""                             , RabonopecuTerco              , "" };
+            object[] row3 = { "Abono pecuniário"        , ""                             , RabonoPecuniario             , "" };
+            object[] row4 = { "1/3 Abono pecuniário"    , ""                             , RabonopecuniarioTerco        , "" };
             object[] row5 = { "INSS"					, PaliquotaINSS                  , ""							, RdescontoINSS };
             object[] row6 = { "IRRF"					, PaliquotaIRRF                  , ""							, RdescontoIRRF };
             object[] row7 = { "Totais"					, ""							 , RtotalProvento               , RtotalDesconto };
