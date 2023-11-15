@@ -156,10 +156,11 @@ namespace SisEnterprise_2._0
                 return;
             }
 
+            //Coleta os dados dos forms
             int dependentes = Convert.ToInt32(textBoxQtdDependentes.Text);
+            double salarioBruto = Convert.ToDouble(textBoxSalario.Text);
 
             //Proventos
-            double salarioBruto = Convert.ToDouble(textBoxSalario.Text);
 			double salarioTerco = salarioBruto / 3;
             double abonopecuTerco = salarioTerco / 3;
 
@@ -167,13 +168,13 @@ namespace SisEnterprise_2._0
             double descontoINSS = CalcularINSS((salarioBruto + salarioTerco));
             double descontoIRRF = CalcularIRRF((salarioBruto + salarioTerco), dependentes, descontoINSS);
 
-            //Alíquota
-            double aliquotaINSS = (descontoINSS / salarioBruto) * 100;
-            double aliquotaIRRF = (descontoIRRF / salarioBruto) * 100;
-
             //Totais
             double totalDesconto = descontoINSS + descontoIRRF;
             double totalProvento = salarioBruto + salarioTerco+ salarioTerco + abonopecuTerco;
+
+            //Alíquota
+            double aliquotaINSS = (descontoINSS / totalProvento) * 100;
+            double aliquotaIRRF = (descontoIRRF / totalProvento) * 100;
 
             //Valor líquido a receber
             double valorLiquidoReceber = totalProvento - totalDesconto;
