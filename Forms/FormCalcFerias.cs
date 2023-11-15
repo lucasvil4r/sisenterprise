@@ -156,29 +156,33 @@ namespace SisEnterprise_2._0
                 return;
             }
 
+            int dependentes = Convert.ToInt32(textBoxQtdDependentes.Text);
+
             //Proventos
             double salarioBruto = Convert.ToDouble(textBoxSalario.Text);
 			double salarioTerco = salarioBruto / 3;
             double abonopecuTerco = salarioTerco / 3;
 
             //Descontos
-            double descontoINSS = CalcularINSS(salarioBruto);
-            double descontoIRRF = CalcularIRRF(salarioBruto);
+            double descontoINSS = CalcularINSS((salarioBruto + salarioTerco));
+            double descontoIRRF = CalcularIRRF((salarioBruto + salarioTerco), dependentes, descontoINSS);
 
             //Alíquota
             double aliquotaINSS = ((descontoINSS / salarioBruto) * 100);
             double aliquotaIRRF = ((descontoIRRF / salarioBruto) * 100);
 
             //Totais
-            double totalDesconto = descontoINSS;
+            double totalDesconto = descontoINSS + descontoIRRF;
+            double totalProvento = salarioBruto + salarioTerco+ salarioTerco + abonopecuTerco;
 
             //Valor líquido a receber
-            double valorLiquidoReceber = ((salarioBruto + salarioTerco) - (descontoINSS));
+            double valorLiquidoReceber = totalProvento - totalDesconto;
 
 			//Formata para R$ para ser exibida na grid
 			var RsalarioBruto = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", salarioBruto);
             var RsalarioTerco = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", salarioTerco);
             var RtotalDesconto = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", totalDesconto);
+            var RtotalProvento = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", totalProvento);
             var RvalorLiquidoReceber = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valorLiquidoReceber);
             var RdescontoINSS = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoINSS);
             var RdescontoIRRF = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", descontoIRRF);
@@ -191,9 +195,9 @@ namespace SisEnterprise_2._0
             object[] row2 = { "1/3 férias"				, ""							 , RsalarioTerco				, "" };
             object[] row3 = { "Abono pecuniário"        , ""                             , RsalarioTerco                , "" };
             object[] row4 = { "1/3 Abono pecuniário"    , ""                             , RabonopecuTerco              , "" };
-            object[] row5 = { "INSS"					, aliquotaINSS.ToString("F")	 , ""							, RdescontoINSS };
-            object[] row6 = { "IRRF"					, aliquotaIRRF.ToString("F")	 , ""							, RdescontoIRRF };
-            object[] row7 = { "Totais"					, ""							 , ""							, RtotalDesconto };
+            object[] row5 = { "INSS"					, aliquotaINSS.ToString("P")	 , ""							, RdescontoINSS };
+            object[] row6 = { "IRRF"					, aliquotaIRRF.ToString("p")	 , ""							, RdescontoIRRF };
+            object[] row7 = { "Totais"					, ""							 , RtotalProvento               , RtotalDesconto };
             object[] row8 = { "Valor líquido a receber"	, ""							 , RvalorLiquidoReceber			, "" };
             dataGridViewResult.Rows.Add(row1);
             dataGridViewResult.Rows.Add(row2);
@@ -204,8 +208,52 @@ namespace SisEnterprise_2._0
             dataGridViewResult.Rows.Add(row7);
             dataGridViewResult.Rows.Add(row8);
         }
-
         private static double CalcularINSS(double salarioBruto)
+        {
+            double descontoINSS = 0;
+
+            // Definição das faixas e alíquotas do INSS para 2023
+            double faixa1 = 1320.00;
+            double faixa2 = 2571.29;
+            double faixa3 = 3856.94;
+            double faixa4 = 7507.49;
+
+            double aliquota1 = 0.075;
+            double aliquota2 = 0.09;
+            double aliquota3 = 0.12;
+            double aliquota4 = 0.14;
+
+            // Limites superiores das faixas para cálculo
+            double tetoFaixa1 = 1320.00;
+            double tetoFaixa2 = 2571.29;
+            double tetoFaixa3 = 3856.94;
+
+            // Cálculo do desconto do INSS de acordo com as faixas e alíquotas
+            if (salarioBruto <= faixa1)
+            {
+                descontoINSS = salarioBruto * aliquota1;
+            }
+            else if (salarioBruto <= faixa2)
+            {
+                descontoINSS = tetoFaixa1 * aliquota1 + (salarioBruto - tetoFaixa1) * aliquota2;
+            }
+            else if (salarioBruto <= faixa3)
+            {
+                descontoINSS = tetoFaixa1 * aliquota1 + (tetoFaixa2 - tetoFaixa1) * aliquota2 + (salarioBruto - tetoFaixa2) * aliquota3;
+            }
+            else if (salarioBruto <= faixa4)
+            {
+                descontoINSS = tetoFaixa1 * aliquota1 + (tetoFaixa2 - tetoFaixa1) * aliquota2 + (tetoFaixa3 - tetoFaixa2) * aliquota3 + (salarioBruto - tetoFaixa3) * aliquota4;
+            }
+            else
+            {
+                // Se o salário ultrapassar a última faixa, o desconto do INSS será sobre o teto da última faixa
+                descontoINSS = tetoFaixa1 * aliquota1 + (tetoFaixa2 - tetoFaixa1) * aliquota2 + (tetoFaixa3 - tetoFaixa2) * aliquota3 + (faixa4 - tetoFaixa3) * aliquota4;
+            }
+
+            return descontoINSS;
+        }
+        private static double CalcularINSS_(double salarioBruto)
         {
             int faixaSalarial = 0;
             double faixaDescontoRetroativo = 0;
@@ -218,48 +266,143 @@ namespace SisEnterprise_2._0
             else														{ faixaSalarial = 5;}
 
 			//Calcula retroativo
-            if (salarioBruto >= 1320.00 || faixaSalarial == 1) { faixaDescontoRetroativo += faixaSalarial == 1 ? (salarioBruto - 1320.01) * 0.075 : 1320.00 * 0.075; }				// Alíquota de 7.5%
+            if (salarioBruto >= 1320.00 || faixaSalarial == 1) { faixaDescontoRetroativo += faixaSalarial == 1 ? (salarioBruto) * 0.075 : 1320.00 * 0.075; }				        // Alíquota de 7.5%
 			if (salarioBruto >= 1320.01 || faixaSalarial == 2) { faixaDescontoRetroativo += faixaSalarial == 2 ? (salarioBruto - 1320.01) * 0.09  : (2571.30 - 1320.01) * 0.09; }	// Alíquota de 9%
 			if (salarioBruto >= 2571.30 || faixaSalarial == 3) { faixaDescontoRetroativo += faixaSalarial == 3 ? (salarioBruto - 2571.30) * 0.12  :	(3856.95 - 2571.30) * 0.12; }	// Alíquota de 12%
 			if (salarioBruto >= 3856.95 || faixaSalarial == 4) { faixaDescontoRetroativo += faixaSalarial == 4 ? (salarioBruto - 3856.95) * 0.14  :	(7507.49 - 3856.95) * 0.14; }	// Alíquota de 14%
 
             return faixaDescontoRetroativo;
         }
-        private static double CalcularIRRF(double salario)
+        private static double CalcularIRRF(double salarioBruto, int numeroDependentes, double descontoINSS)
         {
-            double desconto = 0;
+            double descontoIRRF = 0;
 
-            if (salario <= 1903.98)
+            // Definição das faixas e alíquotas do IRRF (valores de exemplo)
+            double faixa1 = 1903.98;
+            double faixa2 = 2826.65;
+            double faixa3 = 3751.05;
+            double faixa4 = 4664.68;
+            double faixa5 = 5596.80;
+
+            double aliquota1 = 0.075;
+            double aliquota2 = 0.15;
+            double aliquota3 = 0.225;
+            double aliquota4 = 0.275;
+
+            // Valor de dedução por dependente (valor de exemplo)
+            double deducaoDependente = CalcularTotalDeducaoDepedente(salarioBruto, numeroDependentes);
+
+            // Cálculo do IRRF considerando dedução de dependentes
+            double baseCalculo = salarioBruto - (descontoINSS + deducaoDependente);
+
+            // Cálculo do IRRF de acordo com as faixas e alíquotas
+            if (baseCalculo <= faixa1)
             {
-                desconto = 7.50;
+                descontoIRRF = 0;
             }
-            else if (salario <= 2826.65)
+            else if (baseCalculo <= faixa2)
             {
-                desconto = 9.00;
+                descontoIRRF = (baseCalculo - faixa1) * aliquota1;
             }
-            else if (salario <= 3751.05)
+            else if (baseCalculo <= faixa3)
             {
-                desconto = 12.00;
+                descontoIRRF = ((baseCalculo - faixa2) * aliquota2) + (faixa2 - faixa1) * aliquota1;
             }
-            else if (salario <= 4664.68)
+            else if (baseCalculo <= faixa4)
             {
-                desconto = 14.00;
+                descontoIRRF = ((baseCalculo - faixa3) * aliquota3) + (faixa3 - faixa2) * aliquota2 + (faixa2 - faixa1) * aliquota1;
+            }
+            else if (baseCalculo <= faixa5)
+            {
+                descontoIRRF = ((baseCalculo - faixa4) * aliquota4) + (faixa4 - faixa3) * aliquota3 + (faixa3 - faixa2) * aliquota2 + (faixa2 - faixa1) * aliquota1;
             }
             else
             {
-                // Caso o salário ultrapasse todas as faixas, o desconto é o máximo de 14%
-                desconto = 14.00;
+                // Para salários maiores que a faixa 5, aplique a alíquota da faixa máxima sobre todo o valor acima da última faixa
+                descontoIRRF = ((baseCalculo - faixa5) * aliquota4) + (faixa5 - faixa4) * aliquota4 + (faixa4 - faixa3) * aliquota3 + (faixa3 - faixa2) * aliquota2 + (faixa2 - faixa1) * aliquota1;
             }
 
-            return 0;
+            return descontoIRRF;
         }
-        private static decimal CalcularDeducaoDepedente(int quantidadeDependente)
+        private static double CalcularIRRF_(double salario, double dependentes)
         {
-            // Atualmente, o valor de dedução no cálculo do IRRF é de R$ 2.275,08 por dependente, sendo o valor mensal de R$ 189,59.
-            decimal deducao = 189.59m;
-			deducao = 189.59m * quantidadeDependente;
+            double aliquota = 0;
+            double limiteDeducao = 0;
+            double totalDesconto = 0;
+            double totalDeducaoDependente = 0;
 
-            return deducao;
+            if (salario <= 1903.98)
+            {
+                aliquota = 0;
+                limiteDeducao = 0;
+                totalDesconto = salario * 0;
+            }
+            else if (salario <= 2826.65)
+            {
+                aliquota = 7.5;
+                limiteDeducao = 142.80;
+                totalDesconto = salario * 0.075;
+            }
+            else if (salario <= 3751.05)
+            {
+                aliquota = 15.00;
+                limiteDeducao = 354.80;
+                totalDesconto = salario * 0.15;
+            }
+            else if (salario <= 4664.68)
+            {
+                aliquota = 22.5;
+                limiteDeducao = 636.13;
+                totalDesconto = salario * 0.0225;
+            }
+            else
+            {
+                aliquota = 27.5;
+                limiteDeducao = 869.36;
+                totalDesconto = salario * 0.0275;
+            }
+
+            totalDeducaoDependente = 189.59 * dependentes;
+
+            if (totalDeducaoDependente >= limiteDeducao){ totalDesconto -= limiteDeducao;          }
+            else                                        { totalDesconto -= totalDeducaoDependente; }
+
+            return totalDesconto;
+        }
+        private static double CalcularTotalDeducaoDepedente(double salario, int dependentes)
+        {
+            // Valor mensal de R$ 189,59 por dependente
+            double limiteDeducao = 0;
+            double totalDesconto = 0;
+            double totalDeducaoDependente = 0;
+
+            if (salario <= 1903.98)
+            {
+                limiteDeducao = 0;
+            }
+            else if (salario <= 2826.65)
+            {
+                limiteDeducao = 142.80;
+            }
+            else if (salario <= 3751.05)
+            {
+                limiteDeducao = 354.80;
+            }
+            else if (salario <= 4664.68)
+            {
+                limiteDeducao = 636.13;
+            }
+            else
+            {
+                limiteDeducao = 869.36;
+            }
+
+            totalDeducaoDependente = 189.59 * dependentes;
+
+            if (totalDeducaoDependente >= limiteDeducao) { totalDesconto -= limiteDeducao; }
+            else { totalDesconto -= totalDeducaoDependente; }
+
+            return totalDesconto;
         }
     }
 }

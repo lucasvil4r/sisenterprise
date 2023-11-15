@@ -117,7 +117,7 @@
             this.groupBox3.Controls.Add(this.textBoxNome);
             this.groupBox3.Location = new System.Drawing.Point(825, 57);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(229, 581);
+            this.groupBox3.Size = new System.Drawing.Size(229, 643);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados Funcionário";
@@ -269,6 +269,7 @@
             // comboBoxAbonoPecu
             // 
             this.comboBoxAbonoPecu.DisplayMember = "nome";
+            this.comboBoxAbonoPecu.Enabled = false;
             this.comboBoxAbonoPecu.FormattingEnabled = true;
             this.comboBoxAbonoPecu.Items.AddRange(new object[] {
             "Não",
@@ -277,7 +278,7 @@
             this.comboBoxAbonoPecu.Name = "comboBoxAbonoPecu";
             this.comboBoxAbonoPecu.Size = new System.Drawing.Size(181, 21);
             this.comboBoxAbonoPecu.TabIndex = 4;
-            this.comboBoxAbonoPecu.Text = "Não";
+            this.comboBoxAbonoPecu.Text = "Sim";
             this.comboBoxAbonoPecu.ValueMember = "id_departamento";
             // 
             // label14
@@ -353,7 +354,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(12, 493);
+            this.groupBox2.Location = new System.Drawing.Point(12, 555);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(790, 145);
             this.groupBox2.TabIndex = 42;
@@ -519,7 +520,7 @@
             this.groupBox4.Controls.Add(this.dataGridViewResult);
             this.groupBox4.Location = new System.Drawing.Point(12, 279);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(790, 208);
+            this.groupBox4.Size = new System.Drawing.Size(790, 262);
             this.groupBox4.TabIndex = 44;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Resultado Cálculo";
@@ -535,7 +536,7 @@
             this.descontos});
             this.dataGridViewResult.Location = new System.Drawing.Point(39, 21);
             this.dataGridViewResult.Name = "dataGridViewResult";
-            this.dataGridViewResult.Size = new System.Drawing.Size(714, 169);
+            this.dataGridViewResult.Size = new System.Drawing.Size(714, 224);
             this.dataGridViewResult.TabIndex = 0;
             // 
             // eventos
@@ -572,16 +573,16 @@
             this.AccessibleName = "Cálculo de Férias";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 660);
+            this.ClientSize = new System.Drawing.Size(1063, 721);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.textBoxTitle);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1079, 699);
+            this.MaximumSize = new System.Drawing.Size(1079, 760);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1079, 699);
+            this.MinimumSize = new System.Drawing.Size(1079, 760);
             this.Name = "FormCalcFerias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Cálcular Férias";
