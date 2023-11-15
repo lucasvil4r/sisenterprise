@@ -168,8 +168,8 @@ namespace SisEnterprise_2._0
             double descontoIRRF = CalcularIRRF((salarioBruto + salarioTerco), dependentes, descontoINSS);
 
             //Alíquota
-            double aliquotaINSS = ((descontoINSS / salarioBruto) * 100);
-            double aliquotaIRRF = ((descontoIRRF / salarioBruto) * 100);
+            double aliquotaINSS = (descontoINSS / salarioBruto) * 100;
+            double aliquotaIRRF = (descontoIRRF / salarioBruto) * 100;
 
             //Totais
             double totalDesconto = descontoINSS + descontoIRRF;
@@ -178,8 +178,12 @@ namespace SisEnterprise_2._0
             //Valor líquido a receber
             double valorLiquidoReceber = totalProvento - totalDesconto;
 
-			//Formata para R$ para ser exibida na grid
-			var RsalarioBruto = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", salarioBruto);
+            //Formata para % para ser exibida na grid
+            var PaliquotaINSS = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:F}%", aliquotaINSS);
+            var PaliquotaIRRF = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:F}%", aliquotaIRRF);
+
+            //Formata para R$ para ser exibida na grid
+            var RsalarioBruto = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", salarioBruto);
             var RsalarioTerco = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", salarioTerco);
             var RtotalDesconto = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", totalDesconto);
             var RtotalProvento = string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", totalProvento);
@@ -195,8 +199,8 @@ namespace SisEnterprise_2._0
             object[] row2 = { "1/3 férias"				, ""							 , RsalarioTerco				, "" };
             object[] row3 = { "Abono pecuniário"        , ""                             , RsalarioTerco                , "" };
             object[] row4 = { "1/3 Abono pecuniário"    , ""                             , RabonopecuTerco              , "" };
-            object[] row5 = { "INSS"					, aliquotaINSS.ToString("P")	 , ""							, RdescontoINSS };
-            object[] row6 = { "IRRF"					, aliquotaIRRF.ToString("p")	 , ""							, RdescontoIRRF };
+            object[] row5 = { "INSS"					, PaliquotaINSS                  , ""							, RdescontoINSS };
+            object[] row6 = { "IRRF"					, PaliquotaIRRF                  , ""							, RdescontoIRRF };
             object[] row7 = { "Totais"					, ""							 , RtotalProvento               , RtotalDesconto };
             object[] row8 = { "Valor líquido a receber"	, ""							 , RvalorLiquidoReceber			, "" };
             dataGridViewResult.Rows.Add(row1);

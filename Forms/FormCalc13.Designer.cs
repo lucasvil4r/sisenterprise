@@ -110,7 +110,7 @@
             this.groupBox4.Controls.Add(this.dataGridViewResult);
             this.groupBox4.Location = new System.Drawing.Point(10, 284);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(790, 208);
+            this.groupBox4.Size = new System.Drawing.Size(790, 261);
             this.groupBox4.TabIndex = 49;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Resultado Cálculo";
@@ -126,7 +126,7 @@
             this.descontos});
             this.dataGridViewResult.Location = new System.Drawing.Point(39, 21);
             this.dataGridViewResult.Name = "dataGridViewResult";
-            this.dataGridViewResult.Size = new System.Drawing.Size(714, 169);
+            this.dataGridViewResult.Size = new System.Drawing.Size(714, 217);
             this.dataGridViewResult.TabIndex = 0;
             // 
             // eventos
@@ -292,7 +292,7 @@
             this.qtddependentesDataGridViewTextBoxColumn,
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.cadastroFuncionarioBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(39, 28);
+            this.dataGridView.Location = new System.Drawing.Point(39, 29);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(714, 97);
@@ -367,6 +367,7 @@
             this.comboBoxAdinta13.Name = "comboBoxAdinta13";
             this.comboBoxAdinta13.Size = new System.Drawing.Size(181, 21);
             this.comboBoxAdinta13.TabIndex = 5;
+            this.comboBoxAdinta13.Text = "Não";
             this.comboBoxAdinta13.ValueMember = "id_departamento";
             // 
             // comboBoxAbonoPecu
@@ -377,6 +378,7 @@
             this.comboBoxAbonoPecu.Name = "comboBoxAbonoPecu";
             this.comboBoxAbonoPecu.Size = new System.Drawing.Size(181, 21);
             this.comboBoxAbonoPecu.TabIndex = 4;
+            this.comboBoxAbonoPecu.Text = "Sim";
             this.comboBoxAbonoPecu.ValueMember = "id_departamento";
             // 
             // label14
@@ -407,6 +409,7 @@
             // 
             // textBoxHrExtra
             // 
+            this.textBoxHrExtra.Enabled = false;
             this.textBoxHrExtra.Location = new System.Drawing.Point(214, 70);
             this.textBoxHrExtra.Name = "textBoxHrExtra";
             this.textBoxHrExtra.Size = new System.Drawing.Size(181, 20);
@@ -414,11 +417,13 @@
             // 
             // textBoxDiasFerias
             // 
+            this.textBoxDiasFerias.Enabled = false;
             this.textBoxDiasFerias.Location = new System.Drawing.Point(523, 30);
             this.textBoxDiasFerias.Name = "textBoxDiasFerias";
             this.textBoxDiasFerias.Size = new System.Drawing.Size(179, 20);
             this.textBoxDiasFerias.TabIndex = 1;
             this.textBoxDiasFerias.TabStop = false;
+            this.textBoxDiasFerias.Text = "30";
             // 
             // textBoxSalario
             // 
@@ -456,7 +461,7 @@
             this.groupBox3.Controls.Add(this.textBoxNome);
             this.groupBox3.Location = new System.Drawing.Point(823, 62);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(229, 581);
+            this.groupBox3.Size = new System.Drawing.Size(229, 632);
             this.groupBox3.TabIndex = 46;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados Funcionário";
@@ -542,9 +547,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(10, 498);
+            this.groupBox2.Location = new System.Drawing.Point(10, 551);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(790, 145);
+            this.groupBox2.Size = new System.Drawing.Size(790, 143);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Funcionarios";
@@ -557,16 +562,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 660);
+            this.ClientSize = new System.Drawing.Size(1063, 721);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1079, 699);
+            this.MaximumSize = new System.Drawing.Size(1079, 760);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1079, 699);
+            this.MinimumSize = new System.Drawing.Size(1079, 760);
             this.Name = "FormCalc13";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cálcular 13º";
