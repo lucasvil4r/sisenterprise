@@ -263,7 +263,7 @@ namespace SisEnterprise_2._0
         private static double CalcularINSS_(double salarioBruto)
         {
             int faixaSalarial = 0;
-            double faixaDescontoRetroativo = 0;
+            double descontoINSS = 0;
 
             //Descobre faixa salarial
             if (salarioBruto <= 1320.00)								{ faixaSalarial = 1;}
@@ -273,14 +273,14 @@ namespace SisEnterprise_2._0
             else														{ faixaSalarial = 5;}
 
 			//Calcula retroativo
-            if (salarioBruto >= 1320.00 || faixaSalarial == 1) { faixaDescontoRetroativo += faixaSalarial == 1 ? (salarioBruto) * 0.075 : 1320.00 * 0.075; }				        // Alíquota de 7.5%
-			if (salarioBruto >= 1320.01 || faixaSalarial == 2) { faixaDescontoRetroativo += faixaSalarial == 2 ? (salarioBruto - 1320.01) * 0.09  : (2571.30 - 1320.01) * 0.09; }	// Alíquota de 9%
-			if (salarioBruto >= 2571.30 || faixaSalarial == 3) { faixaDescontoRetroativo += faixaSalarial == 3 ? (salarioBruto - 2571.30) * 0.12  :	(3856.95 - 2571.30) * 0.12; }	// Alíquota de 12%
-			if (salarioBruto >= 3856.95 || faixaSalarial == 4) { faixaDescontoRetroativo += faixaSalarial == 4 ? (salarioBruto - 3856.95) * 0.14  :	(7507.49 - 3856.95) * 0.14; }	// Alíquota de 14%
+            if (salarioBruto >= 1320.00 || faixaSalarial == 1) { descontoINSS += faixaSalarial == 1 ? (salarioBruto) * 0.075 : 1320.00 * 0.075; }				        // Alíquota de 7.5%
+			if (salarioBruto >= 1320.01 || faixaSalarial == 2) { descontoINSS += faixaSalarial == 2 ? (salarioBruto - 1320.01) * 0.09  :    (2571.30 - 1320.01) * 0.09; }	// Alíquota de 9%
+			if (salarioBruto >= 2571.30 || faixaSalarial == 3) { descontoINSS += faixaSalarial == 3 ? (salarioBruto - 2571.30) * 0.12  :	(3856.95 - 2571.30) * 0.12; }	// Alíquota de 12%
+			if (salarioBruto >= 3856.95 || faixaSalarial == 4) { descontoINSS += faixaSalarial == 4 ? (salarioBruto - 3856.95) * 0.14  :	(7507.49 - 3856.95) * 0.14; }	// Alíquota de 14%
 
-            return faixaDescontoRetroativo;
+            return descontoINSS;
         }
-        private static double CalcularIRRF(double salarioBruto, int numeroDependentes, double descontoINSS)
+        private static double CalcularIRRF_(double salarioBruto, int numeroDependentes, double descontoINSS)
         {
             double descontoIRRF = 0;
 
@@ -331,85 +331,61 @@ namespace SisEnterprise_2._0
 
             return descontoIRRF;
         }
-        private static double CalcularIRRF_(double salario, double dependentes)
+        private static double CalcularIRRF(double salarioBruto, int numeroDependentes, double descontoINSS)
         {
-            double aliquota = 0;
-            double limiteDeducao = 0;
-            double totalDesconto = 0;
+            double descontoIRRF = 0;
             double totalDeducaoDependente = 0;
 
-            if (salario <= 1903.98)
+            // Definição das faixas e alíquotas do IRRF (valores de exemplo)
+            double faixa1 = 1903.98;
+            double faixa2 = 2826.65;
+            double faixa3 = 3751.05;
+            double faixa4 = 4664.68;
+
+            double aliquota1 = 0.075;
+            double aliquota2 = 0.15;
+            double aliquota3 = 0.225;
+            double aliquota4 = 0.275;
+
+            double deduzirfaixa1 = 0.00;
+            double deduzirfaixa2 = 142.80;
+            double deduzirfaixa3 = 354.80;
+            double deduzirfaixa4 = 636.13;
+            double deduzirfaixa5 = 869.36;
+
+            // Valor de dedução por dependente (valor de exemplo)
+            totalDeducaoDependente = CalcularTotalDeducaoDepedente(salarioBruto, numeroDependentes);
+
+            // Cálculo do IRRF considerando dedução de dependentes
+            double baseCalculo = salarioBruto - (descontoINSS + totalDeducaoDependente);
+
+            if (baseCalculo <= faixa1)
             {
-                aliquota = 0;
-                limiteDeducao = 0;
-                totalDesconto = salario * 0;
+                descontoIRRF = 0;
             }
-            else if (salario <= 2826.65)
+            else if (baseCalculo <= faixa2)
             {
-                aliquota = 7.5;
-                limiteDeducao = 142.80;
-                totalDesconto = salario * 0.075;
+                descontoIRRF = (baseCalculo * aliquota1) - deduzirfaixa2;
             }
-            else if (salario <= 3751.05)
+            else if (baseCalculo <= faixa3)
             {
-                aliquota = 15.00;
-                limiteDeducao = 354.80;
-                totalDesconto = salario * 0.15;
+                descontoIRRF = (baseCalculo * aliquota2) - deduzirfaixa3;
             }
-            else if (salario <= 4664.68)
+            else if (baseCalculo <= faixa4)
             {
-                aliquota = 22.5;
-                limiteDeducao = 636.13;
-                totalDesconto = salario * 0.0225;
+                descontoIRRF = (baseCalculo * aliquota3) - deduzirfaixa4;
             }
             else
             {
-                aliquota = 27.5;
-                limiteDeducao = 869.36;
-                totalDesconto = salario * 0.0275;
+                descontoIRRF = (baseCalculo * aliquota4) - deduzirfaixa5;
             }
-
-            totalDeducaoDependente = 189.59 * dependentes;
-
-            if (totalDeducaoDependente >= limiteDeducao){ totalDesconto -= limiteDeducao;          }
-            else                                        { totalDesconto -= totalDeducaoDependente; }
-
-            return totalDesconto;
+ 
+            return descontoIRRF;
         }
         private static double CalcularTotalDeducaoDepedente(double salario, int dependentes)
         {
-            // Valor mensal de R$ 189,59 por dependente
-            double limiteDeducao = 0;
-            double totalDesconto = 0;
             double totalDeducaoDependente = 0;
-
-            if (salario <= 1903.98)
-            {
-                limiteDeducao = 0;
-            }
-            else if (salario <= 2826.65)
-            {
-                limiteDeducao = 142.80;
-            }
-            else if (salario <= 3751.05)
-            {
-                limiteDeducao = 354.80;
-            }
-            else if (salario <= 4664.68)
-            {
-                limiteDeducao = 636.13;
-            }
-            else
-            {
-                limiteDeducao = 869.36;
-            }
-
-            totalDeducaoDependente = 189.59 * dependentes;
-
-            if (totalDeducaoDependente >= limiteDeducao) { totalDesconto -= limiteDeducao; }
-            else { totalDesconto -= totalDeducaoDependente; }
-
-            return totalDesconto;
+            return totalDeducaoDependente = 189.59 * dependentes;
         }
     }
 }
