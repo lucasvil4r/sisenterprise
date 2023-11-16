@@ -337,7 +337,7 @@ namespace SisEnterprise_2._0
             double totalDeducaoDependente = 0;
 
             // Definição das faixas e alíquotas do IRRF (valores de exemplo)
-            double faixa1 = 1903.98;
+            double faixa1 = 2112.00;
             double faixa2 = 2826.65;
             double faixa3 = 3751.05;
             double faixa4 = 4664.68;
@@ -348,10 +348,10 @@ namespace SisEnterprise_2._0
             double aliquota4 = 0.275;
 
             double deduzirfaixa1 = 0.00;
-            double deduzirfaixa2 = 142.80;
-            double deduzirfaixa3 = 354.80;
-            double deduzirfaixa4 = 636.13;
-            double deduzirfaixa5 = 869.36;
+            double deduzirfaixa2 = 158.40;
+            double deduzirfaixa3 = 370.40;
+            double deduzirfaixa4 = 651.73;
+            double deduzirfaixa5 = 884.96;
 
             // Valor de dedução por dependente (valor de exemplo)
             totalDeducaoDependente = CalcularTotalDeducaoDepedente(salarioBruto, numeroDependentes);
