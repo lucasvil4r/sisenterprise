@@ -55,19 +55,13 @@
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonCalcular = new System.Windows.Forms.Button();
-            this.comboBoxAdinta13 = new System.Windows.Forms.ComboBox();
-            this.comboBoxAbonoPecu = new System.Windows.Forms.ComboBox();
+            this.comboBoxParcela = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBoxQtdDependentes = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxHrExtra = new System.Windows.Forms.TextBox();
-            this.textBoxDiasFerias = new System.Windows.Forms.TextBox();
             this.textBoxSalario = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ComboBoxDept = new System.Windows.Forms.ComboBox();
@@ -80,6 +74,8 @@
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
+            this.numericMesesTrabalhados = new System.Windows.Forms.NumericUpDown();
+            this.numericQtdDependentes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
@@ -90,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMesesTrabalhados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQtdDependentes)).BeginInit();
             this.SuspendLayout();
             // 
             // qtddependentesDataGridViewTextBoxColumn
@@ -301,19 +299,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.numericQtdDependentes);
+            this.groupBox1.Controls.Add(this.numericMesesTrabalhados);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.buttonLimpar);
             this.groupBox1.Controls.Add(this.buttonCalcular);
-            this.groupBox1.Controls.Add(this.comboBoxAdinta13);
-            this.groupBox1.Controls.Add(this.comboBoxAbonoPecu);
+            this.groupBox1.Controls.Add(this.comboBoxParcela);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBoxQtdDependentes);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBoxHrExtra);
-            this.groupBox1.Controls.Add(this.textBoxDiasFerias);
             this.groupBox1.Controls.Add(this.textBoxSalario);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(10, 62);
             this.groupBox1.Name = "groupBox1";
@@ -322,23 +316,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Valores Cálculo";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(431, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 43;
-            this.label5.Text = "ADIANTAR 13°:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(88, 109);
+            this.label4.Location = new System.Drawing.Point(119, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 13);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 42;
-            this.label4.Text = "ABONO PECUNÍARIO:";
+            this.label4.Text = "PARCELA:";
             // 
             // buttonLimpar
             // 
@@ -358,94 +343,53 @@
             this.buttonCalcular.TabIndex = 6;
             this.buttonCalcular.Text = "Calcular";
             this.buttonCalcular.UseVisualStyleBackColor = true;
+            this.buttonCalcular.Click += new System.EventHandler(this.buttonCalcular_Click);
             // 
-            // comboBoxAdinta13
+            // comboBoxParcela
             // 
-            this.comboBoxAdinta13.DisplayMember = "nome";
-            this.comboBoxAdinta13.FormattingEnabled = true;
-            this.comboBoxAdinta13.Location = new System.Drawing.Point(521, 109);
-            this.comboBoxAdinta13.Name = "comboBoxAdinta13";
-            this.comboBoxAdinta13.Size = new System.Drawing.Size(181, 21);
-            this.comboBoxAdinta13.TabIndex = 5;
-            this.comboBoxAdinta13.Text = "Não";
-            this.comboBoxAdinta13.ValueMember = "id_departamento";
-            // 
-            // comboBoxAbonoPecu
-            // 
-            this.comboBoxAbonoPecu.DisplayMember = "nome";
-            this.comboBoxAbonoPecu.FormattingEnabled = true;
-            this.comboBoxAbonoPecu.Location = new System.Drawing.Point(214, 106);
-            this.comboBoxAbonoPecu.Name = "comboBoxAbonoPecu";
-            this.comboBoxAbonoPecu.Size = new System.Drawing.Size(181, 21);
-            this.comboBoxAbonoPecu.TabIndex = 4;
-            this.comboBoxAbonoPecu.Text = "Sim";
-            this.comboBoxAbonoPecu.ValueMember = "id_departamento";
+            this.comboBoxParcela.DisplayMember = "nome";
+            this.comboBoxParcela.FormattingEnabled = true;
+            this.comboBoxParcela.Items.AddRange(new object[] {
+            "Única",
+            "Primeira",
+            "Segunda"});
+            this.comboBoxParcela.Location = new System.Drawing.Point(184, 97);
+            this.comboBoxParcela.Name = "comboBoxParcela";
+            this.comboBoxParcela.Size = new System.Drawing.Size(181, 21);
+            this.comboBoxParcela.TabIndex = 4;
+            this.comboBoxParcela.Text = "Única";
+            this.comboBoxParcela.ValueMember = "id_departamento";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(411, 73);
+            this.label14.Location = new System.Drawing.Point(417, 101);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(106, 13);
             this.label14.TabIndex = 34;
             this.label14.Text = "N° DEPENDENTES:";
             // 
-            // textBoxQtdDependentes
-            // 
-            this.textBoxQtdDependentes.Enabled = false;
-            this.textBoxQtdDependentes.Location = new System.Drawing.Point(523, 71);
-            this.textBoxQtdDependentes.Name = "textBoxQtdDependentes";
-            this.textBoxQtdDependentes.Size = new System.Drawing.Size(179, 20);
-            this.textBoxQtdDependentes.TabIndex = 3;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(439, 33);
+            this.label11.Location = new System.Drawing.Point(393, 42);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 13);
+            this.label11.Size = new System.Drawing.Size(130, 13);
             this.label11.TabIndex = 35;
-            this.label11.Text = "DIAS FÉRIAS:";
-            // 
-            // textBoxHrExtra
-            // 
-            this.textBoxHrExtra.Enabled = false;
-            this.textBoxHrExtra.Location = new System.Drawing.Point(214, 70);
-            this.textBoxHrExtra.Name = "textBoxHrExtra";
-            this.textBoxHrExtra.Size = new System.Drawing.Size(181, 20);
-            this.textBoxHrExtra.TabIndex = 2;
-            // 
-            // textBoxDiasFerias
-            // 
-            this.textBoxDiasFerias.Enabled = false;
-            this.textBoxDiasFerias.Location = new System.Drawing.Point(523, 30);
-            this.textBoxDiasFerias.Name = "textBoxDiasFerias";
-            this.textBoxDiasFerias.Size = new System.Drawing.Size(179, 20);
-            this.textBoxDiasFerias.TabIndex = 1;
-            this.textBoxDiasFerias.TabStop = false;
-            this.textBoxDiasFerias.Text = "30";
+            this.label11.Text = "MESES TRABALHADOS:";
             // 
             // textBoxSalario
             // 
             this.textBoxSalario.Enabled = false;
-            this.textBoxSalario.Location = new System.Drawing.Point(214, 30);
+            this.textBoxSalario.Location = new System.Drawing.Point(184, 39);
             this.textBoxSalario.Name = "textBoxSalario";
             this.textBoxSalario.Size = new System.Drawing.Size(181, 20);
             this.textBoxSalario.TabIndex = 0;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "HORAS EXTRAS:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(111, 33);
+            this.label1.Location = new System.Drawing.Point(81, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 31;
@@ -558,6 +502,31 @@
             // 
             this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
             // 
+            // numericMesesTrabalhados
+            // 
+            this.numericMesesTrabalhados.Location = new System.Drawing.Point(524, 40);
+            this.numericMesesTrabalhados.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.numericMesesTrabalhados.Name = "numericMesesTrabalhados";
+            this.numericMesesTrabalhados.Size = new System.Drawing.Size(179, 20);
+            this.numericMesesTrabalhados.TabIndex = 43;
+            this.numericMesesTrabalhados.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // numericQtdDependentes
+            // 
+            this.numericQtdDependentes.Enabled = false;
+            this.numericQtdDependentes.Location = new System.Drawing.Point(524, 99);
+            this.numericQtdDependentes.Name = "numericQtdDependentes";
+            this.numericQtdDependentes.Size = new System.Drawing.Size(179, 20);
+            this.numericQtdDependentes.TabIndex = 44;
+            // 
             // FormCalc13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,6 +557,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericMesesTrabalhados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQtdDependentes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,19 +592,11 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn qtdhorastrabalhadasDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridView dataGridView;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button buttonLimpar;
 		private System.Windows.Forms.Button buttonCalcular;
-		private System.Windows.Forms.ComboBox comboBoxAdinta13;
-		private System.Windows.Forms.ComboBox comboBoxAbonoPecu;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.TextBox textBoxQtdDependentes;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.TextBox textBoxHrExtra;
-		private System.Windows.Forms.TextBox textBoxDiasFerias;
 		private System.Windows.Forms.TextBox textBoxSalario;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.TextBox textBoxEmail;
@@ -646,5 +609,9 @@
 		private System.Windows.Forms.ComboBox ComboBoxDept;
 		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
 		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;
-	}
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxParcela;
+        private System.Windows.Forms.NumericUpDown numericMesesTrabalhados;
+        private System.Windows.Forms.NumericUpDown numericQtdDependentes;
+    }
 }
