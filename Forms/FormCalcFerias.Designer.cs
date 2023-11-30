@@ -269,6 +269,7 @@
             // comboBoxAbonoPecu
             // 
             this.comboBoxAbonoPecu.DisplayMember = "nome";
+            this.comboBoxAbonoPecu.Enabled = false;
             this.comboBoxAbonoPecu.FormattingEnabled = true;
             this.comboBoxAbonoPecu.Items.AddRange(new object[] {
             "Não",
@@ -277,7 +278,7 @@
             this.comboBoxAbonoPecu.Name = "comboBoxAbonoPecu";
             this.comboBoxAbonoPecu.Size = new System.Drawing.Size(181, 21);
             this.comboBoxAbonoPecu.TabIndex = 4;
-            this.comboBoxAbonoPecu.Text = "Sim";
+            this.comboBoxAbonoPecu.Text = "Não";
             // 
             // label14
             // 

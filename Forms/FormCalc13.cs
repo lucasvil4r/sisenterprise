@@ -170,8 +170,9 @@ namespace SisEnterprise_2._0
             if (comboBoxParcela.Text == "Primeira")
             {
                 aliquotaINSS = 0;
-                aliquotaIRRF = 0;
                 totalDesconto = 0;
+                aliquotaIRRF = 0;
+                descontoINSS = 0;
                 totalProvento = salario13 / 2;
                 valorLiquidoReceber = totalProvento;
                 salario13 = salario13 / 2;
