@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisEnterprise_2._0.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,7 +55,19 @@ namespace SisEnterprise_2._0
 				case "Cálculo de 13°":
 					ShowFormChild(new FormCalc13());
 					break;
-			}
+                case "Cadastro de Produtos":
+                    ShowFormChild(new FormCadProd());
+                    break;
+                case "Cadastro de Fornecedores":
+                    ShowFormChild(new FormCadFornec());
+                    break;
+                case "Cadastrar Propostas":
+                    ShowFormChild(new FormCadProp());
+                    break;
+                case "Cadastro de Clientes":
+                    ShowFormChild(new FormCadCli());
+                    break;
+            }
 
 		}
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)

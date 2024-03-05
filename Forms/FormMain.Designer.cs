@@ -28,30 +28,30 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.TreeNode treeNode81 = new System.Windows.Forms.TreeNode("Cadastro de Departamentos");
-            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("Cadastro de Funcionários");
-            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("Cálculo de Férias");
-            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("Cálculo de 13°");
-            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("RH", new System.Windows.Forms.TreeNode[] {
-            treeNode81,
-            treeNode82,
-            treeNode83,
-            treeNode84});
-            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("Logistica");
-            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("Contabilidade");
-            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("Fiscal");
-            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("Financeiro");
-            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("Diretoria");
-            System.Windows.Forms.TreeNode treeNode91 = new System.Windows.Forms.TreeNode("TI");
-            System.Windows.Forms.TreeNode treeNode92 = new System.Windows.Forms.TreeNode("Cadastro de Clientes");
-            System.Windows.Forms.TreeNode treeNode93 = new System.Windows.Forms.TreeNode("Cadastrar Propostas");
-            System.Windows.Forms.TreeNode treeNode94 = new System.Windows.Forms.TreeNode("Cadastro de Fornecedores");
-            System.Windows.Forms.TreeNode treeNode95 = new System.Windows.Forms.TreeNode("Cadastro de Produtos");
-            System.Windows.Forms.TreeNode treeNode96 = new System.Windows.Forms.TreeNode("Comercial", new System.Windows.Forms.TreeNode[] {
-            treeNode92,
-            treeNode93,
-            treeNode94,
-            treeNode95});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Cadastro de Departamentos");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Cadastro de Funcionários");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Cálculo de Férias");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Cálculo de 13°");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("RH", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Logistica");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Contabilidade");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Fiscal");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Financeiro");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Diretoria");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("TI");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Cadastro de Clientes");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Cadastrar Propostas");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Cadastro de Fornecedores");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Cadastro de Produtos");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Vendas", new System.Windows.Forms.TreeNode[] {
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.treeView = new System.Windows.Forms.TreeView();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -109,47 +109,47 @@
             this.treeView.ItemHeight = 50;
             this.treeView.Location = new System.Drawing.Point(0, 27);
             this.treeView.Name = "treeView";
-            treeNode81.Name = "NodeCadDept";
-            treeNode81.Text = "Cadastro de Departamentos";
-            treeNode82.Name = "NodeCadFunc";
-            treeNode82.Text = "Cadastro de Funcionários";
-            treeNode83.Name = "NodeCalcFerias";
-            treeNode83.Text = "Cálculo de Férias";
-            treeNode84.Name = "NodeCalc13";
-            treeNode84.Text = "Cálculo de 13°";
-            treeNode85.Name = "NodeRH";
-            treeNode85.Text = "RH";
-            treeNode86.Name = "Node1";
-            treeNode86.Text = "Logistica";
-            treeNode87.Name = "Node3";
-            treeNode87.Text = "Contabilidade";
-            treeNode88.Name = "Node4";
-            treeNode88.Text = "Fiscal";
-            treeNode89.Name = "Node5";
-            treeNode89.Text = "Financeiro";
-            treeNode90.Name = "Node6";
-            treeNode90.Text = "Diretoria";
-            treeNode91.Name = "Node7";
-            treeNode91.Text = "TI";
-            treeNode92.Name = "NodeCadCliente";
-            treeNode92.Text = "Cadastro de Clientes";
-            treeNode93.Name = "NodeCadProposta";
-            treeNode93.Text = "Cadastrar Propostas";
-            treeNode94.Name = "NodeCadFornecedor";
-            treeNode94.Text = "Cadastro de Fornecedores";
-            treeNode95.Name = "NodeProduto";
-            treeNode95.Text = "Cadastro de Produtos";
-            treeNode96.Name = "Node8";
-            treeNode96.Text = "Comercial";
+            treeNode1.Name = "NodeCadDept";
+            treeNode1.Text = "Cadastro de Departamentos";
+            treeNode2.Name = "NodeCadFunc";
+            treeNode2.Text = "Cadastro de Funcionários";
+            treeNode3.Name = "NodeCalcFerias";
+            treeNode3.Text = "Cálculo de Férias";
+            treeNode4.Name = "NodeCalc13";
+            treeNode4.Text = "Cálculo de 13°";
+            treeNode5.Name = "NodeRH";
+            treeNode5.Text = "RH";
+            treeNode6.Name = "Node1";
+            treeNode6.Text = "Logistica";
+            treeNode7.Name = "Node3";
+            treeNode7.Text = "Contabilidade";
+            treeNode8.Name = "Node4";
+            treeNode8.Text = "Fiscal";
+            treeNode9.Name = "Node5";
+            treeNode9.Text = "Financeiro";
+            treeNode10.Name = "Node6";
+            treeNode10.Text = "Diretoria";
+            treeNode11.Name = "Node7";
+            treeNode11.Text = "TI";
+            treeNode12.Name = "NodeCadCliente";
+            treeNode12.Text = "Cadastro de Clientes";
+            treeNode13.Name = "NodeCadProposta";
+            treeNode13.Text = "Cadastrar Propostas";
+            treeNode14.Name = "NodeCadFornecedor";
+            treeNode14.Text = "Cadastro de Fornecedores";
+            treeNode15.Name = "NodeProduto";
+            treeNode15.Text = "Cadastro de Produtos";
+            treeNode16.Name = "Node8";
+            treeNode16.Text = "Vendas";
             this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode85,
-            treeNode86,
-            treeNode87,
-            treeNode88,
-            treeNode89,
-            treeNode90,
-            treeNode91,
-            treeNode96});
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode16});
             this.treeView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.treeView.Size = new System.Drawing.Size(268, 676);
             this.treeView.TabIndex = 1;
