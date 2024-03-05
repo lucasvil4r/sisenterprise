@@ -30,7 +30,9 @@ namespace SisEnterprise_2._0
 				} else
 				{
 					MessageBox.Show("Usúario Inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
+                    textBoxPass.Text = string.Empty;
+
+                }
 			}
 		}
 
