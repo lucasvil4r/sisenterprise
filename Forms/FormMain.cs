@@ -32,8 +32,8 @@ namespace SisEnterprise_2._0
 					return;
 				}
 			}
-			form.MdiParent = this;
-			form.Show();
+            form.MdiParent = this;
+            form.Show();
 		}
 
 		private void treeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -42,10 +42,10 @@ namespace SisEnterprise_2._0
 
 			switch (SelectForm)
 			{
-				case "Cadastro de Funcionário":
+				case "Cadastro de Funcionários":
 					ShowFormChild(new FormCadFunc());
 					break;
-				case "Cadastro de Departamento":
+				case "Cadastro de Departamentos":
 					ShowFormChild(new FormCadDept());
 					break;
 				case "Cálculo de Férias":
@@ -57,5 +57,23 @@ namespace SisEnterprise_2._0
 			}
 
 		}
-	}
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
+
+            if (menuItem != null)
+            {
+                if (menuItem.Checked)
+                {
+                    // Realizar ação quando o item de menu está marcado (checked)
+                    treeView.Visible = true;
+                }
+                else
+                {
+                    // Realizar outra ação quando o item de menu não está marcado (unchecked)
+                    treeView.Visible = false;
+                }
+            }
+        }
+    }
 }
