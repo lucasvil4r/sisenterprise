@@ -70,6 +70,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\Cadastro_Cliente.cs" />
+    <Compile Include="Interface\Cadastro_Departamento.cs" />
+    <Compile Include="Interface\Cadastro_Ferias.cs" />
+    <Compile Include="Interface\Cadastro_Fornecedores.cs" />
+    <Compile Include="Interface\Cadastro_Funcionario.cs" />
+    <Compile Include="Interface\Cadastro_Produtos.cs" />
+    <Compile Include="Interface\Cadastro_Proposta.cs" />
+    <Compile Include="Interface\Cadastro_Vendedor.cs" />
     <Compile Include="Forms\FormCadCli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,9 +102,6 @@
     <Compile Include="Forms\FormCadProp.Designer.cs">
       <DependentUpon>FormCadProp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interface\Cadastro_Departamento.cs" />
-    <Compile Include="Interface\Cadastro_Ferias.cs" />
-    <Compile Include="Interface\Cadastro_Funcionario.cs" />
     <Compile Include="Forms\FormCadDept.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +138,7 @@
     <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\Item_Proposta.cs" />
     <Compile Include="Interface\Login_Usuario.cs" />
     <Compile Include="Interface\Log_calculo_13.cs" />
     <Compile Include="Interface\Log_calculo_ferias.cs" />
@@ -145,6 +151,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sisenterpriseDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormCadCli.resx">
+      <DependentUpon>FormCadCli.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadDept.resx">
       <DependentUpon>FormCadDept.cs</DependentUpon>
     </EmbeddedResource>
