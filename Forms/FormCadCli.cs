@@ -28,17 +28,14 @@ namespace SisEnterprise_2._0.Forms
             if (ClienteId != 0)
             {
                 bool returnFunction = SaveCliente(ClienteId);
-                if (returnFunction)
-                {
-                    MessageBox.Show("Cliente salvo com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Não foi possível salvar, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            } else
+                if (returnFunction) {MessageBox.Show("Cliente salvo com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);}
+                else{MessageBox.Show("Não foi possível salvar, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            } 
+            else
             {
-                InsertCliente();
+                bool returnFunction = InsertCliente();
+                if (returnFunction) {MessageBox.Show("Cliente adicionado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                else {MessageBox.Show("Não foi possível adiconar cliente, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
 
             ClearData();
@@ -181,13 +178,8 @@ namespace SisEnterprise_2._0.Forms
             if (ClienteId != 0)
             {
                 bool returnFunction = DeleteCliente(ClienteId);
-                if (returnFunction)
-                {
-                    MessageBox.Show("Cliente excluido com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } else
-                {
-                    MessageBox.Show("Não foi possível excluir, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                if (returnFunction) {MessageBox.Show("Cliente excluido com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);} 
+                else {MessageBox.Show("Não foi possível excluir, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);}
             }
 
             ClearData();

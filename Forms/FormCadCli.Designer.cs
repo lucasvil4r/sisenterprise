@@ -80,8 +80,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.maskedTextBoxDataAlt = new System.Windows.Forms.MaskedTextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.maskedTextBoxDataCad = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -92,6 +90,8 @@
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonCriarProposta = new System.Windows.Forms.Button();
             this.cadastro_ClienteTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ClienteTableAdapter();
+            this.maskedTextBoxDataCad = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroClienteBindingSource)).BeginInit();
@@ -146,9 +146,9 @@
             this.datacadastroDataGridViewTextBoxColumn,
             this.dataalteracaoDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.cadastroClienteBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(26, 332);
+            this.dataGridView.Location = new System.Drawing.Point(26, 335);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(663, 130);
+            this.dataGridView.Size = new System.Drawing.Size(663, 127);
             this.dataGridView.TabIndex = 32;
             this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
@@ -296,7 +296,7 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Location = new System.Drawing.Point(26, 25);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(360, 286);
+            this.groupBox4.Size = new System.Drawing.Size(360, 247);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dados Empresa ";
@@ -304,7 +304,7 @@
             // checkBoxAtivo
             // 
             this.checkBoxAtivo.AutoSize = true;
-            this.checkBoxAtivo.Location = new System.Drawing.Point(197, 41);
+            this.checkBoxAtivo.Location = new System.Drawing.Point(198, 42);
             this.checkBoxAtivo.Name = "checkBoxAtivo";
             this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
             this.checkBoxAtivo.TabIndex = 10;
@@ -346,6 +346,7 @@
             this.maskedTextBoxCNPJ.AccessibleDescription = "";
             this.maskedTextBoxCNPJ.AccessibleName = "";
             this.maskedTextBoxCNPJ.Location = new System.Drawing.Point(96, 160);
+            this.maskedTextBoxCNPJ.Mask = "99.999.999/9999-9";
             this.maskedTextBoxCNPJ.Name = "maskedTextBoxCNPJ";
             this.maskedTextBoxCNPJ.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxCNPJ.TabIndex = 4;
@@ -439,7 +440,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(399, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 286);
+            this.groupBox2.Size = new System.Drawing.Size(290, 247);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
@@ -542,6 +543,7 @@
             this.maskedTextBoxCep.AccessibleDescription = "";
             this.maskedTextBoxCep.AccessibleName = "";
             this.maskedTextBoxCep.Location = new System.Drawing.Point(75, 214);
+            this.maskedTextBoxCep.Mask = "99999-999";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(185, 20);
             this.maskedTextBoxCep.TabIndex = 11;
@@ -567,7 +569,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(713, 281);
+            this.label16.Location = new System.Drawing.Point(701, 284);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(81, 13);
             this.label16.TabIndex = 24;
@@ -577,28 +579,10 @@
             // 
             this.maskedTextBoxDataAlt.AccessibleDescription = "";
             this.maskedTextBoxDataAlt.AccessibleName = "";
-            this.maskedTextBoxDataAlt.Location = new System.Drawing.Point(797, 278);
+            this.maskedTextBoxDataAlt.Location = new System.Drawing.Point(785, 284);
             this.maskedTextBoxDataAlt.Name = "maskedTextBoxDataAlt";
-            this.maskedTextBoxDataAlt.Size = new System.Drawing.Size(99, 20);
+            this.maskedTextBoxDataAlt.Size = new System.Drawing.Size(112, 20);
             this.maskedTextBoxDataAlt.TabIndex = 23;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(713, 258);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Data Cadastro:";
-            // 
-            // maskedTextBoxDataCad
-            // 
-            this.maskedTextBoxDataCad.AccessibleDescription = "";
-            this.maskedTextBoxDataCad.AccessibleName = "";
-            this.maskedTextBoxDataCad.Location = new System.Drawing.Point(797, 252);
-            this.maskedTextBoxDataCad.Name = "maskedTextBoxDataCad";
-            this.maskedTextBoxDataCad.Size = new System.Drawing.Size(99, 20);
-            this.maskedTextBoxDataCad.TabIndex = 21;
             // 
             // groupBox3
             // 
@@ -635,7 +619,7 @@
             // 
             // buttonImportFoto
             // 
-            this.buttonImportFoto.Location = new System.Drawing.Point(52, 173);
+            this.buttonImportFoto.Location = new System.Drawing.Point(48, 173);
             this.buttonImportFoto.Name = "buttonImportFoto";
             this.buttonImportFoto.Size = new System.Drawing.Size(90, 26);
             this.buttonImportFoto.TabIndex = 0;
@@ -692,6 +676,24 @@
             // cadastro_ClienteTableAdapter
             // 
             this.cadastro_ClienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // maskedTextBoxDataCad
+            // 
+            this.maskedTextBoxDataCad.AccessibleDescription = "";
+            this.maskedTextBoxDataCad.AccessibleName = "";
+            this.maskedTextBoxDataCad.Location = new System.Drawing.Point(785, 252);
+            this.maskedTextBoxDataCad.Name = "maskedTextBoxDataCad";
+            this.maskedTextBoxDataCad.Size = new System.Drawing.Size(112, 20);
+            this.maskedTextBoxDataCad.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(701, 255);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Data Cadastro:";
             // 
             // FormCadCli
             // 
@@ -761,8 +763,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataAlt;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxDataCad;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBoxAtivo;
@@ -787,5 +787,7 @@
         private System.Windows.Forms.DataGridViewImageColumn logoempresaDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datacadastroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataalteracaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxDataCad;
     }
 }
