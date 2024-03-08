@@ -22,9 +22,17 @@ namespace SisEnterprise_2._0.Forms
         public FormCadCli()
         {
             InitializeComponent();
+
+            //Carrega foto placeholder
+            Image imagemCarregada = Image.FromFile(Path.Combine(Application.StartupPath, "Logo", "placeholder.jpg"));
+            pictureBoxFoto.Image = imagemCarregada;
+            pictureBoxFoto.SizeMode = PictureBoxSizeMode.Zoom; // Ajusta o tamanho para caber no PictureBox
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Deseja salvar esses dados ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
             if (ClienteId != 0)
             {
                 bool returnFunction = SaveCliente(ClienteId);
@@ -58,10 +66,11 @@ namespace SisEnterprise_2._0.Forms
                     cliente.cep = maskedTextBoxCep.Text;
                     cliente.cidade = maskedTextBoxCidade.Text;
                     cliente.email = maskedTextBoxEmail.Text;
-                    cliente.tipo = checkBoxAtivo.Text;
+                    //cliente.tipo = checkBoxAtivo.Text;
+                    //cliente.logo_empresa = checkBoxAtivo.Text;
                     cliente.comentario = richTextBoxComentario.Text;
                     cliente.data_cadastro = DateTime.Now;
-                    cliente.data_alteracao = DateTime.Now;
+                    //cliente.data_alteracao = DateTime.Now;
                     db.Cadastro_Cliente.Add(cliente);
                     db.SaveChanges();
                     return true;
@@ -86,9 +95,10 @@ namespace SisEnterprise_2._0.Forms
                     cliente.cep = maskedTextBoxCep.Text;
                     cliente.cidade = maskedTextBoxCidade.Text;
                     cliente.email = maskedTextBoxEmail.Text;
-                    cliente.tipo = checkBoxAtivo.Text;
+                    //cliente.tipo = checkBoxAtivo.Text;
+                    //cliente.logo_empresa = checkBoxAtivo.Text;
                     cliente.comentario = richTextBoxComentario.Text;
-                    cliente.data_cadastro = DateTime.Now;
+                    //cliente.data_cadastro = DateTime.Now;
                     cliente.data_alteracao = DateTime.Now;
                     db.SaveChanges();
                     return true;
@@ -139,6 +149,7 @@ namespace SisEnterprise_2._0.Forms
                     maskedTextBoxBairro.Text = cliente.bairro;
                     maskedTextBoxCidade.Text = cliente.cidade;
                     maskedTextBoxEmail.Text = cliente.email;
+                    maskedTextBoxCep.Text = cliente.cep;
                     richTextBoxComentario.Text = cliente.comentario;
                     maskedTextBoxDataCad.Text = cliente.data_cadastro.ToString();
                     maskedTextBoxDataAlt.Text = cliente.data_alteracao.ToString();
@@ -157,6 +168,7 @@ namespace SisEnterprise_2._0.Forms
             maskedTextBoxEndereco.Text = string.Empty;
             maskedTextBoxBairro.Text = string.Empty;
             maskedTextBoxCidade.Text = string.Empty;
+            maskedTextBoxCep.Text = string.Empty;
             maskedTextBoxEmail.Text = string.Empty;
             richTextBoxComentario.Text = string.Empty;
             maskedTextBoxDataCad.Text = string.Empty;
@@ -175,11 +187,18 @@ namespace SisEnterprise_2._0.Forms
 
         private void buttonDeletar_Click(object sender, EventArgs e)
         {
-            if (ClienteId != 0)
+            if (MessageBox.Show("Deseja deletar ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+             if (ClienteId != 0)
             {
                 bool returnFunction = DeleteCliente(ClienteId);
                 if (returnFunction) {MessageBox.Show("Cliente excluido com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);} 
                 else {MessageBox.Show("Não foi possível excluir, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);}
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível excluir, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             ClearData();

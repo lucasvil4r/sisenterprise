@@ -80,6 +80,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.maskedTextBoxDataAlt = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.maskedTextBoxDataCad = new System.Windows.Forms.MaskedTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -90,8 +92,6 @@
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonCriarProposta = new System.Windows.Forms.Button();
             this.cadastro_ClienteTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ClienteTableAdapter();
-            this.maskedTextBoxDataCad = new System.Windows.Forms.MaskedTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroClienteBindingSource)).BeginInit();
@@ -114,9 +114,9 @@
             this.groupBox1.Controls.Add(this.maskedTextBoxDataCad);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.richTextBoxComentario);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(34, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(915, 487);
+            this.groupBox1.Size = new System.Drawing.Size(924, 487);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Cliente";
@@ -296,7 +296,7 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Location = new System.Drawing.Point(26, 25);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(360, 247);
+            this.groupBox4.Size = new System.Drawing.Size(360, 273);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dados Empresa ";
@@ -304,7 +304,7 @@
             // checkBoxAtivo
             // 
             this.checkBoxAtivo.AutoSize = true;
-            this.checkBoxAtivo.Location = new System.Drawing.Point(198, 42);
+            this.checkBoxAtivo.Location = new System.Drawing.Point(193, 54);
             this.checkBoxAtivo.Name = "checkBoxAtivo";
             this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
             this.checkBoxAtivo.TabIndex = 10;
@@ -327,7 +327,7 @@
             // 
             this.maskedTextBoxRazao.AccessibleDescription = "";
             this.maskedTextBoxRazao.AccessibleName = "";
-            this.maskedTextBoxRazao.Location = new System.Drawing.Point(96, 81);
+            this.maskedTextBoxRazao.Location = new System.Drawing.Point(91, 93);
             this.maskedTextBoxRazao.Name = "maskedTextBoxRazao";
             this.maskedTextBoxRazao.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxRazao.TabIndex = 2;
@@ -335,7 +335,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 84);
+            this.label1.Location = new System.Drawing.Point(15, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 3;
@@ -345,8 +345,7 @@
             // 
             this.maskedTextBoxCNPJ.AccessibleDescription = "";
             this.maskedTextBoxCNPJ.AccessibleName = "";
-            this.maskedTextBoxCNPJ.Location = new System.Drawing.Point(96, 160);
-            this.maskedTextBoxCNPJ.Mask = "99.999.999/9999-9";
+            this.maskedTextBoxCNPJ.Location = new System.Drawing.Point(91, 172);
             this.maskedTextBoxCNPJ.Name = "maskedTextBoxCNPJ";
             this.maskedTextBoxCNPJ.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxCNPJ.TabIndex = 4;
@@ -354,7 +353,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 163);
+            this.label4.Location = new System.Drawing.Point(48, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 7;
@@ -364,7 +363,7 @@
             // 
             this.maskedTextBoxNome.AccessibleDescription = "";
             this.maskedTextBoxNome.AccessibleName = "";
-            this.maskedTextBoxNome.Location = new System.Drawing.Point(96, 123);
+            this.maskedTextBoxNome.Location = new System.Drawing.Point(91, 135);
             this.maskedTextBoxNome.Name = "maskedTextBoxNome";
             this.maskedTextBoxNome.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxNome.TabIndex = 3;
@@ -372,7 +371,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(55, 205);
+            this.label9.Location = new System.Drawing.Point(50, 217);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 20;
@@ -381,7 +380,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 126);
+            this.label3.Location = new System.Drawing.Point(12, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 9;
@@ -391,7 +390,7 @@
             // 
             this.maskedTextBoxEmail.AccessibleDescription = "";
             this.maskedTextBoxEmail.AccessibleName = "";
-            this.maskedTextBoxEmail.Location = new System.Drawing.Point(96, 202);
+            this.maskedTextBoxEmail.Location = new System.Drawing.Point(91, 214);
             this.maskedTextBoxEmail.Name = "maskedTextBoxEmail";
             this.maskedTextBoxEmail.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxEmail.TabIndex = 5;
@@ -400,7 +399,7 @@
             // 
             this.maskedTextBoxCodigo.AccessibleDescription = "";
             this.maskedTextBoxCodigo.AccessibleName = "";
-            this.maskedTextBoxCodigo.Location = new System.Drawing.Point(96, 39);
+            this.maskedTextBoxCodigo.Location = new System.Drawing.Point(91, 51);
             this.maskedTextBoxCodigo.Name = "maskedTextBoxCodigo";
             this.maskedTextBoxCodigo.Size = new System.Drawing.Size(84, 20);
             this.maskedTextBoxCodigo.TabIndex = 1;
@@ -408,7 +407,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 42);
+            this.label2.Location = new System.Drawing.Point(9, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 5;
@@ -438,9 +437,9 @@
             this.groupBox2.Controls.Add(this.maskedTextBoxCep);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(399, 25);
+            this.groupBox2.Location = new System.Drawing.Point(399, 26);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 247);
+            this.groupBox2.Size = new System.Drawing.Size(290, 273);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço";
@@ -460,7 +459,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(32, 110);
+            this.label13.Location = new System.Drawing.Point(32, 111);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 13);
             this.label13.TabIndex = 30;
@@ -470,7 +469,7 @@
             // 
             this.maskedTextBoxCidade.AccessibleDescription = "";
             this.maskedTextBoxCidade.AccessibleName = "";
-            this.maskedTextBoxCidade.Location = new System.Drawing.Point(75, 71);
+            this.maskedTextBoxCidade.Location = new System.Drawing.Point(75, 72);
             this.maskedTextBoxCidade.Name = "maskedTextBoxCidade";
             this.maskedTextBoxCidade.Size = new System.Drawing.Size(185, 20);
             this.maskedTextBoxCidade.TabIndex = 7;
@@ -479,7 +478,7 @@
             // 
             this.maskedTextBoxBairro.AccessibleDescription = "";
             this.maskedTextBoxBairro.AccessibleName = "";
-            this.maskedTextBoxBairro.Location = new System.Drawing.Point(75, 107);
+            this.maskedTextBoxBairro.Location = new System.Drawing.Point(75, 108);
             this.maskedTextBoxBairro.Name = "maskedTextBoxBairro";
             this.maskedTextBoxBairro.Size = new System.Drawing.Size(185, 20);
             this.maskedTextBoxBairro.TabIndex = 8;
@@ -487,7 +486,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 76);
+            this.label15.Location = new System.Drawing.Point(26, 77);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(43, 13);
             this.label15.TabIndex = 26;
@@ -496,7 +495,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(13, 39);
+            this.label14.Location = new System.Drawing.Point(13, 40);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 13);
             this.label14.TabIndex = 28;
@@ -506,7 +505,7 @@
             // 
             this.maskedTextBoxEndereco.AccessibleDescription = "";
             this.maskedTextBoxEndereco.AccessibleName = "";
-            this.maskedTextBoxEndereco.Location = new System.Drawing.Point(75, 36);
+            this.maskedTextBoxEndereco.Location = new System.Drawing.Point(75, 37);
             this.maskedTextBoxEndereco.Name = "maskedTextBoxEndereco";
             this.maskedTextBoxEndereco.Size = new System.Drawing.Size(185, 20);
             this.maskedTextBoxEndereco.TabIndex = 6;
@@ -515,7 +514,7 @@
             // 
             this.maskedTextBoxEstado.AccessibleDescription = "";
             this.maskedTextBoxEstado.AccessibleName = "";
-            this.maskedTextBoxEstado.Location = new System.Drawing.Point(75, 143);
+            this.maskedTextBoxEstado.Location = new System.Drawing.Point(75, 144);
             this.maskedTextBoxEstado.Name = "maskedTextBoxEstado";
             this.maskedTextBoxEstado.Size = new System.Drawing.Size(185, 20);
             this.maskedTextBoxEstado.TabIndex = 9;
@@ -523,7 +522,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 217);
+            this.label7.Location = new System.Drawing.Point(38, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 16;
@@ -533,7 +532,7 @@
             // 
             this.maskedTextBoxPais.AccessibleDescription = "";
             this.maskedTextBoxPais.AccessibleName = "";
-            this.maskedTextBoxPais.Location = new System.Drawing.Point(75, 178);
+            this.maskedTextBoxPais.Location = new System.Drawing.Point(75, 179);
             this.maskedTextBoxPais.Name = "maskedTextBoxPais";
             this.maskedTextBoxPais.Size = new System.Drawing.Size(185, 20);
             this.maskedTextBoxPais.TabIndex = 10;
@@ -542,8 +541,7 @@
             // 
             this.maskedTextBoxCep.AccessibleDescription = "";
             this.maskedTextBoxCep.AccessibleName = "";
-            this.maskedTextBoxCep.Location = new System.Drawing.Point(75, 214);
-            this.maskedTextBoxCep.Mask = "99999-999";
+            this.maskedTextBoxCep.Location = new System.Drawing.Point(75, 215);
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(185, 20);
             this.maskedTextBoxCep.TabIndex = 11;
@@ -551,7 +549,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 181);
+            this.label6.Location = new System.Drawing.Point(40, 182);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 11;
@@ -560,7 +558,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 146);
+            this.label5.Location = new System.Drawing.Point(29, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 13;
@@ -569,7 +567,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(701, 284);
+            this.label16.Location = new System.Drawing.Point(701, 282);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(81, 13);
             this.label16.TabIndex = 24;
@@ -579,10 +577,28 @@
             // 
             this.maskedTextBoxDataAlt.AccessibleDescription = "";
             this.maskedTextBoxDataAlt.AccessibleName = "";
-            this.maskedTextBoxDataAlt.Location = new System.Drawing.Point(785, 284);
+            this.maskedTextBoxDataAlt.Location = new System.Drawing.Point(785, 278);
             this.maskedTextBoxDataAlt.Name = "maskedTextBoxDataAlt";
-            this.maskedTextBoxDataAlt.Size = new System.Drawing.Size(112, 20);
+            this.maskedTextBoxDataAlt.Size = new System.Drawing.Size(128, 20);
             this.maskedTextBoxDataAlt.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(701, 255);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Data Cadastro:";
+            // 
+            // maskedTextBoxDataCad
+            // 
+            this.maskedTextBoxDataCad.AccessibleDescription = "";
+            this.maskedTextBoxDataCad.AccessibleName = "";
+            this.maskedTextBoxDataCad.Location = new System.Drawing.Point(785, 252);
+            this.maskedTextBoxDataCad.Name = "maskedTextBoxDataCad";
+            this.maskedTextBoxDataCad.Size = new System.Drawing.Size(128, 20);
+            this.maskedTextBoxDataCad.TabIndex = 21;
             // 
             // groupBox3
             // 
@@ -591,14 +607,14 @@
             this.groupBox3.Controls.Add(this.buttonImportFoto);
             this.groupBox3.Location = new System.Drawing.Point(712, 25);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(185, 205);
+            this.groupBox3.Size = new System.Drawing.Size(201, 205);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Logo Empresa";
             // 
             // pictureBoxFoto
             // 
-            this.pictureBoxFoto.Location = new System.Drawing.Point(14, 25);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(22, 25);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(163, 141);
             this.pictureBoxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -619,7 +635,7 @@
             // 
             // buttonImportFoto
             // 
-            this.buttonImportFoto.Location = new System.Drawing.Point(48, 173);
+            this.buttonImportFoto.Location = new System.Drawing.Point(60, 173);
             this.buttonImportFoto.Name = "buttonImportFoto";
             this.buttonImportFoto.Size = new System.Drawing.Size(90, 26);
             this.buttonImportFoto.TabIndex = 0;
@@ -630,13 +646,13 @@
             // 
             this.richTextBoxComentario.Location = new System.Drawing.Point(712, 335);
             this.richTextBoxComentario.Name = "richTextBoxComentario";
-            this.richTextBoxComentario.Size = new System.Drawing.Size(185, 127);
+            this.richTextBoxComentario.Size = new System.Drawing.Size(201, 127);
             this.richTextBoxComentario.TabIndex = 2;
             this.richTextBoxComentario.Text = "";
             // 
             // buttonDeletar
             // 
-            this.buttonDeletar.Location = new System.Drawing.Point(488, 515);
+            this.buttonDeletar.Location = new System.Drawing.Point(510, 515);
             this.buttonDeletar.Name = "buttonDeletar";
             this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
             this.buttonDeletar.TabIndex = 5;
@@ -646,7 +662,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(362, 515);
+            this.buttonSalvar.Location = new System.Drawing.Point(384, 515);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
             this.buttonSalvar.TabIndex = 4;
@@ -656,7 +672,7 @@
             // 
             // buttonLimpar
             // 
-            this.buttonLimpar.Location = new System.Drawing.Point(610, 515);
+            this.buttonLimpar.Location = new System.Drawing.Point(632, 515);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
             this.buttonLimpar.TabIndex = 7;
@@ -666,7 +682,7 @@
             // 
             // buttonCriarProposta
             // 
-            this.buttonCriarProposta.Location = new System.Drawing.Point(236, 515);
+            this.buttonCriarProposta.Location = new System.Drawing.Point(258, 515);
             this.buttonCriarProposta.Name = "buttonCriarProposta";
             this.buttonCriarProposta.Size = new System.Drawing.Size(105, 31);
             this.buttonCriarProposta.TabIndex = 9;
@@ -677,34 +693,18 @@
             // 
             this.cadastro_ClienteTableAdapter.ClearBeforeFill = true;
             // 
-            // maskedTextBoxDataCad
-            // 
-            this.maskedTextBoxDataCad.AccessibleDescription = "";
-            this.maskedTextBoxDataCad.AccessibleName = "";
-            this.maskedTextBoxDataCad.Location = new System.Drawing.Point(785, 252);
-            this.maskedTextBoxDataCad.Name = "maskedTextBoxDataCad";
-            this.maskedTextBoxDataCad.Size = new System.Drawing.Size(112, 20);
-            this.maskedTextBoxDataCad.TabIndex = 21;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(701, 255);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Data Cadastro:";
-            // 
             // FormCadCli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 560);
+            this.ClientSize = new System.Drawing.Size(987, 560);
             this.Controls.Add(this.buttonCriarProposta);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonDeletar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCadCli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
@@ -731,27 +731,17 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.Button buttonCriarProposta;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxRazao;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBoxComentario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxEstado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPais;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxNome;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxCNPJ;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button buttonImportFoto;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCep;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxEmail;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label13;
@@ -763,9 +753,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataAlt;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBoxAtivo;
         private System.Windows.Forms.DataGridView dataGridView;
         private sisenterpriseDataSet sisenterpriseDataSet;
         private System.Windows.Forms.BindingSource cadastroClienteBindingSource;
@@ -789,5 +776,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataalteracaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataCad;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox checkBoxAtivo;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxRazao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCNPJ;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxNome;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxEmail;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
+        private System.Windows.Forms.Label label2;
     }
 }
