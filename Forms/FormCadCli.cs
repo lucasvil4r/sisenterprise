@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -72,8 +74,22 @@ namespace SisEnterprise_2._0.Forms
                     cliente.data_cadastro = DateTime.Now;
                     //cliente.data_alteracao = DateTime.Now;
                     db.Cadastro_Cliente.Add(cliente);
-                    db.SaveChanges();
-                    return true;
+                    try
+                    {
+                        db.SaveChanges();
+                        return true;
+                    }
+                    catch (DbEntityValidationException ex)
+                    {
+                        foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in entityValidationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName}, Error: {validationError.ErrorMessage}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        return false;
+                    }
                 }
                 else { return false; }
             }
@@ -100,8 +116,23 @@ namespace SisEnterprise_2._0.Forms
                     cliente.comentario = richTextBoxComentario.Text;
                     //cliente.data_cadastro = DateTime.Now;
                     cliente.data_alteracao = DateTime.Now;
-                    db.SaveChanges();
-                    return true;
+
+                    try
+                    {
+                        db.SaveChanges();
+                        return true;
+                    }
+                    catch (DbEntityValidationException ex)
+                    {
+                        foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in entityValidationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName}, Error: {validationError.ErrorMessage}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        return false;
+                    }
                 }
                 else { return false; }
             }
@@ -115,8 +146,22 @@ namespace SisEnterprise_2._0.Forms
                 if (cliente != null)
                 {
                     db.Cadastro_Cliente.Remove(cliente);
-                    db.SaveChanges();
-                    return true;
+                    try
+                    {
+                        db.SaveChanges();
+                        return true;
+                    }
+                    catch (DbEntityValidationException ex)
+                    {
+                        foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                        {
+                            foreach (var validationError in entityValidationErrors.ValidationErrors)
+                            {
+                                MessageBox.Show($"Property: {validationError.PropertyName}, Error: {validationError.ErrorMessage}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        return false;
+                    }
                 }
                 else { return false; }
             }
