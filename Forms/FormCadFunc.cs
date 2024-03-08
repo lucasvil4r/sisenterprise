@@ -92,7 +92,7 @@ namespace SisEnterprise_2._0
 					funcionario.data_nascimento = DateTime.Parse(textBoxDataNascimento.Text);
 					funcionario.salario = decimal.Parse(textBoxSalario.Text);
 					funcionario.email = textBoxEmail.Text;
-					funcionario.id_departamento = (int)ComboBoxDept.SelectedValue;
+					funcionario.id_funcionario = (int)ComboBoxDept.SelectedValue;
 					funcionario.telefone = textBoxTelefone.Text;
 					//funcionario.data_admissao = DateTime.Parse(textBoxDataAdmissao.Text);
 					funcionario.data_alteracao = DateTime.Now;
