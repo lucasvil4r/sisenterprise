@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadCli));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,11 +88,13 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.buttonImportFoto = new System.Windows.Forms.Button();
             this.richTextBoxComentario = new System.Windows.Forms.RichTextBox();
-            this.buttonDeletar = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.buttonLimpar = new System.Windows.Forms.Button();
-            this.buttonCriarProposta = new System.Windows.Forms.Button();
             this.cadastro_ClienteTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ClienteTableAdapter();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroClienteBindingSource)).BeginInit();
@@ -100,6 +103,9 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -114,9 +120,9 @@
             this.groupBox1.Controls.Add(this.maskedTextBoxDataCad);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.richTextBoxComentario);
-            this.groupBox1.Location = new System.Drawing.Point(34, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(924, 487);
+            this.groupBox1.Size = new System.Drawing.Size(924, 460);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Cliente";
@@ -146,7 +152,7 @@
             this.datacadastroDataGridViewTextBoxColumn,
             this.dataalteracaoDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.cadastroClienteBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(26, 335);
+            this.dataGridView.Location = new System.Drawing.Point(26, 319);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.Size = new System.Drawing.Size(663, 127);
@@ -437,7 +443,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(709, 319);
+            this.label12.Location = new System.Drawing.Point(701, 303);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 13);
             this.label12.TabIndex = 31;
@@ -590,7 +596,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(701, 282);
+            this.label16.Location = new System.Drawing.Point(727, 274);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(81, 13);
             this.label16.TabIndex = 24;
@@ -600,15 +606,17 @@
             // 
             this.maskedTextBoxDataAlt.AccessibleDescription = "";
             this.maskedTextBoxDataAlt.AccessibleName = "";
-            this.maskedTextBoxDataAlt.Location = new System.Drawing.Point(785, 278);
+            this.maskedTextBoxDataAlt.Location = new System.Drawing.Point(811, 270);
+            this.maskedTextBoxDataAlt.Mask = "00/00/0000";
             this.maskedTextBoxDataAlt.Name = "maskedTextBoxDataAlt";
-            this.maskedTextBoxDataAlt.Size = new System.Drawing.Size(128, 20);
+            this.maskedTextBoxDataAlt.Size = new System.Drawing.Size(77, 20);
             this.maskedTextBoxDataAlt.TabIndex = 23;
+            this.maskedTextBoxDataAlt.ValidatingType = typeof(System.DateTime);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(701, 255);
+            this.label8.Location = new System.Drawing.Point(727, 247);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 13);
             this.label8.TabIndex = 22;
@@ -618,10 +626,12 @@
             // 
             this.maskedTextBoxDataCad.AccessibleDescription = "";
             this.maskedTextBoxDataCad.AccessibleName = "";
-            this.maskedTextBoxDataCad.Location = new System.Drawing.Point(785, 252);
+            this.maskedTextBoxDataCad.Location = new System.Drawing.Point(811, 244);
+            this.maskedTextBoxDataCad.Mask = "00/00/0000";
             this.maskedTextBoxDataCad.Name = "maskedTextBoxDataCad";
-            this.maskedTextBoxDataCad.Size = new System.Drawing.Size(128, 20);
+            this.maskedTextBoxDataCad.Size = new System.Drawing.Size(77, 20);
             this.maskedTextBoxDataCad.TabIndex = 21;
+            this.maskedTextBoxDataCad.ValidatingType = typeof(System.DateTime);
             // 
             // groupBox3
             // 
@@ -667,67 +677,100 @@
             // 
             // richTextBoxComentario
             // 
-            this.richTextBoxComentario.Location = new System.Drawing.Point(712, 335);
+            this.richTextBoxComentario.Location = new System.Drawing.Point(704, 319);
             this.richTextBoxComentario.Name = "richTextBoxComentario";
             this.richTextBoxComentario.Size = new System.Drawing.Size(201, 127);
             this.richTextBoxComentario.TabIndex = 2;
             this.richTextBoxComentario.Text = "";
             // 
-            // buttonDeletar
-            // 
-            this.buttonDeletar.Location = new System.Drawing.Point(510, 515);
-            this.buttonDeletar.Name = "buttonDeletar";
-            this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
-            this.buttonDeletar.TabIndex = 5;
-            this.buttonDeletar.Text = "Excluir";
-            this.buttonDeletar.UseVisualStyleBackColor = true;
-            this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
-            // 
-            // buttonSalvar
-            // 
-            this.buttonSalvar.Location = new System.Drawing.Point(384, 515);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
-            this.buttonSalvar.TabIndex = 4;
-            this.buttonSalvar.Text = "Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
-            // 
-            // buttonLimpar
-            // 
-            this.buttonLimpar.Location = new System.Drawing.Point(632, 515);
-            this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
-            this.buttonLimpar.TabIndex = 7;
-            this.buttonLimpar.Text = "Limpar";
-            this.buttonLimpar.UseVisualStyleBackColor = true;
-            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
-            // 
-            // buttonCriarProposta
-            // 
-            this.buttonCriarProposta.Location = new System.Drawing.Point(258, 515);
-            this.buttonCriarProposta.Name = "buttonCriarProposta";
-            this.buttonCriarProposta.Size = new System.Drawing.Size(105, 31);
-            this.buttonCriarProposta.TabIndex = 9;
-            this.buttonCriarProposta.Text = "Criar proposta";
-            this.buttonCriarProposta.UseVisualStyleBackColor = true;
-            // 
             // cadastro_ClienteTableAdapter
             // 
             this.cadastro_ClienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.bindingNavigator1);
+            this.groupBox5.Location = new System.Drawing.Point(411, 478);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(102, 41);
+            this.groupBox5.TabIndex = 10;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Alterações";
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.CountItem = null;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salvarToolStripButton,
+            this.novoToolStripButton,
+            this.deletetoolStripButton,
+            this.toolStripButton1});
+            this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.bindingNavigator1.Location = new System.Drawing.Point(3, 16);
+            this.bindingNavigator1.MoveFirstItem = null;
+            this.bindingNavigator1.MoveLastItem = null;
+            this.bindingNavigator1.MoveNextItem = null;
+            this.bindingNavigator1.MovePreviousItem = null;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = null;
+            this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.bindingNavigator1.Size = new System.Drawing.Size(96, 23);
+            this.bindingNavigator1.Stretch = true;
+            this.bindingNavigator1.TabIndex = 0;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // salvarToolStripButton
+            // 
+            this.salvarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
+            this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.salvarToolStripButton.Name = "salvarToolStripButton";
+            this.salvarToolStripButton.Size = new System.Drawing.Size(23, 20);
+            this.salvarToolStripButton.Text = "&Salvar";
+            this.salvarToolStripButton.Click += new System.EventHandler(this.buttonSalvar_Click);
+            // 
+            // novoToolStripButton
+            // 
+            this.novoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.novoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("novoToolStripButton.Image")));
+            this.novoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.novoToolStripButton.Name = "novoToolStripButton";
+            this.novoToolStripButton.Size = new System.Drawing.Size(23, 20);
+            this.novoToolStripButton.Text = "&Limpar";
+            this.novoToolStripButton.Click += new System.EventHandler(this.buttonLimpar_Click);
+            // 
+            // deletetoolStripButton
+            // 
+            this.deletetoolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deletetoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("deletetoolStripButton.Image")));
+            this.deletetoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deletetoolStripButton.Name = "deletetoolStripButton";
+            this.deletetoolStripButton.Size = new System.Drawing.Size(23, 20);
+            this.deletetoolStripButton.Text = "&Deletar";
+            this.deletetoolStripButton.Click += new System.EventHandler(this.buttonDeletar_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 20);
+            this.toolStripButton1.Text = "&Criar Proposta";
             // 
             // FormCadCli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 560);
-            this.Controls.Add(this.buttonCriarProposta);
+            this.ClientSize = new System.Drawing.Size(948, 524);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonLimpar);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.buttonDeletar);
+            this.Controls.Add(this.groupBox5);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(964, 563);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(964, 563);
             this.Name = "FormCadCli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
@@ -744,16 +787,17 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonDeletar;
-        private System.Windows.Forms.Button buttonSalvar;
-        private System.Windows.Forms.Button buttonLimpar;
-        private System.Windows.Forms.Button buttonCriarProposta;
         private System.Windows.Forms.RichTextBox richTextBoxComentario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxEstado;
@@ -812,5 +856,11 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxEmail;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripButton salvarToolStripButton;
+        private System.Windows.Forms.ToolStripButton novoToolStripButton;
+        private System.Windows.Forms.ToolStripButton deletetoolStripButton;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
