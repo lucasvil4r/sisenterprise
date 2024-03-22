@@ -52,6 +52,8 @@
             this.cadastroClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ComboBoxDept = new System.Windows.Forms.ComboBox();
             this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.maskedTextBoxRazao = new System.Windows.Forms.MaskedTextBox();
@@ -306,6 +308,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.ComboBoxDept);
             this.groupBox4.Controls.Add(this.checkBoxAtivo);
             this.groupBox4.Controls.Add(this.checkBox3);
             this.groupBox4.Controls.Add(this.maskedTextBoxRazao);
@@ -320,15 +324,34 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Location = new System.Drawing.Point(26, 25);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(360, 273);
+            this.groupBox4.Size = new System.Drawing.Size(360, 274);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dados Empresa ";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(32, 218);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Vendedor:";
+            // 
+            // ComboBoxDept
+            // 
+            this.ComboBoxDept.DisplayMember = "nome";
+            this.ComboBoxDept.FormattingEnabled = true;
+            this.ComboBoxDept.Location = new System.Drawing.Point(91, 214);
+            this.ComboBoxDept.Name = "ComboBoxDept";
+            this.ComboBoxDept.Size = new System.Drawing.Size(245, 21);
+            this.ComboBoxDept.TabIndex = 21;
+            this.ComboBoxDept.ValueMember = "id_departamento";
+            // 
             // checkBoxAtivo
             // 
             this.checkBoxAtivo.AutoSize = true;
-            this.checkBoxAtivo.Location = new System.Drawing.Point(193, 54);
+            this.checkBoxAtivo.Location = new System.Drawing.Point(193, 44);
             this.checkBoxAtivo.Name = "checkBoxAtivo";
             this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
             this.checkBoxAtivo.TabIndex = 10;
@@ -351,7 +374,7 @@
             // 
             this.maskedTextBoxRazao.AccessibleDescription = "";
             this.maskedTextBoxRazao.AccessibleName = "";
-            this.maskedTextBoxRazao.Location = new System.Drawing.Point(91, 93);
+            this.maskedTextBoxRazao.Location = new System.Drawing.Point(91, 75);
             this.maskedTextBoxRazao.Name = "maskedTextBoxRazao";
             this.maskedTextBoxRazao.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxRazao.TabIndex = 2;
@@ -360,7 +383,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 96);
+            this.label1.Location = new System.Drawing.Point(16, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 3;
@@ -370,7 +393,7 @@
             // 
             this.maskedTextBoxCNPJ.AccessibleDescription = "";
             this.maskedTextBoxCNPJ.AccessibleName = "";
-            this.maskedTextBoxCNPJ.Location = new System.Drawing.Point(91, 172);
+            this.maskedTextBoxCNPJ.Location = new System.Drawing.Point(91, 148);
             this.maskedTextBoxCNPJ.Mask = "99.999.999/9999-99";
             this.maskedTextBoxCNPJ.Name = "maskedTextBoxCNPJ";
             this.maskedTextBoxCNPJ.Size = new System.Drawing.Size(245, 20);
@@ -380,7 +403,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 175);
+            this.label4.Location = new System.Drawing.Point(51, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 7;
@@ -390,7 +413,7 @@
             // 
             this.maskedTextBoxNome.AccessibleDescription = "";
             this.maskedTextBoxNome.AccessibleName = "";
-            this.maskedTextBoxNome.Location = new System.Drawing.Point(91, 135);
+            this.maskedTextBoxNome.Location = new System.Drawing.Point(91, 112);
             this.maskedTextBoxNome.Name = "maskedTextBoxNome";
             this.maskedTextBoxNome.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxNome.TabIndex = 3;
@@ -398,7 +421,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(50, 217);
+            this.label9.Location = new System.Drawing.Point(54, 184);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 20;
@@ -407,7 +430,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 138);
+            this.label3.Location = new System.Drawing.Point(16, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 9;
@@ -417,7 +440,7 @@
             // 
             this.maskedTextBoxEmail.AccessibleDescription = "";
             this.maskedTextBoxEmail.AccessibleName = "";
-            this.maskedTextBoxEmail.Location = new System.Drawing.Point(91, 214);
+            this.maskedTextBoxEmail.Location = new System.Drawing.Point(91, 180);
             this.maskedTextBoxEmail.Name = "maskedTextBoxEmail";
             this.maskedTextBoxEmail.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxEmail.TabIndex = 5;
@@ -426,7 +449,7 @@
             // 
             this.maskedTextBoxCodigo.AccessibleDescription = "";
             this.maskedTextBoxCodigo.AccessibleName = "";
-            this.maskedTextBoxCodigo.Location = new System.Drawing.Point(91, 51);
+            this.maskedTextBoxCodigo.Location = new System.Drawing.Point(91, 41);
             this.maskedTextBoxCodigo.Name = "maskedTextBoxCodigo";
             this.maskedTextBoxCodigo.Size = new System.Drawing.Size(84, 20);
             this.maskedTextBoxCodigo.TabIndex = 1;
@@ -434,7 +457,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 54);
+            this.label2.Location = new System.Drawing.Point(10, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 5;
@@ -862,5 +885,7 @@
         private System.Windows.Forms.ToolStripButton novoToolStripButton;
         private System.Windows.Forms.ToolStripButton deletetoolStripButton;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox ComboBoxDept;
     }
 }

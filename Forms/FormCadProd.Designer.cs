@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadProd));
             this.Produto = new System.Windows.Forms.GroupBox();
+            this.maskedTextBoxDescricao = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBoxDtCad = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -46,8 +47,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.richTextBoxComentario = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBoxFabr = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
@@ -72,7 +71,8 @@
             this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cadastro_ProdutosTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter();
-            this.maskedTextBoxDescricao = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ComboBoxDept = new System.Windows.Forms.ComboBox();
             this.Produto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).BeginInit();
@@ -85,6 +85,8 @@
             // 
             // Produto
             // 
+            this.Produto.Controls.Add(this.label10);
+            this.Produto.Controls.Add(this.ComboBoxDept);
             this.Produto.Controls.Add(this.maskedTextBoxDescricao);
             this.Produto.Controls.Add(this.label8);
             this.Produto.Controls.Add(this.maskedTextBoxDtCad);
@@ -101,8 +103,6 @@
             this.Produto.Controls.Add(this.checkBox1);
             this.Produto.Controls.Add(this.label12);
             this.Produto.Controls.Add(this.richTextBoxComentario);
-            this.Produto.Controls.Add(this.label3);
-            this.Produto.Controls.Add(this.maskedTextBoxFabr);
             this.Produto.Controls.Add(this.label2);
             this.Produto.Controls.Add(this.label1);
             this.Produto.Controls.Add(this.maskedTextBoxCodigo);
@@ -112,6 +112,14 @@
             this.Produto.TabIndex = 0;
             this.Produto.TabStop = false;
             this.Produto.Text = "Produto";
+            // 
+            // maskedTextBoxDescricao
+            // 
+            this.maskedTextBoxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.maskedTextBoxDescricao.Location = new System.Drawing.Point(76, 81);
+            this.maskedTextBoxDescricao.Name = "maskedTextBoxDescricao";
+            this.maskedTextBoxDescricao.Size = new System.Drawing.Size(403, 20);
+            this.maskedTextBoxDescricao.TabIndex = 47;
             // 
             // label8
             // 
@@ -256,25 +264,6 @@
             this.richTextBoxComentario.Size = new System.Drawing.Size(403, 46);
             this.richTextBoxComentario.TabIndex = 6;
             this.richTextBoxComentario.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(342, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Fabricante:";
-            // 
-            // maskedTextBoxFabr
-            // 
-            this.maskedTextBoxFabr.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.maskedTextBoxFabr.Enabled = false;
-            this.maskedTextBoxFabr.Location = new System.Drawing.Point(404, 33);
-            this.maskedTextBoxFabr.Name = "maskedTextBoxFabr";
-            this.maskedTextBoxFabr.Size = new System.Drawing.Size(75, 20);
-            this.maskedTextBoxFabr.TabIndex = 4;
-            this.maskedTextBoxFabr.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label2
             // 
@@ -428,7 +417,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.bindingNavigator1);
-            this.groupBox2.Location = new System.Drawing.Point(230, 524);
+            this.groupBox2.Location = new System.Drawing.Point(230, 512);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(80, 41);
             this.groupBox2.TabIndex = 2;
@@ -492,26 +481,37 @@
             // 
             this.cadastro_ProdutosTableAdapter.ClearBeforeFill = true;
             // 
-            // maskedTextBoxDescricao
+            // label10
             // 
-            this.maskedTextBoxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.maskedTextBoxDescricao.Location = new System.Drawing.Point(76, 81);
-            this.maskedTextBoxDescricao.Name = "maskedTextBoxDescricao";
-            this.maskedTextBoxDescricao.Size = new System.Drawing.Size(403, 20);
-            this.maskedTextBoxDescricao.TabIndex = 47;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(288, 37);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "Fabricante:";
+            // 
+            // ComboBoxDept
+            // 
+            this.ComboBoxDept.DisplayMember = "nome";
+            this.ComboBoxDept.FormattingEnabled = true;
+            this.ComboBoxDept.Location = new System.Drawing.Point(352, 33);
+            this.ComboBoxDept.Name = "ComboBoxDept";
+            this.ComboBoxDept.Size = new System.Drawing.Size(127, 21);
+            this.ComboBoxDept.TabIndex = 48;
+            this.ComboBoxDept.ValueMember = "id_departamento";
             // 
             // FormCadProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 577);
+            this.ClientSize = new System.Drawing.Size(535, 560);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Produto);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(555, 616);
+            this.MaximumSize = new System.Drawing.Size(551, 599);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(555, 616);
+            this.MinimumSize = new System.Drawing.Size(551, 599);
             this.Name = "FormCadProd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produto";
@@ -534,8 +534,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox Produto;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxFabr;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
@@ -576,5 +574,7 @@
         private System.Windows.Forms.ToolStripButton novoToolStripButton;
         private System.Windows.Forms.ToolStripButton deletetoolStripButton;
         private System.Windows.Forms.TextBox maskedTextBoxDescricao;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox ComboBoxDept;
     }
 }
