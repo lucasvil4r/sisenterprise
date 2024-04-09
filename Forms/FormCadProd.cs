@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Validation;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace SisEnterprise_2._0.Forms
 {
@@ -94,8 +96,9 @@ namespace SisEnterprise_2._0.Forms
                 var produto = db.Cadastro_Produtos.FirstOrDefault(x => x.id_produto == Id);
                 if (produto != null)
                 {
-                    //produto.id_fornecedor = maskedTextBoxFabr.Text;
+                    int valor = checkBox1.Checked ? 1 : 0;
                     produto.descricao = maskedTextBoxDescricao.Text;
+                    produto.status = checkBox1.Checked ? "1" : "0";
                     produto.ncm = maskedTextBoxNCM.Text;
                     produto.icms = decimal.Parse(maskedTextBoxICMS.Text);
                     produto.preco = decimal.Parse(maskedTextBoxPreco.Text);
@@ -222,6 +225,9 @@ namespace SisEnterprise_2._0.Forms
                     richTextBoxComentario.Text = produto.obs.ToString();
                     maskedTextBoxDtCad.Text = produto.data_cadastro.ToString();
                     maskedTextBoxDtAlt.Text = produto.data_alteracao.ToString();
+
+                    bool valor = (produto.status == "1") ? true : false;
+                    checkBox1.Checked = valor;  
                 }
             }
         }

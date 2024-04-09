@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadProd));
             this.Produto = new System.Windows.Forms.GroupBox();
+            this.maskedTextBoxDescricao = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBoxDtCad = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -72,7 +73,6 @@
             this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cadastro_ProdutosTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter();
-            this.maskedTextBoxDescricao = new System.Windows.Forms.TextBox();
             this.Produto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).BeginInit();
@@ -112,6 +112,14 @@
             this.Produto.TabIndex = 0;
             this.Produto.TabStop = false;
             this.Produto.Text = "Produto";
+            // 
+            // maskedTextBoxDescricao
+            // 
+            this.maskedTextBoxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.maskedTextBoxDescricao.Location = new System.Drawing.Point(76, 81);
+            this.maskedTextBoxDescricao.Name = "maskedTextBoxDescricao";
+            this.maskedTextBoxDescricao.Size = new System.Drawing.Size(403, 20);
+            this.maskedTextBoxDescricao.TabIndex = 47;
             // 
             // label8
             // 
@@ -158,7 +166,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(206, 123);
+            this.label6.Location = new System.Drawing.Point(194, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 42;
@@ -166,9 +174,8 @@
             // 
             // maskedTextBoxICMS
             // 
-            this.maskedTextBoxICMS.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.maskedTextBoxICMS.Location = new System.Drawing.Point(245, 119);
-            this.maskedTextBoxICMS.Mask = "99,99%";
+            this.maskedTextBoxICMS.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.maskedTextBoxICMS.Location = new System.Drawing.Point(233, 119);
             this.maskedTextBoxICMS.Name = "maskedTextBoxICMS";
             this.maskedTextBoxICMS.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxICMS.TabIndex = 3;
@@ -189,14 +196,14 @@
             this.maskedTextBoxNCM.Location = new System.Drawing.Point(76, 119);
             this.maskedTextBoxNCM.Mask = "00000000";
             this.maskedTextBoxNCM.Name = "maskedTextBoxNCM";
-            this.maskedTextBoxNCM.Size = new System.Drawing.Size(110, 20);
+            this.maskedTextBoxNCM.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxNCM.TabIndex = 2;
             this.maskedTextBoxNCM.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(186, 163);
+            this.label5.Location = new System.Drawing.Point(174, 163);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 38;
@@ -205,8 +212,7 @@
             // maskedTextBoxDesconto
             // 
             this.maskedTextBoxDesconto.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.maskedTextBoxDesconto.Location = new System.Drawing.Point(245, 159);
-            this.maskedTextBoxDesconto.Mask = "99,99%";
+            this.maskedTextBoxDesconto.Location = new System.Drawing.Point(233, 159);
             this.maskedTextBoxDesconto.Name = "maskedTextBoxDesconto";
             this.maskedTextBoxDesconto.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxDesconto.TabIndex = 5;
@@ -491,14 +497,6 @@
             // cadastro_ProdutosTableAdapter
             // 
             this.cadastro_ProdutosTableAdapter.ClearBeforeFill = true;
-            // 
-            // maskedTextBoxDescricao
-            // 
-            this.maskedTextBoxDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.maskedTextBoxDescricao.Location = new System.Drawing.Point(76, 81);
-            this.maskedTextBoxDescricao.Name = "maskedTextBoxDescricao";
-            this.maskedTextBoxDescricao.Size = new System.Drawing.Size(403, 20);
-            this.maskedTextBoxDescricao.TabIndex = 47;
             // 
             // FormCadProd
             // 
