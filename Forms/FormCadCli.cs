@@ -20,7 +20,6 @@ namespace SisEnterprise_2._0.Forms
     {
         //Controla ID em buffer
         int ClienteId = 0;
-
         public FormCadCli()
         {
             InitializeComponent();
@@ -68,11 +67,9 @@ namespace SisEnterprise_2._0.Forms
                     cliente.cep = maskedTextBoxCep.Text;
                     cliente.cidade = maskedTextBoxCidade.Text;
                     cliente.email = maskedTextBoxEmail.Text;
-                    //cliente.tipo = checkBoxAtivo.Text;
-                    //cliente.logo_empresa = checkBoxAtivo.Text;
+                    cliente.tipo = "1";
                     cliente.comentario = richTextBoxComentario.Text;
                     cliente.data_cadastro = DateTime.Now;
-                    //cliente.data_alteracao = DateTime.Now;
                     db.Cadastro_Cliente.Add(cliente);
                     try
                     {
@@ -111,11 +108,11 @@ namespace SisEnterprise_2._0.Forms
                     cliente.cep = maskedTextBoxCep.Text;
                     cliente.cidade = maskedTextBoxCidade.Text;
                     cliente.email = maskedTextBoxEmail.Text;
-                    //cliente.tipo = checkBoxAtivo.Text;
-                    //cliente.logo_empresa = checkBoxAtivo.Text;
                     cliente.comentario = richTextBoxComentario.Text;
-                    //cliente.data_cadastro = DateTime.Now;
                     cliente.data_alteracao = DateTime.Now;
+
+                    int valor = checkBox1.Checked ? 1 : 0;
+                    cliente.tipo = checkBox1.Checked ? "1" : "0";
 
                     try
                     {
@@ -198,6 +195,9 @@ namespace SisEnterprise_2._0.Forms
                     richTextBoxComentario.Text = cliente.comentario;
                     maskedTextBoxDataCad.Text = cliente.data_cadastro.ToString();
                     maskedTextBoxDataAlt.Text = cliente.data_alteracao.ToString();
+
+                    cliente.tipo = checkBox1.Checked ? "1" : "0"; bool valor = (cliente.tipo == "1") ? true : false;
+                    checkBox1.Checked = valor;
                 }
             }
         }
@@ -218,6 +218,8 @@ namespace SisEnterprise_2._0.Forms
             richTextBoxComentario.Text = string.Empty;
             maskedTextBoxDataCad.Text = string.Empty;
             maskedTextBoxDataAlt.Text = string.Empty;
+            checkBox1.Checked = false;
+
             ClienteId = 0;
         }
 

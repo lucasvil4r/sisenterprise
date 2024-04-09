@@ -426,6 +426,7 @@
             // 
             this.maskedTextBoxCodigo.AccessibleDescription = "";
             this.maskedTextBoxCodigo.AccessibleName = "";
+            this.maskedTextBoxCodigo.Enabled = false;
             this.maskedTextBoxCodigo.Location = new System.Drawing.Point(91, 51);
             this.maskedTextBoxCodigo.Name = "maskedTextBoxCodigo";
             this.maskedTextBoxCodigo.Size = new System.Drawing.Size(84, 20);

@@ -24,6 +24,8 @@ namespace SisEnterprise_2._0.Forms
 
         private void FormCadProd_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'sisenterpriseDataSet.Cadastro_Fornecedores'. Você pode movê-la ou removê-la conforme necessário.
+            this.cadastro_FornecedoresTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Fornecedores);
             // TODO: esta linha de código carrega dados na tabela 'sisenterpriseDataSet.Cadastro_Produtos'. Você pode movê-la ou removê-la conforme necessário.
             this.cadastro_ProdutosTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Produtos);
 
@@ -66,8 +68,10 @@ namespace SisEnterprise_2._0.Forms
                     produto.desconto = decimal.Parse(maskedTextBoxDesconto.Text);
                     produto.obs = richTextBoxComentario.Text;
                     produto.data_cadastro = DateTime.Now;
-                    //produto.data_alteracao = DateTime.Now;
+                    produto.status = "1";
+                    produto.id_fornecedor = (int)ComboBoxFornecedor.SelectedValue;
                     db.Cadastro_Produtos.Add(produto);
+
                     try
                     {
                         db.SaveChanges();
@@ -167,6 +171,8 @@ namespace SisEnterprise_2._0.Forms
             richTextBoxComentario.Text = string.Empty;
             maskedTextBoxDtCad.Text = string.Empty;
             maskedTextBoxDtAlt.Text = string.Empty;
+            ComboBoxFornecedor.Enabled = false;
+
             ProdId = 0;
         }
 
@@ -225,6 +231,7 @@ namespace SisEnterprise_2._0.Forms
                     richTextBoxComentario.Text = produto.obs.ToString();
                     maskedTextBoxDtCad.Text = produto.data_cadastro.ToString();
                     maskedTextBoxDtAlt.Text = produto.data_alteracao.ToString();
+                    ComboBoxFornecedor.SelectedValue = produto.id_fornecedor;
 
                     bool valor = (produto.status == "1") ? true : false;
                     checkBox1.Checked = valor;  

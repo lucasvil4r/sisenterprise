@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormCadVend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCadVend.Designer.cs">
+      <DependentUpon>FormCadVend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface\Cadastro_Cliente.cs" />
     <Compile Include="Interface\Cadastro_Departamento.cs" />
     <Compile Include="Interface\Cadastro_Ferias.cs" />
@@ -158,12 +164,18 @@
     <EmbeddedResource Include="Forms\FormCadDept.resx">
       <DependentUpon>FormCadDept.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadFornec.resx">
+      <DependentUpon>FormCadFornec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadFunc.resx">
       <DependentUpon>FormCadFunc.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadProd.resx">
       <DependentUpon>FormCadProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCadVend.resx">
+      <DependentUpon>FormCadVend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCalc13.resx">
       <DependentUpon>FormCalc13.cs</DependentUpon>

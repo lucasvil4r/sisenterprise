@@ -48,7 +48,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.richTextBoxComentario = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBoxFabr = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
@@ -73,6 +72,9 @@
             this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cadastro_ProdutosTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter();
+            this.ComboBoxFornecedor = new System.Windows.Forms.ComboBox();
+            this.cadastroFornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cadastro_FornecedoresTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FornecedoresTableAdapter();
             this.Produto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).BeginInit();
@@ -81,10 +83,12 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Produto
             // 
+            this.Produto.Controls.Add(this.ComboBoxFornecedor);
             this.Produto.Controls.Add(this.maskedTextBoxDescricao);
             this.Produto.Controls.Add(this.label8);
             this.Produto.Controls.Add(this.maskedTextBoxDtCad);
@@ -102,7 +106,6 @@
             this.Produto.Controls.Add(this.label12);
             this.Produto.Controls.Add(this.richTextBoxComentario);
             this.Produto.Controls.Add(this.label3);
-            this.Produto.Controls.Add(this.maskedTextBoxFabr);
             this.Produto.Controls.Add(this.label2);
             this.Produto.Controls.Add(this.label1);
             this.Produto.Controls.Add(this.maskedTextBoxCodigo);
@@ -266,21 +269,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(342, 37);
+            this.label3.Location = new System.Drawing.Point(291, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Fabricante:";
-            // 
-            // maskedTextBoxFabr
-            // 
-            this.maskedTextBoxFabr.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            this.maskedTextBoxFabr.Enabled = false;
-            this.maskedTextBoxFabr.Location = new System.Drawing.Point(404, 33);
-            this.maskedTextBoxFabr.Name = "maskedTextBoxFabr";
-            this.maskedTextBoxFabr.Size = new System.Drawing.Size(75, 20);
-            this.maskedTextBoxFabr.TabIndex = 4;
-            this.maskedTextBoxFabr.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label2
             // 
@@ -498,6 +491,26 @@
             // 
             this.cadastro_ProdutosTableAdapter.ClearBeforeFill = true;
             // 
+            // ComboBoxFornecedor
+            // 
+            this.ComboBoxFornecedor.DataSource = this.cadastroFornecedoresBindingSource;
+            this.ComboBoxFornecedor.DisplayMember = "razao_social";
+            this.ComboBoxFornecedor.FormattingEnabled = true;
+            this.ComboBoxFornecedor.Location = new System.Drawing.Point(354, 32);
+            this.ComboBoxFornecedor.Name = "ComboBoxFornecedor";
+            this.ComboBoxFornecedor.Size = new System.Drawing.Size(125, 21);
+            this.ComboBoxFornecedor.TabIndex = 48;
+            this.ComboBoxFornecedor.ValueMember = "id_fornecedor";
+            // 
+            // cadastroFornecedoresBindingSource
+            // 
+            this.cadastroFornecedoresBindingSource.DataMember = "Cadastro_Fornecedores";
+            this.cadastroFornecedoresBindingSource.DataSource = this.sisenterpriseDataSet;
+            // 
+            // cadastro_FornecedoresTableAdapter
+            // 
+            this.cadastro_FornecedoresTableAdapter.ClearBeforeFill = true;
+            // 
             // FormCadProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,6 +538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,7 +547,6 @@
 
         private System.Windows.Forms.GroupBox Produto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxFabr;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
@@ -574,5 +587,8 @@
         private System.Windows.Forms.ToolStripButton novoToolStripButton;
         private System.Windows.Forms.ToolStripButton deletetoolStripButton;
         private System.Windows.Forms.TextBox maskedTextBoxDescricao;
+        private System.Windows.Forms.ComboBox ComboBoxFornecedor;
+        private System.Windows.Forms.BindingSource cadastroFornecedoresBindingSource;
+        private sisenterpriseDataSetTableAdapters.Cadastro_FornecedoresTableAdapter cadastro_FornecedoresTableAdapter;
     }
 }
