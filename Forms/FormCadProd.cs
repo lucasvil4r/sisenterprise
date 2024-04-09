@@ -100,7 +100,6 @@ namespace SisEnterprise_2._0.Forms
                 var produto = db.Cadastro_Produtos.FirstOrDefault(x => x.id_produto == Id);
                 if (produto != null)
                 {
-                    int valor = checkBox1.Checked ? 1 : 0;
                     produto.descricao = maskedTextBoxDescricao.Text;
                     produto.status = checkBox1.Checked ? "1" : "0";
                     produto.ncm = maskedTextBoxNCM.Text;
@@ -171,7 +170,6 @@ namespace SisEnterprise_2._0.Forms
             richTextBoxComentario.Text = string.Empty;
             maskedTextBoxDtCad.Text = string.Empty;
             maskedTextBoxDtAlt.Text = string.Empty;
-            ComboBoxFornecedor.Enabled = false;
 
             ProdId = 0;
         }
