@@ -248,11 +248,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 138);
+            this.label18.Location = new System.Drawing.Point(14, 139);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(73, 13);
+            this.label18.Size = new System.Drawing.Size(75, 13);
             this.label18.TabIndex = 9;
-            this.label18.Text = "Nome Cliente:";
+            this.label18.Text = "Apelido Forne:";
             // 
             // maskedTextBoxEmail
             // 
@@ -758,7 +758,9 @@
             this.ClientSize = new System.Drawing.Size(948, 524);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox6);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(964, 563);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(964, 563);
             this.Name = "FormCadFornec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
