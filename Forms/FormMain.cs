@@ -43,29 +43,32 @@ namespace SisEnterprise_2._0
 
 			switch (SelectForm)
 			{
-				case "Cadastro de Funcionários":
+				case "Cadastro Funcionários":
 					ShowFormChild(new FormCadFunc());
 					break;
-				case "Cadastro de Departamentos":
+				case "Cadastro Departamentos":
 					ShowFormChild(new FormCadDept());
 					break;
-				case "Cálculo de Férias":
+				case "Cálculo Férias":
 					ShowFormChild(new FormCalcFerias());
 					break;
-				case "Cálculo de 13°":
+				case "Cálculo 13°":
 					ShowFormChild(new FormCalc13());
 					break;
-                case "Cadastro de Produtos":
+                case "Cadastro Produtos":
                     ShowFormChild(new FormCadProd());
                     break;
-                case "Cadastro de Fornecedores":
+                case "Cadastro Fornecedores":
                     ShowFormChild(new FormCadFornec());
                     break;
                 case "Cadastrar Propostas":
                     ShowFormChild(new FormCadProp());
                     break;
-                case "Cadastro de Clientes":
+                case "Cadastro Clientes":
                     ShowFormChild(new FormCadCli());
+                    break;
+                case "Cadastro Vendedores":
+                    ShowFormChild(new FormCadVend());
                     break;
             }
 
