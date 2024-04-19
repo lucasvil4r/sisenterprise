@@ -70,6 +70,8 @@ namespace SisEnterprise_2._0.Forms
                     cliente.tipo = "1";
                     cliente.comentario = richTextBoxComentario.Text;
                     cliente.data_cadastro = DateTime.Now;
+                    cliente.id_vendedor = (int)ComboBoxVendedor.SelectedValue;
+
                     db.Cadastro_Cliente.Add(cliente);
                     try
                     {
@@ -110,9 +112,8 @@ namespace SisEnterprise_2._0.Forms
                     cliente.email = maskedTextBoxEmail.Text;
                     cliente.comentario = richTextBoxComentario.Text;
                     cliente.data_alteracao = DateTime.Now;
-
-                    int valor = checkBox1.Checked ? 1 : 0;
                     cliente.tipo = checkBox1.Checked ? "1" : "0";
+                    cliente.id_vendedor = (int)ComboBoxVendedor.SelectedValue;
 
                     try
                     {
@@ -166,6 +167,8 @@ namespace SisEnterprise_2._0.Forms
 
         private void FormCadCli_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'sisenterpriseDataSet.Cadastro_Vendedor'. Você pode movê-la ou removê-la conforme necessário.
+            this.cadastro_VendedorTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Vendedor);
             // TODO: esta linha de código carrega dados na tabela 'sisenterpriseDataSet.Cadastro_Cliente'. Você pode movê-la ou removê-la conforme necessário.
             this.cadastro_ClienteTableAdapter.Fill(this.sisenterpriseDataSet.Cadastro_Cliente);
         }
@@ -195,6 +198,7 @@ namespace SisEnterprise_2._0.Forms
                     richTextBoxComentario.Text = cliente.comentario;
                     maskedTextBoxDataCad.Text = cliente.data_cadastro.ToString();
                     maskedTextBoxDataAlt.Text = cliente.data_alteracao.ToString();
+                    ComboBoxVendedor.SelectedValue = cliente.id_vendedor;
 
                     cliente.tipo = checkBox1.Checked ? "1" : "0"; bool valor = (cliente.tipo == "1") ? true : false;
                     checkBox1.Checked = valor;
