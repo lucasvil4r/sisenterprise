@@ -38,6 +38,14 @@
             this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.idvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomevendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cadastroVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cadastroProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cadastro_FornecedoresTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FornecedoresTableAdapter();
             this.cadastro_ProdutosTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter();
@@ -54,25 +62,17 @@
             this.maskedTextBoxEmpresa = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.cadastroVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cadastro_VendedorTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_VendedorTableAdapter();
-            this.idvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomevendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).BeginInit();
-            this.Produto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroVendedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).BeginInit();
+            this.Produto.SuspendLayout();
             this.SuspendLayout();
             // 
             // salvarToolStripButton
@@ -157,6 +157,70 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Vendedores";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idvendedorDataGridViewTextBoxColumn,
+            this.nomevendedorDataGridViewTextBoxColumn,
+            this.cpfDataGridViewTextBoxColumn,
+            this.emailvendedorDataGridViewTextBoxColumn,
+            this.empresaDataGridViewTextBoxColumn,
+            this.telvendedorDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.cadastroVendedorBindingSource;
+            this.dataGridView.Location = new System.Drawing.Point(23, 26);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(242, 114);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
+            // 
+            // idvendedorDataGridViewTextBoxColumn
+            // 
+            this.idvendedorDataGridViewTextBoxColumn.DataPropertyName = "id_vendedor";
+            this.idvendedorDataGridViewTextBoxColumn.HeaderText = "id_vendedor";
+            this.idvendedorDataGridViewTextBoxColumn.Name = "idvendedorDataGridViewTextBoxColumn";
+            this.idvendedorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomevendedorDataGridViewTextBoxColumn
+            // 
+            this.nomevendedorDataGridViewTextBoxColumn.DataPropertyName = "nome_vendedor";
+            this.nomevendedorDataGridViewTextBoxColumn.HeaderText = "nome_vendedor";
+            this.nomevendedorDataGridViewTextBoxColumn.Name = "nomevendedorDataGridViewTextBoxColumn";
+            // 
+            // cpfDataGridViewTextBoxColumn
+            // 
+            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
+            this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
+            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // emailvendedorDataGridViewTextBoxColumn
+            // 
+            this.emailvendedorDataGridViewTextBoxColumn.DataPropertyName = "email_vendedor";
+            this.emailvendedorDataGridViewTextBoxColumn.HeaderText = "email_vendedor";
+            this.emailvendedorDataGridViewTextBoxColumn.Name = "emailvendedorDataGridViewTextBoxColumn";
+            this.emailvendedorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // empresaDataGridViewTextBoxColumn
+            // 
+            this.empresaDataGridViewTextBoxColumn.DataPropertyName = "empresa";
+            this.empresaDataGridViewTextBoxColumn.HeaderText = "empresa";
+            this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
+            this.empresaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // telvendedorDataGridViewTextBoxColumn
+            // 
+            this.telvendedorDataGridViewTextBoxColumn.DataPropertyName = "telvendedor";
+            this.telvendedorDataGridViewTextBoxColumn.HeaderText = "telvendedor";
+            this.telvendedorDataGridViewTextBoxColumn.Name = "telvendedorDataGridViewTextBoxColumn";
+            this.telvendedorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cadastroVendedorBindingSource
+            // 
+            this.cadastroVendedorBindingSource.DataMember = "Cadastro_Vendedor";
+            this.cadastroVendedorBindingSource.DataSource = this.sisenterpriseDataSet;
             // 
             // cadastroProdutosBindingSource
             // 
@@ -302,73 +366,9 @@
             this.maskedTextBoxTelefone.TabIndex = 5;
             this.maskedTextBoxTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // dataGridView
-            // 
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idvendedorDataGridViewTextBoxColumn,
-            this.nomevendedorDataGridViewTextBoxColumn,
-            this.cpfDataGridViewTextBoxColumn,
-            this.emailvendedorDataGridViewTextBoxColumn,
-            this.empresaDataGridViewTextBoxColumn,
-            this.telvendedorDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.cadastroVendedorBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(23, 26);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(242, 114);
-            this.dataGridView.TabIndex = 0;
-            this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
-            // 
-            // cadastroVendedorBindingSource
-            // 
-            this.cadastroVendedorBindingSource.DataMember = "Cadastro_Vendedor";
-            this.cadastroVendedorBindingSource.DataSource = this.sisenterpriseDataSet;
-            // 
             // cadastro_VendedorTableAdapter
             // 
             this.cadastro_VendedorTableAdapter.ClearBeforeFill = true;
-            // 
-            // idvendedorDataGridViewTextBoxColumn
-            // 
-            this.idvendedorDataGridViewTextBoxColumn.DataPropertyName = "id_vendedor";
-            this.idvendedorDataGridViewTextBoxColumn.HeaderText = "id_vendedor";
-            this.idvendedorDataGridViewTextBoxColumn.Name = "idvendedorDataGridViewTextBoxColumn";
-            this.idvendedorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomevendedorDataGridViewTextBoxColumn
-            // 
-            this.nomevendedorDataGridViewTextBoxColumn.DataPropertyName = "nome_vendedor";
-            this.nomevendedorDataGridViewTextBoxColumn.HeaderText = "nome_vendedor";
-            this.nomevendedorDataGridViewTextBoxColumn.Name = "nomevendedorDataGridViewTextBoxColumn";
-            // 
-            // cpfDataGridViewTextBoxColumn
-            // 
-            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "cpf";
-            this.cpfDataGridViewTextBoxColumn.HeaderText = "cpf";
-            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
-            this.cpfDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // emailvendedorDataGridViewTextBoxColumn
-            // 
-            this.emailvendedorDataGridViewTextBoxColumn.DataPropertyName = "email_vendedor";
-            this.emailvendedorDataGridViewTextBoxColumn.HeaderText = "email_vendedor";
-            this.emailvendedorDataGridViewTextBoxColumn.Name = "emailvendedorDataGridViewTextBoxColumn";
-            this.emailvendedorDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // empresaDataGridViewTextBoxColumn
-            // 
-            this.empresaDataGridViewTextBoxColumn.DataPropertyName = "empresa";
-            this.empresaDataGridViewTextBoxColumn.HeaderText = "empresa";
-            this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
-            this.empresaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // telvendedorDataGridViewTextBoxColumn
-            // 
-            this.telvendedorDataGridViewTextBoxColumn.DataPropertyName = "telvendedor";
-            this.telvendedorDataGridViewTextBoxColumn.HeaderText = "telvendedor";
-            this.telvendedorDataGridViewTextBoxColumn.Name = "telvendedorDataGridViewTextBoxColumn";
-            this.telvendedorDataGridViewTextBoxColumn.Visible = false;
             // 
             // FormCadVend
             // 
@@ -384,7 +384,7 @@
             this.MinimumSize = new System.Drawing.Size(328, 544);
             this.Name = "FormCadVend";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCadVend";
+            this.Text = "Cadastro de Vendedor";
             this.Load += new System.EventHandler(this.FormCadVend_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
@@ -394,11 +394,11 @@
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroVendedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).EndInit();
             this.Produto.ResumeLayout(false);
             this.Produto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastroVendedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
