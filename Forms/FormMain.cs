@@ -61,7 +61,7 @@ namespace SisEnterprise_2._0
                 case "Cadastro Fornecedores":
                     ShowFormChild(new FormCadFornec());
                     break;
-                case "Cadastrar Propostas":
+                case "Cadastro Propostas":
                     ShowFormChild(new FormCadProp());
                     break;
                 case "Cadastro Clientes":

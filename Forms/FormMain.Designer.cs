@@ -44,7 +44,7 @@
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Diretoria");
             System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("TI");
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Cadastro Clientes");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Cadastrar Propostas");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Cadastro Propostas");
             System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Cadastro Fornecedores");
             System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Cadastro Produtos");
             System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Cadastro Vendedores");
@@ -136,7 +136,7 @@
             treeNode12.Name = "NodeCadCliente";
             treeNode12.Text = "Cadastro Clientes";
             treeNode13.Name = "NodeCadProposta";
-            treeNode13.Text = "Cadastrar Propostas";
+            treeNode13.Text = "Cadastro Propostas";
             treeNode14.Name = "NodeCadFornecedor";
             treeNode14.Text = "Cadastro Fornecedores";
             treeNode15.Name = "NodeProduto";
