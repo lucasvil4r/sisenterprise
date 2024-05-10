@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SisEnterprise_2._0.Forms
@@ -15,6 +8,41 @@ namespace SisEnterprise_2._0.Forms
         public FormCadProp()
         {
             InitializeComponent();
+        }
+
+        private void salvarToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void novoToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deletetoolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBoxDataCad_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
