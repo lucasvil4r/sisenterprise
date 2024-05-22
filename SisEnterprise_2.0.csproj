@@ -242,5 +242,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf-humbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbole-pdf-rouge.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

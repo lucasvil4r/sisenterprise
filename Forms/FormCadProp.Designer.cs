@@ -33,6 +33,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dataGridViewListaProp = new System.Windows.Forms.DataGridView();
+            this.idpropostaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projetoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.validadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotacaodolarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probabilidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadofaturamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cadastroPropostaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBoxEstFatProposta = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -47,12 +58,15 @@
             this.label25 = new System.Windows.Forms.Label();
             this.maskedTextBoxCodProposta = new System.Windows.Forms.MaskedTextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.maskedTextTotal = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.maskedTextDesconto = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridViewItmProp = new System.Windows.Forms.DataGridView();
+            this.cadastroProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.maskedTextBoxCidadeCliente = new System.Windows.Forms.MaskedTextBox();
@@ -95,18 +109,34 @@
             this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cadastro_ProdutosTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter();
+            this.cadastroPropostaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cadastro_PropostaTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_PropostaTableAdapter();
+            this.fKItemPropidpr4CA06362BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.item_PropostaTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Item_PropostaTableAdapter();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ICMS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NCM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Desconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaProp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroPropostaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItmProp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroPropostaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKItemPropidpr4CA06362BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -133,19 +163,120 @@
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox8.Size = new System.Drawing.Size(303, 187);
+            this.groupBox8.Size = new System.Drawing.Size(303, 185);
             this.groupBox8.TabIndex = 34;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Lista Propostas";
+            this.groupBox8.Text = "Propostas Recentes";
             // 
             // dataGridViewListaProp
             // 
+            this.dataGridViewListaProp.AllowUserToAddRows = false;
+            this.dataGridViewListaProp.AllowUserToDeleteRows = false;
+            this.dataGridViewListaProp.AllowUserToResizeColumns = false;
+            this.dataGridViewListaProp.AllowUserToResizeRows = false;
+            this.dataGridViewListaProp.AutoGenerateColumns = false;
+            this.dataGridViewListaProp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewListaProp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewListaProp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaProp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpropostaDataGridViewTextBoxColumn,
+            this.idclienteDataGridViewTextBoxColumn,
+            this.idvendedorDataGridViewTextBoxColumn,
+            this.projetoDataGridViewTextBoxColumn,
+            this.validadeDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.cotacaodolarDataGridViewTextBoxColumn,
+            this.probabilidadeDataGridViewTextBoxColumn,
+            this.estadofaturamentoDataGridViewTextBoxColumn});
+            this.dataGridViewListaProp.DataSource = this.cadastroPropostaBindingSource1;
             this.dataGridViewListaProp.Location = new System.Drawing.Point(29, 31);
             this.dataGridViewListaProp.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewListaProp.MultiSelect = false;
             this.dataGridViewListaProp.Name = "dataGridViewListaProp";
+            this.dataGridViewListaProp.ReadOnly = true;
             this.dataGridViewListaProp.Size = new System.Drawing.Size(249, 135);
             this.dataGridViewListaProp.TabIndex = 0;
+            this.dataGridViewListaProp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewListaProp_MouseClick);
+            // 
+            // idpropostaDataGridViewTextBoxColumn
+            // 
+            this.idpropostaDataGridViewTextBoxColumn.DataPropertyName = "id_proposta";
+            this.idpropostaDataGridViewTextBoxColumn.HeaderText = "id_proposta";
+            this.idpropostaDataGridViewTextBoxColumn.Name = "idpropostaDataGridViewTextBoxColumn";
+            this.idpropostaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idclienteDataGridViewTextBoxColumn
+            // 
+            this.idclienteDataGridViewTextBoxColumn.DataPropertyName = "id_cliente";
+            this.idclienteDataGridViewTextBoxColumn.HeaderText = "id_cliente";
+            this.idclienteDataGridViewTextBoxColumn.Name = "idclienteDataGridViewTextBoxColumn";
+            this.idclienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idclienteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idvendedorDataGridViewTextBoxColumn
+            // 
+            this.idvendedorDataGridViewTextBoxColumn.DataPropertyName = "id_vendedor";
+            this.idvendedorDataGridViewTextBoxColumn.HeaderText = "id_vendedor";
+            this.idvendedorDataGridViewTextBoxColumn.Name = "idvendedorDataGridViewTextBoxColumn";
+            this.idvendedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idvendedorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // projetoDataGridViewTextBoxColumn
+            // 
+            this.projetoDataGridViewTextBoxColumn.DataPropertyName = "projeto";
+            this.projetoDataGridViewTextBoxColumn.HeaderText = "projeto";
+            this.projetoDataGridViewTextBoxColumn.Name = "projetoDataGridViewTextBoxColumn";
+            this.projetoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // validadeDataGridViewTextBoxColumn
+            // 
+            this.validadeDataGridViewTextBoxColumn.DataPropertyName = "validade";
+            this.validadeDataGridViewTextBoxColumn.HeaderText = "validade";
+            this.validadeDataGridViewTextBoxColumn.Name = "validadeDataGridViewTextBoxColumn";
+            this.validadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.validadeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cotacaodolarDataGridViewTextBoxColumn
+            // 
+            this.cotacaodolarDataGridViewTextBoxColumn.DataPropertyName = "cotacao_dolar";
+            this.cotacaodolarDataGridViewTextBoxColumn.HeaderText = "cotacao_dolar";
+            this.cotacaodolarDataGridViewTextBoxColumn.Name = "cotacaodolarDataGridViewTextBoxColumn";
+            this.cotacaodolarDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cotacaodolarDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // probabilidadeDataGridViewTextBoxColumn
+            // 
+            this.probabilidadeDataGridViewTextBoxColumn.DataPropertyName = "probabilidade";
+            this.probabilidadeDataGridViewTextBoxColumn.HeaderText = "probabilidade";
+            this.probabilidadeDataGridViewTextBoxColumn.Name = "probabilidadeDataGridViewTextBoxColumn";
+            this.probabilidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.probabilidadeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estadofaturamentoDataGridViewTextBoxColumn
+            // 
+            this.estadofaturamentoDataGridViewTextBoxColumn.DataPropertyName = "estado_faturamento";
+            this.estadofaturamentoDataGridViewTextBoxColumn.HeaderText = "estado_faturamento";
+            this.estadofaturamentoDataGridViewTextBoxColumn.Name = "estadofaturamentoDataGridViewTextBoxColumn";
+            this.estadofaturamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadofaturamentoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // cadastroPropostaBindingSource1
+            // 
+            this.cadastroPropostaBindingSource1.DataMember = "Cadastro_Proposta";
+            this.cadastroPropostaBindingSource1.DataSource = this.sisenterpriseDataSet;
+            // 
+            // sisenterpriseDataSet
+            // 
+            this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
+            this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox7
             // 
@@ -231,6 +362,7 @@
             // 
             this.maskedTextBoxDataValidadeProposta.AccessibleDescription = "";
             this.maskedTextBoxDataValidadeProposta.AccessibleName = "";
+            this.maskedTextBoxDataValidadeProposta.Enabled = false;
             this.maskedTextBoxDataValidadeProposta.Location = new System.Drawing.Point(163, 192);
             this.maskedTextBoxDataValidadeProposta.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxDataValidadeProposta.Mask = "00/00/0000";
@@ -281,44 +413,68 @@
             // maskedTextBoxCodProposta
             // 
             this.maskedTextBoxCodProposta.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.maskedTextBoxCodProposta.Enabled = false;
             this.maskedTextBoxCodProposta.Location = new System.Drawing.Point(163, 33);
             this.maskedTextBoxCodProposta.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxCodProposta.Name = "maskedTextBoxCodProposta";
             this.maskedTextBoxCodProposta.Size = new System.Drawing.Size(99, 22);
-            this.maskedTextBoxCodProposta.TabIndex = 1;
+            this.maskedTextBoxCodProposta.TabIndex = 0;
             this.maskedTextBoxCodProposta.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.maskedTextBoxCodProposta.TextChanged += new System.EventHandler(this.maskedTextBoxCodProposta_TextChanged);
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.maskedTextBox1);
+            this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Controls.Add(this.maskedTextTotal);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.maskedTextDesconto);
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Location = new System.Drawing.Point(380, 695);
+            this.groupBox6.Location = new System.Drawing.Point(291, 695);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(445, 66);
+            this.groupBox6.Size = new System.Drawing.Size(619, 66);
             this.groupBox6.TabIndex = 33;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Totais";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.AccessibleDescription = "";
+            this.maskedTextBox1.AccessibleName = "";
+            this.maskedTextBox1.Enabled = false;
+            this.maskedTextBox1.Location = new System.Drawing.Point(280, 25);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(116, 22);
+            this.maskedTextBox1.TabIndex = 48;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(181, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 16);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Total Imposto:";
             // 
             // maskedTextTotal
             // 
             this.maskedTextTotal.AccessibleDescription = "";
             this.maskedTextTotal.AccessibleName = "";
             this.maskedTextTotal.Enabled = false;
-            this.maskedTextTotal.Location = new System.Drawing.Point(309, 25);
+            this.maskedTextTotal.Location = new System.Drawing.Point(479, 25);
             this.maskedTextTotal.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextTotal.Name = "maskedTextTotal";
-            this.maskedTextTotal.Size = new System.Drawing.Size(111, 22);
+            this.maskedTextTotal.Size = new System.Drawing.Size(115, 22);
             this.maskedTextTotal.TabIndex = 46;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(253, 30);
+            this.label6.Location = new System.Drawing.Point(431, 30);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 16);
@@ -329,16 +485,16 @@
             // 
             this.maskedTextDesconto.AccessibleDescription = "";
             this.maskedTextDesconto.AccessibleName = "";
-            this.maskedTextDesconto.Location = new System.Drawing.Point(116, 25);
+            this.maskedTextDesconto.Location = new System.Drawing.Point(97, 25);
             this.maskedTextDesconto.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextDesconto.Name = "maskedTextDesconto";
-            this.maskedTextDesconto.Size = new System.Drawing.Size(111, 22);
-            this.maskedTextDesconto.TabIndex = 4;
+            this.maskedTextDesconto.Size = new System.Drawing.Size(64, 22);
+            this.maskedTextDesconto.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 28);
+            this.label5.Location = new System.Drawing.Point(19, 28);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 16);
@@ -359,12 +515,25 @@
             // 
             // dataGridViewItmProp
             // 
+            this.dataGridViewItmProp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewItmProp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewItmProp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Descricao,
+            this.ICMS,
+            this.NCM,
+            this.Preco,
+            this.Desconto});
             this.dataGridViewItmProp.Location = new System.Drawing.Point(28, 33);
             this.dataGridViewItmProp.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewItmProp.Name = "dataGridViewItmProp";
             this.dataGridViewItmProp.Size = new System.Drawing.Size(769, 135);
             this.dataGridViewItmProp.TabIndex = 0;
+            // 
+            // cadastroProdutosBindingSource
+            // 
+            this.cadastroProdutosBindingSource.DataMember = "Cadastro_Produtos";
+            this.cadastroProdutosBindingSource.DataSource = this.sisenterpriseDataSet;
             // 
             // groupBox9
             // 
@@ -622,7 +791,7 @@
             this.maskedTextBoxCodCliente.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxCodCliente.Name = "maskedTextBoxCodCliente";
             this.maskedTextBoxCodCliente.Size = new System.Drawing.Size(111, 22);
-            this.maskedTextBoxCodCliente.TabIndex = 2;
+            this.maskedTextBoxCodCliente.TabIndex = 0;
             this.maskedTextBoxCodCliente.TextChanged += new System.EventHandler(this.maskedTextBoxCodCliente_TextChanged);
             // 
             // label36
@@ -805,7 +974,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
             this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNavigator1.Size = new System.Drawing.Size(139, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(112, 27);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
@@ -842,25 +1011,86 @@
             // 
             // toolStripButton1
             // 
+            this.toolStripButton1.CheckOnClick = true;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::SisEnterprise_2._0.Properties.Resources.symbole_pdf_rouge;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
             this.toolStripButton1.Text = "&Criar Proposta";
+            this.toolStripButton1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.bindingNavigator1);
-            this.groupBox5.Location = new System.Drawing.Point(549, 799);
+            this.groupBox5.Location = new System.Drawing.Point(549, 800);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(147, 50);
+            this.groupBox5.Size = new System.Drawing.Size(120, 49);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Alterações";
+            // 
+            // cadastro_ProdutosTableAdapter
+            // 
+            this.cadastro_ProdutosTableAdapter.ClearBeforeFill = true;
+            // 
+            // cadastroPropostaBindingSource
+            // 
+            this.cadastroPropostaBindingSource.DataMember = "Cadastro_Proposta";
+            this.cadastroPropostaBindingSource.DataSource = this.sisenterpriseDataSet;
+            // 
+            // cadastro_PropostaTableAdapter
+            // 
+            this.cadastro_PropostaTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKItemPropidpr4CA06362BindingSource
+            // 
+            this.fKItemPropidpr4CA06362BindingSource.DataMember = "FK__Item_Prop__id_pr__4CA06362";
+            this.fKItemPropidpr4CA06362BindingSource.DataSource = this.cadastroPropostaBindingSource;
+            // 
+            // item_PropostaTableAdapter
+            // 
+            this.item_PropostaTableAdapter.ClearBeforeFill = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            // 
+            // Descricao
+            // 
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // ICMS
+            // 
+            this.ICMS.HeaderText = "ICMS";
+            this.ICMS.Name = "ICMS";
+            this.ICMS.ReadOnly = true;
+            // 
+            // NCM
+            // 
+            this.NCM.HeaderText = "NCM";
+            this.NCM.Name = "NCM";
+            this.NCM.ReadOnly = true;
+            // 
+            // Preco
+            // 
+            this.Preco.HeaderText = "Preço";
+            this.Preco.Name = "Preco";
+            this.Preco.ReadOnly = true;
+            // 
+            // Desconto
+            // 
+            this.Desconto.HeaderText = "Desconto";
+            this.Desconto.Name = "Desconto";
+            this.Desconto.ReadOnly = true;
             // 
             // FormCadProp
             // 
@@ -870,18 +1100,24 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1261, 901);
+            this.MinimumSize = new System.Drawing.Size(1261, 901);
             this.Name = "FormCadProp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Proposta";
+            this.Load += new System.EventHandler(this.FormCadProp_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaProp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroPropostaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItmProp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -891,6 +1127,8 @@
             this.bindingNavigator1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroPropostaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKItemPropidpr4CA06362BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -961,5 +1199,30 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxEmailCliente;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCodCliente;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label1;
+        private sisenterpriseDataSet sisenterpriseDataSet;
+        private System.Windows.Forms.BindingSource cadastroProdutosBindingSource;
+        private sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter cadastro_ProdutosTableAdapter;
+        private System.Windows.Forms.BindingSource cadastroPropostaBindingSource;
+        private sisenterpriseDataSetTableAdapters.Cadastro_PropostaTableAdapter cadastro_PropostaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpropostaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idclienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idvendedorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projetoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn validadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cotacaodolarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn probabilidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadofaturamentoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cadastroPropostaBindingSource1;
+        private System.Windows.Forms.BindingSource fKItemPropidpr4CA06362BindingSource;
+        private sisenterpriseDataSetTableAdapters.Item_PropostaTableAdapter item_PropostaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ICMS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NCM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Desconto;
     }
 }
