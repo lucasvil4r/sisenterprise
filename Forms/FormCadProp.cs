@@ -416,5 +416,10 @@ namespace SisEnterprise_2._0.Forms
             // Exiba o resultado na TextBox
             maskedTextBoxTotalDesconto.Text = somaDesconto.ToString();
         }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

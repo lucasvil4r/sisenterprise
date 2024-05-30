@@ -248,5 +248,8 @@
   <ItemGroup>
     <None Include="Resources\symbole-pdf-rouge.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e-mail.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

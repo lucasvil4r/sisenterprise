@@ -106,18 +106,19 @@
             this.maskedTextBoxCodVendedor = new System.Windows.Forms.MaskedTextBox();
             this.cadastroProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cadastro_ProdutosTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter();
             this.cadastroPropostaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cadastro_PropostaTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_PropostaTableAdapter();
-            this.fKItemPropidpr4CA06362BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.item_PropostaTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Item_PropostaTableAdapter();
             this.maskedTextBoxTotalDesconto = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonGerarPDF = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.fKItemPropidpr4CA06362BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaProp)).BeginInit();
@@ -436,7 +437,7 @@
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Controls.Add(this.maskedTextTotal);
             this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Location = new System.Drawing.Point(345, 696);
+            this.groupBox6.Location = new System.Drawing.Point(354, 696);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
@@ -972,6 +973,7 @@
             this.salvarToolStripButton,
             this.novoToolStripButton,
             this.deletetoolStripButton,
+            this.toolStripButtonGerarPDF,
             this.toolStripButton1});
             this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.bindingNavigator1.Location = new System.Drawing.Point(4, 19);
@@ -982,10 +984,60 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
             this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNavigator1.Size = new System.Drawing.Size(136, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(174, 27);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.bindingNavigator1);
+            this.groupBox5.Location = new System.Drawing.Point(548, 795);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(182, 64);
+            this.groupBox5.TabIndex = 12;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Alterações";
+            // 
+            // cadastro_ProdutosTableAdapter
+            // 
+            this.cadastro_ProdutosTableAdapter.ClearBeforeFill = true;
+            // 
+            // cadastroPropostaBindingSource
+            // 
+            this.cadastroPropostaBindingSource.DataMember = "Cadastro_Proposta";
+            this.cadastroPropostaBindingSource.DataSource = this.sisenterpriseDataSet;
+            // 
+            // cadastro_PropostaTableAdapter
+            // 
+            this.cadastro_PropostaTableAdapter.ClearBeforeFill = true;
+            // 
+            // item_PropostaTableAdapter
+            // 
+            this.item_PropostaTableAdapter.ClearBeforeFill = true;
+            // 
+            // maskedTextBoxTotalDesconto
+            // 
+            this.maskedTextBoxTotalDesconto.AccessibleDescription = "";
+            this.maskedTextBoxTotalDesconto.AccessibleName = "";
+            this.maskedTextBoxTotalDesconto.Enabled = false;
+            this.maskedTextBoxTotalDesconto.Location = new System.Drawing.Point(137, 23);
+            this.maskedTextBoxTotalDesconto.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBoxTotalDesconto.Name = "maskedTextBoxTotalDesconto";
+            this.maskedTextBoxTotalDesconto.Size = new System.Drawing.Size(116, 22);
+            this.maskedTextBoxTotalDesconto.TabIndex = 50;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 16);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Total Desconto:";
             // 
             // salvarToolStripButton
             // 
@@ -1017,74 +1069,35 @@
             this.deletetoolStripButton.Text = "&Deletar";
             this.deletetoolStripButton.Click += new System.EventHandler(this.deletetoolStripButton_Click);
             // 
+            // toolStripButtonGerarPDF
+            // 
+            this.toolStripButtonGerarPDF.CheckOnClick = true;
+            this.toolStripButtonGerarPDF.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonGerarPDF.Image = global::SisEnterprise_2._0.Properties.Resources.symbole_pdf_rouge;
+            this.toolStripButtonGerarPDF.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonGerarPDF.Name = "toolStripButtonGerarPDF";
+            this.toolStripButtonGerarPDF.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStripButtonGerarPDF.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonGerarPDF.Text = "&Criar Proposta";
+            this.toolStripButtonGerarPDF.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.toolStripButtonGerarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolStripButtonGerarPDF.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // toolStripButton1
             // 
-            this.toolStripButton1.CheckOnClick = true;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::SisEnterprise_2._0.Properties.Resources.symbole_pdf_rouge;
+            this.toolStripButton1.Image = global::SisEnterprise_2._0.Properties.Resources.e_mail;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStripButton1.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "&Criar Proposta";
-            this.toolStripButton1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.bindingNavigator1);
-            this.groupBox5.Location = new System.Drawing.Point(549, 799);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(144, 49);
-            this.groupBox5.TabIndex = 12;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Alterações";
-            // 
-            // cadastro_ProdutosTableAdapter
-            // 
-            this.cadastro_ProdutosTableAdapter.ClearBeforeFill = true;
-            // 
-            // cadastroPropostaBindingSource
-            // 
-            this.cadastroPropostaBindingSource.DataMember = "Cadastro_Proposta";
-            this.cadastroPropostaBindingSource.DataSource = this.sisenterpriseDataSet;
-            // 
-            // cadastro_PropostaTableAdapter
-            // 
-            this.cadastro_PropostaTableAdapter.ClearBeforeFill = true;
+            this.toolStripButton1.Text = "toolStripButtonEmail";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // fKItemPropidpr4CA06362BindingSource
             // 
             this.fKItemPropidpr4CA06362BindingSource.DataMember = "FK__Item_Prop__id_pr__4CA06362";
             this.fKItemPropidpr4CA06362BindingSource.DataSource = this.cadastroPropostaBindingSource;
-            // 
-            // item_PropostaTableAdapter
-            // 
-            this.item_PropostaTableAdapter.ClearBeforeFill = true;
-            // 
-            // maskedTextBoxTotalDesconto
-            // 
-            this.maskedTextBoxTotalDesconto.AccessibleDescription = "";
-            this.maskedTextBoxTotalDesconto.AccessibleName = "";
-            this.maskedTextBoxTotalDesconto.Enabled = false;
-            this.maskedTextBoxTotalDesconto.Location = new System.Drawing.Point(137, 23);
-            this.maskedTextBoxTotalDesconto.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBoxTotalDesconto.Name = "maskedTextBoxTotalDesconto";
-            this.maskedTextBoxTotalDesconto.Size = new System.Drawing.Size(116, 22);
-            this.maskedTextBoxTotalDesconto.TabIndex = 50;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 16);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "Total Desconto:";
             // 
             // FormCadProp
             // 
@@ -1136,7 +1149,7 @@
         private System.Windows.Forms.ToolStripButton salvarToolStripButton;
         private System.Windows.Forms.ToolStripButton novoToolStripButton;
         private System.Windows.Forms.ToolStripButton deletetoolStripButton;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonGerarPDF;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridViewItmProp;
@@ -1218,5 +1231,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Desconto;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTotalDesconto;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

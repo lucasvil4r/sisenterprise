@@ -73,6 +73,16 @@ namespace SisEnterprise_2._0.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap e_mail {
+            get {
+                object obj = ResourceManager.GetObject("e-mail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap symbole_pdf_rouge {
             get {
                 object obj = ResourceManager.GetObject("symbole-pdf-rouge", resourceCulture);
