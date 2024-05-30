@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity.Validation;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
@@ -187,6 +188,9 @@ namespace SisEnterprise_2._0.Forms
 
             PropostaId = 0;
 
+            dataGridViewItmProp.Rows.Clear();
+
+            CalcularTotaisGridItm();
             ChangedCliente();
             ChangedVendedor();
         }
@@ -334,6 +338,83 @@ namespace SisEnterprise_2._0.Forms
                     ChangedVendedor();
                 }
             }
+        }
+
+        private void dataGridViewItmProp_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewItmProp.Columns[e.ColumnIndex].Name == "Codigo")
+            {
+                // Obtenha o novo valor da célula na coluna "Codigo"
+                var ItmGridProdId = dataGridViewItmProp.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                int ItmProdId = Convert.ToInt32(ItmGridProdId);
+                if (ItmProdId == 0){return; }
+
+                using (var db = new ModelContext())
+                {
+                    var produto = new Cadastro_Produtos();
+                    produto = db.Cadastro_Produtos.Where(x => x.id_produto == ItmProdId).FirstOrDefault();
+
+                    if (produto == null)
+                    {
+                        MessageBox.Show("Produto não existe", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; 
+                    }
+
+                    // Altere os valores de outras células na mesma linha
+                    var ColumnIndexDescricao = dataGridViewItmProp.Columns["Descricao"].Index;
+                    var ColumnIndexICMS = dataGridViewItmProp.Columns["ICMS"].Index;
+                    var ColumnIndexNCM = dataGridViewItmProp.Columns["NCM"].Index;
+                    var ColumnIndexPreco = dataGridViewItmProp.Columns["Preco"].Index;
+                    var ColumnIndexDesconto = dataGridViewItmProp.Columns["Desconto"].Index;
+
+                    dataGridViewItmProp.Rows[e.RowIndex].Cells[ColumnIndexDescricao].Value = produto.descricao.ToString();
+                    dataGridViewItmProp.Rows[e.RowIndex].Cells[ColumnIndexICMS].Value = produto.icms.ToString();
+                    dataGridViewItmProp.Rows[e.RowIndex].Cells[ColumnIndexNCM].Value = produto.ncm.ToString();
+                    dataGridViewItmProp.Rows[e.RowIndex].Cells[ColumnIndexPreco].Value = produto.preco.ToString();
+                    dataGridViewItmProp.Rows[e.RowIndex].Cells[ColumnIndexDesconto].Value = produto.desconto.ToString();
+                }
+                
+                CalcularTotaisGridItm();
+            }
+        }
+
+        private void CalcularTotaisGridItm()
+        {
+            double somaTotal = 0;
+            double somaDesconto = 0;
+
+            // Percorra todas as linhas do DataGridView
+            foreach (DataGridViewRow row in dataGridViewItmProp.Rows)
+            {
+                if (row.Cells["Preco"].Value != null)
+                {
+                    double valor;
+                    if (double.TryParse(row.Cells["Preco"].Value.ToString(), out valor))
+                    {
+                        // Some os valores
+                        somaTotal += valor;
+                    }
+                }
+
+                if (row.Cells["Desconto"].Value != null)
+                {
+                    double valor;
+                    if (double.TryParse(row.Cells["Desconto"].Value.ToString(), out valor))
+                    {
+                        // Some os valores
+                        somaDesconto += valor;
+                    }
+                }
+            }
+
+            // Calcula total com desconto
+            somaTotal -= somaDesconto;
+
+            // Exiba o resultado na TextBox
+            maskedTextTotal.Text = somaTotal.ToString();
+
+            // Exiba o resultado na TextBox
+            maskedTextBoxTotalDesconto.Text = somaDesconto.ToString();
         }
     }
 }
