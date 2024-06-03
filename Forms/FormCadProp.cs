@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace SisEnterprise_2._0.Forms
             if (PropostaId != 0)
             {
                 bool returnFunction = SaveProposta(PropostaId);
+                this.SaveItemProposta(PropostaId);
                 if (returnFunction) { MessageBox.Show("Proposta salvo com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                 else { MessageBox.Show("Não foi possível salvar, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
@@ -222,7 +224,6 @@ namespace SisEnterprise_2._0.Forms
                     proposta.id_cliente = Int32.Parse(maskedTextBoxCodCliente.Text);
                     db.Cadastro_Proposta.Add(proposta);
 
-
                     try
                     {
                         db.SaveChanges();
@@ -244,6 +245,48 @@ namespace SisEnterprise_2._0.Forms
             }
         }
 
+        private void SaveItemProposta(int Id)
+        {
+            using (var db = new ModelContext())
+            {
+                // Remova os registros existentes com o ID fornecido
+                var itensParaRemover = db.Item_Proposta.Where(e => e.id_proposta == Id);
+                db.Item_Proposta.RemoveRange(itensParaRemover);
+
+                // Insira os novos dados
+                foreach (DataGridViewRow row in dataGridViewItmProp.Rows)
+                {
+                    if (row.Cells["Codigo"].Value != null)
+                    {
+                        string codigo = row.Cells["Codigo"].Value.ToString();
+
+                        var novoItem = new Item_Proposta
+                        {
+                            id_proposta = Id,
+                            id_produto = int.Parse(codigo)
+                        };
+
+                        db.Item_Proposta.Add(novoItem);
+                    }
+                }
+
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            MessageBox.Show($"Property: {validationError.PropertyName}, Error: {validationError.ErrorMessage}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
         private bool SaveProposta(int Id)
         {
             using (var db = new ModelContext())
@@ -251,6 +294,7 @@ namespace SisEnterprise_2._0.Forms
                 var proposta = db.Cadastro_Proposta.FirstOrDefault(x => x.id_proposta == Id);
                 if (proposta != null)
                 {
+                    // Salva cabeçalho
                     proposta.projeto = textBoxProjetoProposta.Text;
                     proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
                     proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
@@ -336,6 +380,22 @@ namespace SisEnterprise_2._0.Forms
 
                     ChangedCliente();
                     ChangedVendedor();
+                    ChangedItemProposta(proposta.id_proposta);
+                }
+            }
+        }
+
+        private void ChangedItemProposta(int Id)
+        {
+            using (var db = new ModelContext())
+            {
+                var dados = db.Item_Proposta.Where(e => e.id_proposta == Id).ToList();
+
+                // Percorra a lista e adicione os valores à coluna "Código" da dataGridViewItmProp
+                foreach (var item in dados)
+                {
+                    int rowIndex = dataGridViewItmProp.Rows.Add(); // Adicione uma nova linha
+                    dataGridViewItmProp.Rows[rowIndex].Cells["Codigo"].Value = item.id_produto; // Defina o valor da célula
                 }
             }
         }
