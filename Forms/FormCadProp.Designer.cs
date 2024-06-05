@@ -940,7 +940,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
             this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.bindingNavigator1.Size = new System.Drawing.Size(130, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(124, 27);
             this.bindingNavigator1.Stretch = true;
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
@@ -1005,7 +1005,7 @@
             this.groupBox5.Controls.Add(this.bindingNavigator1);
             this.groupBox5.Location = new System.Drawing.Point(411, 646);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(136, 52);
+            this.groupBox5.Size = new System.Drawing.Size(130, 50);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Alterações";

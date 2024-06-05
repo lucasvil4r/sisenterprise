@@ -1,10 +1,13 @@
 ﻿using System;
+using System.IO;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.Diagnostics;
+using System.Text;
 
 namespace SisEnterprise_2._0.Forms
 {
@@ -32,8 +35,9 @@ namespace SisEnterprise_2._0.Forms
             }
             else
             {
-                bool returnFunction = InsertProposta();
-                if (returnFunction) { MessageBox.Show("Proposta adicionado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                int idProp = InsertProposta();
+                this.SaveItemProposta(idProp);
+                if (idProp != 0) { MessageBox.Show("Proposta adicionado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                 else { MessageBox.Show("Não foi possível adiconar vendedor, tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
 
@@ -69,7 +73,51 @@ namespace SisEnterprise_2._0.Forms
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            if (PropostaId == 0)
+            {
+                MessageBox.Show("Nenhuma proposta foi selecionado!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            // Carregue o conteúdo do arquivo HTML (substitua pelo seu caminho de arquivo real)
+            string htmlTemplate = Path.Combine(Application.StartupPath, "Teamplate", "snippets.html");
+             htmlTemplate = File.ReadAllText(htmlTemplate);
+
+            // Cria caminho TEMP do user
+            string userTemp = Path.GetTempPath();
+
+            StringBuilder itensPropostaHtml = new StringBuilder();
+
+            // Insira os novos dados
+            foreach (DataGridViewRow row in dataGridViewItmProp.Rows)
+            {
+                if (row.Cells["Codigo"].Value != null)
+                { 
+                    string descricao = row.Cells["Descricao"].Value.ToString();
+                    string preco = row.Cells["Preco"].Value.ToString();
+                    string desconto = row.Cells["Desconto"].Value.ToString();
+                    itensPropostaHtml.Append("<tr>\r\n<td class=\"item\">\r\n<div class=\"d-flex align-items-start\">\r\n<div>\r\n" + descricao + "\r\n<div class=\"text-uppercase new\"><span class=\"fas fa-star\"></span>new</div>\r\n</div>\r\n</div>\r\n</td>\r\n<td class=\"font-weight-bold\">R$" + desconto + "</td>\r\n<td class=\"d-flex flex-column font-weight-bold\">R$" + preco + "</td>\r\n</tr>");
+                }
+            }
+
+            // Substitua as palavras-chave no templateente.Text);
+            string htmlPreenchido = htmlTemplate
+                .Replace("{{nomeCliente}}", maskedTextBoxRazaoSocialCliente.Text)
+                .Replace("{{cnpjCliente}}", maskedTextBoxCNPJCliente.Text)
+                .Replace("{{emailCliente}}", maskedTextBoxEmailCliente.Text)
+
+                .Replace("{{projeto}}", textBoxProjetoProposta.Text)
+                .Replace("{{validade}}", maskedTextBoxDataValidadeProposta.Text)
+                .Replace("{{emailVendedor}}", maskedTextBoxEmailVendedor.Text)
+
+                .Replace("{{totalPedido}}", maskedTextTotal.Text)
+                .Replace("{{totalDesconto}}", maskedTextBoxTotalDesconto.Text)
+                .Replace("{{Itens}}", itensPropostaHtml.ToString());
+
+            userTemp = Path.Combine(userTemp, "orcamento.html");
+            File.WriteAllText(userTemp, htmlPreenchido);
+
+            Process.Start(userTemp);
         }
 
         private void maskedTextBoxCodProposta_TextChanged(object sender, EventArgs e)
@@ -206,28 +254,28 @@ namespace SisEnterprise_2._0.Forms
             }
         }
 
-        private bool InsertProposta()
+        private int InsertProposta()
         {
             using (var db = new ModelContext())
             {
                 var proposta = new Cadastro_Proposta();
                 if (proposta != null)
                 {
-                    proposta.projeto = textBoxProjetoProposta.Text;
-                    proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
-                    proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
-                    proposta.estado_faturamento = textBoxEstFatProposta.Text;
-                    proposta.validade = DateTime.Now;
-
-                    // outher
-                    proposta.id_vendedor = Int32.Parse(maskedTextBoxCodVendedor.Text);
-                    proposta.id_cliente = Int32.Parse(maskedTextBoxCodCliente.Text);
-                    db.Cadastro_Proposta.Add(proposta);
-
                     try
                     {
+                        proposta.projeto = textBoxProjetoProposta.Text;
+                        //proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
+                        //proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
+                        proposta.estado_faturamento = textBoxEstFatProposta.Text;
+                        proposta.validade = DateTime.Now;
+
+                        // outher
+                        proposta.id_vendedor = Int32.Parse(maskedTextBoxCodVendedor.Text);
+                        proposta.id_cliente = Int32.Parse(maskedTextBoxCodCliente.Text);
+                        db.Cadastro_Proposta.Add(proposta);
+
                         db.SaveChanges();
-                        return true;
+                        return db.Cadastro_Proposta.OrderByDescending(pi => pi.id_proposta).Select(pi => pi.id_proposta).FirstOrDefault(); ;
                     }
                     catch (DbEntityValidationException ex)
                     {
@@ -238,10 +286,10 @@ namespace SisEnterprise_2._0.Forms
                                 MessageBox.Show($"Property: {validationError.PropertyName}, Error: {validationError.ErrorMessage}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        return false;
+                        return 0;
                     }
                 }
-                else { return false; }
+                else { return 0; }
             }
         }
 
@@ -296,8 +344,8 @@ namespace SisEnterprise_2._0.Forms
                 {
                     // Salva cabeçalho
                     proposta.projeto = textBoxProjetoProposta.Text;
-                    proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
-                    proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
+                    //proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
+                    //proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
                     proposta.estado_faturamento = textBoxEstFatProposta.Text;
                     proposta.validade = DateTime.Now;
 
@@ -407,7 +455,7 @@ namespace SisEnterprise_2._0.Forms
                 // Obtenha o novo valor da célula na coluna "Codigo"
                 var ItmGridProdId = dataGridViewItmProp.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 int ItmProdId = Convert.ToInt32(ItmGridProdId);
-                if (ItmProdId == 0){return; }
+                if (ItmProdId == 0){return;}
 
                 using (var db = new ModelContext())
                 {
