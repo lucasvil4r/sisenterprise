@@ -254,6 +254,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\Teamplate\snippets.html" />
     <Content Include="bin\Release\Teamplate\snippets.html" />
+    <Content Include="Teamplate\snippets.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
