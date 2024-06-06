@@ -247,8 +247,8 @@ namespace SisEnterprise_2._0.Forms
             // Group box prop
             maskedTextBoxCodProposta.Text = string.Empty;
             textBoxProjetoProposta.Text = string.Empty;
-            textBoxDolarProposta.Text = string.Empty;
-            textBoxProbaProposta.Text = string.Empty;
+            textBoxDolarProposta.Text = "0";
+            textBoxProbaProposta.Text = "0";
             textBoxEstFatProposta.Text = string.Empty;
             maskedTextBoxDataValidadeProposta.Text = string.Empty;
 
