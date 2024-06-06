@@ -50,7 +50,6 @@
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonDeletar = new System.Windows.Forms.Button();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -62,7 +61,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(64, 187);
+            this.groupBox2.Location = new System.Drawing.Point(12, 145);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(672, 245);
             this.groupBox2.TabIndex = 17;
@@ -131,7 +130,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBoxDept);
-            this.groupBox1.Location = new System.Drawing.Point(64, 54);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(672, 127);
             this.groupBox1.TabIndex = 16;
@@ -208,7 +207,7 @@
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(287, 461);
+            this.buttonAdicionar.Location = new System.Drawing.Point(235, 419);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
             this.buttonAdicionar.TabIndex = 1;
@@ -218,7 +217,7 @@
             // 
             // buttonLimpar
             // 
-            this.buttonLimpar.Location = new System.Drawing.Point(408, 461);
+            this.buttonLimpar.Location = new System.Drawing.Point(356, 419);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
             this.buttonLimpar.TabIndex = 2;
@@ -228,7 +227,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(166, 461);
+            this.buttonSalvar.Location = new System.Drawing.Point(114, 419);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
             this.buttonSalvar.TabIndex = 0;
@@ -238,28 +237,13 @@
             // 
             // buttonDeletar
             // 
-            this.buttonDeletar.Location = new System.Drawing.Point(529, 461);
+            this.buttonDeletar.Location = new System.Drawing.Point(477, 419);
             this.buttonDeletar.Name = "buttonDeletar";
             this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
             this.buttonDeletar.TabIndex = 3;
             this.buttonDeletar.Text = "Excluir";
             this.buttonDeletar.UseVisualStyleBackColor = true;
             this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
-            // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.AllowDrop = true;
-            this.textBoxTitle.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(64, 12);
-            this.textBoxTitle.Multiline = true;
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(672, 39);
-            this.textBoxTitle.TabIndex = 18;
-            this.textBoxTitle.Text = "CADASTRO DE DEPARTAMENTOS";
-            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cadastro_DepartamentoTableAdapter
             // 
@@ -269,18 +253,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 523);
+            this.ClientSize = new System.Drawing.Size(699, 464);
             this.Controls.Add(this.buttonAdicionar);
-            this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonDeletar);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(817, 562);
+            this.MaximumSize = new System.Drawing.Size(715, 503);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(817, 562);
+            this.MinimumSize = new System.Drawing.Size(715, 503);
             this.Name = "FormCadDept";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Departamento";
@@ -292,7 +275,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
@@ -311,7 +293,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox textBoxDept;
-		internal System.Windows.Forms.TextBox textBoxTitle;
 		private sisenterpriseDataSet sisenterpriseDataSet;
 		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;
 		private sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter cadastro_DepartamentoTableAdapter;

@@ -55,6 +55,8 @@
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericQtdDependentes = new System.Windows.Forms.NumericUpDown();
+            this.numericMesesTrabalhados = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonCalcular = new System.Windows.Forms.Button();
@@ -71,23 +73,20 @@
             this.textBoxCPF = new System.Windows.Forms.TextBox();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cadastro_DepartamentoTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_DepartamentoTableAdapter();
-            this.numericMesesTrabalhados = new System.Windows.Forms.NumericUpDown();
-            this.numericQtdDependentes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroFuncionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQtdDependentes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMesesTrabalhados)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericMesesTrabalhados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericQtdDependentes)).BeginInit();
             this.SuspendLayout();
             // 
             // qtddependentesDataGridViewTextBoxColumn
@@ -106,7 +105,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridViewResult);
-            this.groupBox4.Location = new System.Drawing.Point(10, 284);
+            this.groupBox4.Location = new System.Drawing.Point(12, 234);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(790, 261);
             this.groupBox4.TabIndex = 49;
@@ -309,12 +308,37 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textBoxSalario);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(10, 62);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(790, 216);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Valores Cálculo";
+            // 
+            // numericQtdDependentes
+            // 
+            this.numericQtdDependentes.Enabled = false;
+            this.numericQtdDependentes.Location = new System.Drawing.Point(524, 99);
+            this.numericQtdDependentes.Name = "numericQtdDependentes";
+            this.numericQtdDependentes.Size = new System.Drawing.Size(179, 20);
+            this.numericQtdDependentes.TabIndex = 44;
+            // 
+            // numericMesesTrabalhados
+            // 
+            this.numericMesesTrabalhados.Location = new System.Drawing.Point(524, 40);
+            this.numericMesesTrabalhados.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.numericMesesTrabalhados.Name = "numericMesesTrabalhados";
+            this.numericMesesTrabalhados.Size = new System.Drawing.Size(179, 20);
+            this.numericMesesTrabalhados.TabIndex = 43;
+            this.numericMesesTrabalhados.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -403,7 +427,7 @@
             this.groupBox3.Controls.Add(this.textBoxCPF);
             this.groupBox3.Controls.Add(this.pictureBoxFoto);
             this.groupBox3.Controls.Add(this.textBoxNome);
-            this.groupBox3.Location = new System.Drawing.Point(823, 62);
+            this.groupBox3.Location = new System.Drawing.Point(825, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(229, 632);
             this.groupBox3.TabIndex = 46;
@@ -473,25 +497,10 @@
             this.textBoxNome.TabIndex = 0;
             this.textBoxNome.TabStop = false;
             // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.AllowDrop = true;
-            this.textBoxTitle.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(195, 17);
-            this.textBoxTitle.Multiline = true;
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(672, 39);
-            this.textBoxTitle.TabIndex = 45;
-            this.textBoxTitle.Text = "CÁLCULO DE 13º";
-            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(10, 551);
+            this.groupBox2.Location = new System.Drawing.Point(12, 501);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(790, 143);
             this.groupBox2.TabIndex = 48;
@@ -502,45 +511,19 @@
             // 
             this.cadastro_DepartamentoTableAdapter.ClearBeforeFill = true;
             // 
-            // numericMesesTrabalhados
-            // 
-            this.numericMesesTrabalhados.Location = new System.Drawing.Point(524, 40);
-            this.numericMesesTrabalhados.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.numericMesesTrabalhados.Name = "numericMesesTrabalhados";
-            this.numericMesesTrabalhados.Size = new System.Drawing.Size(179, 20);
-            this.numericMesesTrabalhados.TabIndex = 43;
-            this.numericMesesTrabalhados.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            // 
-            // numericQtdDependentes
-            // 
-            this.numericQtdDependentes.Enabled = false;
-            this.numericQtdDependentes.Location = new System.Drawing.Point(524, 99);
-            this.numericQtdDependentes.Name = "numericQtdDependentes";
-            this.numericQtdDependentes.Size = new System.Drawing.Size(179, 20);
-            this.numericQtdDependentes.TabIndex = 44;
-            // 
             // FormCalc13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 721);
+            this.ClientSize = new System.Drawing.Size(1063, 656);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.groupBox2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1079, 760);
+            this.MaximumSize = new System.Drawing.Size(1079, 695);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1079, 760);
+            this.MinimumSize = new System.Drawing.Size(1079, 695);
             this.Name = "FormCalc13";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cálcular 13º";
@@ -552,15 +535,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQtdDependentes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMesesTrabalhados)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroDepartamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericMesesTrabalhados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericQtdDependentes)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
@@ -604,7 +586,6 @@
 		private System.Windows.Forms.TextBox textBoxCPF;
 		private System.Windows.Forms.PictureBox pictureBoxFoto;
 		private System.Windows.Forms.TextBox textBoxNome;
-		internal System.Windows.Forms.TextBox textBoxTitle;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.ComboBox ComboBoxDept;
 		private System.Windows.Forms.BindingSource cadastroDepartamentoBindingSource;

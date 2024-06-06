@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ComboBoxDept = new System.Windows.Forms.ComboBox();
             this.cadastroDepartamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -92,21 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.AllowDrop = true;
-            this.textBoxTitle.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(197, 12);
-            this.textBoxTitle.Multiline = true;
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(672, 39);
-            this.textBoxTitle.TabIndex = 38;
-            this.textBoxTitle.Text = "CÁLCULO DE FÉRIAS";
-            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.ComboBoxDept);
@@ -115,7 +99,7 @@
             this.groupBox3.Controls.Add(this.textBoxCPF);
             this.groupBox3.Controls.Add(this.pictureBoxFoto);
             this.groupBox3.Controls.Add(this.textBoxNome);
-            this.groupBox3.Location = new System.Drawing.Point(825, 57);
+            this.groupBox3.Location = new System.Drawing.Point(825, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(229, 643);
             this.groupBox3.TabIndex = 40;
@@ -206,7 +190,7 @@
             this.groupBox1.Controls.Add(this.textBoxSalario);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 57);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(790, 216);
             this.groupBox1.TabIndex = 41;
@@ -353,7 +337,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(12, 555);
+            this.groupBox2.Location = new System.Drawing.Point(12, 510);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(790, 145);
             this.groupBox2.TabIndex = 42;
@@ -517,7 +501,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridViewResult);
-            this.groupBox4.Location = new System.Drawing.Point(12, 279);
+            this.groupBox4.Location = new System.Drawing.Point(12, 234);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(790, 262);
             this.groupBox4.TabIndex = 44;
@@ -572,16 +556,15 @@
             this.AccessibleName = "Cálculo de Férias";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 721);
+            this.ClientSize = new System.Drawing.Size(1063, 671);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBoxTitle);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1079, 760);
+            this.MaximumSize = new System.Drawing.Size(1079, 710);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1079, 760);
+            this.MinimumSize = new System.Drawing.Size(1079, 710);
             this.Name = "FormCalcFerias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Cálcular Férias";
@@ -599,13 +582,10 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
 		#endregion
-
-		internal System.Windows.Forms.TextBox textBoxTitle;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.PictureBox pictureBoxFoto;
 		private System.Windows.Forms.GroupBox groupBox1;

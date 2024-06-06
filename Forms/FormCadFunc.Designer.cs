@@ -78,7 +78,6 @@
             this.qtddependentesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdhorastrabalhadasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cadastroFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.cadastro_FuncionarioTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
@@ -107,9 +106,9 @@
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.Location = new System.Drawing.Point(697, 723);
+            this.buttonAdicionar.Location = new System.Drawing.Point(604, 613);
             this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(105, 31);
+            this.buttonAdicionar.Size = new System.Drawing.Size(105, 32);
             this.buttonAdicionar.TabIndex = 2;
             this.buttonAdicionar.Text = "Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
@@ -117,9 +116,9 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(443, 723);
+            this.buttonSalvar.Location = new System.Drawing.Point(350, 613);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(105, 31);
+            this.buttonSalvar.Size = new System.Drawing.Size(105, 32);
             this.buttonSalvar.TabIndex = 0;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -127,9 +126,9 @@
             // 
             // buttonDeletar
             // 
-            this.buttonDeletar.Location = new System.Drawing.Point(570, 723);
+            this.buttonDeletar.Location = new System.Drawing.Point(477, 613);
             this.buttonDeletar.Name = "buttonDeletar";
-            this.buttonDeletar.Size = new System.Drawing.Size(105, 31);
+            this.buttonDeletar.Size = new System.Drawing.Size(105, 32);
             this.buttonDeletar.TabIndex = 1;
             this.buttonDeletar.Text = "Excluir";
             this.buttonDeletar.UseVisualStyleBackColor = true;
@@ -156,7 +155,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(959, 390);
+            this.label7.Location = new System.Drawing.Point(931, 330);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 23;
@@ -242,7 +241,7 @@
             this.groupBox1.Controls.Add(this.textBoxEndereco);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBoxSalario);
-            this.groupBox1.Location = new System.Drawing.Point(40, 72);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(635, 394);
             this.groupBox1.TabIndex = 31;
@@ -377,7 +376,7 @@
             // textBoxDataAdmissao
             // 
             this.textBoxDataAdmissao.Enabled = false;
-            this.textBoxDataAdmissao.Location = new System.Drawing.Point(1064, 383);
+            this.textBoxDataAdmissao.Location = new System.Drawing.Point(1036, 323);
             this.textBoxDataAdmissao.Mask = "00/00/0000";
             this.textBoxDataAdmissao.Name = "textBoxDataAdmissao";
             this.textBoxDataAdmissao.Size = new System.Drawing.Size(108, 20);
@@ -399,9 +398,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(40, 472);
+            this.groupBox2.Location = new System.Drawing.Point(12, 412);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1160, 225);
+            this.groupBox2.Size = new System.Drawing.Size(1160, 195);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Funcionarios";
@@ -557,21 +556,6 @@
             this.cadastroFuncionarioBindingSource.DataMember = "Cadastro_Funcionario";
             this.cadastroFuncionarioBindingSource.DataSource = this.sisenterpriseDataSet;
             // 
-            // textBoxTitle
-            // 
-            this.textBoxTitle.AllowDrop = true;
-            this.textBoxTitle.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTitle.Location = new System.Drawing.Point(326, 27);
-            this.textBoxTitle.Multiline = true;
-            this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.ReadOnly = true;
-            this.textBoxTitle.Size = new System.Drawing.Size(672, 39);
-            this.textBoxTitle.TabIndex = 37;
-            this.textBoxTitle.Text = "CADASTRO DE FUNCIONARIOS";
-            this.textBoxTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // cadastro_FuncionarioTableAdapter
             // 
             this.cadastro_FuncionarioTableAdapter.ClearBeforeFill = true;
@@ -581,7 +565,7 @@
             this.groupBox3.Controls.Add(this.pictureBoxFoto);
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Controls.Add(this.buttonImportFoto);
-            this.groupBox3.Location = new System.Drawing.Point(932, 72);
+            this.groupBox3.Location = new System.Drawing.Point(904, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(268, 297);
             this.groupBox3.TabIndex = 13;
@@ -610,7 +594,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(959, 419);
+            this.label13.Location = new System.Drawing.Point(931, 359);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(101, 13);
             this.label13.TabIndex = 23;
@@ -619,7 +603,7 @@
             // textBoxDataCadastro
             // 
             this.textBoxDataCadastro.Enabled = false;
-            this.textBoxDataCadastro.Location = new System.Drawing.Point(1064, 414);
+            this.textBoxDataCadastro.Location = new System.Drawing.Point(1036, 354);
             this.textBoxDataCadastro.Mask = "00/00/0000";
             this.textBoxDataCadastro.Name = "textBoxDataCadastro";
             this.textBoxDataCadastro.Size = new System.Drawing.Size(108, 20);
@@ -629,7 +613,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(958, 448);
+            this.label15.Location = new System.Drawing.Point(930, 388);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(106, 13);
             this.label15.TabIndex = 23;
@@ -638,7 +622,7 @@
             // textBoxDataAlteracao
             // 
             this.textBoxDataAlteracao.Enabled = false;
-            this.textBoxDataAlteracao.Location = new System.Drawing.Point(1064, 446);
+            this.textBoxDataAlteracao.Location = new System.Drawing.Point(1036, 386);
             this.textBoxDataAlteracao.Mask = "00/00/0000";
             this.textBoxDataAlteracao.Name = "textBoxDataAlteracao";
             this.textBoxDataAlteracao.Size = new System.Drawing.Size(108, 20);
@@ -647,9 +631,9 @@
             // 
             // buttonLimpar
             // 
-            this.buttonLimpar.Location = new System.Drawing.Point(824, 723);
+            this.buttonLimpar.Location = new System.Drawing.Point(731, 613);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(105, 31);
+            this.buttonLimpar.Size = new System.Drawing.Size(105, 32);
             this.buttonLimpar.TabIndex = 3;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = true;
@@ -663,7 +647,7 @@
             // 
             this.groupBox4.Controls.Add(this.dataGridViewFiles);
             this.groupBox4.Controls.Add(this.buttonImportaDocs);
-            this.groupBox4.Location = new System.Drawing.Point(681, 72);
+            this.groupBox4.Location = new System.Drawing.Point(653, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(245, 394);
             this.groupBox4.TabIndex = 37;
@@ -704,11 +688,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 791);
+            this.ClientSize = new System.Drawing.Size(1184, 664);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonDeletar);
@@ -721,9 +704,9 @@
             this.Controls.Add(this.textBoxDataAdmissao);
             this.Controls.Add(this.label7);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1253, 830);
+            this.MaximumSize = new System.Drawing.Size(1200, 703);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1253, 830);
+            this.MinimumSize = new System.Drawing.Size(1200, 703);
             this.Name = "FormCadFunc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Funcionários";
@@ -771,7 +754,6 @@
 		private System.Windows.Forms.TextBox textBoxSalario;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.DataGridView dataGridView;
-		internal System.Windows.Forms.TextBox textBoxTitle;
 		private sisenterpriseDataSet sisenterpriseDataSet;
 		private System.Windows.Forms.BindingSource cadastroFuncionarioBindingSource;
 		private sisenterpriseDataSetTableAdapters.Cadastro_FuncionarioTableAdapter cadastro_FuncionarioTableAdapter;
