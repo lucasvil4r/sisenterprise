@@ -1,13 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Data.Entity;
 using System.Data.Entity.Validation;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using System.Diagnostics;
 using System.Text;
+
 
 namespace SisEnterprise_2._0.Forms
 {
@@ -23,6 +21,12 @@ namespace SisEnterprise_2._0.Forms
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
+            if (PropostaId == 0)
+            {
+                MessageBox.Show("Nenhum dado posicionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (MessageBox.Show("Deseja salvar esses dados ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
@@ -78,10 +82,14 @@ namespace SisEnterprise_2._0.Forms
                 MessageBox.Show("Nenhuma proposta foi selecionado!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            Process.Start(CreatePropostaHtml());
+        }
 
+        private string CreatePropostaHtml()
+        {
             // Carregue o conteúdo do arquivo HTML (substitua pelo seu caminho de arquivo real)
             string htmlTemplate = Path.Combine(Application.StartupPath, "Teamplate", "snippets.html");
-             htmlTemplate = File.ReadAllText(htmlTemplate);
+            htmlTemplate = File.ReadAllText(htmlTemplate);
 
             // Cria caminho TEMP do user
             string userTemp = Path.GetTempPath();
@@ -92,7 +100,7 @@ namespace SisEnterprise_2._0.Forms
             foreach (DataGridViewRow row in dataGridViewItmProp.Rows)
             {
                 if (row.Cells["Codigo"].Value != null)
-                { 
+                {
                     string descricao = row.Cells["Descricao"].Value.ToString();
                     string preco = row.Cells["Preco"].Value.ToString();
                     string desconto = row.Cells["Desconto"].Value.ToString();
@@ -117,7 +125,7 @@ namespace SisEnterprise_2._0.Forms
             userTemp = Path.Combine(userTemp, "orcamento.html");
             File.WriteAllText(userTemp, htmlPreenchido);
 
-            Process.Start(userTemp);
+            return userTemp;
         }
 
         private void maskedTextBoxCodProposta_TextChanged(object sender, EventArgs e)
@@ -264,8 +272,8 @@ namespace SisEnterprise_2._0.Forms
                     try
                     {
                         proposta.projeto = textBoxProjetoProposta.Text;
-                        //proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
-                        //proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
+                        proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
+                        proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
                         proposta.estado_faturamento = textBoxEstFatProposta.Text;
                         proposta.validade = DateTime.Now;
 
@@ -344,8 +352,8 @@ namespace SisEnterprise_2._0.Forms
                 {
                     // Salva cabeçalho
                     proposta.projeto = textBoxProjetoProposta.Text;
-                    //proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
-                    //proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
+                    proposta.cotacao_dolar = decimal.Parse(textBoxDolarProposta.Text);
+                    proposta.probabilidade = Int32.Parse(textBoxProbaProposta.Text);
                     proposta.estado_faturamento = textBoxEstFatProposta.Text;
                     proposta.validade = DateTime.Now;
 

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadProd));
             this.Produto = new System.Windows.Forms.GroupBox();
+            this.ComboBoxFornecedor = new System.Windows.Forms.ComboBox();
+            this.cadastroFornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
             this.maskedTextBoxDescricao = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBoxDtCad = new System.Windows.Forms.MaskedTextBox();
@@ -64,7 +67,6 @@
             this.dataalteracaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idfornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cadastroProdutosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -72,18 +74,16 @@
             this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cadastro_ProdutosTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_ProdutosTableAdapter();
-            this.ComboBoxFornecedor = new System.Windows.Forms.ComboBox();
-            this.cadastroFornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cadastro_FornecedoresTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_FornecedoresTableAdapter();
             this.Produto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Produto
@@ -115,6 +115,27 @@
             this.Produto.TabIndex = 0;
             this.Produto.TabStop = false;
             this.Produto.Text = "Produto";
+            // 
+            // ComboBoxFornecedor
+            // 
+            this.ComboBoxFornecedor.DataSource = this.cadastroFornecedoresBindingSource;
+            this.ComboBoxFornecedor.DisplayMember = "razao_social";
+            this.ComboBoxFornecedor.FormattingEnabled = true;
+            this.ComboBoxFornecedor.Location = new System.Drawing.Point(354, 32);
+            this.ComboBoxFornecedor.Name = "ComboBoxFornecedor";
+            this.ComboBoxFornecedor.Size = new System.Drawing.Size(125, 21);
+            this.ComboBoxFornecedor.TabIndex = 48;
+            this.ComboBoxFornecedor.ValueMember = "id_fornecedor";
+            // 
+            // cadastroFornecedoresBindingSource
+            // 
+            this.cadastroFornecedoresBindingSource.DataMember = "Cadastro_Fornecedores";
+            this.cadastroFornecedoresBindingSource.DataSource = this.sisenterpriseDataSet;
+            // 
+            // sisenterpriseDataSet
+            // 
+            this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
+            this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // maskedTextBoxDescricao
             // 
@@ -182,6 +203,7 @@
             this.maskedTextBoxICMS.Name = "maskedTextBoxICMS";
             this.maskedTextBoxICMS.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxICMS.TabIndex = 3;
+            this.maskedTextBoxICMS.Text = "0";
             this.maskedTextBoxICMS.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label7
@@ -219,6 +241,7 @@
             this.maskedTextBoxDesconto.Name = "maskedTextBoxDesconto";
             this.maskedTextBoxDesconto.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxDesconto.TabIndex = 5;
+            this.maskedTextBoxDesconto.Text = "0";
             this.maskedTextBoxDesconto.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label4
@@ -237,6 +260,7 @@
             this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
             this.maskedTextBoxPreco.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxPreco.TabIndex = 4;
+            this.maskedTextBoxPreco.Text = "0";
             this.maskedTextBoxPreco.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // checkBox1
@@ -409,11 +433,6 @@
             this.cadastroProdutosBindingSource.DataMember = "Cadastro_Produtos";
             this.cadastroProdutosBindingSource.DataSource = this.sisenterpriseDataSet;
             // 
-            // sisenterpriseDataSet
-            // 
-            this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
-            this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView);
@@ -491,22 +510,6 @@
             // 
             this.cadastro_ProdutosTableAdapter.ClearBeforeFill = true;
             // 
-            // ComboBoxFornecedor
-            // 
-            this.ComboBoxFornecedor.DataSource = this.cadastroFornecedoresBindingSource;
-            this.ComboBoxFornecedor.DisplayMember = "razao_social";
-            this.ComboBoxFornecedor.FormattingEnabled = true;
-            this.ComboBoxFornecedor.Location = new System.Drawing.Point(354, 32);
-            this.ComboBoxFornecedor.Name = "ComboBoxFornecedor";
-            this.ComboBoxFornecedor.Size = new System.Drawing.Size(125, 21);
-            this.ComboBoxFornecedor.TabIndex = 48;
-            this.ComboBoxFornecedor.ValueMember = "id_fornecedor";
-            // 
-            // cadastroFornecedoresBindingSource
-            // 
-            this.cadastroFornecedoresBindingSource.DataMember = "Cadastro_Fornecedores";
-            this.cadastroFornecedoresBindingSource.DataSource = this.sisenterpriseDataSet;
-            // 
             // cadastro_FornecedoresTableAdapter
             // 
             this.cadastro_FornecedoresTableAdapter.ClearBeforeFill = true;
@@ -529,16 +532,16 @@
             this.Load += new System.EventHandler(this.FormCadProd_Load);
             this.Produto.ResumeLayout(false);
             this.Produto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroProdutosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastroFornecedoresBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

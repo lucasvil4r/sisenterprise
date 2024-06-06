@@ -327,6 +327,7 @@
             this.textBoxProbaProposta.Name = "textBoxProbaProposta";
             this.textBoxProbaProposta.Size = new System.Drawing.Size(222, 20);
             this.textBoxProbaProposta.TabIndex = 63;
+            this.textBoxProbaProposta.Text = "0";
             // 
             // label22
             // 
@@ -344,6 +345,7 @@
             this.textBoxDolarProposta.Name = "textBoxDolarProposta";
             this.textBoxDolarProposta.Size = new System.Drawing.Size(222, 20);
             this.textBoxDolarProposta.TabIndex = 61;
+            this.textBoxDolarProposta.Text = "0";
             // 
             // label21
             // 

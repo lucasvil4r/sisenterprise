@@ -31,6 +31,12 @@ namespace SisEnterprise_2._0.Forms
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            if (ClienteId == 0)
+            {
+                MessageBox.Show("Nenhum dado posicionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (MessageBox.Show("Deseja salvar esses dados ?", "Delete ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
