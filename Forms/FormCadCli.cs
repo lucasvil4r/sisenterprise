@@ -31,9 +31,9 @@ namespace SisEnterprise_2._0.Forms
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            if (ClienteId == 0)
+            if (maskedTextBoxRazao.Text.Trim() == "")
             {
-                MessageBox.Show("Nenhum dado posicionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Razão Social Obrigatorio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

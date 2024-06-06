@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadCli));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ComboBoxVendedor = new System.Windows.Forms.ComboBox();
+            this.cadastroVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
+            this.label10 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.idclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idvendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +54,6 @@
             this.datacadastroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataalteracaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cadastroClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sisenterpriseDataSet = new SisEnterprise_2._0.sisenterpriseDataSet();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -95,14 +98,12 @@
             this.novoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deletetoolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.ComboBoxVendedor = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cadastroVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cadastro_VendedorTableAdapter = new SisEnterprise_2._0.sisenterpriseDataSetTableAdapters.Cadastro_VendedorTableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroVendedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -110,7 +111,6 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastroVendedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -133,6 +133,36 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Cliente";
+            // 
+            // ComboBoxVendedor
+            // 
+            this.ComboBoxVendedor.DataSource = this.cadastroVendedorBindingSource;
+            this.ComboBoxVendedor.DisplayMember = "nome_vendedor";
+            this.ComboBoxVendedor.FormattingEnabled = true;
+            this.ComboBoxVendedor.Location = new System.Drawing.Point(787, 208);
+            this.ComboBoxVendedor.Name = "ComboBoxVendedor";
+            this.ComboBoxVendedor.Size = new System.Drawing.Size(125, 21);
+            this.ComboBoxVendedor.TabIndex = 50;
+            this.ComboBoxVendedor.ValueMember = "id_vendedor";
+            // 
+            // cadastroVendedorBindingSource
+            // 
+            this.cadastroVendedorBindingSource.DataMember = "Cadastro_Vendedor";
+            this.cadastroVendedorBindingSource.DataSource = this.sisenterpriseDataSet;
+            // 
+            // sisenterpriseDataSet
+            // 
+            this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
+            this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(716, 212);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "Atendido por:";
             // 
             // dataGridView
             // 
@@ -306,11 +336,6 @@
             this.cadastroClienteBindingSource.DataMember = "Cadastro_Cliente";
             this.cadastroClienteBindingSource.DataSource = this.sisenterpriseDataSet;
             // 
-            // sisenterpriseDataSet
-            // 
-            this.sisenterpriseDataSet.DataSetName = "sisenterpriseDataSet";
-            this.sisenterpriseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.checkBoxAtivo);
@@ -428,6 +453,7 @@
             this.maskedTextBoxEmail.Name = "maskedTextBoxEmail";
             this.maskedTextBoxEmail.Size = new System.Drawing.Size(245, 20);
             this.maskedTextBoxEmail.TabIndex = 5;
+            this.maskedTextBoxEmail.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // maskedTextBoxCodigo
             // 
@@ -768,31 +794,6 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 20);
             this.toolStripButton1.Text = "&Criar Proposta";
             // 
-            // ComboBoxVendedor
-            // 
-            this.ComboBoxVendedor.DataSource = this.cadastroVendedorBindingSource;
-            this.ComboBoxVendedor.DisplayMember = "nome_vendedor";
-            this.ComboBoxVendedor.FormattingEnabled = true;
-            this.ComboBoxVendedor.Location = new System.Drawing.Point(787, 208);
-            this.ComboBoxVendedor.Name = "ComboBoxVendedor";
-            this.ComboBoxVendedor.Size = new System.Drawing.Size(125, 21);
-            this.ComboBoxVendedor.TabIndex = 50;
-            this.ComboBoxVendedor.ValueMember = "id_vendedor";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(716, 212);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 13);
-            this.label10.TabIndex = 49;
-            this.label10.Text = "Atendido por:";
-            // 
-            // cadastroVendedorBindingSource
-            // 
-            this.cadastroVendedorBindingSource.DataMember = "Cadastro_Vendedor";
-            this.cadastroVendedorBindingSource.DataSource = this.sisenterpriseDataSet;
-            // 
             // cadastro_VendedorTableAdapter
             // 
             this.cadastro_VendedorTableAdapter.ClearBeforeFill = true;
@@ -814,9 +815,10 @@
             this.Load += new System.EventHandler(this.FormCadCli_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cadastroVendedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadastroClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sisenterpriseDataSet)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -829,7 +831,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cadastroVendedorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -30,9 +30,9 @@ namespace SisEnterprise_2._0.Forms
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
-            if (VendId == 0)
+            if (maskedTextBoxNome.Text.Trim() == "")
             {
-                MessageBox.Show("Nenhum dado posicionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nome Obrigatorio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

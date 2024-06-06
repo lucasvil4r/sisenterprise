@@ -21,9 +21,21 @@ namespace SisEnterprise_2._0.Forms
 
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
-            if (PropostaId == 0)
+            if (textBoxProjetoProposta.Text.Trim() == "")
             {
-                MessageBox.Show("Nenhum dado posicionado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Projeto Obrigatorio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (maskedTextBoxCodVendedor.Text.Trim() == "")
+            {
+                MessageBox.Show("Vendedor Obrigatorio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (maskedTextBoxCodCliente.Text.Trim() == "")
+            {
+                MessageBox.Show("Cliente Obrigatorio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
