@@ -5,6 +5,10 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.Net;
 
 
 namespace SisEnterprise_2._0.Forms
@@ -104,6 +108,7 @@ namespace SisEnterprise_2._0.Forms
             htmlTemplate = File.ReadAllText(htmlTemplate);
 
             // Cria caminho TEMP do user
+            //string userTemp = Path.GetTempPath();
             string userTemp = Path.GetTempPath();
 
             StringBuilder itensPropostaHtml = new StringBuilder();
@@ -134,7 +139,7 @@ namespace SisEnterprise_2._0.Forms
                 .Replace("{{totalDesconto}}", maskedTextBoxTotalDesconto.Text)
                 .Replace("{{Itens}}", itensPropostaHtml.ToString());
 
-            userTemp = Path.Combine(userTemp, "orcamento.html");
+            userTemp = Path.Combine(userTemp, "orcamento"+ new Random().Next(0, 1000000) + ".html");
             File.WriteAllText(userTemp, htmlPreenchido);
 
             return userTemp;
@@ -547,7 +552,54 @@ namespace SisEnterprise_2._0.Forms
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
+            if (PropostaId == 0)
+            {
+                MessageBox.Show("Nenhuma proposta foi selecionado!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            if (MessageBox.Show("Deseja enviar essa proposta para o e-mail de cadastro do cliente?", "Enviar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            string filtHtmlProp = CreatePropostaHtml();
+            string textHtmlProp = File.ReadAllText(filtHtmlProp);
+
+            bool sendEmailClient = SendMailProposta(filtHtmlProp, textHtmlProp, maskedTextBoxEmailCliente.Text.Trim());
+            if (sendEmailClient) { MessageBox.Show("E-mail enviado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else { MessageBox.Show("Erro ao enviar E-mail!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+        private bool SendMailProposta(string anexoHtmlProp, string bodyHtmlProp, string sendEmail)
+        {
+            // Informações do remetente
+            string remetenteEmail = "";
+            string remetenteSenha = "";
+            string serverSMTP = "";
+
+            // Configuração do cliente SMTP
+            SmtpClient smtpClient = new SmtpClient(serverSMTP);
+            smtpClient.Port = 587;
+            smtpClient.EnableSsl = true;
+            smtpClient.Credentials = new NetworkCredential(remetenteEmail, remetenteSenha);
+
+            // Mensagem de email
+            MailMessage mensagem = new MailMessage();
+            mensagem.From = new MailAddress(remetenteEmail);
+            mensagem.To.Add(sendEmail);
+
+            mensagem.Subject = "Proposta - SisEnterprise";
+            mensagem.IsBodyHtml = true;
+            mensagem.Body = bodyHtmlProp;
+
+            try
+            {
+                // Envia o email
+                smtpClient.Send(mensagem);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
