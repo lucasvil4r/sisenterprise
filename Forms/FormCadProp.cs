@@ -571,9 +571,9 @@ namespace SisEnterprise_2._0.Forms
         private bool SendMailProposta(string anexoHtmlProp, string bodyHtmlProp, string sendEmail)
         {
             // Informações do remetente
-            string remetenteEmail = "";
-            string remetenteSenha = "";
-            string serverSMTP = "";
+            string remetenteEmail = "lucasvilar-celestino@hotmail.com";
+            string remetenteSenha = "vsfaivyrsdhnjcsv";
+            string serverSMTP = "smtp.office365.com";
 
             // Configuração do cliente SMTP
             SmtpClient smtpClient = new SmtpClient(serverSMTP);
